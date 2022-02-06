@@ -1,0 +1,19 @@
+@mixin large {
+  @media (max-width: (1024px)) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media (max-width: (768px)) {
+    @content;
+  }
+}
+
+@mixin textGradient {
+  color: var(--purple);
+  background: var(--gradient);
+  background-color: transparent;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
