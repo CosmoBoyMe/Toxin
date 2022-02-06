@@ -1,0 +1,24 @@
+include ../button/button.pug
+
+header.header 
+    .container
+        header.header__inner 
+            include ../logo/logo.pug
+            nav.header__nav
+                ul.header__nav-list 
+                    li.header__nav-item
+                        a.header__nav-link.header__nav-link--current(href="") О нас
+                    li.header__nav-item.header__nav-item--arrow
+                        a.header__nav-link(href="") Услуги
+                    li.header__nav-item
+                        a.header__nav-link(href="") Вакансии
+                    li.header__nav-item
+                        a.header__nav-link(href="") Новости
+                    li.header__nav-item.header__nav-item--arrow
+                        a.header__nav-link(href="") Соглашения
+                button.header__nav-burger
+                    span.header__nav-burger-line
+
+            .header__auth-user
+                +button('войти', border=true)
+                +button('зарегистрироваться')

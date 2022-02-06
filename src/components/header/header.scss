@@ -1,0 +1,154 @@
+.header {
+  &__inner {
+    display: flex;
+    align-items: center;
+
+    padding: 15px 0;
+  }
+
+  &__nav {
+    margin-left: auto;
+  }
+
+  &__nav-list {
+    display: flex;
+    column-gap: 20px;
+
+    @include large {
+      display: none;
+    }
+  }
+
+  &__nav-item {
+    position: relative;
+
+    &--arrow {
+      padding-right: 25px;
+    }
+
+    &--arrow::before {
+      position: absolute;
+      top: 6px;
+      right: 8px;
+
+      width: 9px;
+      height: 9px;
+
+      content: '';
+      transform: rotate(45deg);
+
+      border: 2px solid var(--darkShade50);
+      border-top: transparent;
+      border-left: transparent;
+      background-color: transparent;
+    }
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &__nav-link {
+    color: var(--darkShade50);
+
+    line-height: 17px;
+
+    &--current {
+      color: var(--darkShade75);
+
+      font-weight: 700;
+    }
+  }
+
+  &__auth-user {
+    display: flex;
+    column-gap: 20px;
+    margin-left: 20px;
+
+    @include large {
+      display: none;
+    }
+  }
+
+  &__nav-burger {
+    --burger-width: 40px;
+    --burger-height: 20px;
+    --burger-line-height: 2px;
+    position: relative;
+
+    display: none;
+
+    width: var(--burger-width);
+    height: var(--burger-height);
+    padding: 0;
+
+    cursor: pointer;
+
+    color: var(--darkShade50);
+    border: none;
+    background-color: transparent;
+
+    &::before,
+    &::after {
+      position: absolute;
+      left: 0;
+
+      width: 100%;
+      height: var(--burger-line-height);
+
+      content: '';
+      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+
+      background-color: currentcolor;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      top: calc(100% - var(--burger-line-height));
+    }
+
+    &-line {
+      position: absolute;
+      top: 50%;
+      left: 0;
+
+      width: 100%;
+      height: var(--burger-line-height);
+
+      transition: transform 0.3s ease-in-out;
+      transform: translateY(-50%);
+
+      background-color: currentcolor;
+    }
+
+    &--active::before {
+      top: 50%;
+
+      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+      transform: rotate(45deg);
+    }
+
+    &--active::after {
+      top: 50%;
+
+      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+      transform: rotate(-45deg);
+    }
+
+    &--active &-line {
+      transition: transform 0.3s ease-in-out;
+      transform: scale(0);
+    }
+
+    &:focus::after {
+      opacity: 1;
+    }
+
+    @include large {
+      display: block;
+    }
+  }
+}
