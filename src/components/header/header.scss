@@ -6,60 +6,6 @@
     padding: 15px 0;
   }
 
-  &__nav {
-    margin-left: auto;
-  }
-
-  &__nav-list {
-    display: flex;
-    column-gap: 20px;
-
-    @include large {
-      display: none;
-    }
-  }
-
-  &__nav-item {
-    position: relative;
-
-    &--arrow {
-      padding-right: 25px;
-    }
-
-    &--arrow::before {
-      position: absolute;
-      top: 6px;
-      right: 8px;
-
-      width: 9px;
-      height: 9px;
-
-      content: '';
-      transform: rotate(45deg);
-
-      border: 2px solid var(--darkShade50);
-      border-top: transparent;
-      border-left: transparent;
-      background-color: transparent;
-    }
-
-    &:hover {
-      opacity: 0.5;
-    }
-  }
-
-  &__nav-link {
-    color: var(--darkShade50);
-
-    line-height: 17px;
-
-    &--current {
-      color: var(--darkShade75);
-
-      font-weight: 700;
-    }
-  }
-
   &__auth-user {
     display: flex;
     column-gap: 20px;

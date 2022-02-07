@@ -1,0 +1,43 @@
+.header__nav {
+  margin-left: auto;
+  &-list {
+    display: flex;
+    column-gap: 20px;
+
+    @include large {
+      display: none;
+    }
+  }
+
+  &-item {
+    &--arrow {
+      position: relative;
+      padding-right: 25px;
+      &::before {
+        content: 'expand_more';
+        font-family: 'Material Icons';
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 20px;
+        position: absolute;
+        right: 0;
+        top: 3px;
+      }
+    }
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &-link {
+    color: var(--darkShade50);
+
+    line-height: 17px;
+
+    &--current {
+      color: var(--darkShade75);
+
+      font-weight: 700;
+    }
+  }
+}
