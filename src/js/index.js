@@ -1,4 +1,5 @@
 import '../styles/index.scss';
+import '../components/calender/calender.js';
 
 const burger = document.querySelector('.header__nav-burger');
 

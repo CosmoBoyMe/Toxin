@@ -1,0 +1,8 @@
+include ../dateField/dateField.pug
+
+mixin calender
+  .calender
+    .calender__fields 
+      +dateField('прибытие', 'first-date')
+      +dateField('выезд', 'last-date')
+    .calender__date-picker.calender__date-picker--close
