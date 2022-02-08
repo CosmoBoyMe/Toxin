@@ -1,0 +1,31 @@
+.submit-btn {
+  position: relative;
+
+  width: 100%;
+  padding: 14px 50px 15px 18px;
+
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  word-wrap: break-word;
+
+  color: white;
+  border: none;
+  border-radius: 22px;
+  background: var(--gradient);
+
+  font-family: var(--mainFont);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 15px;
+
+  &::after {
+    top: 50%;
+    right: -2px;
+
+    transform: translate(-50%, -50%);
+    text-transform: none;
+
+    @include MaterialIcon("arrow_forward");
+  }
+}
