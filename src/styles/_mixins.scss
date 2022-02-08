@@ -17,3 +17,14 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+@mixin MaterialIcon($content) {
+  position: absolute;
+
+  content: $content;
+
+  font-family: var(--materialFont);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 24px;
+}

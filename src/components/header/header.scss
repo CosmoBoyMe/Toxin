@@ -9,6 +9,7 @@
   &__auth-user {
     display: flex;
     column-gap: 20px;
+
     margin-left: 20px;
 
     @include large {
@@ -42,7 +43,7 @@
       width: 100%;
       height: var(--burger-line-height);
 
-      content: '';
+      content: "";
       transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
 
       background-color: currentcolor;

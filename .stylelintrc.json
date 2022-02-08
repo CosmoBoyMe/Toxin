@@ -4,6 +4,7 @@
   "rules": {
     "custom-property-pattern": null,
     "declaration-empty-line-before": null,
+    "selector-class-pattern": null,
     "order/order": [
       "custom-properties",
       "dollar-variables",

@@ -3,4 +3,4 @@ mixin headerNav(items)
         ul.header__nav-list
             each item in items
                 li.header__nav-item(class=item.nested ? 'header__nav-item--arrow' : '')
-                    a.header__nav-link(class=item.current ? 'header__nav-link--current' : '', href="")=item.text
+                    a.header__nav-link(class=item.current ? 'header__nav-link--current' : '', href="/mock-address/change-me")=item.text
