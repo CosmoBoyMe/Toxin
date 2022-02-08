@@ -1,0 +1,37 @@
+.date-field {
+  display: flex;
+  flex-direction: column;
+  max-width: 150px;
+  &__title {
+    margin-bottom: 5px;
+
+    text-transform: uppercase;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 11px 44px 14px 15px;
+
+    border: 1px solid var(--darkShade25);
+    border-radius: 4px;
+    outline: none;
+
+    font-family: var(--mainFont);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+
+  &__control {
+    position: relative;
+
+    display: flex;
+
+    &::after {
+      top: 11px;
+      right: 10px;
+
+      @include MaterialIcon('expand_more');
+    }
+  }
+}
