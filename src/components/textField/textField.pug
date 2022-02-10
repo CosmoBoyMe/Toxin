@@ -1,0 +1,6 @@
+mixin textField({text, type, placeholder})
+  .text-field
+    if (text)
+      label.text-field__label= text
+
+    input.text-field__input(type=type, placeholder=placeholder)
