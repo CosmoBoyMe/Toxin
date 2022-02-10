@@ -12,6 +12,7 @@ if (process.env.NODE_ENV === 'production') {
 console.log(mode + ' mode');
 
 module.exports = {
+  context: path.resolve(__dirname, 'src'),
   mode: mode,
   target: 'web',
   devServer: {
@@ -23,7 +24,8 @@ module.exports = {
   },
 
   entry: {
-    main: path.resolve(__dirname, './src/js/index.js'),
+    main: path.resolve(__dirname, './src/pages/landingPage/landingPage.js'),
+    signIn: path.resolve(__dirname, './src/pages/signIn/signIn.js'),
   },
 
   output: {
@@ -44,8 +46,13 @@ module.exports = {
       filename: 'style/[name].[contenthash].css',
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/index.pug'), // шаблон
+      template: path.resolve(__dirname, './src/pages/landingPage/landingPage.pug'), // шаблон
     }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, './src/pages/signIn/signIn.pug'), // шаблон
+      filename: 'signIn.html',
+    }),
+
     new LiveReloadPlugin({
       appendScriptTag: true,
     }),
@@ -82,7 +89,7 @@ module.exports = {
       // изображения
 
       {
-        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+        test: /\.(?:ico|gif|png|jpg|jpeg|svg)$/i,
         type: 'asset/resource',
         generator: {
           filename: 'img/[name][ext][query]',
