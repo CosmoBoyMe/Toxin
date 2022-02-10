@@ -10,6 +10,12 @@
   }
 }
 
+@mixin small {
+  @media (max-width: (420px)) {
+    @content;
+  }
+}
+
 @mixin textGradient {
   color: var(--purple);
   background: var(--gradient);

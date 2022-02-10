@@ -1,9 +1,11 @@
 .calender {
   position: relative;
   z-index: 1000;
+
   &__fields {
     display: flex;
     column-gap: 20px;
+
     @include small {
       flex-direction: column;
       row-gap: 20px;
@@ -59,7 +61,7 @@
 
       color: var(--purple);
 
-      @include MaterialIcon('arrow_back');
+      @include MaterialIcon("arrow_back");
     }
   }
 
@@ -73,7 +75,7 @@
 
       color: var(--purple);
 
-      @include MaterialIcon('arrow_forward');
+      @include MaterialIcon("arrow_forward");
     }
   }
 
@@ -151,7 +153,7 @@
       bottom: 0;
       left: 0;
 
-      content: '';
+      content: "";
 
       border-radius: 50% 0 0 50%;
       background: var(--gradient25);
@@ -169,7 +171,7 @@
       bottom: 0;
       left: 0;
 
-      content: '';
+      content: "";
 
       border-radius: 0 50% 50% 0;
       background: var(--gradient25);
