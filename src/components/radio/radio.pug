@@ -1,0 +1,6 @@
+mixin radio({text, checked, name, value})
+  .radio 
+    label.radio__label 
+      input.radio__input.visually-hidden(type='radio', checked=checked, name=name, value=value)
+      span.radio__bullet
+      span.radio__text= text
