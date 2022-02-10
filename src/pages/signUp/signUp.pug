@@ -1,0 +1,42 @@
+include ../../components/textField/textField.pug
+include ../../components/submitBtn/submitBtn.pug
+include ../../components/button/button.pug
+include ../../components/toggle/toggle.pug
+include ../../components/radio/radio.pug
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Toxin
+  body
+    .wrapper 
+      include ../../components/header/header.pug
+      .main
+        .sign-up
+          .sign-up__inner
+            form.sign-up__form
+              h1.sign-up__title Регистрация аккаунта
+              .sign-up__fields 
+                +textField({placeholder:"Имя"})
+                +textField({placeholder:"Фамилия"})
+              .sign-up__radios
+                +radio({text: 'Мужчина', checked: true, name: 'gender', value: 'Мужчина'})
+                +radio({text: 'Женщина', name: 'gender', value: 'Женщина'})
+
+              .sign-up__birth-field
+                +textField({text: 'дата рождения', placeholder: 'ДД.ММ.ГГГГ'})
+              .sign-up__fields 
+                +textField({text: 'данные для входа в сервис', placeholder:'Email', type: 'email'})
+                +textField({placeholder:"Пароль"})
+              .sign-up__toggle 
+                +toggle('Получать спецпредложения')
+              .sign-up__submit-btn 
+                +submitBtn('зарегистрироваться')
+              .sign-up__info 
+                p.sign-up__text Уже есть аккаунт на Toxin?
+                +button('Войти', true)
+
+      include ../../components/footer/footer.pug

@@ -26,6 +26,7 @@ module.exports = {
   entry: {
     main: path.resolve(__dirname, './src/pages/landingPage/landingPage.js'),
     signIn: path.resolve(__dirname, './src/pages/signIn/signIn.js'),
+    signUp: path.resolve(__dirname, './src/pages/signUp/signUp.js'),
   },
 
   output: {
@@ -45,12 +46,19 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'style/[name].[contenthash].css',
     }),
+
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './src/pages/landingPage/landingPage.pug'), // шаблон
     }),
+
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './src/pages/signIn/signIn.pug'), // шаблон
       filename: 'signIn.html',
+    }),
+
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, './src/pages/signUp/signUp.pug'), // шаблон
+      filename: 'signUp.html',
     }),
 
     new LiveReloadPlugin({
