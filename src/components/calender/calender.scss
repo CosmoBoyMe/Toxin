@@ -1,13 +1,18 @@
 .calender {
   position: relative;
+  z-index: 1000;
   &__fields {
     display: flex;
     column-gap: 20px;
+    @include small {
+      flex-direction: column;
+      row-gap: 20px;
+    }
   }
 
   &__date-picker {
     position: absolute;
-    top: 70px;
+    top: calc(100% - 1px); // height - border
 
     display: flex;
 

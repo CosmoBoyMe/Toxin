@@ -13,9 +13,14 @@ const datePickerInstance = new AirDatepicker(calenderDatePickerEl, {
   visible: true,
   range: true,
   buttons: [
-    'clear',
+    {
+      content: 'очистить',
+      attrs: { type: 'button' },
+      onClick: (dpInstance) => dpInstance.clear(),
+    },
     {
       content: 'Применить',
+      attrs: { type: 'button' },
       onClick: (dpInstance) => calenderToogleHandler(),
     },
   ],
