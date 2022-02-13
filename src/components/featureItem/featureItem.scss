@@ -1,0 +1,37 @@
+.feature-item {
+  display: flex;
+
+  width: 100%;
+
+  &__icon {
+    width: 48px;
+    height: 48px;
+    margin-top: 4px;
+    margin-right: 10px;
+
+    color: transparent;
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    background-clip: text;
+
+    font-family: "Material Icons";
+    font-size: 48px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 41px;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__title {
+    font-family: var(--mainFont);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  &__text {
+    font-family: var(--mainFont);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+}
