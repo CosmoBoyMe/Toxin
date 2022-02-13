@@ -1,0 +1,47 @@
+.like-btn {
+  display: flex;
+  align-items: center;
+
+  min-width: 40px;
+  height: 20px;
+  padding-left: 0;
+
+  cursor: pointer;
+
+  color: var(--darkShade25);
+  border: 1px solid var(--darkShade25);
+  border-radius: 10px;
+  background-color: #fff;
+
+  font-size: 10px;
+
+  &--liked {
+    color: var(--purple);
+    border-color: var(--purple);
+  }
+
+  &__heart {
+    position: relative;
+
+    width: 20px;
+    height: 20px;
+
+    font-family: "Material Icons";
+    font-size: 10px;
+    font-weight: 400;
+    font-style: normal;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      content: "favorite_border";
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &--liked &__heart::before {
+    content: "favorite";
+  }
+}
