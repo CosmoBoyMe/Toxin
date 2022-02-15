@@ -1,0 +1,6 @@
+mixin pieChart(id, votesCount)
+  .pie-chart
+    canvas(id=id)
+    span.pie-chart__inner
+      span.pie-chart__number= votesCount
+      span.pie-chart__text голосов
