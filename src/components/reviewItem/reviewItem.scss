@@ -1,0 +1,51 @@
+@use '../likeBtn/likeBtn.scss';
+
+.reviewItem {
+  &__user {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 12px;
+  }
+
+  &__user-img {
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
+
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    filter: drop-shadow(0 10px 20px rgb(31 32 65 / 10%));
+  }
+
+  &__user-name {
+    font-family: var(--mainFont);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  &__user-online {
+    font-family: var(--mainFont);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  &__comment {
+    display: flex;
+    align-items: flex-start;
+
+    margin-left: 4px;
+  }
+
+  &__text {
+    margin-top: -2px;
+    margin-left: 14px;
+
+    font-family: var(--mainFont);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+}
