@@ -2,6 +2,7 @@ include ../../components/submitBtn/submitBtn.pug
 include ../../components/amountSelect/amountSelect.pug
 include ../../components/textField/textField.pug
 include ../../components/button/button.pug
+include ../../components/dropdown/dropdown.pug
 
 doctype html
 html(lang='en')
@@ -20,20 +21,9 @@ html(lang='en')
               h1.search-rooms__form-title Найдём номера под ваши пожелания
               .search-rooms__calender 
                 include ../../components/calender/calender.pug
-              .dropdown
-                label.dropdown__label гости
-                .dropdown__input-wrapper
-                  input.dropdown__input(placeholder='сколько гостей', readonly)
-                  span.dropdown__input-arrow
-                .dropdown__menu
-                  .dropdown__amount-items
-                    +amountSelect('взрослые')
-                    +amountSelect('дети')
-                    +amountSelect('младенцы')
-                  .dropdown__buttons
-                    button.dropdown__btn(type='button') очистить
-                    button.dropdown__btn(type='button') применить
-
+              .search-rooms__dropdown
+                - const items = [{ title: 'взрослые', value: 0 }, { title: 'дети', value: 0 }, { title: 'младенцы', value: 0 }];
+                  +dropdown('guestDropdown', 'гости', 'Сколько гостей', items)
               +submitBtn('подобрать номер')
             .search-rooms__text Лучшие номера для вашей работы, отдыха и просто вдохновения
       include ../../components/footer/footer.pug
