@@ -1,7 +1,7 @@
-mixin amountSelect(title)
+mixin amountSelect(title, value, min=0, max)
   .amount-select
     h3.amount-select__title= title
     .amount-select__controls
-      button.amount-select__btn.amount-select__btn-minus(type='button', onclick='this.nextElementSibling.stepDown()')
-      input.amount-select__number(type='number', min='0', max='20', value='0', readonly='')
-      button.amount-select__btn.amount-select__btn-plus(type='button', onclick='this.previousElementSibling.stepUp()') 
+      button.amount-select__btn.amount-select__btn-minus(type='button')
+      input.amount-select__number(type='number', min=min, max=max, value=value, readonly='')
+      button.amount-select__btn.amount-select__btn-plus(type='button') 

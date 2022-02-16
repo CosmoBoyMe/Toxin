@@ -1,0 +1,128 @@
+.dropdown {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  &__label {
+    margin-bottom: 5px;
+
+    text-transform: uppercase;
+
+    color: var(--darkShade);
+
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+  }
+
+  &__input-wrapper {
+    position: relative;
+  }
+
+  &__input {
+    width: 100%;
+
+    padding: 12px 40px 12px 12px;
+
+    cursor: pointer;
+    user-select: none;
+    text-overflow: ellipsis;
+
+    color: var(--darkShade75);
+    border: 1px solid var(--darkShade25);
+    border-radius: 4px;
+
+    font-family: var(--mainFont);
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 18px;
+
+    &:hover,
+    &:focus {
+      user-select: none;
+
+      border: 1px solid var(--darkShade50);
+      outline: var(--darkShade50);
+    }
+  }
+
+  &__input-arrow::before {
+    position: absolute;
+    top: 0;
+    right: 10px;
+
+    content: "expand_more";
+
+    color: var(--darkShade50);
+
+    font-family: var(--materialFont);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 44px;
+  }
+
+  &__menu {
+    position: absolute;
+    z-index: 1000;
+    top: calc(100% - 1px); // height - border 1px
+
+    display: none;
+
+    width: 100%;
+    padding: 7px 7px 13px 15px;
+
+    border: 1px solid var(--darkShade50);
+    border-radius: 4px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #fff;
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &__amount-items {
+    display: flex;
+    flex-direction: column;
+    row-gap: 7px;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 20px;
+  }
+
+  &__btn {
+    padding: 0;
+
+    cursor: pointer;
+    transition: opacity 0.7s;
+    text-transform: uppercase;
+
+    color: var(--purple);
+    border: none;
+    background-color: transparent;
+
+    font-family: var(--mainFont);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+
+    &--hidden {
+      display: none;
+    }
+
+    &--apply {
+      margin-left: auto;
+    }
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
