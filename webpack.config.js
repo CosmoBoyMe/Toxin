@@ -27,6 +27,7 @@ module.exports = {
     main: path.resolve(__dirname, './src/pages/landingPage/landingPage.js'),
     signIn: path.resolve(__dirname, './src/pages/signIn/signIn.js'),
     signUp: path.resolve(__dirname, './src/pages/signUp/signUp.js'),
+    roomDetails: path.resolve(__dirname, './src/pages/roomDetails/roomDetails.js'),
   },
 
   output: {
@@ -49,20 +50,24 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './src/pages/landingPage/landingPage.pug'), // шаблон
+      chunks: ['main'],
     }),
 
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './src/pages/signIn/signIn.pug'), // шаблон
       filename: 'signIn.html',
+      chunks: ['signIn'],
     }),
 
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './src/pages/signUp/signUp.pug'), // шаблон
       filename: 'signUp.html',
+      chunks: ['signUp'],
     }),
-
-    new LiveReloadPlugin({
-      appendScriptTag: true,
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, './src/pages/roomDetails/roomDetails.pug'), // шаблон
+      filename: 'roomDetails.html',
+      chunks: ['roomDetails'],
     }),
   ],
 
