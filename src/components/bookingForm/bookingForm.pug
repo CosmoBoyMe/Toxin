@@ -1,0 +1,33 @@
+include ../submitBtn/submitBtn.pug
+include ../dropdown/dropdown.pug
+
+mixin bookingForm
+  form.booking-form 
+    .booking-form__about
+      .booking-form__room-numbers 
+        span.booking-form__room-symbol №
+        | 888
+        span.booking-form__room-status люкс
+      .booking-form__room-price 9 990₽
+        span.booking-form__room-days в сутки
+    .booking-form__calender 
+      include ../../components/calender/calender.pug
+    .booking-form__dropdown 
+      - const items = [{ title: 'взрослые', value: 1 }, { title: 'дети', value: 1 }, { title: 'младенцы', value: 1 }];
+      +dropdown('guestDropdown', 'гости', 'Сколько гостей', items)
+    .booking-form__services-items 
+      .booking-form__services-item 
+        span.booking-form__services-item-name 9 990₽ х 4 суток
+        span.booking-form__services-item-price 39 960₽
+      .booking-form__services-item
+        span.booking-form__services-item-name Сбор за услуги: скидка 2 179₽
+        button.booking-form__services-item-info-btn(type='button') i
+        span.booking-form__services-item-price 0₽
+      .booking-form__services-item
+        span.booking-form__services-item-name Сбор за дополнительные услуги
+        button.booking-form__services-item-info-btn(type='button') i
+        span.booking-form__services-item-price 300₽
+    .booking-form__result Итого
+      span.booking-form__result-line
+      span.booking-form__result-price 38 081₽
+    +submitBtn('забронировать')

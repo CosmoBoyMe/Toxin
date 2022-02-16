@@ -1,0 +1,138 @@
+.booking-form {
+  max-width: 380px;
+  padding: 40px 29px 29px;
+
+  border: 1px solid rgb(0 0 0 / 12%);
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 0 25px 0 rgb(0 0 0 / 20%);
+
+  &__about {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+  }
+
+  &__room-numbers {
+    color: var(--darkShade);
+
+    font-family: var(--mainFont);
+    font-size: 24px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 29px;
+  }
+
+  &__room-symbol {
+    margin-right: 5px;
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+  }
+
+  &__room-status {
+    margin-left: 8px;
+
+    text-transform: uppercase;
+
+    color: var(--purple);
+
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+  }
+
+  &__room-price {
+    font-family: var(--mainFont);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+  }
+
+  &__room-days {
+    margin-left: 3px;
+
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+
+  &__calender {
+    margin-bottom: 20px;
+  }
+  &__dropdown {
+    margin-bottom: 18px;
+  }
+  &__services-items {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 21px;
+    row-gap: 10px;
+  }
+
+  &__services-item {
+    display: flex;
+
+    font-family: var(--mainFont);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+
+    &-name {
+      max-width: 214px;
+      margin-right: 5px;
+    }
+
+    &-info-btn {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+
+      cursor: pointer;
+      text-align: center;
+
+      color: var(--darkShade25);
+      border: 1px solid rgb(31 32 65 / 25%);
+      border-radius: 50%;
+      background-color: transparent;
+    }
+
+    &-price {
+      margin-left: auto;
+    }
+  }
+
+  &__result {
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 21px;
+
+    color: var(--darkShade);
+
+    font-family: var(--mainFont);
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 23px;
+
+    &-line {
+      align-self: flex-end;
+
+      width: 55%;
+      margin: 0 auto;
+      margin-bottom: 4px;
+
+      border-bottom: 1px dashed rgb(31 32 65 / 25%);
+    }
+
+    &-price {
+      white-space: nowrap;
+    }
+  }
+}
