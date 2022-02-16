@@ -1,4 +1,4 @@
-@use '../likeBtn/likeBtn.scss';
+@use "../likeBtn/likeBtn.scss";
 
 .reviewItem {
   &__user {
@@ -13,7 +13,7 @@
     height: 48px;
     margin-right: 10px;
 
-    border: 2px solid #ffffff;
+    border: 2px solid #fff;
     border-radius: 50%;
     filter: drop-shadow(0 10px 20px rgb(31 32 65 / 10%));
   }
