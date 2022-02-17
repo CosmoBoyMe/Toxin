@@ -18,6 +18,8 @@
 
     display: flex;
 
+    width: 100%;
+
     max-width: 320px;
     padding: 20px;
 
@@ -29,6 +31,10 @@
       display: none;
     }
   }
+}
+
+.-inline- {
+  width: 100%;
 }
 
 .air-datepicker {
@@ -96,16 +102,17 @@
 
   &-body--day-name {
     display: flex;
-    align-items: center;
     justify-content: center;
 
-    width: 40px;
-    height: 40px;
+    width: 15%;
+    height: auto;
+    padding-top: 4.5%;
+    padding-bottom: 4.5%;
   }
 
   &-body--cells {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
 
     cursor: pointer;
 
@@ -122,8 +129,9 @@
     align-items: center;
     justify-content: center;
 
-    width: 40px;
-    height: 40px;
+    height: auto;
+    padding-top: 32%;
+    padding-bottom: 32%;
   }
 
   &-cell.-current- {
