@@ -143,4 +143,8 @@
       white-space: nowrap;
     }
   }
+
+  @include small {
+    padding: 40px 15px 29px;
+  }
 }
