@@ -1,3 +1,5 @@
+@import "../../styles/mixins";
+
 .main {
   border-bottom: 1px solid var(--darkShade25);
 
@@ -39,16 +41,35 @@
   &__inner {
     display: grid;
     grid-template-columns: auto 380px;
+
+    @include extraLarge {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
   }
 
   &__content {
     margin-right: 20px;
+
+    @include extraLarge {
+      margin-bottom: 100px;
+    }
   }
 
   &__about {
     display: flex;
 
     margin-bottom: 13px;
+
+    @include extraLarge {
+      justify-content: space-between;
+    }
+
+    @include medium {
+      flex-direction: column;
+
+      margin-bottom: 100px;
+    }
   }
 
   &__features {
@@ -58,15 +79,24 @@
 
     &-title {
       margin-bottom: 21px;
+
+      @include medium {
+        text-align: center;
+      }
     }
 
     &-items {
       display: flex;
       flex-direction: column;
-      row-gap: 20px;
+      gap: 20px;
+
+      @include medium {
+        align-items: center;
+      }
     }
 
     &-item {
+      max-width: 280px;
       padding-bottom: 16px;
 
       border-bottom: 1px solid rgb(31 32 65 / 10%);
@@ -74,23 +104,51 @@
       &:last-child {
         border-bottom: 0;
       }
+
+      @include small {
+        max-width: none;
+      }
+    }
+
+    @include extraLarge {
+      margin-right: 20px;
+    }
+
+    @include medium {
+      max-width: none;
+      margin-bottom: 50px;
     }
   }
 
   &__votes {
     &-title {
       margin-bottom: 21px;
+
+      @include medium {
+        text-align: center;
+      }
     }
 
     &-content {
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
+
+      @include medium {
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 50px;
+      }
     }
 
     &-chart {
       width: 122px;
       margin-right: 32px;
+
+      @include medium {
+        margin-right: 0;
+      }
     }
 
     &-list {
@@ -150,6 +208,10 @@
       justify-content: space-between;
 
       margin-bottom: 19px;
+
+      @include medium {
+        flex-direction: column;
+      }
     }
 
     &-counts {
@@ -166,6 +228,15 @@
   &__details {
     display: flex;
     justify-content: flex-start;
+
+    @include extraLarge {
+      justify-content: space-between;
+    }
+
+    @include medium {
+      flex-direction: column-reverse;
+      gap: 50px;
+    }
   }
 
   &__rules {
@@ -175,12 +246,20 @@
     &-title {
       margin-bottom: 18px;
       margin-left: 20px;
+
+      @include medium {
+        margin-left: 0;
+      }
     }
 
     &-list {
       display: flex;
       flex-direction: column;
       row-gap: 10px;
+    }
+
+    @include extraLarge {
+      margin-right: 20px;
     }
   }
 
@@ -189,6 +268,10 @@
 
     &-title {
       margin-bottom: 18px;
+    }
+
+    @include medium {
+      max-width: none;
     }
   }
 }
