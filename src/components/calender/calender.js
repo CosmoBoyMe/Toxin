@@ -11,8 +11,11 @@ const initCalender = (calenderId, datePickerId) => {
   };
 
   const onClickOut = () => {
+    calenderEl.addEventListener('click', (event) => {
+      event.stopPropagation();
+    });
+
     document.addEventListener('click', (event) => {
-      console.log(calenderEl.contains(event.target));
       if (!calenderEl.contains(event.target)) {
         datePickerContainerEl.classList.add('calender__date-picker-container--close');
       }
@@ -23,7 +26,7 @@ const initCalender = (calenderId, datePickerId) => {
     field.addEventListener('click', datePickerToogleHandler);
   });
 
-  const onSelectDate = ({ date, formattedDate, datePicker }) => {
+  const onSelect = ({ date, formattedDate, datePicker }) => {
     const [firstDate, lastDate] = formattedDate;
     const [firstInputEl, lastInputdEl] = inputElements;
     firstInputEl.value = firstDate ?? '';
@@ -38,7 +41,7 @@ const initCalender = (calenderId, datePickerId) => {
     });
   };
 
-  initDatePicker(datePickerId, { onClickApplyBtnHandler: datePickerToogleHandler, newOpts: { onSelectDate, dateFormat } });
+  initDatePicker(datePickerId, { onClickApplyBtnHandler: datePickerToogleHandler, newOpts: { onSelect, dateFormat } });
   onClickOut();
 };
 
