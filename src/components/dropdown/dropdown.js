@@ -85,11 +85,19 @@ const initDropdown = (id, wordsDeclensions) => {
     setState();
     update();
   };
+  const onClickOutsideDropdown = () => {
+    document.addEventListener('click', (event) => {
+      if (!dropdownEl.contains(event.target)) {
+        dropdownMenuEl.classList.remove('dropdown__menu--active');
+      }
+    });
+  };
 
   dropdownInputWrapperEl.addEventListener('click', toggleDropdownMenuHandler);
   applyBtnEl?.addEventListener('click', toggleDropdownMenuHandler);
   clearBtnEl?.addEventListener('click', onClickClearBtnHandler);
   update();
+  onClickOutsideDropdown();
 };
 
 export { initDropdown };
