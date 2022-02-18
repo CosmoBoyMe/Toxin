@@ -1,8 +1,12 @@
 include ../dateField/dateField.pug
-.calender
-  .calender__fields
-    .calender__field
-      +dateField('прибытие', 'first-date')
-    .calender__field
-      +dateField('выезд', 'last-date')
-  .calender__date-picker.calender__date-picker--close
+include ../datepicker/datepicker.pug
+
+mixin calender(calenderId, datePickerId)
+  .calender(id=calenderId)
+    .calender__fields
+      .calender__field.calender__field-js
+        +dateField('прибытие', 'first-date')
+      .calender__field.calender__field-js
+        +dateField('выезд', 'last-date')
+    .calender__date-picker-container.calender__date-picker-container--close
+      +datepicker(datePickerId)

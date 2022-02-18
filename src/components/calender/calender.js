@@ -1,48 +1,45 @@
-import AirDatepicker from 'air-datepicker';
+import { initDatePicker } from '../datepicker/datepicker';
 
-const firstDateInputEl = document.querySelector('#first-date');
-const lastDateInputEl = document.querySelector('#last-date');
-const calenderDatePickerEl = document.querySelector('.calender__date-picker');
-const dateFieldsElements = document.querySelectorAll('.date-field');
+const initCalender = (calenderId, datePickerId) => {
+  const calenderEl = document.getElementById(calenderId);
+  const datePickerContainerEl = calenderEl.querySelector('.calender__date-picker-container');
+  const fieldElements = calenderEl.querySelectorAll('.calender__field-js');
+  const inputElements = calenderEl.querySelectorAll('input');
 
-const calenderToogleHandler = () => {
-  calenderDatePickerEl.classList.toggle('calender__date-picker--close');
-};
+  const datePickerToogleHandler = () => {
+    datePickerContainerEl.classList.toggle('calender__date-picker-container--close');
+  };
 
-const datePickerInstance = new AirDatepicker(calenderDatePickerEl, {
-  visible: true,
-  range: true,
-  buttons: [
-    {
-      content: 'очистить',
-      attrs: { type: 'button' },
-      onClick: (dpInstance) => dpInstance.clear(),
-    },
-    {
-      content: 'Применить',
-      attrs: { type: 'button' },
-      onClick: (dpInstance) => calenderToogleHandler(),
-    },
-  ],
-  altField: lastDateInputEl,
-  altFieldDateFormat: 'dd.MM.yyyy',
-  dateFormat(date) {
+  const onClickOut = () => {
+    document.addEventListener('click', (event) => {
+      console.log(calenderEl.contains(event.target));
+      if (!calenderEl.contains(event.target)) {
+        datePickerContainerEl.classList.add('calender__date-picker-container--close');
+      }
+    });
+  };
+
+  fieldElements.forEach((field) => {
+    field.addEventListener('click', datePickerToogleHandler);
+  });
+
+  const onSelectDate = ({ date, formattedDate, datePicker }) => {
+    const [firstDate, lastDate] = formattedDate;
+    const [firstInputEl, lastInputdEl] = inputElements;
+    firstInputEl.value = firstDate ?? '';
+    lastInputdEl.value = lastDate ?? '';
+  };
+
+  const dateFormat = (date) => {
     return date.toLocaleString('ru', {
       year: 'numeric',
       day: '2-digit',
       month: '2-digit',
     });
-  },
-  prevHtml: '<span class="air-datepicker-prev"></span>',
-  nextHtml: '<span class="air-datepicker-next"></span>',
-  navTitles: { days: 'MMMM yyyy' },
-  onSelect({ date, formattedDate, datepicker }) {
-    const [firstDate, lastDate] = formattedDate;
-    firstDateInputEl.value = firstDate ?? '';
-    lastDateInputEl.value = lastDate ?? '';
-  },
-});
+  };
 
-dateFieldsElements.forEach((element) => {
-  element.addEventListener('click', calenderToogleHandler);
-});
+  initDatePicker(datePickerId, { onClickApplyBtnHandler: datePickerToogleHandler, newOpts: { onSelectDate, dateFormat } });
+  onClickOut();
+};
+
+export { initCalender };
