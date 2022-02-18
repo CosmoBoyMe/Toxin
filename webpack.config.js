@@ -28,6 +28,7 @@ module.exports = {
     signIn: path.resolve(__dirname, './src/pages/signIn/signIn.js'),
     signUp: path.resolve(__dirname, './src/pages/signUp/signUp.js'),
     roomDetails: path.resolve(__dirname, './src/pages/roomDetails/roomDetails.js'),
+    searchRoom: path.resolve(__dirname, './src/pages/searchRoom/searchRoom.js'),
   },
 
   output: {
@@ -68,6 +69,11 @@ module.exports = {
       template: path.resolve(__dirname, './src/pages/roomDetails/roomDetails.pug'), // шаблон
       filename: 'roomDetails.html',
       chunks: ['roomDetails'],
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, './src/pages/searchRoom/searchRoom.pug'), // шаблон
+      filename: 'searchRoom.html',
+      chunks: ['searchRoom'],
     }),
   ],
 
