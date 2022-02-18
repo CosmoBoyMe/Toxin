@@ -1,0 +1,61 @@
+.rich-checkbox-item {
+  &__label {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 5px;
+  }
+
+  &__box {
+    position: relative;
+
+    display: inline-block;
+
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+
+    border: 1px solid var(--darkShade25);
+    border-radius: 4px;
+  }
+
+  &__input:checked + &__box {
+    border-color: var(--purple);
+
+    &::before {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+
+      width: 8px;
+      height: 6px;
+
+      content: "";
+      transform: rotate(135deg);
+
+      border: 2px solid;
+      border-bottom: transparent;
+      border-left: transparent;
+      border-image: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      border-image-slice: 1;
+    }
+  }
+
+  &__title {
+    color: var(--darkShade75);
+
+    font-family: var(--mainFont);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+  }
+
+  &__text {
+    margin-left: 30px;
+
+    font-family: var(--mainFont);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+  }
+}
