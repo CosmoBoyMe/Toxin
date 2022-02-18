@@ -1,5 +1,5 @@
-mixin dateField(title, id)
+mixin dateField(title, id, placeholder='ДД.ММ.ГГГГ')
   .date-field
     h3.date-field__title= title
     .date-field__control
-      input.date-field__input(placeholder='ДД.ММ.ГГГГ', readonly, id=id)
+      input.date-field__input(placeholder=placeholder, readonly, id=id)
