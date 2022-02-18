@@ -22,6 +22,12 @@ const initDatePicker = (elementId, settings = {}) => {
         },
       },
     ],
+    dateFormat(date) {
+      return date.toLocaleString('ru', {
+        day: '2-digit',
+        month: 'short',
+      });
+    },
     prevHtml: '<span class="air-datepicker-prev"></span>',
     nextHtml: '<span class="air-datepicker-next"></span>',
     navTitles: { days: 'MMMM yyyy' },
