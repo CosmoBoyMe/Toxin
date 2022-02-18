@@ -21,7 +21,7 @@ html(lang='en')
             form.search-rooms__form
               h1.search-rooms__form-title Найдём номера под ваши пожелания
               .search-rooms__calender 
-                +calender('calenderId', 'datePickerId')
+                +calender('calenderId', 'datePickerId', 'multiple')
               .search-rooms__dropdown
                 - const items = [{ title: 'взрослые', value: 0 }, { title: 'дети', value: 0 }, { title: 'младенцы', value: 0 }];
                   +dropdown('guestDropdown', 'гости', 'Сколько гостей', items)

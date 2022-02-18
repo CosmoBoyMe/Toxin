@@ -5,4 +5,4 @@ import { initDropdown } from '../../components/dropdown/dropdown';
 const wordsDeclensions = [['гость', 'гостя', 'гостей']];
 
 initDropdown('guestDropdown', wordsDeclensions);
-initCalender('calenderId', 'datePickerId');
+initCalender('calenderId', 'datePickerId', 'multiple');

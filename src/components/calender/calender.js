@@ -1,23 +1,22 @@
 import { initDatePicker } from '../datepicker/datepicker';
 
-const initCalender = (calenderId, datePickerId) => {
+const initCalender = (calenderId, datePickerId, type = '') => {
   const calenderEl = document.getElementById(calenderId);
-  const datePickerContainerEl = calenderEl.querySelector('.calender__date-picker-container');
+  const datePickerEl = calenderEl.querySelector('.calender__date-picker');
   const fieldElements = calenderEl.querySelectorAll('.calender__field-js');
   const inputElements = calenderEl.querySelectorAll('input');
 
   const datePickerToogleHandler = () => {
-    datePickerContainerEl.classList.toggle('calender__date-picker-container--close');
+    datePickerEl.classList.toggle('calender__date-picker--close');
   };
 
   const onClickOut = () => {
-    calenderEl.addEventListener('click', (event) => {
+    datePickerEl.addEventListener('click', (event) => {
       event.stopPropagation();
     });
-
     document.addEventListener('click', (event) => {
       if (!calenderEl.contains(event.target)) {
-        datePickerContainerEl.classList.add('calender__date-picker-container--close');
+        datePickerEl.classList.add('calender__date-picker--close');
       }
     });
   };
@@ -26,22 +25,38 @@ const initCalender = (calenderId, datePickerId) => {
     field.addEventListener('click', datePickerToogleHandler);
   });
 
-  const onSelect = ({ date, formattedDate, datePicker }) => {
-    const [firstDate, lastDate] = formattedDate;
-    const [firstInputEl, lastInputdEl] = inputElements;
-    firstInputEl.value = firstDate ?? '';
-    lastInputdEl.value = lastDate ?? '';
-  };
+  if (type === 'multiple') {
+    const onSelect = ({ date, formattedDate, datePicker }) => {
+      const [firstDate, lastDate] = formattedDate;
+      const [firstInputEl, lastInputdEl] = inputElements;
+      firstInputEl.value = firstDate ?? '';
+      lastInputdEl.value = lastDate ?? '';
+    };
 
-  const dateFormat = (date) => {
-    return date.toLocaleString('ru', {
-      year: 'numeric',
-      day: '2-digit',
-      month: '2-digit',
+    const dateFormat = (date) => {
+      return date.toLocaleString('ru', {
+        year: 'numeric',
+        day: '2-digit',
+        month: '2-digit',
+      });
+    };
+
+    initDatePicker(datePickerId, { onClickApplyBtnHandler: datePickerToogleHandler, newOpts: { onSelect, dateFormat } });
+  } else {
+    const onSelect = ({ date, formattedDate, datePicker }) => {
+      const inputElement = inputElements[0];
+      const formattedDateValue = formattedDate.join(' - ');
+      inputElement.value = formattedDateValue;
+    };
+
+    initDatePicker(datePickerId, {
+      onClickApplyBtnHandler: datePickerToogleHandler,
+      newOpts: {
+        onSelect,
+      },
     });
-  };
+  }
 
-  initDatePicker(datePickerId, { onClickApplyBtnHandler: datePickerToogleHandler, newOpts: { onSelect, dateFormat } });
   onClickOut();
 };
 
