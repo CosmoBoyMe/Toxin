@@ -42,6 +42,8 @@
   "dependencies": {
     "air-datepicker": "^3.1.1",
     "chart.js": "^3.7.1",
-    "inputmask": "^5.0.7"
+    "inputmask": "^5.0.7",
+    "nouislider": "^15.5.1",
+    "wnumb": "^1.2.0"
   }
 }
