@@ -1,0 +1,55 @@
+.expandable-list {
+  position: relative;
+
+  background-color: #fff;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    text-transform: uppercase;
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    user-select: none;
+    transition: transform 0.8s;
+
+    font-family: var(--materialFont);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+
+    &--active {
+      transform: rotate(-180deg);
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    top: 44px;
+
+    display: flex;
+    display: none;
+    flex-direction: column;
+
+    width: 100%;
+    padding-top: 3px;
+
+    background-color: #fff;
+    row-gap: 10px;
+
+    &--active {
+      display: flex;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+include ../checkboxItem/checkboxItem.pug
+
+mixin expandableList(id, title, items)
+  .expandable-list(id=id)
+    .expandable-list__header
+      h3.expandable-list__title= title
+      span.expandable-list__arrow expand_more
+    .expandable-list__menu
+      each item in items 
+        +checkboxItem(item)
