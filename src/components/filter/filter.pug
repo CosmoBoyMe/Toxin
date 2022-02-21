@@ -1,0 +1,30 @@
+include ../datepicker/datepicker.pug
+include ../calender/calender.pug
+include ../dropdown/dropdown.pug
+include ../checkboxList/checkboxList.pug
+include ../richCheckboxItem/richCheckboxItem.pug
+include ../dropdown/dropdown.pug
+include ../rangeSlider/rangeSlider.pug
+include ../expandableList/expandableList.pug
+
+mixin filter
+  .filter
+    .filter__calender 
+      +calender('calender', 'datepicker')
+    .filter__guest-dropdown
+      - const guestItems = [{ title: 'взрослые', value: 2 }, { title: 'дети', value: 1 }, { title: 'младенцы', value: 1 }];
+      +dropdown('guest-dropdown', 'гости', 'Сколько гостей', guestItems)
+    .filter__range-slider 
+      +rangeSlider('range-slider','диапазон цены', 'Стоимость за сутки пребывания в номере')
+    .filter__rules
+      - const checkboxItems = ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)'];
+      +checkboxList('правила дома', checkboxItems)
+    .filter__availability
+      - const richCheckboxItems = [{ title: 'Широкий коридор', text: 'Ширина коридоров в номере не менее 91 см.' }, { title: 'Помощник для инвалидов', text: 'На 1 этаже вас встретит специалист  и проводит до номера.' }];
+      +checkboxList('доступность', richCheckboxItems, 'rich')
+    .filter__room-dropdown 
+      - const roomItems = [{ title: 'спальни', value: 2 }, { title: 'кровати', value: 1 }, { title: 'ванные комнаты', value: 1 }];
+      +dropdown('room-dropdown', 'удобства номера', 'удобства', roomItems)
+    .filter__expandable-list 
+      - const expandableItems = ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь'];
+      +expandableList('expandable-list', 'дополнительные удобства', expandableItems)
