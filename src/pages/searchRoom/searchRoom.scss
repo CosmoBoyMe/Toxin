@@ -1,8 +1,27 @@
+@import "../../styles/index";
+
 .main {
   padding-top: 30px;
   padding-bottom: 70px;
 
+  &__inner {
+    display: flex;
+  }
+
   &__filter {
     max-width: 266px;
+    margin-right: 60px;
+  }
+}
+
+.content {
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(255px, 270px));
+    gap: 20px 12px;
+  }
+
+  &__title {
+    margin-bottom: 22px;
   }
 }

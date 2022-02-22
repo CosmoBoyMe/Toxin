@@ -1,4 +1,5 @@
 include ../../components/filter/filter.pug
+include ../../components/roomCard/roomCard.pug
 
 doctype html
 html(lang='en')
@@ -15,4 +16,13 @@ html(lang='en')
           .main__inner 
             .main__filter 
               +filter
+            .main__content
+              .content 
+                h1.content__title Номера, которые мы для вас подобрали
+                .content__cards
+                  - const { roomCards } = require('../../js/roomCards.js');
+                    each roomCard in roomCards 
+                      +roomCard(roomCard)
+              .pagination 
+
       include ../../components/footer/footer.pug
