@@ -10,7 +10,7 @@
     "build": "set NODE_ENV=production&&webpack",
     "style": "stylelint \"**/*.scss\" --fix",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "CosmoboyMe",
