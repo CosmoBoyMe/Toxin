@@ -1,5 +1,6 @@
 {
   "name": "toxin",
+  "homepage": "http://CosmoBoyMe.github.io/Toxin",
   "version": "1.0.0",
   "description": "learn project for metaLamp",
   "main": "src/index.js",
@@ -7,7 +8,9 @@
     "start": "set NODE_ENV=development&&webpack serve",
     "dev": "set NODE_ENV=development&&webpack",
     "build": "set NODE_ENV=production&&webpack",
-    "style": "stylelint \"**/*.scss\" --fix"
+    "style": "stylelint \"**/*.scss\" --fix",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "CosmoboyMe",
@@ -20,6 +23,7 @@
     "babel-loader": "8.2.2",
     "clean-webpack-plugin": "4.0.0",
     "css-loader": "6.3.0",
+    "gh-pages": "^3.2.3",
     "html-webpack-plugin": "5.3.2",
     "mini-css-extract-plugin": "2.5.3",
     "node-sass": "6.0.1",
