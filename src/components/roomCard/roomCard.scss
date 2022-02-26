@@ -3,7 +3,8 @@
   box-shadow: 0 10px 20px 0 rgb(31 32 65 / 5%);
 
   &__img {
-    aspect-ratio: 270 / 151; // width / height
+    width: 100%;
+    aspect-ratio: 271 / 151; // width / height
   }
 
   &__pagination {

@@ -5,6 +5,7 @@ import 'swiper/css';
 
 new Swiper('.card__slider', {
   modules: [Navigation, Pagination],
+  slidesPerView: 'auto',
   pagination: {
     el: '.card__pagination',
     type: 'bullets',
