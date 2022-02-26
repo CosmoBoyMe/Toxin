@@ -1,5 +1,6 @@
 include ../../components/filter/filter.pug
 include ../../components/roomCard/roomCard.pug
+include ../../components/pagination/pagination.pug
 
 doctype html
 html(lang='en')
@@ -23,6 +24,7 @@ html(lang='en')
                   - const { roomCards } = require('../../js/roomCards.js');
                     each roomCard in roomCards 
                       +roomCard(roomCard)
-              .pagination 
+                .content__pagination
+                  +pagination
 
       include ../../components/footer/footer.pug

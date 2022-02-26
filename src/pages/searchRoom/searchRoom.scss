@@ -2,7 +2,9 @@
 
 .main {
   padding-top: 30px;
-  padding-bottom: 70px;
+  padding-bottom: 72px;
+
+  border-bottom: 1px solid var(--darkShade25);
 
   &__inner {
     display: flex;
@@ -11,17 +13,29 @@
   &__filter {
     max-width: 266px;
     margin-right: 60px;
+
+    @include extraLarge {
+      width: 100%;
+      max-width: none;
+      margin-right: 0;
+    }
   }
 }
 
 .content {
+  &__title {
+    margin-bottom: 22px;
+  }
+
   &__cards {
     display: grid;
     grid-template-columns: repeat(3, minmax(255px, 270px));
     gap: 20px 12px;
+
+    margin-bottom: 43px;
   }
 
-  &__title {
-    margin-bottom: 22px;
+  &__pagination {
+    margin-right: 14px;
   }
 }
