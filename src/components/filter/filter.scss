@@ -1,4 +1,91 @@
 .filter {
+  &__btn {
+    display: none;
+
+    max-width: 170px;
+    margin: 0 auto;
+
+    @include extraLarge {
+      display: flex;
+    }
+  }
+
+  &__content {
+    @include extraLarge {
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+
+      overflow-y: scroll;
+      align-items: center;
+
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      padding: 40px 15px;
+
+      transition: transform 0.7s;
+      transform: translateX(200%);
+
+      background-color: #fff;
+    }
+  }
+
+  &__content-wrapper {
+    @include extraLarge {
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+  }
+
+  &__content-btn-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+
+    display: none;
+
+    width: 32px;
+    height: 32px;
+
+    opacity: 0.3;
+    border: none;
+    background-color: transparent;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 15px;
+
+      width: 2px;
+      height: 33px;
+
+      content: " ";
+
+      background-color: #333;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+
+    @include extraLarge {
+      display: block;
+    }
+  }
+
   &__calender {
     margin-bottom: 19px;
   }
@@ -21,5 +108,11 @@
 
   &__room-dropdown {
     margin-bottom: 15px;
+  }
+}
+
+.js-filter {
+  &__content--visible {
+    transform: translateX(0);
   }
 }
