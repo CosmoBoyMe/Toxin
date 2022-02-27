@@ -1,17 +1,15 @@
 include ../button/button.pug
 include ../headerNav/headerNav.pug
 
-header.header 
-  .container
-    header.header__inner 
-      include ../logo/logo.pug
-      -
-        const headerNav = [{text: 'О нас', current: true}, {text: 'Услуги', nested: true},
-         {text: 'Вакансии'}, {text: 'Новости'}, {text: 'Соглашения', nested: true} ]
-      +headerNav(headerNav)
-      button.header__nav-burger
-        span.header__nav-burger-line
+// options: {activePageName: string, user: {name: string}}
 
-      .header__auth-user
-        +button('войти', border=true)
-        +button('зарегистрироваться')
+mixin header({ activePageName='', user={}})
+  header.header 
+    .container
+      header.header__inner 
+        include ../logo/logo.pug
+        -
+          const items = [{text: 'о нас'}, {text: 'услуги', nested: true},
+          {text: 'вакансии'}, {text: 'новости'}, {text: 'соглашения', nested: true} ]
+        .header__nav
+          +headerNav({items, activePageName: activePageName, user: user})

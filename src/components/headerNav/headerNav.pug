@@ -1,6 +1,23 @@
-mixin headerNav(items)
-    nav.header__nav
-        ul.header__nav-list
-            each item in items
-                li.header__nav-item(class=item.nested ? 'header__nav-item--arrow' : '')
-                    a.header__nav-link(class=item.current ? 'header__nav-link--current' : '', href="/mock-address/change-me")=item.text
+include ../button/button.pug
+
+// options: {activePageName: string, user: {name: string}, items: {[text: string]}}
+
+mixin headerNav({activePageName, user, items})
+  nav.header-nav.js-header-nav
+    button.header-nav__burger.js-header-nav__burger
+      span.header-nav__burger-line.js-header-nav__burger-line
+    .header-nav__content.js-header-nav__content
+      ul.header-nav__list
+        each item in items
+          li.header-nav__item
+            a.header-nav__link(
+              class=item.text === activePageName ? 'header-nav__link--current' : '',
+              class=item.nested ? 'header-nav__link--arrow' : '',
+              href=item.link ? link : '/mock-address/change-me'
+            )= item.text
+      if user.name
+        .header-nav__profile= user.name
+      else
+        .header-nav__auth-user
+          +button('войти', border=true)
+          +button('зарегистрироваться')
