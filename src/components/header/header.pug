@@ -1,15 +1,29 @@
 include ../button/button.pug
-include ../headerNav/headerNav.pug
 
-// options: {activePageName: string, user: {name: string}}
-
-mixin header({ activePageName='', user={}})
-  header.header 
+mixin header(options = { activePageName: '', isAuth: false, userName: ''})
+  - const { activePageName, isAuth, userName } = options;
+  header.header.js-header
     .container
       header.header__inner 
         include ../logo/logo.pug
         -
           const items = [{text: 'о нас'}, {text: 'услуги', nested: true},
           {text: 'вакансии'}, {text: 'новости'}, {text: 'соглашения', nested: true} ]
-        .header__nav
-          +headerNav({items, activePageName: activePageName, user: user})
+        nav.header__nav
+          button.header__nav-burger.js-header__nav-burger
+            span.header__nav-burger-line.js-header__nav-burger-line
+          .header__nav-content.js-header__nav-content
+            ul.header__nav-list
+              each item in items
+                li.header__nav-item
+                  a.header__nav-link(
+                    class=item.text === activePageName ? 'header__nav-link--current' : '',
+                    class=item.nested ? 'header__nav-link--arrow' : '',
+                    href=item.link ? link : '/mock-address/change-me'
+                  )= item.text
+            if isAuth
+              .header__nav-profile= userName
+            else
+              .header__nav-auth-user
+                +button('войти', border=true)
+                +button('зарегистрироваться')
