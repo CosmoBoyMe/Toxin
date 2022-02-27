@@ -13,7 +13,7 @@ initCalender('calender', 'datepicker');
 initDropdown('guest-dropdown', wordsGuestDropdown);
 initDropdown('room-dropdown', wordsRoomDropdown);
 initRangeSlider('range-slider');
-initExpandableList('expandable-list');
+initExpandableList();
 
 const filterBtnElements = document.querySelectorAll('.js-filter__btn');
 const filterContentEl = document.querySelector('.js-filter__content');

@@ -28,10 +28,6 @@
     font-size: 24px;
     font-weight: 400;
     line-height: 24px;
-
-    &--active {
-      transform: rotate(-180deg);
-    }
   }
 
   &__menu {
@@ -47,9 +43,15 @@
 
     background-color: #fff;
     row-gap: 10px;
+  }
+}
 
-    &--active {
-      display: flex;
-    }
+.js-expandable-list {
+  &__arrow--active {
+    transform: rotate(-180deg);
+  }
+
+  &__menu--active {
+    display: flex;
   }
 }
