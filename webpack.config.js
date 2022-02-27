@@ -29,6 +29,7 @@ module.exports = {
     signUp: path.resolve(__dirname, './src/pages/signUp/signUp.js'),
     roomDetails: path.resolve(__dirname, './src/pages/roomDetails/roomDetails.js'),
     colors: path.resolve(__dirname, './src/pages/colors/colors.js'),
+    headersAndFooters: path.resolve(__dirname, './src/pages/headersAndFooters/headersAndFooters.js'),
   },
 
   output: {
@@ -80,8 +81,12 @@ module.exports = {
       filename: 'colors.html',
       chunks: ['colors'],
     }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, './src/pages/headersAndFooters/headersAndFooters.pug'), // шаблон
+      filename: 'headersAndFooters.html',
+      chunks: ['headersAndFooters'],
+    }),
   ],
-
   module: {
     rules: [
       // стили
