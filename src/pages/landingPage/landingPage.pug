@@ -4,6 +4,8 @@ include ../../components/textField/textField.pug
 include ../../components/button/button.pug
 include ../../components/dropdown/dropdown.pug
 include ../../components/calender/calender.pug
+include ../../components/header/header.pug
+include ../../components/footer/footer.pug
 
 doctype html
 html(lang='en')
@@ -14,7 +16,7 @@ html(lang='en')
     title Toxin
   body 
     .wrapper
-      include ../../components/header/header.pug
+      +header
       main.main
         .search-rooms
           .search-rooms__container
@@ -27,4 +29,4 @@ html(lang='en')
                   +dropdown('guestDropdown', 'гости', 'Сколько гостей', items)
               +submitBtn('подобрать номер')
             .search-rooms__text Лучшие номера для вашей работы, отдыха и просто вдохновения
-      include ../../components/footer/footer.pug
+      +footer

@@ -1,3 +1,5 @@
+include ../../components/header/header.pug
+include ../../components/footer/footer.pug
 include ../../components/textField/textField.pug
 include ../../components/submitBtn/submitBtn.pug
 include ../../components/button/button.pug
@@ -13,7 +15,7 @@ html(lang='en')
     title Toxin
   body
     .wrapper 
-      include ../../components/header/header.pug
+      +header
       .main
         .sign-up
           .sign-up__inner
@@ -39,4 +41,4 @@ html(lang='en')
                 p.sign-up__text Уже есть аккаунт на Toxin?
                 +button('Войти', true)
 
-      include ../../components/footer/footer.pug
+      +footer

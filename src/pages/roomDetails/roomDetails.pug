@@ -1,3 +1,5 @@
+include ../../components/header/header.pug
+include ../../components/footer/footer.pug
 include ../../components/submitBtn/submitBtn.pug
 include ../../components/featureItem/featureItem.pug
 include ../../components/likeBtn/likeBtn.pug
@@ -15,7 +17,7 @@ html(lang='en')
     title Toxin
   body 
     .wrapper 
-      include ../../components/header/header.pug
+      +header
       main.main
         .preview.main__preview
           img.preview__img.preview__img-first(
@@ -76,4 +78,4 @@ html(lang='en')
                     p.room__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
               .room__form
                 +bookingForm
-  include ../../components/footer/footer.pug
+      +footer

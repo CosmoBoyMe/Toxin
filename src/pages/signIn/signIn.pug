@@ -1,3 +1,5 @@
+include ../../components/header/header.pug
+include ../../components/footer/footer.pug
 include ../../components/submitBtn/submitBtn.pug
 include ../../components/textField/textField.pug
 include ../../components/button/button.pug
@@ -11,7 +13,7 @@ html(lang='en')
     title Toxin
   body 
     .wrapper
-      include ../../components/header/header.pug
+      +header
       main.main
         .sign-in
           .sign-in__inner
@@ -26,4 +28,4 @@ html(lang='en')
                 p.sign-in__text Нет аккаунта на Toxin?
                 +button('создать', border=true)
 
-      include ../../components/footer/footer.pug
+      +footer

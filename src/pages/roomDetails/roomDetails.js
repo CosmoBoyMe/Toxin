@@ -1,5 +1,7 @@
 import '../../styles/index.scss';
 import './roomDetails.scss';
+
+import '../../components/header/header';
 import '../../components/likeBtn/likeBtn.js';
 import '../../components/bookingForm/bookingForm';
 

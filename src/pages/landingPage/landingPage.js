@@ -1,5 +1,8 @@
 import './landingPage.scss';
-import { initCalender } from '../../components/calender/calender.js';
+
+import '../../components/header/header';
+
+import { initCalender } from '../../components/calender/calender';
 import { initDropdown } from '../../components/dropdown/dropdown';
 
 const wordsDeclensions = [['гость', 'гостя', 'гостей']];
