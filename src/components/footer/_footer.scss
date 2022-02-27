@@ -1,4 +1,6 @@
 .footer {
+  background-color: #fff;
+
   &__inner {
     @include large {
       padding: 120px 0;
