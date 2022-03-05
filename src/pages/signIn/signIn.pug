@@ -20,8 +20,8 @@ html(lang='en')
             form.sign-in__form
               h1.sign-in__title Войти
               .sign-in__fields
-                +textField({type: 'text', placeholder: "Email"})
-                +textField({type: 'password', placeholder: 'Пароль'})
+                +textField({type: 'text', placeholder: "Email", name: 'email'})
+                +textField({type: 'password', placeholder: 'Пароль', name: 'password'})
               .sign-in__submitBtn 
                 +submitBtn('войти')
               .sign-in__info 
