@@ -5,6 +5,7 @@ include ../../components/submitBtn/submitBtn.pug
 include ../../components/button/button.pug
 include ../../components/toggle/toggle.pug
 include ../../components/radio/radio.pug
+include ../../components/maskedField/maskedField.pug
 
 doctype html
 html(lang='en')
@@ -29,7 +30,7 @@ html(lang='en')
                 +radio({text: 'Женщина', name: 'gender', value: 'Женщина'})
 
               .sign-up__birth-field
-                +textField({text: 'дата рождения', placeholder: 'ДД.ММ.ГГГГ', id:'birthdate', name: 'birthdate'})
+                +maskedField({text: 'дата рождения', id:'birthdate', name: 'birthdate'})
               .sign-up__fields 
                 +textField({text: 'данные для входа в сервис', placeholder:'Email', type: 'email', name: 'email'})
                 +textField({placeholder:"Пароль", type:'password', name: 'password'})
