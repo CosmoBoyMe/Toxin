@@ -1,5 +1,23 @@
-.subInput {
-  position: relative;
+.subscription-field {
+  &__controls {
+    position: relative;
+  }
+
+  &__label {
+    display: inline-block;
+
+    margin-bottom: 5px;
+    margin-left: 2px;
+
+    text-transform: uppercase;
+
+    color: var(--darkShade);
+
+    font-family: var(--mainFont);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+  }
 
   &__input {
     width: 100%;
