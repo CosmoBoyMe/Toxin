@@ -1,15 +1,14 @@
 import { wording } from '../../helpers/wording';
 
-const initDropdown = (id, wordsDeclensions) => {
-  const dropdownEl = document.getElementById(id);
-  const dropdownInputEl = dropdownEl.querySelector('.dropdown__input');
-  const dropdownInputWrapperEl = dropdownEl.querySelector('.dropdown__input-wrapper');
-  const dropdownMenuEl = dropdownEl.querySelector('.dropdown__menu');
-  const counterElements = dropdownEl.querySelectorAll('.amount-select__number');
-  const minusBtnElements = dropdownEl.querySelectorAll('.amount-select__btn-minus');
-  const plusBtnElements = dropdownEl.querySelectorAll('.amount-select__btn-plus');
-  const clearBtnEl = dropdownEl.querySelector('.dropdown__btn--clear');
-  const applyBtnEl = dropdownEl.querySelector('.dropdown__btn--apply');
+const initDropdown = ({ dropdownEl, wordsDeclensions = '', onChangeTextValue = null }) => {
+  const dropdownInputWrapperEl = dropdownEl.querySelector('.js-dropdown__input-wrapper');
+  const dropdownInputEl = dropdownEl.querySelector('.js-dropdown__input');
+  const dropdownMenuEl = dropdownEl.querySelector('.js-dropdown__menu');
+  const counterElements = dropdownEl.querySelectorAll('.js-amount-select__number');
+  const minusBtnElements = dropdownEl.querySelectorAll('.js-amount-select__btn-minus');
+  const plusBtnElements = dropdownEl.querySelectorAll('.js-amount-select__btn-plus');
+  const clearBtnEl = dropdownEl.querySelector('.js-dropdown__btn--clear');
+  const applyBtnEl = dropdownEl.querySelector('.js-dropdown__btn--apply');
 
   const state = {};
   const setState = () => {
@@ -20,9 +19,9 @@ const initDropdown = (id, wordsDeclensions) => {
   const updateInputValueText = () => {
     if (state.totalCounts === 0) {
       dropdownInputEl.value = '';
-    } else if (wordsDeclensions.length === 1) {
-      const wordingText = wording(state.totalCounts, wordsDeclensions[0]);
-      dropdownInputEl.value = wordingText;
+    } else if (onChangeTextValue) {
+      const inputText = onChangeTextValue(state.totalCounts, state.values);
+      dropdownInputEl.value = inputText;
     } else {
       const wordingTextArray = wordsDeclensions.map((item, index) => wording(state.values[index], item));
       const removedEmptyText = wordingTextArray.filter((item) => item !== '');
@@ -33,9 +32,9 @@ const initDropdown = (id, wordsDeclensions) => {
 
   const updateClearBtn = () => {
     if (state.totalCounts === 0) {
-      clearBtnEl?.classList.add('dropdown__btn--hidden');
+      clearBtnEl?.classList.add('js-dropdown__btn--hidden');
     } else {
-      clearBtnEl?.classList.remove('dropdown__btn--hidden');
+      clearBtnEl?.classList.remove('js-dropdown__btn--hidden');
     }
   };
 
@@ -49,7 +48,6 @@ const initDropdown = (id, wordsDeclensions) => {
         minusButton.removeAttribute('disabled');
       }
     });
-
     updateInputValueText();
     updateClearBtn();
   };
@@ -75,7 +73,7 @@ const initDropdown = (id, wordsDeclensions) => {
   });
 
   const toggleDropdownMenuHandler = () => {
-    dropdownMenuEl.classList.toggle('dropdown__menu--active');
+    dropdownMenuEl.classList.toggle('js-dropdown__menu--active');
   };
 
   const onClickClearBtnHandler = () => {
@@ -85,10 +83,11 @@ const initDropdown = (id, wordsDeclensions) => {
     setState();
     update();
   };
+
   const onClickOutsideDropdown = () => {
     document.addEventListener('click', (event) => {
       if (!dropdownEl.contains(event.target)) {
-        dropdownMenuEl.classList.remove('dropdown__menu--active');
+        dropdownMenuEl.classList.remove('js-dropdown__menu--active');
       }
     });
   };

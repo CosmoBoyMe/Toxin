@@ -3,9 +3,7 @@ import './landingPage.scss';
 import '../../components/header/header';
 
 import { initCalender } from '../../components/calender/calender';
-import { initDropdown } from '../../components/dropdown/dropdown';
+import { initGuestDropdown } from '../../components/guestDropdown/guestDropdown';
 
-const wordsDeclensions = [['гость', 'гостя', 'гостей']];
-
-initDropdown('guestDropdown', wordsDeclensions);
+initGuestDropdown();
 initCalender('calenderId', 'datePickerId', 'multiple');

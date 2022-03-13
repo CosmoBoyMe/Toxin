@@ -1,0 +1,5 @@
+include ../dropdown/dropdown.pug
+
+mixin guestDropdown({label='Гости', placeholder='Сколько гостей', items=[{ title: 'взрослые', value: 2 }, { title: 'дети', value: 1 }, { title: 'младенцы', value: 0 }], active=false}={})
+  .guest-dropdown 
+    +dropdown({label, placeholder, items})

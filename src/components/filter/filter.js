@@ -1,20 +1,10 @@
 import { initCalender } from '../calender/calender';
-import { initDropdown } from '../dropdown/dropdown';
 import { initRangeSlider } from '../rangeSlider/rangeSlider';
 import { initExpandableList } from '../expandableList/expandableList';
+import { initRoomDropdown } from '../roomDropdown/roomDropdown';
+import { initGuestDropdown } from '../guestDropdown/guestDropdown';
 
-const wordsGuestDropdown = [['гость', 'гостя', 'гостей']];
-const wordsRoomDropdown = [
-  ['cпальня', 'спальни', 'спален'],
-  ['кровать', 'кровати', 'кроватей'],
-  ['ванная комната', 'ванных комнат', 'ванных комнат'],
-];
-initCalender('calender', 'datepicker');
-initDropdown('guest-dropdown', wordsGuestDropdown);
-initDropdown('room-dropdown', wordsRoomDropdown);
-initRangeSlider('range-slider');
-initExpandableList();
-
+const filterRoomDropdownEl = document.querySelector('.js-filter__room-dropdown');
 const filterBtnElements = document.querySelectorAll('.js-filter__btn');
 const filterContentEl = document.querySelector('.js-filter__content');
 
@@ -28,3 +18,10 @@ const onClickFilterBtn = () => {
 };
 
 filterBtnElements.forEach((btn) => btn.addEventListener('click', onClickFilterBtn));
+
+initCalender('calender', 'datepicker');
+initRangeSlider('range-slider');
+initExpandableList();
+initGuestDropdown();
+
+initRoomDropdown(filterRoomDropdownEl);

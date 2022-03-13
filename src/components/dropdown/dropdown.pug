@@ -1,17 +1,18 @@
 include ../amountSelect/amountSelect.pug
 
-mixin dropdown(id, label, placeholder, items, buttons=true)
-  .dropdown(id=id)
+mixin dropdown({ label, placeholder, items, buttons=true, active=false})
+  .dropdown
     label.dropdown__label= label
-    .dropdown__input-wrapper
-      input.dropdown__input(placeholder=placeholder, readonly)
+    .dropdown__input-wrapper.js-dropdown__input-wrapper
+      input.dropdown__input.js-dropdown__input(placeholder=placeholder, readonly)
       span.dropdown__input-arrow
-    .dropdown__menu
+    .dropdown__menu.js-dropdown__menu(class=active ? 'js-dropdown__menu--active' : '')
       .dropdown__amount-items
         each item in items
           - const { title, value, min, max } = item;
-          +amountSelect(title, value, min, max)
+          .dropdown__amount-select.js-dropdown__amount-select
+            +amountSelect(title, value, min, max)
       if (buttons)
-      .dropdown__buttons
-        button.dropdown__btn.dropdown__btn--clear(type='button') очистить
-        button.dropdown__btn.dropdown__btn--apply(type='button') применить
+        .dropdown__buttons
+          button.dropdown__btn.dropdown__btn--clear.js-dropdown__btn--clear(type='button') очистить
+          button.dropdown__btn.dropdown__btn--apply.js-dropdown__btn--apply(type='button') применить

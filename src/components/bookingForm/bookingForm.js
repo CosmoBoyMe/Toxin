@@ -1,7 +1,5 @@
 import { initCalender } from '../calender/calender.js';
-import { initDropdown } from '../dropdown/dropdown.js';
+import { initGuestDropdown } from '../guestDropdown/guestDropdown.js';
 
-const wordsDeclensions = [['гость', 'гостя', 'гостей']];
-
-initDropdown('guestDropdown', wordsDeclensions);
-initCalender('calender', 'datapicker', 'multiple');
+initGuestDropdown();
+initCalender('calender', 'datapicker');

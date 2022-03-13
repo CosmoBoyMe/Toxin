@@ -1,6 +1,6 @@
 include ../submitBtn/submitBtn.pug
-include ../dropdown/dropdown.pug
-include ../../components/calender/calender.pug
+include ../calender/calender.pug
+include ../guestDropdown/guestDropdown.pug
 
 mixin bookingForm
   form.booking-form 
@@ -14,8 +14,7 @@ mixin bookingForm
     .booking-form__calender 
       +calender('calender', 'datapicker')
     .booking-form__dropdown 
-      - const items = [{ title: 'взрослые', value: 1 }, { title: 'дети', value: 1 }, { title: 'младенцы', value: 1 }];
-      +dropdown('guestDropdown', 'гости', 'Сколько гостей', items)
+      +guestDropdown
     .booking-form__services-items 
       .booking-form__services-item
         .booking-form__services-item-info

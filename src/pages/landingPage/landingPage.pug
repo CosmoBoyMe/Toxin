@@ -2,7 +2,7 @@ include ../../components/submitBtn/submitBtn.pug
 include ../../components/amountSelect/amountSelect.pug
 include ../../components/textField/textField.pug
 include ../../components/button/button.pug
-include ../../components/dropdown/dropdown.pug
+include ../../components/guestDropdown/guestDropdown.pug
 include ../../components/calender/calender.pug
 include ../../components/header/header.pug
 include ../../components/footer/footer.pug
@@ -26,7 +26,7 @@ html(lang='en')
                 +calender('calenderId', 'datePickerId', 'multiple')
               .search-rooms__dropdown
                 - const items = [{ title: 'взрослые', value: 0 }, { title: 'дети', value: 0 }, { title: 'младенцы', value: 0 }];
-                  +dropdown('guestDropdown', 'гости', 'Сколько гостей', items)
+                +guestDropdown({items})
               +submitBtn('подобрать номер')
             .search-rooms__text Лучшие номера для вашей работы, отдыха и просто вдохновения
       +footer
