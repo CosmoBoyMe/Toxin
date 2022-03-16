@@ -6,6 +6,7 @@ const initDatePicker = (elementId, settings = {}) => {
 
   const datePickerInstance = new AirDatepicker(containerEl, {
     range: true,
+    minDate: new Date(),
     buttons: [
       {
         content: 'очистить',
