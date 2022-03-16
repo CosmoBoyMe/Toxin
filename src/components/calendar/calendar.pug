@@ -1,0 +1,20 @@
+include ../dateField/dateField.pug
+include ../datepicker/datepicker.pug
+
+mixin calendar({calendarId, datePickerId, type="", title='', secondTitle= ''})
+  .calendar(id=calendarId)
+    if (type==='multiple')
+      .calendar__fields
+        .calendar__field.js-calendar__field
+          - const dateFieldTitleFirst = title ? title : 'прибытие';
+            +dateField(dateFieldTitleFirst)
+        .calendar__field.js-calendar__field
+          - const dateFieldTitleSecond = secondTitle ? secondTitle : 'выезд';
+          +dateField(dateFieldTitleSecond)
+    else
+      .calendar__field.js-calendar__field
+        - const dateFieldTitlteThird = title ? title : 'даты пребывания в отеле';
+        +dateField(dateFieldTitlteThird, 'ДД-ММ - ДД-ММ')
+
+    .calendar__date-picker.js-calendar__date-picker.js-calendar__date-picker--close
+      +datepicker(datePickerId)

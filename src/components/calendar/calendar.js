@@ -1,13 +1,12 @@
 import { initDatePicker } from '../datepicker/datepicker';
 
-const initCalender = (calenderId, datePickerId, type = '') => {
-  const calenderEl = document.getElementById(calenderId);
-  const datePickerEl = calenderEl.querySelector('.calender__date-picker');
-  const fieldElements = calenderEl.querySelectorAll('.calender__field-js');
-  const inputElements = calenderEl.querySelectorAll('input');
-
+const initCalendar = (calendarId, datePickerId, type = '') => {
+  const calendarEl = document.getElementById(calendarId);
+  const datePickerEl = calendarEl.querySelector('.js-calendar__date-picker');
+  const fieldElements = calendarEl.querySelectorAll('.js-calendar__field');
+  const inputElements = calendarEl.querySelectorAll('input');
   const datePickerToogleHandler = () => {
-    datePickerEl.classList.toggle('calender__date-picker--close');
+    datePickerEl.classList.toggle('js-calendar__date-picker--close');
   };
 
   const onClickOut = () => {
@@ -15,8 +14,8 @@ const initCalender = (calenderId, datePickerId, type = '') => {
       event.stopPropagation();
     });
     document.addEventListener('click', (event) => {
-      if (!calenderEl.contains(event.target)) {
-        datePickerEl.classList.add('calender__date-picker--close');
+      if (!calendarEl.contains(event.target)) {
+        datePickerEl.classList.add('js-calendar__date-picker--close');
       }
     });
   };
@@ -60,4 +59,4 @@ const initCalender = (calenderId, datePickerId, type = '') => {
   onClickOut();
 };
 
-export { initCalender };
+export { initCalendar };

@@ -2,8 +2,8 @@ import './landingPage.scss';
 
 import '../../components/header/header';
 
-import { initCalender } from '../../components/calender/calender';
+import { initCalendar } from '../../components/calendar/calendar';
 import { initGuestDropdown } from '../../components/guestDropdown/guestDropdown';
 
 initGuestDropdown();
-initCalender('calenderId', 'datePickerId', 'multiple');
+initCalendar('calendarId', 'datePickerId', 'multiple');

@@ -1,6 +1,5 @@
-.calender {
+.calendar {
   position: relative;
-  z-index: 1000;
 
   &__fields {
     display: flex;
@@ -14,12 +13,15 @@
 
   &__date-picker {
     position: absolute;
+    z-index: 1000;
     top: calc(100% - 1px); // height - border
 
     width: 100%;
+  }
+}
 
-    &--close {
-      display: none;
-    }
+.js-calendar {
+  &__date-picker--close {
+    display: none;
   }
 }

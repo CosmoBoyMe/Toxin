@@ -3,7 +3,7 @@ include ../../components/amountSelect/amountSelect.pug
 include ../../components/textField/textField.pug
 include ../../components/button/button.pug
 include ../../components/guestDropdown/guestDropdown.pug
-include ../../components/calender/calender.pug
+include ../../components/calendar/calendar.pug
 include ../../components/header/header.pug
 include ../../components/footer/footer.pug
 
@@ -22,8 +22,8 @@ html(lang='en')
           .search-rooms__container
             form.search-rooms__form
               h1.search-rooms__form-title Найдём номера под ваши пожелания
-              .search-rooms__calender 
-                +calender('calenderId', 'datePickerId', 'multiple')
+              .search-rooms__calendar 
+                +calendar('calendarId', 'datePickerId', 'multiple')
               .search-rooms__dropdown
                 - const items = [{ title: 'взрослые', value: 0 }, { title: 'дети', value: 0 }, { title: 'младенцы', value: 0 }];
                 +guestDropdown({items})

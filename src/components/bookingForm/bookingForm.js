@@ -1,5 +1,5 @@
-import { initCalender } from '../calender/calender.js';
+import { initCalendar } from '../calendar/calendar.js';
 import { initGuestDropdown } from '../guestDropdown/guestDropdown.js';
 
 initGuestDropdown();
-initCalender('calender', 'datapicker');
+initCalendar('calendar', 'datapicker');

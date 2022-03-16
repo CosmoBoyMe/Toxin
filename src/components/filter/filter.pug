@@ -1,9 +1,7 @@
 include ../datepicker/datepicker.pug
-include ../calender/calender.pug
-include ../dropdown/dropdown.pug
+include ../calendar/calendar.pug
 include ../checkboxList/checkboxList.pug
 include ../richCheckboxItem/richCheckboxItem.pug
-include ../dropdown/dropdown.pug
 include ../rangeSlider/rangeSlider.pug
 include ../expandableList/expandableList.pug
 include ../guestDropdown/guestDropdown.pug
@@ -17,8 +15,8 @@ mixin filter
     .filter__content.js-filter__content
       .filter__content-wrapper
         button.filter__content-btn-close.js-filter__btn(type='button')
-        .filter__calender 
-          +calender('calender', 'datepicker')
+        .filter__calendar 
+          +calendar('calendar', 'datepicker')
         .filter__guest-dropdown
           +guestDropdown
         .filter__range-slider 

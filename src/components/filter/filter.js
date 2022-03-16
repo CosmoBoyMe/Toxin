@@ -1,4 +1,4 @@
-import { initCalender } from '../calender/calender';
+import { initCalendar } from '../calendar/calendar';
 import { initRangeSlider } from '../rangeSlider/rangeSlider';
 import { initExpandableList } from '../expandableList/expandableList';
 import { initRoomDropdown } from '../roomDropdown/roomDropdown';
@@ -19,7 +19,7 @@ const onClickFilterBtn = () => {
 
 filterBtnElements.forEach((btn) => btn.addEventListener('click', onClickFilterBtn));
 
-initCalender('calender', 'datepicker');
+initCalendar('calendar', 'datepicker');
 initRangeSlider('range-slider');
 initExpandableList();
 initGuestDropdown();
