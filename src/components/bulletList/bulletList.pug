@@ -1,0 +1,8 @@
+include ../bulletItem/bulletItem.pug
+
+mixin bulletList(title, itemsTitle)
+  .bullet-list 
+    h3.bullet-list__title= title
+    .bullet-list__items 
+      each title in itemsTitle
+        +bulletItem(title)
