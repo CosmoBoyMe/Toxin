@@ -1,0 +1,2 @@
+mixin link({text, href='/mock-address/change-me', border=false, active=false, size=''} = {})
+  a.link(class=border ? 'link--border' : '', class=size === 'large' ? 'link--large' : '', class=active ? 'link--active' : '', href=href)= text
