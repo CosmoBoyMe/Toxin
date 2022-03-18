@@ -1,7 +1,7 @@
-mixin richCheckboxItem(title, text)
+mixin richCheckboxItem(title, text, checked=false)
   .rich-checkbox-item
     label.rich-checkbox-item__label
-      input.rich-checkbox-item__input.visually-hidden(type='checkbox')
+      input.rich-checkbox-item__input.visually-hidden(type='checkbox', checked=checked)
       span.rich-checkbox-item__box 
       span.rich-checkbox-item__title= title
     p.rich-checkbox-item__text= text
