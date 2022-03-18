@@ -2,7 +2,7 @@ include ../../components/header/header.pug
 include ../../components/footer/footer.pug
 include ../../components/submitBtn/submitBtn.pug
 include ../../components/textField/textField.pug
-include ../../components/button/button.pug
+include ../../components/link/link.pug
 
 doctype html
 html(lang='en')
@@ -26,6 +26,6 @@ html(lang='en')
                 +submitBtn('войти')
               .sign-in__info 
                 p.sign-in__text Нет аккаунта на Toxin?
-                +button('создать', border=true)
+                +link({text:'создать', href: '/signUp.html', border:true})
 
       +footer
