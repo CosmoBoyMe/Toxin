@@ -16,19 +16,19 @@ mixin filter
       .filter__content-wrapper
         button.filter__content-btn-close.js-filter__btn(type='button')
         .filter__calendar 
-          +calendar('calendar', 'datepicker')
+          +calendar({calendarId: 'calendar', datePickerId: 'datepicker'})
         .filter__guest-dropdown
-          +guestDropdown
+          +guestDropdown({values: [1,2,1]})
         .filter__range-slider 
           +rangeSlider('range-slider','диапазон цены', 'Стоимость за сутки пребывания в номере')
         .filter__rules
-          - const checkboxItems = ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)'];
-          +checkboxList('правила дома', checkboxItems)
+          - const checkboxItems = [{ title: 'Можно курить' }, { title: 'Можно с питомцами' }, { title: 'Можно пригласить гостей (до 10 человек)' }];
+          +checkboxList('правила дома', checkboxItems, '')
         .filter__availability
           - const richCheckboxItems = [{ title: 'Широкий коридор', text: 'Ширина коридоров в номере не менее 91 см.' }, { title: 'Помощник для инвалидов', text: 'На 1 этаже вас встретит специалист  и проводит до номера.' }];
           +checkboxList('доступность', richCheckboxItems, 'rich')
         .filter__room-dropdown.js-filter__room-dropdown
-          +roomDropdown
+          +roomDropdown({values: [2,2]})
         .filter__expandable-list 
           - const expandableItems = ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь'];
             +expandableList('дополнительные удобства', expandableItems)

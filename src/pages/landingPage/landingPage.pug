@@ -23,9 +23,8 @@ html(lang='en')
             form.search-rooms__form
               h1.search-rooms__form-title Найдём номера под ваши пожелания
               .search-rooms__calendar 
-                +calendar('calendarId', 'datePickerId', 'multiple')
+                +calendar({calendarId: 'calendar', datePickerId: 'date-picker', type:"multiple"})
               .search-rooms__dropdown
-                - const items = [{ title: 'взрослые', value: 0 }, { title: 'дети', value: 0 }, { title: 'младенцы', value: 0 }];
                 +guestDropdown({items})
               +submitBtn('подобрать номер')
             .search-rooms__text Лучшие номера для вашей работы, отдыха и просто вдохновения
