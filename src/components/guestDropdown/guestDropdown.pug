@@ -1,5 +1,11 @@
 include ../dropdown/dropdown.pug
 
-mixin guestDropdown({label='Гости', placeholder='Сколько гостей', items=[{ title: 'взрослые', value: 2 }, { title: 'дети', value: 1 }, { title: 'младенцы', value: 0 }], active=false}={})
-  .guest-dropdown 
-    +dropdown({label, placeholder, items})
+mixin guestDropdown({label='Гости', values=[], placeholder='Сколько гостей', active=false}={})
+  .guest-dropdown
+    -
+      const items=[{ title: 'взрослые', value: 0 }, { title: 'дети', value: 0 }, { title: 'младенцы', value: 0 }];
+      if(values) {
+        values.forEach((value, index) => items[index].value = value)
+      }
+
+    +dropdown({label, placeholder, items, active: active})
