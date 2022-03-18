@@ -1,4 +1,5 @@
 include ../amountSelect/amountSelect.pug
+include ../button/button.pug
 
 mixin dropdown({ label, placeholder, items, buttons=true, active=false})
   .dropdown
@@ -14,5 +15,7 @@ mixin dropdown({ label, placeholder, items, buttons=true, active=false})
             +amountSelect(title, value, min, max)
       if (buttons)
         .dropdown__buttons
-          button.dropdown__btn.dropdown__btn--clear.js-dropdown__btn--clear(type='button') очистить
-          button.dropdown__btn.dropdown__btn--apply.js-dropdown__btn--apply(type='button') применить
+          .dropdown__btn.dropdown__btn--clear.js-dropdown__btn--clear
+            +button({text: 'очистить'})
+          .dropdown__btn.dropdown__btn--apply.js-dropdown__btn--apply
+            +button({text: 'применить'})

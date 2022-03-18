@@ -64,13 +64,13 @@
 
   &__menu {
     position: absolute;
-    z-index: 1000;
+    z-index: 10000;
     top: calc(100% - 1px); // height - border 1px
 
     display: none;
 
     width: 100%;
-    padding: 7px 7px 13px 15px;
+    padding: 4px 7px 9px 15px;
 
     border: 1px solid var(--darkShade50);
     border-radius: 4px;
@@ -89,31 +89,13 @@
     display: flex;
     justify-content: space-between;
 
-    margin-top: 20px;
+    margin-top: 17px;
+    margin-bottom: -2px;
   }
 
   &__btn {
-    padding: 0;
-
-    cursor: pointer;
-    transition: opacity 0.7s;
-    text-transform: uppercase;
-
-    color: var(--purple);
-    border: none;
-    background-color: transparent;
-
-    font-family: var(--mainFont);
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 15px;
-
     &--apply {
       margin-left: auto;
-    }
-
-    &:hover {
-      opacity: 0.5;
     }
   }
 }
@@ -123,7 +105,7 @@
     display: block;
   }
 
-  &--hidden {
+  &__btn--hidden {
     display: none;
   }
 }
