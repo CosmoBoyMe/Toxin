@@ -1,5 +1,6 @@
 include ./footerList.pug
 include ../subscriptionField/subscriptionField.pug
+include ../logo/logo.pug
 
 mixin footer
   footer.footer
@@ -8,7 +9,8 @@ mixin footer
         .container
           .footer__top-inner 
             .footer__info
-              include ../logo/logo.pug
+              .footer__logo
+                +logo
               p.footer__info-text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
             -
               const Lists = [
