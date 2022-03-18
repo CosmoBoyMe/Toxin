@@ -1,2 +1,2 @@
-mixin button(text, border=false)
-    button.button(class=border ? 'button--border' : '')= text
+mixin button({text='', active=false})
+  button.button(class=border ? 'button--border' : '', class=active ? 'button--active' : '', type='button')= text
