@@ -1,11 +1,12 @@
-include ../button/button.pug
+include ../link/link.pug
+include ../logo/logo.pug
 
 mixin header(options = { activePageName: '', isAuth: false, userName: ''})
   - const { activePageName, isAuth, userName } = options;
   header.header.js-header
     .container
       header.header__inner 
-        include ../logo/logo.pug
+        +logo
         -
           const items = [{text: 'о нас'}, {text: 'услуги', nested: true},
           {text: 'вакансии'}, {text: 'новости'}, {text: 'соглашения', nested: true} ]
@@ -17,7 +18,7 @@ mixin header(options = { activePageName: '', isAuth: false, userName: ''})
               each item in items
                 li.header__nav-item
                   a.header__nav-link(
-                    class=item.text === activePageName ? 'header__nav-link--current' : '',
+                    class=item.text.toLowerCase() === activePageName.toLowerCase() ? 'header__nav-link--current' : '',
                     class=item.nested ? 'header__nav-link--arrow' : '',
                     href=item.link ? link : '/mock-address/change-me'
                   )= item.text
@@ -25,5 +26,5 @@ mixin header(options = { activePageName: '', isAuth: false, userName: ''})
               .header__nav-profile= userName
             else
               .header__nav-auth-user
-                +button('войти', border=true)
-                +button('зарегистрироваться')
+                +link({text: 'войти', href:'/signIn.html', border: true, size: 'small'})
+                +link({text: 'зарегистрироваться', href: '/signUp.html', size: 'small'})
