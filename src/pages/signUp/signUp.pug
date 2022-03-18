@@ -2,7 +2,7 @@ include ../../components/header/header.pug
 include ../../components/footer/footer.pug
 include ../../components/textField/textField.pug
 include ../../components/submitBtn/submitBtn.pug
-include ../../components/button/button.pug
+include ../../components/link/link.pug
 include ../../components/toggle/toggle.pug
 include ../../components/radio/radio.pug
 include ../../components/maskedField/maskedField.pug
@@ -39,7 +39,7 @@ html(lang='en')
               .sign-up__submit-btn 
                 +submitBtn('зарегистрироваться')
               .sign-up__info 
-                p.sign-up__text Уже есть аккаунт на Toxin?
-                +button('Войти', true)
+                p.sign-up__text Уже есть аккаунт на Toxin
+                +link({text: 'Войти', href: '/signIn.html', border: true})
 
       +footer
