@@ -12,8 +12,9 @@ const initExpandableList = () => {
     };
 
     const outsideClickHandler = (event) => {
-      if (!event.target.closest('.js-expandable-list')) {
-        toogleMenu();
+      if (!listEl.contains(event.target)) {
+        menuEl.classList.remove('js-expandable-list__menu--active');
+        headerArrowEl.classList.remove('js-expandable-list__arrow--active');
         removeOutsideClickHandler();
       }
     };
