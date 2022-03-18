@@ -1,17 +1,13 @@
 include ../checkboxItem/checkboxItem.pug
 include ../richCheckboxItem/richCheckboxItem.pug
 
-//- title: string 
-//- items: [string, string, string] | [{title, text}, {title, text}, {title, text}]
-//- type: rich | ''
-
 mixin checkboxList(title, items, type='')
   .checkbox-list
     h3.checkbox-list__title= title
     .checkbox-list__items
       if (type === 'rich')
         each item in items 
-          +richCheckboxItem(item.title, item.text)
+          +richCheckboxItem(item.title, item.text, items.checked)
       else
         each item in items 
-          +checkboxItem(item)
+          +checkboxItem(item.title, item.checked)
