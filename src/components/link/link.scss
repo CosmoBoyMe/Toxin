@@ -1,5 +1,9 @@
 .link {
-  padding: 9px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 20px;
 
   cursor: pointer;
   transition: opacity 0.3s;
@@ -42,8 +46,8 @@
     }
   }
 
-  &--large {
-    padding: 14px 20px;
+  &--small {
+    padding: 9px 20px;
   }
 
   &--active {
