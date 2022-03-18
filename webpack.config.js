@@ -28,8 +28,11 @@ module.exports = {
     signIn: path.resolve(__dirname, './src/pages/signIn/signIn.js'),
     signUp: path.resolve(__dirname, './src/pages/signUp/signUp.js'),
     roomDetails: path.resolve(__dirname, './src/pages/roomDetails/roomDetails.js'),
+    searchRoom: path.resolve(__dirname, './src/pages/searchRoom/searchRoom.js'),
     colors: path.resolve(__dirname, './src/pages/colors/colors.js'),
     headersAndFooters: path.resolve(__dirname, './src/pages/headersAndFooters/headersAndFooters.js'),
+    formElements: path.resolve(__dirname, './src/pages/formElements/formElements.js'),
+    cards: path.resolve(__dirname, './src/pages/cards/cards.js'),
   },
 
   output: {
@@ -85,6 +88,16 @@ module.exports = {
       template: path.resolve(__dirname, './src/pages/headersAndFooters/headersAndFooters.pug'), // шаблон
       filename: 'headersAndFooters.html',
       chunks: ['headersAndFooters'],
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, './src/pages/formElements/formElements.pug'), // шаблон
+      filename: 'formElements.html',
+      chunks: ['formElements'],
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, './src/pages/cards/cards.pug'), // шаблон
+      filename: 'cards.html',
+      chunks: ['cards'],
     }),
   ],
   module: {
