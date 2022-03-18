@@ -6,4 +6,4 @@ import { initCalendar } from '../../components/calendar/calendar';
 import { initGuestDropdown } from '../../components/guestDropdown/guestDropdown';
 
 initGuestDropdown();
-initCalendar('calendarId', 'datePickerId', 'multiple');
+initCalendar('calendar', 'date-picker', 'multiple');
