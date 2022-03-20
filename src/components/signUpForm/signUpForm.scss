@@ -1,0 +1,50 @@
+.sign-up-form {
+  max-width: 380px;
+  padding: 39px 29px 31px;
+
+  border: 1px solid rgb(0 0 0 / 12%);
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 1px 1px 25px 1px rgb(0 0 0 / 20%);
+
+  &__title {
+    margin-bottom: 21px;
+  }
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+    margin-bottom: 8px;
+  }
+
+  &__radios {
+    display: flex;
+    column-gap: 20px;
+
+    margin-bottom: 22px;
+  }
+
+  &__birth-field {
+    margin-bottom: 20px;
+  }
+
+  &__toggle {
+    margin-bottom: 22px;
+  }
+
+  &__submit-btn {
+    margin-bottom: 29px;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @include medium {
+    padding: 40px 15px 37px;
+  }
+}
