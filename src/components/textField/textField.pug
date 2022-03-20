@@ -5,7 +5,7 @@ mixin textField({text='', type='text', placeholder, focus=false, value='', id=''
 
     input.text-field__input(
       type=type,
-      id=id,
+      id=id ? id : undefined,
       name=name,
       placeholder=placeholder,
       value=value,
