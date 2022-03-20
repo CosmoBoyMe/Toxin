@@ -1,0 +1,43 @@
+@import "../../styles/index";
+
+.main {
+  background-color: #e5e5e5;
+
+  &__inner {
+    display: flex;
+    justify-content: center;
+
+    padding-top: 150px;
+  }
+
+  &__first-column {
+    margin-right: 40px;
+  }
+
+  &__search-rooms-form {
+    margin-bottom: 40px;
+  }
+
+  &__second-column {
+    margin-right: 40px;
+  }
+
+  &__booking-form {
+    margin-bottom: 40px;
+  }
+
+  &__datepicker {
+    width: 320px;
+    margin-bottom: 40px;
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+  }
+
+  &__room-card {
+    width: 270px;
+  }
+}
