@@ -1,9 +1,6 @@
+import '../../components/header/header';
 import './landingPage.scss';
 
-import '../../components/header/header';
+import { initSearchRoomsForm } from '../../components/searchRoomsForm/searchRoomsForm';
 
-import { initCalendar } from '../../components/calendar/calendar';
-import { initGuestDropdown } from '../../components/guestDropdown/guestDropdown';
-
-initGuestDropdown();
-initCalendar('calendar', 'date-picker', 'multiple');
+initSearchRoomsForm();

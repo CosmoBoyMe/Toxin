@@ -1,0 +1,28 @@
+.search-rooms-form {
+  max-width: 380px;
+  padding: 40px 30px 30px;
+
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 0 25px 0 rgb(0 0 0 / 20%);
+
+  &__title {
+    margin-bottom: 22px;
+
+    @include small {
+      font-size: 20px;
+    }
+  }
+
+  &__calendar {
+    margin-bottom: 20px;
+  }
+
+  &__dropdown {
+    margin-bottom: 31px;
+  }
+
+  @include small {
+    padding: 30px 10px 20px;
+  }
+}
