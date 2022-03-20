@@ -1,3 +1,4 @@
+include ../../components/head/head.pug
 include ../../components/textField/textField.pug
 include ../../components/expandableList/expandableList.pug
 include ../../components/subscriptionField/subscriptionField.pug
@@ -22,11 +23,7 @@ include ../../components/reviewItem/reviewItem.pug
 
 doctype html
 html(lang='en')
-  head
-    meta(charset='UTF-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    title Form Elements
+  +head
   body 
     main.main
       .container 
@@ -37,7 +34,7 @@ html(lang='en')
                 +textField({text:'Text Field', type:'email', placeholder: 'Email', id: 'email'})
               .main__text-field
                 +textField({text:'Text Field', type:'email', placeholder: 'Email', focus: true, value: 'This is pretty awesome', id:'extra-email'})
-              .main__guest-dropdown-first
+              .main__guest-dropdown-first.js-main__guest-dropdown
                 +guestDropdown({label: 'dropdown'})
               .main__masked-field
                 +maskedField({text:'masked text field', id: 'date'})
@@ -97,7 +94,7 @@ html(lang='en')
                     const rateItems = [{rateNumber: 4 }, {rateNumber: 5 }];
                   each rateItem in rateItems 
                     +rate(rateItem.rateNumber) 
-              .main__guest-dropdown-second
+              .main__guest-dropdown-second.js-main__guest-dropdown
                 +guestDropdown({label: 'dropdown', active: true})
               .main__rich-checkbox-buttons
                 -
@@ -125,7 +122,7 @@ html(lang='en')
                 h3.main__pagination-title pagination
                 .main__pagination-pagination
                   +pagination
-              .main__guest-dropdown-third
+              .main__guest-dropdown-third.js-main__guest-dropdown
                 +guestDropdown({label: 'Dropdown', values: [2, 1], active: true})
               .main__bullet-list
                 -
