@@ -9,11 +9,16 @@ import { initRangeSlider } from '../../components/rangeSlider/rangeSlider';
 import { initPagination } from '../../components/pagination/pagination';
 
 const roomDropdownElemenets = document.querySelectorAll('.js-main__room-dropdown');
+const guestDropdownElements = document.querySelectorAll('.js-main__guest-dropdown');
+
 roomDropdownElemenets.forEach((element) => {
   initRoomDropdown(element);
 });
 
-initGuestDropdown();
+guestDropdownElements.forEach((element) => {
+  initGuestDropdown(element);
+});
+
 initExpandableList();
 initCalendar('calendar-first', 'date-picker-first', 'multiple');
 initCalendar('filter-calendar', 'date-picker-second');
