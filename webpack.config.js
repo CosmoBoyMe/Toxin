@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 let mode = 'development';
 if (process.env.NODE_ENV === 'production') {
@@ -98,6 +99,11 @@ module.exports = {
       template: path.resolve(__dirname, './src/pages/cards/cards.pug'), // шаблон
       filename: 'cards.html',
       chunks: ['cards'],
+    }),
+
+    new FaviconsWebpackPlugin({
+      logo: path.resolve(__dirname, './src/assets/favicons/favicon.svg'),
+      outputPath: 'favicons',
     }),
   ],
   module: {
