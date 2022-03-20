@@ -1,45 +1,17 @@
 include ../../components/header/header.pug
+include ../../components/head/head.pug
 include ../../components/footer/footer.pug
-include ../../components/textField/textField.pug
-include ../../components/submitBtn/submitBtn.pug
-include ../../components/link/link.pug
-include ../../components/toggle/toggle.pug
-include ../../components/radio/radio.pug
-include ../../components/maskedField/maskedField.pug
+include ../../components/signUpForm/signUpForm.pug
 
 doctype html
 html(lang='en')
-  head
-    meta(charset='UTF-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    title Toxin
+  +head
   body
     .wrapper 
       +header
       .main
         .sign-up
           .sign-up__inner
-            form.sign-up__form
-              h1.sign-up__title Регистрация аккаунта
-              .sign-up__fields 
-                +textField({placeholder:"Имя", name: 'name'})
-                +textField({placeholder:"Фамилия", name:'surname'})
-              .sign-up__radios
-                +radio({text: 'Мужчина', checked: true, name: 'gender', value: 'Мужчина'})
-                +radio({text: 'Женщина', name: 'gender', value: 'Женщина'})
-
-              .sign-up__birth-field
-                +maskedField({text: 'дата рождения', id:'birthdate', name: 'birthdate'})
-              .sign-up__fields 
-                +textField({text: 'данные для входа в сервис', placeholder:'Email', type: 'email', name: 'email'})
-                +textField({placeholder:"Пароль", type:'password', name: 'password'})
-              .sign-up__toggle 
-                +toggle('Получать спецпредложения')
-              .sign-up__submit-btn 
-                +submitBtn('зарегистрироваться')
-              .sign-up__info 
-                p.sign-up__text Уже есть аккаунт на Toxin
-                +link({text: 'Войти', href: '/signIn.html', border: true})
-
+            .sign-up__form
+              +signUpForm
       +footer
