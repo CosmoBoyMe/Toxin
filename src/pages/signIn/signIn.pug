@@ -1,31 +1,17 @@
 include ../../components/header/header.pug
+include ../../components/head/head.pug
 include ../../components/footer/footer.pug
-include ../../components/submitBtn/submitBtn.pug
-include ../../components/textField/textField.pug
-include ../../components/link/link.pug
+include ../../components/signInForm/signInForm.pug
 
 doctype html
 html(lang='en')
-  head
-    meta(charset='UTF-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    title Toxin
+  +head
   body 
     .wrapper
       +header
       main.main
         .sign-in
           .sign-in__inner
-            form.sign-in__form
-              h1.sign-in__title Войти
-              .sign-in__fields
-                +textField({type: 'text', placeholder: "Email", name: 'email'})
-                +textField({type: 'password', placeholder: 'Пароль', name: 'password'})
-              .sign-in__submitBtn 
-                +submitBtn('войти')
-              .sign-in__info 
-                p.sign-in__text Нет аккаунта на Toxin?
-                +link({text:'создать', href: '/signUp.html', border:true})
-
+            .sign-in__form
+              +signInForm
       +footer

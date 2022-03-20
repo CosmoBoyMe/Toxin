@@ -17,44 +17,6 @@
   &__form {
     max-width: 380px;
     margin: 0 auto;
-    padding: 39px 29px 33px;
-
-    border: 1px solid rgb(0 0 0 / 12%);
-    border-radius: 4px;
-    background-color: #fff;
-    box-shadow: 1px 1px 25px 1px rgb(0 0 0 / 20%);
-
-    @include medium {
-      padding: 39px 15px 33px;
-    }
-  }
-
-  &__title {
-    margin-bottom: 21px;
-  }
-
-  &__fields {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
-    margin-bottom: 20px;
-  }
-
-  &__submitBtn {
-    margin-bottom: 29px;
-  }
-
-  &__info {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  &__text {
-    margin-right: 15px;
-
-    color: rgb(0 0 0 / 100%);
   }
 
   @media (max-width: 1330px) {
