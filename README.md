@@ -32,7 +32,7 @@
 * [Cтраница регистрации](https://cosmoboyme.github.io/Toxin/signUp)
 * [Страница поиска номеров](https://cosmoboyme.github.io/Toxin/searchRoom)
 * [Страница с деталями номеров](https://cosmoboyme.github.io/Toxin/roomDetails)
-* 
+
 ### Ui Kit
 
 * [Страница с элементами](https://cosmoboyme.github.io/Toxin/formElements.html)
