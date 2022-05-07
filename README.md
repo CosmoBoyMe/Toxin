@@ -11,19 +11,19 @@
 
 ## Команды
     Установка зависимостей
-    `npm -i`
+    npm -i
     
     Запуск проекта в браузере
-    `npm start`
+    npm start
     
     Сборка проекта в режиме разработчика
-    `npm run dev`
+    npm run dev
     
     Сборка проекта для продакшена 
-    `npm run build`
+    npm run build
     
     Проверка стилий в проекте 
-    `npm run style`
+    npm run style
 
 ## Страницы
 
