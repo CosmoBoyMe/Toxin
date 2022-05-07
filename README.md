@@ -22,7 +22,7 @@
     Сборка проекта для продакшена 
     npm run build
     
-    Проверка стилий в проекте 
+    Проверка стилей в проекте 
     npm run style
 
 ## Страницы
@@ -37,5 +37,5 @@
 
 * [Страница с элементами](https://cosmoboyme.github.io/Toxin/formElements.html)
 * [Страница c цветами и шрифтами](https://cosmoboyme.github.io/Toxin/colors)
-* [Страница c header and footer](https://cosmoboyme.github.io/Toxin/headersAndFooters)
+* [Страница c header и footer](https://cosmoboyme.github.io/Toxin/headersAndFooters)
 * [Страница c карточками номеров](https://cosmoboyme.github.io/Toxin/cards)
