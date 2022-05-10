@@ -103,7 +103,9 @@ module.exports = {
 
     new FaviconsWebpackPlugin({
       logo: path.resolve(__dirname, './src/assets/favicons/favicon.svg'),
-      outputPath: 'favicons',
+      outputPath: path.resolve(__dirname, './dist/assets/favicons'),
+      prefix: 'assets/favicons/',
+      inject: true,
     }),
   ],
   module: {
