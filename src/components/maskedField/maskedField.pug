@@ -1,5 +1,0 @@
-mixin maskedField({text='', id='', name=''})
-  .masked-field 
-    if (text)
-      label.masked-field__label(for=id)= text
-    input.masked-field__input.js-masked-field__input(type='text', id=id, name=name, placeholder='ДД.ММ.ГГГГ')

@@ -1,9 +1,9 @@
 import './cards.scss';
-import '../../components/signUpForm/signUpForm';
-import '../../components/roomCard/roomCard';
+import '../../components/sign-up-form/sign-up-form';
+import '../../components/room-card/room-card';
 
-import { initSearchRoomsForm } from '../../components/searchRoomsForm/searchRoomsForm';
-import { initBookingForm } from '../../components/bookingForm/bookingForm';
+import { initSearchRoomsForm } from '../../components/search-rooms-form/search-rooms-form';
+import { initBookingForm } from '../../components/booking-form/booking-form';
 import { initDatePicker } from '../../components/datepicker/datepicker';
 
 initSearchRoomsForm();

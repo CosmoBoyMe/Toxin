@@ -1,4 +1,4 @@
-include ../amountSelect/amountSelect.pug
+include ../amount-select/amount-select.pug
 include ../button/button.pug
 
 mixin dropdown({ label, placeholder, items, buttons=true, active=false})
@@ -12,7 +12,7 @@ mixin dropdown({ label, placeholder, items, buttons=true, active=false})
         each item in items
           - const { title, value, min, max } = item;
           .dropdown__amount-select.js-dropdown__amount-select
-            +amountSelect(title, value, min, max)
+            +amount-select(title, value, min, max)
       if (buttons)
         .dropdown__buttons
           .dropdown__btn.dropdown__btn--clear.js-dropdown__btn--clear

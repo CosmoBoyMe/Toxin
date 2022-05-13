@@ -10,8 +10,6 @@ if (process.env.NODE_ENV === 'production') {
   mode = 'production';
 }
 
-console.log(mode + ' mode');
-
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: mode,
@@ -25,14 +23,14 @@ module.exports = {
   },
 
   entry: {
-    main: path.resolve(__dirname, './src/pages/landingPage/landingPage.js'),
-    signIn: path.resolve(__dirname, './src/pages/signIn/signIn.js'),
-    signUp: path.resolve(__dirname, './src/pages/signUp/signUp.js'),
-    roomDetails: path.resolve(__dirname, './src/pages/roomDetails/roomDetails.js'),
-    searchRoom: path.resolve(__dirname, './src/pages/searchRoom/searchRoom.js'),
+    main: path.resolve(__dirname, './src/pages/landing-page/landing-page.js'),
+    signIn: path.resolve(__dirname, './src/pages/sign-in/sign-in.js'),
+    signUp: path.resolve(__dirname, './src/pages/sign-up/sign-up.js'),
+    roomDetails: path.resolve(__dirname, './src/pages/room-details/room-details.js'),
+    searchRoom: path.resolve(__dirname, './src/pages/search-room/search-room.js'),
     colors: path.resolve(__dirname, './src/pages/colors/colors.js'),
-    headersAndFooters: path.resolve(__dirname, './src/pages/headersAndFooters/headersAndFooters.js'),
-    formElements: path.resolve(__dirname, './src/pages/formElements/formElements.js'),
+    headersAndFooters: path.resolve(__dirname, './src/pages/headers-and-footers/headers-and-footers.js'),
+    formElements: path.resolve(__dirname, './src/pages/form-elements/form-elements.js'),
     cards: path.resolve(__dirname, './src/pages/cards/cards.js'),
   },
 
@@ -55,28 +53,28 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/pages/landingPage/landingPage.pug'), // шаблон
+      template: path.resolve(__dirname, './src/pages/landing-page/landing-page.pug'), // шаблон
       chunks: ['main'],
     }),
 
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/pages/signIn/signIn.pug'), // шаблон
+      template: path.resolve(__dirname, './src/pages/sign-in/sign-in.pug'), // шаблон
       filename: 'signIn.html',
       chunks: ['signIn'],
     }),
 
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/pages/signUp/signUp.pug'), // шаблон
+      template: path.resolve(__dirname, './src/pages/sign-up/sign-up.pug'), // шаблон
       filename: 'signUp.html',
       chunks: ['signUp'],
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/pages/roomDetails/roomDetails.pug'), // шаблон
+      template: path.resolve(__dirname, './src/pages/room-details/room-details.pug'), // шаблон
       filename: 'roomDetails.html',
       chunks: ['roomDetails'],
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/pages/searchRoom/searchRoom.pug'), // шаблон
+      template: path.resolve(__dirname, './src/pages/search-room/search-room.pug'), // шаблон
       filename: 'searchRoom.html',
       chunks: ['searchRoom'],
     }),
@@ -86,12 +84,12 @@ module.exports = {
       chunks: ['colors'],
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/pages/headersAndFooters/headersAndFooters.pug'), // шаблон
+      template: path.resolve(__dirname, './src/pages/headers-and-footers/headers-and-footers.pug'), // шаблон
       filename: 'headersAndFooters.html',
       chunks: ['headersAndFooters'],
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/pages/formElements/formElements.pug'), // шаблон
+      template: path.resolve(__dirname, './src/pages/form-elements/form-elements.pug'), // шаблон
       filename: 'formElements.html',
       chunks: ['formElements'],
     }),

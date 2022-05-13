@@ -1,11 +1,11 @@
 include ../datepicker/datepicker.pug
 include ../calendar/calendar.pug
-include ../checkboxList/checkboxList.pug
-include ../richCheckboxItem/richCheckboxItem.pug
-include ../rangeSlider/rangeSlider.pug
-include ../expandableList/expandableList.pug
-include ../guestDropdown/guestDropdown.pug
-include ../roomDropdown/roomDropdown.pug
+include ../checkbox-list/checkbox-list.pug
+include ../rich-checkbox-item/rich-checkbox-item.pug
+include ../range-slider/range-slider.pug
+include ../expandable-list/expandable-list.pug
+include ../guest-dropdown/guest-dropdown.pug
+include ../room-dropdown/room-dropdown.pug
 include ../button/button.pug
 
 mixin filter
@@ -17,18 +17,18 @@ mixin filter
         button.filter__content-btn-close.js-filter__btn(type='button')
         .filter__calendar 
           +calendar({calendarId: 'calendar', datePickerId: 'datepicker'})
-        .filter__guest-dropdown
-          +guestDropdown({values: [1,2,1]})
+        .filter__guest-dropdown.js-filter__guest-dropdown
+          +guest-dropdown({values: [1,2,1]})
         .filter__range-slider 
-          +rangeSlider('range-slider','диапазон цены', 'Стоимость за сутки пребывания в номере')
+          +range-slider('range-slider','диапазон цены', 'Стоимость за сутки пребывания в номере')
         .filter__rules
           - const checkboxItems = [{ title: 'Можно курить' }, { title: 'Можно с питомцами' }, { title: 'Можно пригласить гостей (до 10 человек)' }];
-          +checkboxList('правила дома', checkboxItems, '')
+          +checkbox-list('правила дома', checkboxItems, '')
         .filter__availability
           - const richCheckboxItems = [{ title: 'Широкий коридор', text: 'Ширина коридоров в номере не менее 91 см.' }, { title: 'Помощник для инвалидов', text: 'На 1 этаже вас встретит специалист  и проводит до номера.' }];
-          +checkboxList('доступность', richCheckboxItems, 'rich')
+          +checkbox-list('доступность', richCheckboxItems, 'rich')
         .filter__room-dropdown.js-filter__room-dropdown
-          +roomDropdown({values: [2,2]})
+          +room-dropdown({values: [2,2]})
         .filter__expandable-list 
           - const expandableItems = ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь'];
-            +expandableList('дополнительные удобства', expandableItems)
+            +expandable-list('дополнительные удобства', expandableItems)

@@ -1,5 +1,5 @@
-include ./footerList.pug
-include ../subscriptionField/subscriptionField.pug
+include ./footer-list.pug
+include ../subscription-field/subscription-field.pug
 include ../logo/logo.pug
 
 mixin footer
@@ -20,13 +20,13 @@ mixin footer
               ];
 
             each list in Lists
-              +footerList(list)
+              +footer-list(list)
 
             .footer__sub
               h3.footer__title.footer__sub-title Подписка
               p.footer__sub-text Получайте специальные предложения и новости сервиса
               form.footer__sub-form(action='/mock-address/change-me')
-                +subscriptionField({id: 'subscription-email'})
+                +subscription-field({id: 'subscription-email'})
 
       .footer__bottom
         .container

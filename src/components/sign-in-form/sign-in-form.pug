@@ -1,0 +1,15 @@
+include ../text-field/text-field.pug
+include ../submit-btn/submit-btn.pug
+include ../link/link.pug
+
+mixin sign-in-form
+  form.sign-in-form
+    h1.sign-in-form__title Войти
+    .sign-in-form__fields
+      +text-field({type: 'text', placeholder: "Email", name: 'email'})
+      +text-field({type: 'password', placeholder: 'Пароль', name: 'password'})
+    .sign-in-form__submitBtn 
+      +submit-btn('войти')
+    .sign-in-form__info 
+      p.sign-in-form__text Нет аккаунта на Toxin?
+      +link({text:'создать', href: '/signUp.html', border:true})

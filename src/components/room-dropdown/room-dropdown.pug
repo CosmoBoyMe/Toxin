@@ -1,0 +1,11 @@
+include ../dropdown/dropdown.pug
+
+mixin room-dropdown({label='удобства номера', values=[], placeholder='выберите удобства', active=false} = {})
+  .room-dropdown.js-room-dropdown
+    -
+      const items= [{ title: 'спальни', value: 0 }, { title: 'кровати', value: 0 }, { title: 'ванные комнаты', value: 0 }];
+      if(values) {
+        values.forEach((value, index) => items[index].value = value)
+        }
+
+    +dropdown({ label, placeholder, buttons: false, items, active})

@@ -1,0 +1,13 @@
+include ../checkbox-item/checkbox-item.pug
+include ../rich-checkbox-item/rich-checkbox-item.pug
+
+mixin checkbox-list(title, items, type='')
+  .checkbox-list
+    h3.checkbox-list__title= title
+    .checkbox-list__items
+      if (type === 'rich')
+        each item in items 
+          +rich-checkbox-item(item.title, item.text, items.checked)
+      else
+        each item in items 
+          +checkbox-item(item.title, item.checked)

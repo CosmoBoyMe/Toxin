@@ -1,0 +1,8 @@
+mixin range-slider(id, title='Range Slider', text='')
+  .range-slider(id=id)
+    .range-slider__info 
+      h3.range-slider__title= title
+      .range-slider__price
+    .range-slider__slider
+    if (text)
+    p.range-slider__note-text= text

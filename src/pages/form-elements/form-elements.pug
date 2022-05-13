@@ -1,0 +1,142 @@
+include ../../components/head/head.pug
+include ../../components/text-field/text-field.pug
+include ../../components/expandable-list/expandable-list.pug
+include ../../components/subscription-field/subscription-field.pug
+include ../../components/masked-field/masked-field.pug
+include ../../components/room-dropdown/room-dropdown.pug
+include ../../components/guest-dropdown/guest-dropdown.pug
+include ../../components/date-field/date-field.pug
+include ../../components/calendar/calendar.pug
+include ../../components/feature-item/feature-item.pug
+include ../../components/checkbox-list/checkbox-list.pug
+include ../../components/radio/radio.pug
+include ../../components/toggle/toggle.pug
+include ../../components/like-btn/like-btn.pug
+include ../../components/rate/rate.pug
+include ../../components/bullet-list/bullet-list.pug
+include ../../components/range-slider/range-slider.pug
+include ../../components/submit-btn/submit-btn.pug
+include ../../components/link/link.pug
+include ../../components/button/button.pug
+include ../../components/pagination/pagination.pug
+include ../../components/review-item/review-item.pug
+
+doctype html
+html(lang='en')
+  +head
+  body 
+    main.main
+      .container 
+        .main__inner
+          .main__columns
+            .main__first-column
+              .main__text-field
+                +text-field({text:'Text Field', type:'email', placeholder: 'Email', id: 'email'})
+              .main__text-field
+                +text-field({text:'Text Field', type:'email', placeholder: 'Email', focus: true, value: 'This is pretty awesome', id:'extra-email'})
+              .main__guest-dropdown-first.js-main__guest-dropdown
+                +guest-dropdown({label: 'dropdown'})
+              .main__masked-field
+                +masked-field({text:'masked text field', id: 'date'})
+              .main__multiple-calendar
+                +calendar({calendarId: 'calendar-first', datePickerId: 'date-picker-first', type: 'multiple', title: 'date Dropdown', secondTitle: 'date Dropdown'})
+              .main__filter-calendar
+                +calendar({calendarId: 'filter-calendar', datePickerId: 'date-picker-second', title: 'filter date dropdown'})
+              .main__subscription-field
+                +subscription-field({text:'subscription text field', id:'subscription'})
+              .main__room-dropdown.js-main__room-dropdown
+                +room-dropdown({label: 'dropdown', values: [2, 2]})
+              .main__room-dropdown.main__room-dropdown--second.js-main__room-dropdown
+                +room-dropdown({label: 'dropdown',values: [2, 2], active: true})
+              - const expandableItems = ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь'];
+              .main__expandable-list
+                +expandable-list('expandable checkbox list', expandableItems)
+              .main__expandable-list.main__expandable-list--second
+                +expandable-list('expandable checkbox list', expandableItems, true)
+            .main__second-column
+              .main__checkbox-buttons-list
+                -
+                  const checkboxItems = [
+                    { title: 'Можно курить'},
+                    { title: 'Можно с питомцами', checked: true },
+                    { title: 'Можно пригласить гостей (до 10 человек)', checked: true }];
+                +checkbox-list('checkbox buttons', checkboxItems)
+              .main__radio-buttons
+                -
+                  const radioItems = [
+                    {text: 'Мужчина', checked: true, name: 'genders', value: 'man'},
+                    {text: 'Женщина', name: 'genders', value: 'woman'}]
+                h3.main__radio-buttons-title Radio Buttons
+                .main__radio-buttons-items
+                  each item in radioItems
+                    +radio(item)
+              .main__toggle 
+                h3.main__toggle-title Toggle
+                .main__toggle-items
+                  -
+                    const toggleItems = [
+                      { text: 'Получать спецпредложения', checked: true },
+                      {text: 'Получать спецпредложения'}
+                      ];
+                  each toggleItem in toggleItems
+                    +toggle(toggleItem.text, toggleItem.checked)
+              .main__like-buttons 
+                h3.main__like-buttons-title like button
+                .main__like-buttons-items
+                  -
+                    const likeButtonsItems = [{likeCount: 2 }, {likeCount: 12, liked: true}];
+                  each likeButtonItem in likeButtonsItems 
+                    +like-btn(likeButtonItem.likeCount, likeButtonItem.liked)
+              .main__rate-buttons 
+                h3.main__rate-buttons-title rate button
+                .main__rate-buttons-items 
+                  -
+                    const rateItems = [{rateNumber: 4 }, {rateNumber: 5 }];
+                  each rateItem in rateItems 
+                    +rate(rateItem.rateNumber) 
+              .main__guest-dropdown-second.js-main__guest-dropdown
+                +guest-dropdown({label: 'dropdown', active: true})
+              .main__rich-checkbox-buttons
+                -
+                  const richCheckboxItems = [
+                    {title: 'Широкий коридор', text: 'Ширина коридоров в номере не менее 91 см.'},
+                    {title: 'Помощник для инвалидов', text: 'На 1 этаже вас встретит специалист  и проводит до номера.'}]
+                +checkbox-list('rich Checkbox Buttons', richCheckboxItems, type='rich')
+            .main__third-column
+              .main__range-slider 
+                +range-slider('range-slider')
+              .main__buttons
+                h3.main__buttons-title buttons
+                .main__buttons-links
+                  +link({text: 'click me'})
+                  +link({text: 'click me', active: true})
+                .main__buttons-links.main__buttons-links--second
+                  +link({text: 'click me', border: true})
+                  +link({text: 'click me', border: true, active: true})
+                .main__buttons-buttons 
+                  +button({text: 'click me'})
+                  +button({text: 'click me', active: true})
+                .main__buttons-submit-btn
+                  +submit-btn('перейти к оплате')
+              .main__pagination
+                h3.main__pagination-title pagination
+                .main__pagination-pagination
+                  +pagination
+              .main__guest-dropdown-third.js-main__guest-dropdown
+                +guest-dropdown({label: 'Dropdown', values: [2, 1], active: true})
+              .main__bullet-list
+                -
+                  const bulletItems = [
+                    'Нельзя с питомцами',
+                    'Без вечеринок и мероприятий',
+                    'Время прибытия — после 13:00, а выезд до 12:00'];
+
+                +bullet-list('bullet list', bulletItems)
+          .main__row-bottom
+            .main__feature-items 
+              .main__feature-item
+                +feature-item('Комфорт', 'Шумопоглощающие стены', 'insert_emoticon')
+              .main__feature-item
+                +feature-item('Удобство', 'Окно в каждой из спален', 'location_city')
+            .main__review-item
+              +review-item({name: 'Мурад Сарафанов', online: '5 дней назад', avatarSrc: require('../../assets/img/user-img-1.jpg'), likeCount: 12, isLiked: true, text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'})

@@ -1,10 +1,10 @@
 include ../../components/head/head.pug
-include ../../components/searchRoomsForm/searchRoomsForm.pug
-include ../../components/signUpForm/signUpForm.pug
-include ../../components/bookingForm/bookingForm.pug
-include ../../components/signInForm/signInForm.pug
+include ../../components/search-rooms-form/search-rooms-form.pug
+include ../../components/sign-up-form/sign-up-form.pug
+include ../../components/booking-form/booking-form.pug
+include ../../components/sign-in-form/sign-in-form.pug
 include ../../components/datepicker/datepicker.pug
-include ../../components/roomCard/roomCard.pug
+include ../../components/room-card/room-card.pug
 
 doctype html
 html(lang='en')
@@ -14,14 +14,14 @@ html(lang='en')
       .main__inner 
         .main__first-column
           .main__search-rooms-form
-            +searchRoomsForm
+            +search-rooms-form
           .main__sign-up-form
-            +signUpForm
+            +sign-up-form
         .main__second-column 
           .main__booking-form
-            +bookingForm
+            +booking-form
           .main__sign-in-form
-            +signInForm
+            +sign-in-form
         .main__third-column
           .main__datepicker
             +datepicker('main__third-column-datepicker')
@@ -33,4 +33,4 @@ html(lang='en')
                   ];
             each item in cardItems
               .main__room-card
-                +roomCard(item)
+                +room-card(item)

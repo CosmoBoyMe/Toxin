@@ -1,0 +1,17 @@
+include ../../components/header/header.pug
+include ../../components/head/head.pug
+include ../../components/footer/footer.pug
+include ../../components/sign-in-form/sign-in-form.pug
+
+doctype html
+html(lang='en')
+  +head
+  body 
+    .wrapper
+      +header
+      main.main
+        .sign-in
+          .sign-in__inner
+            .sign-in__form
+              +sign-in-form
+      +footer

@@ -1,4 +1,4 @@
-include ../dateField/dateField.pug
+include ../date-field/date-field.pug
 include ../datepicker/datepicker.pug
 
 mixin calendar({calendarId, datePickerId, type="", title='', secondTitle= ''})
@@ -7,14 +7,14 @@ mixin calendar({calendarId, datePickerId, type="", title='', secondTitle= ''})
       .calendar__fields
         .calendar__field.js-calendar__field
           - const dateFieldTitleFirst = title ? title : 'прибытие';
-            +dateField(dateFieldTitleFirst)
+            +date-field(dateFieldTitleFirst)
         .calendar__field.js-calendar__field
           - const dateFieldTitleSecond = secondTitle ? secondTitle : 'выезд';
-          +dateField(dateFieldTitleSecond)
+          +date-field(dateFieldTitleSecond)
     else
       .calendar__field.js-calendar__field
         - const dateFieldTitlteThird = title ? title : 'даты пребывания в отеле';
-        +dateField(dateFieldTitlteThird, 'ДД-ММ - ДД-ММ')
+        +date-field(dateFieldTitlteThird, 'ДД-ММ - ДД-ММ')
 
     .calendar__date-picker.js-calendar__date-picker.js-calendar__date-picker--close
       +datepicker(datePickerId)
