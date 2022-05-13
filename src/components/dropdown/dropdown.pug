@@ -7,7 +7,7 @@ mixin dropdown({ label, placeholder, items, buttons=true, active=false})
     .dropdown__input-wrapper.js-dropdown__input-wrapper
       input.dropdown__input.js-dropdown__input(placeholder=placeholder, readonly)
       span.dropdown__input-arrow
-    .dropdown__menu.js-dropdown__menu(class=active ? 'js-dropdown__menu--active' : '')
+    .dropdown__menu.js-dropdown__menu(class=active ? 'js-dropdown__menu_active' : '')
       .dropdown__amount-items
         each item in items
           - const { title, value, min, max } = item;
@@ -15,7 +15,7 @@ mixin dropdown({ label, placeholder, items, buttons=true, active=false})
             +amount-select(title, value, min, max)
       if (buttons)
         .dropdown__buttons
-          .dropdown__btn.dropdown__btn--clear.js-dropdown__btn--clear
+          .dropdown__btn.dropdown__btn_clear.js-dropdown__btn_clear
             +button({text: 'очистить'})
-          .dropdown__btn.dropdown__btn--apply.js-dropdown__btn--apply
+          .dropdown__btn.dropdown__btn_apply.js-dropdown__btn_apply
             +button({text: 'применить'})

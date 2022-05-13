@@ -1,4 +1,4 @@
-@import "../../styles/index";
+@import '../../styles/index';
 
 .main {
   padding-top: 140px;
@@ -54,7 +54,7 @@
     width: 266px;
     margin-bottom: 20px;
 
-    &--second {
+    &_second {
       margin-bottom: 157px;
     }
   }
@@ -63,7 +63,7 @@
     width: 266px;
     margin-bottom: 20px;
 
-    &--second {
+    &_second {
       margin-bottom: 0;
     }
   }
@@ -170,7 +170,7 @@
 
       margin-bottom: 31px;
 
-      &--second {
+      &_second {
         margin-bottom: 26px;
       }
     }

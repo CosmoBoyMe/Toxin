@@ -1,4 +1,4 @@
-@import "../../styles/index";
+@import '../../styles/index';
 
 .main {
   &__inner {
@@ -26,31 +26,31 @@
 
     border-radius: 6px;
 
-    &--darkShade {
+    &_darkShade {
       background-color: var(--darkShade);
     }
 
-    &--darkShade75 {
+    &_darkShade75 {
       background-color: var(--darkShade75);
     }
 
-    &--darkShade50 {
+    &_darkShade50 {
       background-color: var(--darkShade50);
     }
 
-    &--darkShade25 {
+    &_darkShade25 {
       background-color: var(--darkShade25);
     }
 
-    &--white {
+    &_white {
       background-color: var(--white);
     }
 
-    &--purple {
+    &_purple {
       background-color: var(--purple);
     }
 
-    &--green {
+    &_green {
       background-color: var(--green);
     }
   }
@@ -82,17 +82,17 @@
 
     color: var(--darkShade25);
 
-    &--h1 {
+    &_h1 {
       font-size: 24px;
       line-height: 29px;
     }
 
-    &--h2 {
+    &_h2 {
       font-size: 19px;
       line-height: 23px;
     }
 
-    &--h3 {
+    &_h3 {
       margin-right: 40px;
 
       font-size: 12px;
@@ -101,7 +101,7 @@
   }
 
   &__text {
-    &--uppercase {
+    &_uppercase {
       text-transform: uppercase;
     }
   }

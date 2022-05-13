@@ -20,7 +20,7 @@
   font-weight: 700;
   line-height: 15px;
 
-  &--border {
+  &_border {
     position: relative;
 
     color: var(--purple);
@@ -36,7 +36,7 @@
 
       padding: 2px;
 
-      content: "";
+      content: '';
 
       border-radius: 22px;
       background: var(--gradient);
@@ -46,11 +46,11 @@
     }
   }
 
-  &--small {
+  &_small {
     padding: 9px 20px;
   }
 
-  &--active {
+  &_active {
     opacity: 0.5;
   }
 

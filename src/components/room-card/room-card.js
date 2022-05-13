@@ -11,11 +11,11 @@ new Swiper('.card__slider', {
     type: 'bullets',
     clickable: true,
     bulletClass: 'card__pagination-bullet',
-    bulletActiveClass: 'card__pagination-bullet--active',
+    bulletActiveClass: 'card__pagination-bullet_active',
   },
   navigation: {
-    nextEl: '.card__btn--next',
-    prevEl: '.card__btn--prev',
+    nextEl: '.card__btn_next',
+    prevEl: '.card__btn_prev',
   },
 });
 

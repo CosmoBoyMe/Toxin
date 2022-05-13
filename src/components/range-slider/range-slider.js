@@ -1,12 +1,6 @@
 import noUiSlider from 'nouislider';
 import wNumb from 'wnumb';
 
-// ARGUMENTS
-// id: string
-// start: [number, number]
-// range: {min: number, max: number}
-// step: number
-
 const initRangeSlider = (
   id,
   start = [5000, 10000],

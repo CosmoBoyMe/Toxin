@@ -7,8 +7,8 @@ const initDropdown = ({ dropdownEl, wordsDeclensions = '', onChangeTextValue = n
   const counterElements = dropdownEl.querySelectorAll('.js-amount-select__number');
   const minusBtnElements = dropdownEl.querySelectorAll('.js-amount-select__btn-minus');
   const plusBtnElements = dropdownEl.querySelectorAll('.js-amount-select__btn-plus');
-  const clearBtnEl = dropdownEl.querySelector('.js-dropdown__btn--clear');
-  const applyBtnEl = dropdownEl.querySelector('.js-dropdown__btn--apply');
+  const clearBtnEl = dropdownEl.querySelector('.js-dropdown__btn_clear');
+  const applyBtnEl = dropdownEl.querySelector('.js-dropdown__btn_apply');
 
   const state = {};
   const setState = () => {
@@ -32,9 +32,9 @@ const initDropdown = ({ dropdownEl, wordsDeclensions = '', onChangeTextValue = n
 
   const updateClearBtn = () => {
     if (state.totalCounts === 0) {
-      clearBtnEl?.classList.add('js-dropdown__btn--hidden');
+      clearBtnEl?.classList.add('js-dropdown__btn_hidden');
     } else {
-      clearBtnEl?.classList.remove('js-dropdown__btn--hidden');
+      clearBtnEl?.classList.remove('js-dropdown__btn_hidden');
     }
   };
 
@@ -73,7 +73,7 @@ const initDropdown = ({ dropdownEl, wordsDeclensions = '', onChangeTextValue = n
   });
 
   const toggleDropdownMenuHandler = () => {
-    dropdownMenuEl.classList.toggle('js-dropdown__menu--active');
+    dropdownMenuEl.classList.toggle('js-dropdown__menu_active');
   };
 
   const onClickClearBtnHandler = () => {
@@ -87,7 +87,7 @@ const initDropdown = ({ dropdownEl, wordsDeclensions = '', onChangeTextValue = n
   const onClickOutsideDropdown = () => {
     document.addEventListener('click', (event) => {
       if (!dropdownEl.contains(event.target)) {
-        dropdownMenuEl.classList.remove('js-dropdown__menu--active');
+        dropdownMenuEl.classList.remove('js-dropdown__menu_active');
       }
     });
   };

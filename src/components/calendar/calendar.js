@@ -6,7 +6,7 @@ const initCalendar = (calendarId, datePickerId, type = '') => {
   const fieldElements = calendarEl.querySelectorAll('.js-calendar__field');
   const inputElements = calendarEl.querySelectorAll('input');
   const datePickerToogleHandler = () => {
-    datePickerEl.classList.toggle('js-calendar__date-picker--close');
+    datePickerEl.classList.toggle('js-calendar__date-picker_close');
   };
 
   const onClickOut = () => {
@@ -15,7 +15,7 @@ const initCalendar = (calendarId, datePickerId, type = '') => {
     });
     document.addEventListener('click', (event) => {
       if (!calendarEl.contains(event.target)) {
-        datePickerEl.classList.add('js-calendar__date-picker--close');
+        datePickerEl.classList.add('js-calendar__date-picker_close');
       }
     });
   };

@@ -52,7 +52,7 @@
     top: 0;
     right: 10px;
 
-    content: "expand_more";
+    content: 'expand_more';
 
     color: var(--darkShade50);
 
@@ -94,18 +94,18 @@
   }
 
   &__btn {
-    &--apply {
+    &_apply {
       margin-left: auto;
     }
   }
 }
 
 .js-dropdown {
-  &__menu--active {
+  &__menu_active {
     display: block;
   }
 
-  &__btn--hidden {
+  &__btn_hidden {
     display: none;
   }
 }

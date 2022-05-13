@@ -48,11 +48,11 @@
 }
 
 .js-expandable-list {
-  &__arrow--active {
+  &__arrow_active {
     transform: rotate(-180deg);
   }
 
-  &__menu--active {
+  &__menu_active {
     display: flex;
   }
 }

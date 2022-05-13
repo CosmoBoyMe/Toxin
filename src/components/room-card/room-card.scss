@@ -28,7 +28,7 @@
       border-radius: 50%;
       background-color: transparent;
 
-      &--active {
+      &_active {
         background-color: #fff;
       }
     }
@@ -60,18 +60,18 @@
     font-weight: 400;
     line-height: 24px;
 
-    &--next {
+    &_next {
       right: 0;
 
       transform: rotate(180deg);
     }
 
     &-icon {
-      &--next {
+      &_next {
         transform: rotate(90deg);
       }
 
-      &--prev {
+      &_prev {
         transform: rotate(90deg);
       }
     }

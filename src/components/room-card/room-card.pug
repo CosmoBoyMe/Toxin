@@ -9,10 +9,10 @@ mixin room-card({roomNumber, price, isLux, reviewsCount, imgsSrc, rateNumber})
             .card__img-wrapper
               img.card__img(src=imgSrc, alt='комната отеля')
       .card__pagination
-      button.card__btn.card__btn--prev(type='button')
-        i.card__btn-icon.card__btn-icon--prev expand_more
-      button.card__btn.card__btn--next(type='button')
-        i.card__btn-icon.card__btn-icon--next expand_more
+      button.card__btn.card__btn_prev(type='button')
+        i.card__btn-icon.card__btn-icon_prev expand_more
+      button.card__btn.card__btn_next(type='button')
+        i.card__btn-icon.card__btn-icon_next expand_more
     .card__description
       a.card__description-link(href='/mock-address/change-me')
         .card__description-header

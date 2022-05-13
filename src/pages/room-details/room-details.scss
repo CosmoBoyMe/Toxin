@@ -1,4 +1,4 @@
-@import "../../styles/mixins";
+@import '../../styles/mixins';
 
 .main {
   border-bottom: 1px solid var(--darkShade25);
@@ -15,8 +15,8 @@
 .preview {
   display: grid;
   grid-template-areas:
-    "first second"
-    "first third";
+    'first second'
+    'first third';
   grid-template-columns: 68% 32%;
 
   &__img {
@@ -178,26 +178,26 @@
         width: 10px;
         height: 10px;
 
-        content: "";
+        content: '';
         transform: translate(-50%, -50%);
 
         border-radius: 50%;
       }
     }
 
-    &-item--orange::before {
+    &-item_orange::before {
       background: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
     }
 
-    &-item--green::before {
+    &-item_green::before {
       background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
     }
 
-    &-item--purple::before {
+    &-item_purple::before {
       background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
     }
 
-    &-item--black::before {
+    &-item_black::before {
       background: linear-gradient(180deg, #919191 0%, #3d4975 100%);
     }
   }

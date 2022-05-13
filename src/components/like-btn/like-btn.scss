@@ -15,7 +15,7 @@
 
   font-size: 10px;
 
-  &--liked {
+  &_liked {
     color: var(--purple);
     border-color: var(--purple);
   }
@@ -36,12 +36,12 @@
       top: 50%;
       left: 50%;
 
-      content: "favorite_border";
+      content: 'favorite_border';
       transform: translate(-50%, -50%);
     }
   }
 
-  &--liked &__heart::before {
-    content: "favorite";
+  &_liked &__heart::before {
+    content: 'favorite';
   }
 }

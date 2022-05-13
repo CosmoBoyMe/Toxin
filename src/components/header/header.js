@@ -5,7 +5,7 @@ headerElements.forEach((headerEl) => {
   const contentEl = headerEl.querySelector('.js-header__nav-content');
 
   burgerEl.addEventListener('click', (e) => {
-    burgerEl.classList.toggle('js-header__nav-burger--active');
-    contentEl.classList.toggle('js-header__nav-content--active');
+    burgerEl.classList.toggle('js-header__nav-burger_active');
+    contentEl.classList.toggle('js-header__nav-content_active');
   });
 });

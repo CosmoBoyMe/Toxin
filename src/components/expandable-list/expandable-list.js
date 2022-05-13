@@ -7,14 +7,14 @@ const initExpandableList = () => {
     const menuEl = listEl.querySelector('.js-expandable-list__menu');
 
     const toogleMenu = () => {
-      menuEl.classList.toggle('js-expandable-list__menu--active');
-      headerArrowEl.classList.toggle('js-expandable-list__arrow--active');
+      menuEl.classList.toggle('js-expandable-list__menu_active');
+      headerArrowEl.classList.toggle('js-expandable-list__arrow_active');
     };
 
     const outsideClickHandler = (event) => {
       if (!listEl.contains(event.target)) {
-        menuEl.classList.remove('js-expandable-list__menu--active');
-        headerArrowEl.classList.remove('js-expandable-list__arrow--active');
+        menuEl.classList.remove('js-expandable-list__menu_active');
+        headerArrowEl.classList.remove('js-expandable-list__arrow_active');
         removeOutsideClickHandler();
       }
     };

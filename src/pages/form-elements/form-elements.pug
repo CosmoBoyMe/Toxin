@@ -46,12 +46,12 @@ html(lang='en')
                 +subscription-field({text:'subscription text field', id:'subscription'})
               .main__room-dropdown.js-main__room-dropdown
                 +room-dropdown({label: 'dropdown', values: [2, 2]})
-              .main__room-dropdown.main__room-dropdown--second.js-main__room-dropdown
+              .main__room-dropdown.main__room-dropdown_second.js-main__room-dropdown
                 +room-dropdown({label: 'dropdown',values: [2, 2], active: true})
               - const expandableItems = ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь'];
               .main__expandable-list
                 +expandable-list('expandable checkbox list', expandableItems)
-              .main__expandable-list.main__expandable-list--second
+              .main__expandable-list.main__expandable-list_second
                 +expandable-list('expandable checkbox list', expandableItems, true)
             .main__second-column
               .main__checkbox-buttons-list
@@ -110,7 +110,7 @@ html(lang='en')
                 .main__buttons-links
                   +link({text: 'click me'})
                   +link({text: 'click me', active: true})
-                .main__buttons-links.main__buttons-links--second
+                .main__buttons-links.main__buttons-links_second
                   +link({text: 'click me', border: true})
                   +link({text: 'click me', border: true, active: true})
                 .main__buttons-buttons 

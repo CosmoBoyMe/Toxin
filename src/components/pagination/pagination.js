@@ -26,7 +26,7 @@ const initPagination = (totalItems, itemsPerPage) => {
     };
 
     if (activePageNumber === pageNumber) {
-      buttonEl.classList.add('js-pagination__btn', 'js-pagination__page', 'js-pagination__btn--active');
+      buttonEl.classList.add('js-pagination__btn', 'js-pagination__page', 'js-pagination__btn_active');
     } else {
       buttonEl.classList.add('js-pagination__btn', 'js-pagination__page');
     }
