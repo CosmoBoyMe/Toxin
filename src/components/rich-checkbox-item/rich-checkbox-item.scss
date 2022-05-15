@@ -1,5 +1,6 @@
 .rich-checkbox-item {
   &__label {
+    cursor: pointer;
     display: flex;
     align-items: center;
 
@@ -30,7 +31,7 @@
       width: 8px;
       height: 6px;
 
-      content: "";
+      content: '';
       transform: rotate(135deg);
 
       border: 2px solid;

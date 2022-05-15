@@ -1,4 +1,4 @@
-@import "nouislider/dist/nouislider.css";
+@import 'nouislider/dist/nouislider.css';
 
 .range-slider {
   &__info {
@@ -28,47 +28,55 @@
     font-size: 12px;
     line-height: 14px;
   }
+  &__slider {
+    cursor: pointer;
+  }
 }
 
-.noUi-horizontal {
-  height: 5px;
+.noUi {
+  &-horizontal {
+    height: 5px;
 
-  border: 1px solid var(--darkShade25);
-}
+    border: 1px solid var(--darkShade25);
+  }
+  &-target {
+    border-radius: 3px;
+  }
 
-.noUi-target {
-  border-radius: 3px;
-}
+  &-connects {
+    overflow: visible;
+  }
 
-.noUi-connects {
-  overflow: visible;
-}
+  &-connect {
+    top: -2px;
 
-.noUi-connect {
-  top: -2px;
+    height: 6px;
 
-  height: 6px;
+    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+  }
 
-  background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-}
+  &-handle {
+    cursor: pointer;
+  }
 
-.noUi-horizontal .noUi-handle {
-  top: -6px;
-  left: calc(100% - 3px);
+  &-horizontal &-handle {
+    top: -6px;
+    left: calc(100% - 3px);
 
-  width: 16px;
-  height: 16px;
+    width: 16px;
+    height: 16px;
 
-  border: none;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-  box-shadow: none;
-}
+    border: none;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+    box-shadow: none;
+  }
 
-.noUi-handle::before,
-.noUi-handle::after {
-  display: none;
+  &-handle::before,
+  &-handle::after {
+    display: none;
 
-  content: none;
+    content: none;
+  }
 }

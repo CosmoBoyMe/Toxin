@@ -15,6 +15,7 @@
     margin-bottom: 30px;
 
     &--title {
+      cursor: pointer;
       color: var(--darkShade);
 
       font-family: var(--mainFont);
@@ -34,7 +35,7 @@
 
       color: var(--purple);
 
-      @include MaterialIcon("arrow_back");
+      @include MaterialIcon('arrow_back');
     }
   }
 
@@ -48,7 +49,7 @@
 
       color: var(--purple);
 
-      @include MaterialIcon("arrow_forward");
+      @include MaterialIcon('arrow_forward');
     }
   }
 
@@ -131,7 +132,7 @@
     font-weight: 700;
   }
 
-  .-range-from- {
+  .-day-.-range-from- {
     position: relative;
 
     &::before {
@@ -142,14 +143,14 @@
       bottom: 0;
       left: 0;
 
-      content: "";
+      content: '';
 
       border-radius: 50% 0 0 50%;
       background: var(--gradient25);
     }
   }
 
-  .-range-to- {
+  .-day-.-range-to- {
     position: relative;
 
     &::before {
@@ -160,7 +161,7 @@
       bottom: 0;
       left: 0;
 
-      content: "";
+      content: '';
 
       border-radius: 0 50% 50% 0;
       background: var(--gradient25);
