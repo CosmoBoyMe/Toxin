@@ -52,9 +52,11 @@
     "webpack-livereload-plugin": "3.0.2"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "6.1.1",
     "air-datepicker": "3.1.1",
     "chart.js": "3.7.1",
     "inputmask": "5.0.7",
+    "material-icons": "1.10.11",
     "nouislider": "15.5.1",
     "swiper": "8.0.6",
     "wnumb": "1.2.0"
