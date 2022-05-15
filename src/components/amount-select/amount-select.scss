@@ -25,7 +25,7 @@
     border-radius: 50%;
     background-color: transparent;
 
-    &-minus::before {
+    &_sign_minus::before {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -33,13 +33,13 @@
       width: 5px;
       height: 1px;
 
-      content: "";
+      content: '';
       transform: translate(-50%, -50%);
 
       background-color: var(--darkShade75);
     }
 
-    &-plus::before {
+    &_sign_plus::before {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -47,13 +47,13 @@
       width: 5px;
       height: 1px;
 
-      content: "";
+      content: '';
       transform: translate(-50%, -50%);
 
       background-color: var(--darkShade75);
     }
 
-    &-plus::after {
+    &_sign_plus::after {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -61,7 +61,7 @@
       width: 1px;
       height: 5px;
 
-      content: "";
+      content: '';
       transform: translate(-50%, -50%);
 
       background-color: var(--darkShade75);

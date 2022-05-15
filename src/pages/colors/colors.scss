@@ -26,31 +26,31 @@
 
     border-radius: 6px;
 
-    &_darkShade {
+    &_color_darkShade {
       background-color: var(--darkShade);
     }
 
-    &_darkShade75 {
+    &_color_darkShade75 {
       background-color: var(--darkShade75);
     }
 
-    &_darkShade50 {
+    &_color_darkShade50 {
       background-color: var(--darkShade50);
     }
 
-    &_darkShade25 {
+    &_color_darkShade25 {
       background-color: var(--darkShade25);
     }
 
-    &_white {
+    &_color_white {
       background-color: var(--white);
     }
 
-    &_purple {
+    &_color_purple {
       background-color: var(--purple);
     }
 
-    &_green {
+    &_color_green {
       background-color: var(--green);
     }
   }
@@ -82,17 +82,17 @@
 
     color: var(--darkShade25);
 
-    &_h1 {
+    &_name_h1 {
       font-size: 24px;
       line-height: 29px;
     }
 
-    &_h2 {
+    &_name_h2 {
       font-size: 19px;
       line-height: 23px;
     }
 
-    &_h3 {
+    &_name_h3 {
       margin-right: 40px;
 
       font-size: 12px;
@@ -101,7 +101,7 @@
   }
 
   &__text {
-    &_uppercase {
+    &_transform_uppercase {
       text-transform: uppercase;
     }
   }

@@ -1,2 +1,7 @@
 mixin link({text, href='/mock-address/change-me', border=false, active=false, size=''} = {})
-  a.link(class=border ? 'link_border' : '', class=size === 'small' ? 'link_small' : '', class=active ? 'link_active' : '', href=href)= text
+  a.link(
+    class=border ? 'link_border' : '',
+    class=size === 'small' ? 'link_size_small' : '',
+    class=active ? 'link_active' : '',
+    href=href
+  )= text

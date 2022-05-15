@@ -126,13 +126,13 @@
         text-transform: uppercase;
       }
 
-      &_current {
+      &_active {
         color: var(--darkShade75);
 
         font-weight: 700;
       }
 
-      &_arrow {
+      &_sign_arrow {
         position: relative;
 
         padding-right: 25px;

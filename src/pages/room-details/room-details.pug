@@ -17,15 +17,15 @@ html(lang='en')
       +header
       main.main
         .preview.main__preview
-          img.preview__img.preview__img-first(
+          img.preview__img.preview__img_grid-area_first(
             src=require('/assets/img/room-details/room-details-1.jpg'),
             alt='комната отеля'
           )
-          img.preview__img.preview__img-second(
+          img.preview__img.preview__img_grid-area_second(
             src=require('/assets/img/room-details/room-details-2.jpg'),
             alt='комната отеля'
           )
-          img.preview__img.preview__img-third(
+          img.preview__img.preview__img_grid-area_third(
             src=require('/assets/img/room-details/room-details-3.jpg'),
             alt='комната отеля'
           )
@@ -49,10 +49,10 @@ html(lang='en')
                       .room__votes-chart
                         +pie-chart('chart', 260)
                       ul.room__votes-list 
-                        li.room__votes-item.room__votes-item_orange Великолепно
-                        li.room__votes-item.room__votes-item_green Хорошо
-                        li.room__votes-item.room__votes-item_purple Удовлетворительно
-                        li.room__votes-item.room__votes-item_black Разочарован
+                        li.room__votes-item.room__votes-item_color_orange Великолепно
+                        li.room__votes-item.room__votes-item_color_green Хорошо
+                        li.room__votes-item.room__votes-item_color_purple Удовлетворительно
+                        li.room__votes-item.room__votes-item_color_black Разочарован
                 .room__reviews
                   .room__reviews-header 
                     h2.room__reviews-title Отзывы посетителей номера

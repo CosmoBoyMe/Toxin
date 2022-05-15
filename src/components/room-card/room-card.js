@@ -9,21 +9,21 @@ const swiper = new Swiper('.card__slider', {
   modules: [Navigation, Pagination],
   slidesPerView: 'auto',
   pagination: {
-    el: '.card__pagination',
+    el: '.js_card__pagination',
     type: 'bullets',
     clickable: true,
-    bulletClass: 'card__pagination-bullet',
-    bulletActiveClass: 'card__pagination-bullet_active',
+    bulletClass: 'js-card__pagination-bullet',
+    bulletActiveClass: 'js-card__pagination-bullet_active',
   },
   navigation: {
-    nextEl: '.card__btn_next',
-    prevEl: '.card__btn_prev',
+    nextEl: '.js-card__btn-next',
+    prevEl: '.js-card__btn-prev',
   },
 });
 
-const cardEls = document.querySelectorAll('.card');
+const cardEls = document.querySelectorAll('.js-card');
 cardEls.forEach((cardEl) => {
-  const cardPriceEl = cardEl.querySelector('.card__description-header-value');
+  const cardPriceEl = cardEl.querySelector('.js-card__description-header-value');
 
   const priceFormat = wNumb({
     thousand: ' ',

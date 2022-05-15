@@ -17,21 +17,6 @@
 
     user-select: none;
     column-gap: 4px;
-
-    &-bullet {
-      width: 7.5px;
-      height: 7.5px;
-
-      cursor: pointer;
-
-      border: 1px solid #fff;
-      border-radius: 50%;
-      background-color: transparent;
-
-      &_active {
-        background-color: #fff;
-      }
-    }
   }
 
   &__btn {
@@ -52,7 +37,12 @@
     opacity: 0;
     color: #fff;
     border: none;
-    background: linear-gradient(90deg, rgb(0 0 0 / 50%) 0%, rgb(0 0 0 / 0%) 99.99%, rgb(255 255 255 / 0%) 100%);
+    background: linear-gradient(
+      90deg,
+      rgb(0 0 0 / 50%) 0%,
+      rgb(0 0 0 / 0%) 99.99%,
+      rgb(255 255 255 / 0%) 100%
+    );
     background-color: transparent;
 
     font-family: var(--materialFont);
@@ -60,20 +50,14 @@
     font-weight: 400;
     line-height: 24px;
 
-    &_next {
+    &_transform_rotate {
       right: 0;
 
       transform: rotate(180deg);
     }
 
     &-icon {
-      &_next {
-        transform: rotate(90deg);
-      }
-
-      &_prev {
-        transform: rotate(90deg);
-      }
+      transform: rotate(90deg);
     }
   }
 
@@ -185,6 +169,23 @@
         font-weight: 700;
         line-height: 18px;
       }
+    }
+  }
+}
+
+.js {
+  &-card__pagination-bullet {
+    width: 7.5px;
+    height: 7.5px;
+
+    cursor: pointer;
+
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background-color: transparent;
+
+    &_active {
+      background-color: #fff;
     }
   }
 }

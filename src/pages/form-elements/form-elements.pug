@@ -46,12 +46,12 @@ html(lang='en')
                 +subscription-field({text:'subscription text field', id:'subscription'})
               .main__room-dropdown.js-main__room-dropdown
                 +room-dropdown({label: 'dropdown', values: [2, 2]})
-              .main__room-dropdown.main__room-dropdown_second.js-main__room-dropdown
+              .main__room-dropdown.main__room-dropdown_position_margin-bottom.js-main__room-dropdown
                 +room-dropdown({label: 'dropdown',values: [2, 2], active: true})
               - const expandableItems = ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь'];
               .main__expandable-list
                 +expandable-list('expandable checkbox list', expandableItems)
-              .main__expandable-list.main__expandable-list_second
+              .main__expandable-list.main__expandable-list_position_margin-bottom
                 +expandable-list('expandable checkbox list', expandableItems, true)
             .main__second-column
               .main__checkbox-buttons-list
@@ -106,11 +106,11 @@ html(lang='en')
               .main__range-slider 
                 +range-slider('range-slider')
               .main__buttons
-                h3.main__buttons-title buttons
+                h3.main__buttons-title= 'buttons'
                 .main__buttons-links
                   +link({text: 'click me'})
                   +link({text: 'click me', active: true})
-                .main__buttons-links.main__buttons-links_second
+                .main__buttons-links.main__buttons-links_position_margin-bottom
                   +link({text: 'click me', border: true})
                   +link({text: 'click me', border: true, active: true})
                 .main__buttons-buttons 
@@ -119,7 +119,7 @@ html(lang='en')
                 .main__buttons-submit-btn
                   +submit-btn('перейти к оплате')
               .main__pagination
-                h3.main__pagination-title pagination
+                h3.main__pagination-title= 'pagination'
                 .main__pagination-pagination
                   +pagination
               .main__guest-dropdown-third.js-main__guest-dropdown

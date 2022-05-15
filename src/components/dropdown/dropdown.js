@@ -5,8 +5,8 @@ const initDropdown = ({ dropdownEl, wordsDeclensions = '', onChangeTextValue = n
   const dropdownInputEl = dropdownEl.querySelector('.js-dropdown__input');
   const dropdownMenuEl = dropdownEl.querySelector('.js-dropdown__menu');
   const counterElements = dropdownEl.querySelectorAll('.js-amount-select__number');
-  const minusBtnElements = dropdownEl.querySelectorAll('.js-amount-select__btn-minus');
-  const plusBtnElements = dropdownEl.querySelectorAll('.js-amount-select__btn-plus');
+  const minusBtnElements = dropdownEl.querySelectorAll('.js-amount-select__btn_sign_minus');
+  const plusBtnElements = dropdownEl.querySelectorAll('.js-amount-select__btn_sign_plus');
   const clearBtnEl = dropdownEl.querySelector('.js-dropdown__btn_clear');
   const applyBtnEl = dropdownEl.querySelector('.js-dropdown__btn_apply');
 
