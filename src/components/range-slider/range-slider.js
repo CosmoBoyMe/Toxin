@@ -8,7 +8,7 @@ const initRangeSlider = (
     min: 1000,
     max: 15500,
   },
-  step = 100,
+  step = 100
 ) => {
   const sliderContainerEl = document.getElementById(id);
   const rangeSliderEl = sliderContainerEl.querySelector('.range-slider__slider');
@@ -26,7 +26,7 @@ const initRangeSlider = (
   });
 
   const rangeSliderValueEl = sliderContainerEl.querySelector('.range-slider__price');
-  rangeSliderEl.noUiSlider.on('update', (values, handle) => {
+  rangeSliderEl.noUiSlider.on('update', (values) => {
     const valuesString = values.join(' - ');
     rangeSliderValueEl.textContent = valuesString;
   });

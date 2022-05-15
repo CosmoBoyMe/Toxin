@@ -13,7 +13,10 @@ const initDropdown = ({ dropdownEl, wordsDeclensions = '', onChangeTextValue = n
   const state = {};
   const setState = () => {
     state.values = [...counterElements].map((counter) => Number(counter.value));
-    state.totalCounts = [...counterElements].reduce((prev, counter) => prev + Number(counter.value), 0);
+    state.totalCounts = [...counterElements].reduce(
+      (prev, counter) => prev + Number(counter.value),
+      0
+    );
   };
 
   const updateInputValueText = () => {
@@ -23,7 +26,9 @@ const initDropdown = ({ dropdownEl, wordsDeclensions = '', onChangeTextValue = n
       const inputText = onChangeTextValue(state.totalCounts, state.values);
       dropdownInputEl.value = inputText;
     } else {
-      const wordingTextArray = wordsDeclensions.map((item, index) => wording(state.values[index], item));
+      const wordingTextArray = wordsDeclensions.map((item, index) =>
+        wording(state.values[index], item)
+      );
       const removedEmptyText = wordingTextArray.filter((item) => item !== '');
       const formatedText = removedEmptyText.join(', ');
       dropdownInputEl.value = formatedText;
@@ -78,7 +83,8 @@ const initDropdown = ({ dropdownEl, wordsDeclensions = '', onChangeTextValue = n
 
   const onClickClearBtnHandler = () => {
     [...counterElements].forEach((counter) => {
-      counter.value = 0;
+      const counterEl = counter;
+      counterEl.value = 0;
     });
     setState();
     update();

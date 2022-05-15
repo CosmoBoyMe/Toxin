@@ -20,13 +20,14 @@ const initPieChart = (id, data) => {
   blackGradient.addColorStop(0, '#909090');
   blackGradient.addColorStop(1, '#3D4975');
 
-  new Chart(pieChartEl, {
+  // eslint-disable-next-line no-unused-vars
+  const chart = new Chart(pieChartEl, {
     type: 'doughnut',
     data: {
       cutout: 70,
       datasets: [
         {
-          data: data,
+          data,
           backgroundColor: [blackGradient, purpleGradient, greenGradient, orangeGradient],
           spacing: 2,
           borderWidth: 1,

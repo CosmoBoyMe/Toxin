@@ -16,10 +16,11 @@ const initDatePicker = (elementId, settings = {}) => {
       {
         content: 'Применить',
         attrs: { type: 'button' },
-        onClick: (dpInstance) => {
+        onClick: () => {
           if (onClickApplyBtnHandler) {
             return onClickApplyBtnHandler();
           }
+          return undefined;
         },
       },
     ],

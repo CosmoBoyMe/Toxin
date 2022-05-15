@@ -25,24 +25,26 @@ const initCalendar = (calendarId, datePickerId, type = '') => {
   });
 
   if (type === 'multiple') {
-    const onSelect = ({ date, formattedDate, datePicker }) => {
+    const onSelect = ({ formattedDate }) => {
       const [firstDate, lastDate] = formattedDate;
       const [firstInputEl, lastInputdEl] = inputElements;
       firstInputEl.value = firstDate ?? '';
       lastInputdEl.value = lastDate ?? '';
     };
 
-    const dateFormat = (date) => {
-      return date.toLocaleString('ru', {
+    const dateFormat = (date) =>
+      date.toLocaleString('ru', {
         year: 'numeric',
         day: '2-digit',
         month: '2-digit',
       });
-    };
 
-    initDatePicker(datePickerId, { onClickApplyBtnHandler: datePickerToogleHandler, newOpts: { onSelect, dateFormat } });
+    initDatePicker(datePickerId, {
+      onClickApplyBtnHandler: datePickerToogleHandler,
+      newOpts: { onSelect, dateFormat },
+    });
   } else {
-    const onSelect = ({ date, formattedDate, datePicker }) => {
+    const onSelect = ({ formattedDate }) => {
       const inputElement = inputElements[0];
       const formattedDateValue = formattedDate.join(' - ');
       inputElement.value = formattedDateValue;

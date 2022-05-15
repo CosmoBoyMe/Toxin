@@ -1,5 +1,5 @@
-import { initCalendar } from '../calendar/calendar.js';
-import { initGuestDropdown } from '../guest-dropdown/guest-dropdown.js';
+import { initCalendar } from '../calendar/calendar';
+import { initGuestDropdown } from '../guest-dropdown/guest-dropdown';
 
 const initBookingForm = () => {
   const dropdownEl = document.querySelector('.js-booking-form__dropdown');

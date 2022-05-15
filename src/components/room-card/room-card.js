@@ -1,9 +1,11 @@
 import Swiper, { Navigation, Pagination } from 'swiper';
 import wNumb from 'wnumb';
 
+// eslint-disable-next-line import/no-unresolved
 import 'swiper/css';
 
-new Swiper('.card__slider', {
+// eslint-disable-next-line no-unused-vars
+const swiper = new Swiper('.card__slider', {
   modules: [Navigation, Pagination],
   slidesPerView: 'auto',
   pagination: {

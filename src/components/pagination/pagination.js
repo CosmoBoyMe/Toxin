@@ -22,11 +22,16 @@ const initPagination = (totalItems, itemsPerPage) => {
     buttonEl.classList.add('js-pagination__btn', 'js-pagination__page');
     const onClickPageButton = () => {
       activePageNumber = pageNumber;
+      // eslint-disable-next-line no-use-before-define
       render();
     };
 
     if (activePageNumber === pageNumber) {
-      buttonEl.classList.add('js-pagination__btn', 'js-pagination__page', 'js-pagination__btn_active');
+      buttonEl.classList.add(
+        'js-pagination__btn',
+        'js-pagination__page',
+        'js-pagination__btn_active'
+      );
     } else {
       buttonEl.classList.add('js-pagination__btn', 'js-pagination__page');
     }
@@ -44,7 +49,8 @@ const initPagination = (totalItems, itemsPerPage) => {
       nextButton.setAttribute('disable', true);
     } else {
       const onClickNextBtn = () => {
-        activePageNumber++;
+        activePageNumber += 1;
+        // eslint-disable-next-line no-use-before-define
         render();
       };
       nextButton.addEventListener('click', onClickNextBtn);
@@ -109,7 +115,7 @@ const initPagination = (totalItems, itemsPerPage) => {
     if (totalPage <= PAGINATION_BUTTONS_COUNT) {
       const buttons = [];
       const nextButton = createNextButton();
-      for (let i = FIRST_PAGE_NUMBER; i <= totalPage; i++) {
+      for (let i = FIRST_PAGE_NUMBER; i <= totalPage; i += 1) {
         buttons.push(createPageButton(i));
       }
       containerEl.append(...buttons, nextButton);

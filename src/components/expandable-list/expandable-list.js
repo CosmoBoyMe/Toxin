@@ -15,15 +15,11 @@ const initExpandableList = () => {
       if (!listEl.contains(event.target)) {
         menuEl.classList.remove('js-expandable-list__menu_active');
         headerArrowEl.classList.remove('js-expandable-list__arrow_active');
-        removeOutsideClickHandler();
+        document.removeEventListener('click', outsideClickHandler);
       }
     };
 
-    const removeOutsideClickHandler = (event) => {
-      document.removeEventListener('click', outsideClickHandler);
-    };
-
-    const onClickHeader = (event) => {
+    const onClickHeader = () => {
       toogleMenu();
       document.addEventListener('click', outsideClickHandler);
     };

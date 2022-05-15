@@ -1,4 +1,4 @@
-import { initDropdown } from '../dropdown/dropdown.js';
+import { initDropdown } from '../dropdown/dropdown';
 
 const initRoomDropdown = (element) => {
   const wordsDeclensions = [
