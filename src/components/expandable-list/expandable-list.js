@@ -6,7 +6,7 @@ const initExpandableList = () => {
     const headerArrowEl = headerEl.querySelector('.js-expandable-list__arrow');
     const menuEl = listEl.querySelector('.js-expandable-list__menu');
 
-    const toogleMenu = () => {
+    const toggleMenu = () => {
       menuEl.classList.toggle('js-expandable-list__menu_active');
       headerArrowEl.classList.toggle('js-expandable-list__arrow_active');
     };
@@ -20,7 +20,7 @@ const initExpandableList = () => {
     };
 
     const onClickHeader = () => {
-      toogleMenu();
+      toggleMenu();
       document.addEventListener('click', outsideClickHandler);
     };
 

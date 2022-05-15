@@ -13,8 +13,8 @@ mixin calendar({calendarId, datePickerId, type="", title='', secondTitle= ''})
           +date-field(dateFieldTitleSecond)
     else
       .calendar__field.js-calendar__field
-        - const dateFieldTitlteThird = title ? title : 'даты пребывания в отеле';
-        +date-field(dateFieldTitlteThird, 'ДД-ММ - ДД-ММ')
+        - const dateFieldTittleThird = title ? title : 'даты пребывания в отеле';
+        +date-field(dateFieldTittleThird, 'ДД-ММ - ДД-ММ')
 
     .calendar__date-picker.js-calendar__date-picker.js-calendar__date-picker_close
       +datepicker(datePickerId)

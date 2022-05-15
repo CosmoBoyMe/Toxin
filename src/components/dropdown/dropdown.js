@@ -30,8 +30,8 @@ const initDropdown = ({ dropdownEl, wordsDeclensions = '', onChangeTextValue = n
         wording(state.values[index], item)
       );
       const removedEmptyText = wordingTextArray.filter((item) => item !== '');
-      const formatedText = removedEmptyText.join(', ');
-      dropdownInputEl.value = formatedText;
+      const formattedText = removedEmptyText.join(', ');
+      dropdownInputEl.value = formattedText;
     }
   };
 

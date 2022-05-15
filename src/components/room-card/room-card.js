@@ -30,6 +30,6 @@ cardEls.forEach((cardEl) => {
     suffix: '₽',
   });
 
-  const formatedCardPriceValue = priceFormat.to(Number(cardPriceEl.textContent));
-  cardPriceEl.textContent = formatedCardPriceValue;
+  const formattedCardPriceValue = priceFormat.to(Number(cardPriceEl.textContent));
+  cardPriceEl.textContent = formattedCardPriceValue;
 });

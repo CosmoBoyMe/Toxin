@@ -8,10 +8,10 @@ import { initCalendar } from '../../components/calendar/calendar';
 import { initRangeSlider } from '../../components/range-slider/range-slider';
 import { initPagination } from '../../components/pagination/pagination';
 
-const roomDropdownElemenets = document.querySelectorAll('.js-main__room-dropdown');
+const roomDropdownElements = document.querySelectorAll('.js-main__room-dropdown');
 const guestDropdownElements = document.querySelectorAll('.js-main__guest-dropdown');
 
-roomDropdownElemenets.forEach((element) => {
+roomDropdownElements.forEach((element) => {
   initRoomDropdown(element);
 });
 

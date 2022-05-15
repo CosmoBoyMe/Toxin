@@ -11,11 +11,11 @@ const initGuestDropdown = (element) => {
     const guestCount = values[0] + values[1];
     const babyCount = values[2];
     const wordingTextArray = [guestCount, babyCount].map((count, index) =>
-      wording(count, wordsDeclensions[index]),
+      wording(count, wordsDeclensions[index])
     );
     const removedEmptyText = wordingTextArray.filter((item) => item !== '');
-    const formatedText = removedEmptyText.join(', ');
-    return formatedText;
+    const formattedText = removedEmptyText.join(', ');
+    return formattedText;
   };
 
   initDropdown({ dropdownEl: element, onChangeTextValue });
