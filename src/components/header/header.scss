@@ -40,7 +40,7 @@
         width: 100%;
         height: var(--burger-line-height);
 
-        content: '';
+        content: "";
         transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
 
         background-color: currentcolor;
@@ -141,7 +141,7 @@
           top: -3px;
           right: 0;
 
-          @include MaterialIcon('expand_more');
+          @include MaterialIcon("expand_more");
         }
       }
 
@@ -168,7 +168,7 @@
         width: 1px;
         height: 100%;
 
-        content: '';
+        content: "";
 
         background: rgb(31 32 65 / 10%);
       }

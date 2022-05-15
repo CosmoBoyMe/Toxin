@@ -3,11 +3,12 @@
   align-items: center;
 
   &__label {
-    cursor: pointer;
     display: flex;
     align-items: center;
 
     margin-right: 10px;
+
+    cursor: pointer;
   }
 
   &__slider {
@@ -30,7 +31,7 @@
       width: 12px;
       height: 12px;
 
-      content: '';
+      content: "";
       transition: 0.4s;
 
       border-radius: 50%;
@@ -50,7 +51,7 @@
 
       padding: 1px;
 
-      content: '';
+      content: "";
 
       border-color: transparent;
       border-radius: 22px;

@@ -1,4 +1,4 @@
-@import 'nouislider/dist/nouislider.css';
+@import "nouislider/dist/nouislider.css";
 
 .range-slider {
   &__info {
@@ -28,6 +28,7 @@
     font-size: 12px;
     line-height: 14px;
   }
+
   &__slider {
     cursor: pointer;
   }
@@ -39,6 +40,7 @@
 
     border: 1px solid var(--darkShade25);
   }
+
   &-target {
     border-radius: 3px;
   }
