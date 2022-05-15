@@ -36,12 +36,12 @@
       top: 50%;
       left: 50%;
 
-      content: "favorite_border";
+      content: 'favorite_border';
       transform: translate(-50%, -50%);
     }
   }
 
   &_liked &__heart::before {
-    content: "favorite";
+    content: 'favorite';
   }
 }

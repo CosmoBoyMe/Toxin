@@ -18,13 +18,13 @@ mixin header(options = { activePageName: '', isAuth: false, userName: ''})
               each item in items
                 li.header__nav-item
                   a.header__nav-link(
-                    class=item.text.toLowerCase() === activePageName.toLowerCase() ? 'header__nav-link_active' : '',
-                    class=item.nested ? 'header__nav-link_sign_arrow' : '',
-                    href=item.link ? link : '/mock-address/change-me'
+                    class=item.text.toLowerCase() === activePageName.toLowerCase() ? "header__nav-link_active" : "",
+                    class=item.nested ? "header__nav-link_sign_arrow" : "",
+                    href=item.link ? link : "/mock-address/change-me"
                   )= item.text
             if isAuth
               .header__nav-profile= userName
             else
               .header__nav-auth-user
-                +link({text: 'войти', href:'/signIn.html', border: true, size: 'small'})
+                +link({text: 'войти', href: '/signIn.html', border: true, size: 'small'})
                 +link({text: 'зарегистрироваться', href: '/signUp.html', size: 'small'})

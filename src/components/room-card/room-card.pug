@@ -7,14 +7,14 @@ mixin room-card({roomNumber, price, isLux, reviewsCount, imgsSrc, rateNumber})
         each imgSrc in imgsSrc 
           .card__slide.swiper-slide
             .card__img-wrapper
-              img.card__img(src=imgSrc, alt='комната отеля')
+              img.card__img(src=imgSrc, alt="комната отеля")
       .card__pagination.js_card__pagination
-      button.card__btn.js-card__btn-prev(type='button')
+      button.card__btn.js-card__btn-prev(type="button")
         i.card__btn-icon expand_more
-      button.card__btn.card__btn_transform_rotate.js-card__btn-next(type='button')
+      button.card__btn.card__btn_transform_rotate.js-card__btn-next(type="button")
         i.card__btn-icon expand_more
     .card__description
-      a.card__description-link(href='/mock-address/change-me')
+      a.card__description-link(href="/mock-address/change-me")
         .card__description-header
           .card__description-header-room-number
             span.card__description-header-symbol №

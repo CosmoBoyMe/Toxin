@@ -22,7 +22,7 @@ include ../../components/pagination/pagination.pug
 include ../../components/review-item/review-item.pug
 
 doctype html
-html(lang='en')
+html(lang="en")
   +head
   body 
     main.main
@@ -48,7 +48,7 @@ html(lang='en')
                 +room-dropdown({label: 'dropdown', values: [2, 2]})
               .main__room-dropdown.main__room-dropdown_position_margin-bottom.js-main__room-dropdown
                 +room-dropdown({label: 'dropdown',values: [2, 2], active: true})
-              - const expandableItems = ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь'];
+              - const expandableItems = ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"];
               .main__expandable-list
                 +expandable-list('expandable checkbox list', expandableItems)
               .main__expandable-list.main__expandable-list_position_margin-bottom
@@ -106,7 +106,7 @@ html(lang='en')
               .main__range-slider 
                 +range-slider('range-slider')
               .main__buttons
-                h3.main__buttons-title= 'buttons'
+                h3.main__buttons-title buttons
                 .main__buttons-links
                   +link({text: 'click me'})
                   +link({text: 'click me', active: true})
@@ -119,7 +119,7 @@ html(lang='en')
                 .main__buttons-submit-btn
                   +submit-btn('перейти к оплате')
               .main__pagination
-                h3.main__pagination-title= 'pagination'
+                h3.main__pagination-title= "pagination"
                 .main__pagination-pagination
                   +pagination
               .main__guest-dropdown-third.js-main__guest-dropdown

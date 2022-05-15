@@ -6,7 +6,7 @@ include ../../components/pagination/pagination.pug
 include ../../components/head/head.pug
 
 doctype html
-html(lang='en')
+html(lang="en")
   +head
   body 
     .wrapper 
@@ -20,7 +20,7 @@ html(lang='en')
               .content 
                 h1.content__title Номера, которые мы для вас подобрали
                 .content__cards
-                  - const { roomCards } = require('../../js/room-cards.js');
+                  - const { roomCards } = require("../../js/room-cards.js");
                     each roomCard in roomCards 
                       +room-card(roomCard)
                 .content__pagination

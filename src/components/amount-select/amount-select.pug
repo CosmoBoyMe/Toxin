@@ -3,15 +3,15 @@ mixin amount-select(title, value, min=0, max)
     h3.amount-select__title= title
     .amount-select__controls
       button.amount-select__btn.amount-select__btn_sign_minus.js-amount-select__btn_sign_minus(
-        type='button'
+        type="button"
       )
       input.amount-select__number.js-amount-select__number(
-        type='number',
+        type="number",
         min=min,
         max=max,
         value=value,
-        readonly=''
+        readonly=""
       )
       button.amount-select__btn.amount-select__btn_sign_plus.js-amount-select__btn_sign_plus(
-        type='button'
+        type="button"
       ) 
