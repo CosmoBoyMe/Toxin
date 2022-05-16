@@ -1,5 +1,7 @@
 @use '../like-btn/like-btn.scss';
 
+@use '../../styles/vars';
+
 .reviewItem {
   &__user {
     display: flex;

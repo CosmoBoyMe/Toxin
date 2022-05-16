@@ -1,3 +1,5 @@
+@use '../../styles/vars';
+
 .rich-checkbox-item {
   &__label {
     display: flex;
@@ -38,7 +40,7 @@
       border: 2px solid;
       border-bottom: transparent;
       border-left: transparent;
-      border-image: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      border-image: var(--gradient);
       border-image-slice: 1;
     }
   }

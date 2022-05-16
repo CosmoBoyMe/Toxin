@@ -1,3 +1,5 @@
+@use '../../styles/vars';
+
 @import '../../styles/mixins';
 
 .main {
@@ -194,7 +196,7 @@
     }
 
     &-item_color_purple::before {
-      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      background: var(--gradient);
     }
 
     &-item_color_black::before {

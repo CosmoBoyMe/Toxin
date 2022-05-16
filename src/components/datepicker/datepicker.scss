@@ -1,3 +1,5 @@
+@use '../../styles/vars';
+
 .air-datepicker {
   display: flex;
   flex-direction: column;
@@ -120,6 +122,10 @@
       color: white;
       border-radius: 22px;
       background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+    }
+
+    &.-day-.-other-month- {
+      color: var(--darkShade25);
     }
   }
 

@@ -1,3 +1,5 @@
+@use '../../styles/vars';
+
 .pagination {
   display: flex;
   align-items: center;
@@ -45,7 +47,7 @@
 
     &_active {
       color: white;
-      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      background: var(--gradient);
 
       font-weight: 700;
     }
