@@ -1,6 +1,6 @@
 mixin toggle(text, checked=false)
   .toggle 
     label.toggle__label
-      input.toggle__input.visually-hidden(type="checkbox", checked=checked)
+      input.toggle__input.toggle__input_visually_hidden(type="checkbox", checked=checked)
       span.toggle__slider
       p.toggle__text= text

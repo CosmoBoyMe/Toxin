@@ -23,7 +23,7 @@ const roomCards = [
   {
     roomNumber: 840,
     price: 9990,
-    reviewsCount: 64,
+    reviewsCount: 65,
     imgsSrc: [room2, room2, room2, room2],
     rateNumber: 4,
   },

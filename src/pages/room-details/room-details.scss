@@ -2,7 +2,15 @@
 
 @import '../../styles/mixins';
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100%;
+}
+
 .main {
+  flex: 1 1 auto;
   border-bottom: 1px solid var(--darkShade25);
 
   &__preview {
@@ -20,8 +28,10 @@
     'first second'
     'first third';
   grid-template-columns: 68% 32%;
-
   &__img {
+    display: block;
+
+    max-width: 100%;
     aspect-ratio: 981 / 485;
 
     width: 100%;
@@ -44,6 +54,11 @@
 }
 
 .room {
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
   &__inner {
     display: grid;
     grid-template-columns: auto 380px;
@@ -85,7 +100,11 @@
 
     &-title {
       margin-bottom: 21px;
+      color: var(--darkShade);
 
+      font-size: 19px;
+      font-weight: 700;
+      line-height: 23px;
       @include medium {
         text-align: center;
       }
@@ -129,6 +148,11 @@
   &__votes {
     &-title {
       margin-bottom: 21px;
+      color: var(--darkShade);
+
+      font-size: 19px;
+      font-weight: 700;
+      line-height: 23px;
 
       @include medium {
         text-align: center;
@@ -207,7 +231,13 @@
   &__reviews {
     max-width: 712px;
     margin-bottom: 33px;
+    &-title {
+      color: var(--darkShade);
 
+      font-size: 19px;
+      font-weight: 700;
+      line-height: 23px;
+    }
     &-header {
       display: flex;
       align-items: baseline;
@@ -252,7 +282,11 @@
     &-title {
       margin-bottom: 18px;
       margin-left: 20px;
+      color: var(--darkShade);
 
+      font-size: 19px;
+      font-weight: 700;
+      line-height: 23px;
       @include medium {
         margin-left: 0;
       }
@@ -274,6 +308,11 @@
 
     &-title {
       margin-bottom: 18px;
+      color: var(--darkShade);
+
+      font-size: 19px;
+      font-weight: 700;
+      line-height: 23px;
     }
 
     @include medium {

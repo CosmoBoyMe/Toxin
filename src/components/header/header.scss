@@ -2,7 +2,11 @@
 
 .header {
   background-color: #fff;
-
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
   &__inner {
     display: flex;
     align-items: center;
@@ -118,6 +122,7 @@
     }
 
     &-link {
+      text-decoration: none;
       display: inline-block;
 
       color: var(--darkShade50);

@@ -1,5 +1,16 @@
 @import '../../styles/index';
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100%;
+}
+
+.main {
+  flex: 1 1 auto;
+}
+
 .search-rooms {
   background-image: url('/assets/img/landing-page-bg.jpg');
   background-repeat: no-repeat;

@@ -4,7 +4,7 @@ include ../logo/logo.pug
 mixin header(options = { activePageName: '', isAuth: false, userName: ''})
   - const { activePageName, isAuth, userName } = options;
   header.header.js-header
-    .container
+    .header__container
       header.header__inner 
         +logo
         -

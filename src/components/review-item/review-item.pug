@@ -1,13 +1,13 @@
 include ../like-btn/like-btn.pug
 
 mixin review-item({name, online, avatarSrc, likeCount, isLiked, text})
-  .reviewItem 
-    .reviewItem__user 
-      img.reviewItem__user-img(src=avatarSrc, alt="user avatar")
-      .reviewItem__user-info 
-        .reviewItem__user-name= name
-        .reviewItem__user-online= online
-    .reviewItem__comment
-      .reviewItem__like
+  .review-item 
+    .review-item__user 
+      img.review-item__user-img(src=avatarSrc, alt="user avatar")
+      .review-item__user-info 
+        .review-item__user-name= name
+        .review-item__user-online= online
+    .review-item__comment
+      .review-item__like
       +like-btn(likeCount, isLiked)
-      p.reviewItem__text= text
+      p.review-item__text= text

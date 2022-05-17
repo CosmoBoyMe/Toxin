@@ -1,0 +1,37 @@
+@use '../../styles/vars';
+
+.footer-list {
+  display: flex;
+  flex-direction: column;
+
+  width: 160px;
+  margin-top: 4px;
+  margin-right: auto;
+  padding-right: 10px;
+  row-gap: 21px;
+
+  @include large {
+    display: none;
+  }
+
+  &__item {
+    line-height: 17px;
+  }
+
+  &__title {
+    margin-bottom: 1px;
+
+    text-transform: uppercase;
+
+    color: var(--darkShade);
+
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: var(--darkShade50);
+  }
+}
