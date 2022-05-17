@@ -1,8 +1,10 @@
+/* eslint-disable no-unused-vars */
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 let mode = 'development';
@@ -12,7 +14,7 @@ if (process.env.NODE_ENV === 'production') {
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
-  mode: mode,
+  mode,
   target: 'web',
   devServer: {
     historyApiFallback: true,
@@ -29,7 +31,10 @@ module.exports = {
     roomDetails: path.resolve(__dirname, './src/pages/room-details/room-details.js'),
     searchRoom: path.resolve(__dirname, './src/pages/search-room/search-room.js'),
     colors: path.resolve(__dirname, './src/pages/colors/colors.js'),
-    headersAndFooters: path.resolve(__dirname, './src/pages/headers-and-footers/headers-and-footers.js'),
+    headersAndFooters: path.resolve(
+      __dirname,
+      './src/pages/headers-and-footers/headers-and-footers.js'
+    ),
     formElements: path.resolve(__dirname, './src/pages/form-elements/form-elements.js'),
     cards: path.resolve(__dirname, './src/pages/cards/cards.js'),
   },
@@ -98,12 +103,16 @@ module.exports = {
       filename: 'cards.html',
       chunks: ['cards'],
     }),
-
     new FaviconsWebpackPlugin({
       logo: path.resolve(__dirname, './src/assets/favicons/favicon.svg'),
       outputPath: path.resolve(__dirname, './dist/assets/favicons'),
       prefix: 'assets/favicons/',
       inject: true,
+      favicons: {
+        icons: {
+          appleStartup: false,
+        },
+      },
     }),
   ],
   module: {
@@ -144,7 +153,7 @@ module.exports = {
         },
       },
 
-      // щрифты
+      // шрифты
 
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
