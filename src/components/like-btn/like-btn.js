@@ -1,7 +1,8 @@
 const likeBtnElements = document.querySelectorAll('.like-btn');
 
 likeBtnElements.forEach((item) => {
-  item.addEventListener('click', ({ currentTarget }) => {
+  const handlerLikeBtnClick = (event) => {
+    const { currentTarget } = event;
     const countEl = currentTarget.querySelector('.like-btn__count');
     const currentCount = Number(countEl.textContent);
 
@@ -12,5 +13,6 @@ likeBtnElements.forEach((item) => {
       currentTarget.classList.add('like-btn_liked');
       countEl.textContent = currentCount + 1;
     }
-  });
+  };
+  item.addEventListener('click', handlerLikeBtnClick);
 });

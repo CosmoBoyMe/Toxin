@@ -11,20 +11,20 @@ const initExpandableList = () => {
       headerArrowEl.classList.toggle('js-expandable-list__arrow_active');
     };
 
-    const outsideClickHandler = (event) => {
+    const handlerOutsideClick = (event) => {
       if (!listEl.contains(event.target)) {
         menuEl.classList.remove('js-expandable-list__menu_active');
         headerArrowEl.classList.remove('js-expandable-list__arrow_active');
-        document.removeEventListener('click', outsideClickHandler);
+        document.removeEventListener('click', handlerOutsideClick);
       }
     };
 
-    const onClickHeader = () => {
+    const handlerHeaderClick = () => {
       toggleMenu();
-      document.addEventListener('click', outsideClickHandler);
+      document.addEventListener('click', handlerOutsideClick);
     };
 
-    headerEl.addEventListener('click', onClickHeader);
+    headerEl.addEventListener('click', handlerHeaderClick);
   });
 };
 

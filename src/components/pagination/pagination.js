@@ -20,7 +20,7 @@ const initPagination = (totalItems, itemsPerPage) => {
     const buttonEl = document.createElement('button');
     buttonEl.textContent = pageNumber;
     buttonEl.classList.add('js-pagination__btn', 'js-pagination__page');
-    const onClickPageButton = () => {
+    const handlerPageButtonClick = () => {
       activePageNumber = pageNumber;
       // eslint-disable-next-line no-use-before-define
       render();
@@ -35,7 +35,7 @@ const initPagination = (totalItems, itemsPerPage) => {
     } else {
       buttonEl.classList.add('js-pagination__btn', 'js-pagination__page');
     }
-    buttonEl.addEventListener('click', onClickPageButton);
+    buttonEl.addEventListener('click', handlerPageButtonClick);
     return buttonEl;
   };
 
@@ -48,12 +48,12 @@ const initPagination = (totalItems, itemsPerPage) => {
     if (activePageNumber === totalPage) {
       nextButton.setAttribute('disable', true);
     } else {
-      const onClickNextBtn = () => {
+      const handlerNextButtonClick = () => {
         activePageNumber += 1;
         // eslint-disable-next-line no-use-before-define
         render();
       };
-      nextButton.addEventListener('click', onClickNextBtn);
+      nextButton.addEventListener('click', handlerNextButtonClick);
     }
     return nextButton;
   };

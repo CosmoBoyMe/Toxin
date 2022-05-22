@@ -8,16 +8,16 @@ const initCalendar = (calendarId, datePickerId, type = '') => {
   const datePickerToggleHandler = () => {
     datePickerEl.classList.toggle('js-calendar__date-picker_close');
   };
-
-  const onClickOut = () => {
-    datePickerEl.addEventListener('click', (event) => {
-      event.stopPropagation();
-    });
-    document.addEventListener('click', (event) => {
+  const initOutsideClick = () => {
+    const handlerOutsideClick = (event) => {
       if (!calendarEl.contains(event.target)) {
         datePickerEl.classList.add('js-calendar__date-picker_close');
       }
+    };
+    datePickerEl.addEventListener('click', (event) => {
+      event.stopPropagation();
     });
+    document.addEventListener('click', handlerOutsideClick);
   };
 
   fieldElements.forEach((field) => {
@@ -57,8 +57,7 @@ const initCalendar = (calendarId, datePickerId, type = '') => {
       },
     });
   }
-
-  onClickOut();
+  initOutsideClick();
 };
 
 export { initCalendar };

@@ -57,31 +57,31 @@ const initDropdown = ({ dropdownEl, wordsDeclensions = '', onChangeTextValue = n
     updateClearBtn();
   };
 
-  const onClickMinusBtnHandler = ({ target }) => {
+  const handlerMinusButtonClick = ({ target }) => {
     const counterEl = target.nextElementSibling;
     counterEl.stepDown();
     update();
   };
 
-  const onClickPlusBtnHandler = ({ target }) => {
+  const handlerPlusButtonClick = ({ target }) => {
     const counterEl = target.previousElementSibling;
     counterEl.stepUp();
     update();
   };
 
   minusBtnElements.forEach((btn) => {
-    btn.addEventListener('click', onClickMinusBtnHandler);
+    btn.addEventListener('click', handlerMinusButtonClick);
   });
 
   plusBtnElements.forEach((btn) => {
-    btn.addEventListener('click', onClickPlusBtnHandler);
+    btn.addEventListener('click', handlerPlusButtonClick);
   });
 
-  const toggleDropdownMenuHandler = () => {
+  const toggleDropdownMenu = () => {
     dropdownMenuEl.classList.toggle('js-dropdown__menu_active');
   };
 
-  const onClickClearBtnHandler = () => {
+  const handlerClearButtonClick = () => {
     [...counterElements].forEach((counter) => {
       const counterEl = counter;
       counterEl.value = 0;
@@ -90,19 +90,17 @@ const initDropdown = ({ dropdownEl, wordsDeclensions = '', onChangeTextValue = n
     update();
   };
 
-  const onClickOutsideDropdown = () => {
-    document.addEventListener('click', (event) => {
-      if (!dropdownEl.contains(event.target)) {
-        dropdownMenuEl.classList.remove('js-dropdown__menu_active');
-      }
-    });
+  const handlerOutsideClick = (event) => {
+    if (!dropdownEl.contains(event.target)) {
+      dropdownMenuEl.classList.remove('js-dropdown__menu_active');
+    }
   };
 
-  dropdownInputWrapperEl.addEventListener('click', toggleDropdownMenuHandler);
-  applyBtnEl?.addEventListener('click', toggleDropdownMenuHandler);
-  clearBtnEl?.addEventListener('click', onClickClearBtnHandler);
+  dropdownInputWrapperEl.addEventListener('click', toggleDropdownMenu);
+  applyBtnEl?.addEventListener('click', toggleDropdownMenu);
+  clearBtnEl?.addEventListener('click', handlerClearButtonClick);
   update();
-  onClickOutsideDropdown();
+  document.addEventListener('click', handlerOutsideClick);
 };
 
 export { initDropdown };

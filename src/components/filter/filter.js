@@ -9,7 +9,7 @@ const guestDropdownEl = document.querySelector('.js-filter__guest-dropdown');
 const filterBtnElements = document.querySelectorAll('.js-filter__btn');
 const filterContentEl = document.querySelector('.js-filter__content');
 
-const onClickFilterBtn = () => {
+const handlerButtonClick = () => {
   filterContentEl.classList.toggle('js-filter__content_visible');
   if (document.body.style.overflowY === 'hidden') {
     document.body.style.overflowY = 'auto';
@@ -18,7 +18,7 @@ const onClickFilterBtn = () => {
   }
 };
 
-filterBtnElements.forEach((btn) => btn.addEventListener('click', onClickFilterBtn));
+filterBtnElements.forEach((btn) => btn.addEventListener('click', handlerButtonClick));
 
 initCalendar('calendar', 'datepicker');
 initRangeSlider('range-slider');
