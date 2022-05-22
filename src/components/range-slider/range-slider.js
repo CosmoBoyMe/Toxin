@@ -11,7 +11,7 @@ const initRangeSlider = (
   step = 100
 ) => {
   const sliderContainerEl = document.getElementById(id);
-  const rangeSliderEl = sliderContainerEl.querySelector('.range-slider__slider');
+  const rangeSliderEl = sliderContainerEl.querySelector('.js-range-slider__slider');
   noUiSlider.create(rangeSliderEl, {
     start,
     connect: true,
@@ -25,7 +25,7 @@ const initRangeSlider = (
     }),
   });
 
-  const rangeSliderValueEl = sliderContainerEl.querySelector('.range-slider__price');
+  const rangeSliderValueEl = sliderContainerEl.querySelector('.js-range-slider__price');
   rangeSliderEl.noUiSlider.on('update', (values) => {
     const valuesString = values.join(' - ');
     rangeSliderValueEl.textContent = valuesString;
