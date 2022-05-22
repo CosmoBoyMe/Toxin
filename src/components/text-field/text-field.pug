@@ -1,4 +1,4 @@
-mixin text-field({text='', type='text', placeholder, focus=false, value='', id='', name=''})
+mixin text-field({text='', type='text', placeholder='введите текст', focus=false, value='', id='', name=''} = {})
   .text-field
     if (text)
       label.text-field__label(for=id ? id : undefined)= text

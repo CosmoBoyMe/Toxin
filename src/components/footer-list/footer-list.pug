@@ -1,7 +1,7 @@
-mixin footer-list(list)
+mixin footer-list(list={ items: [] })
   ul.footer-list 
     li.footer-list__item
       h3.footer-list__title= list.title
-    each item in list.items 
+    each item in list.items
       li.footer-list__item
         a.footer-list__link(href=item.link ? item.link : "/mock-address/change-me")= item.text

@@ -1,7 +1,7 @@
 include ../amount-select/amount-select.pug
 include ../button/button.pug
 
-mixin dropdown({ label, placeholder, items, buttons=true, active=false})
+mixin dropdown({ label='', placeholder='', items=[], buttons=true, active=false}={})
   .dropdown
     label.dropdown__label= label
     .dropdown__input-wrapper.js-dropdown__input-wrapper
