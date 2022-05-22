@@ -5,7 +5,7 @@ mixin header(options = { activePageName: '', isAuth: false, userName: ''})
   - const { activePageName, isAuth, userName } = options;
   header.header.js-header
     .header__container
-      header.header__inner 
+      .header__inner 
         +logo
         -
           const items = [{text: 'о нас'}, {text: 'услуги', nested: true},

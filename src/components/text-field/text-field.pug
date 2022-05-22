@@ -1,7 +1,7 @@
 mixin text-field({text='', type='text', placeholder, focus=false, value='', id='', name=''})
   .text-field
     if (text)
-      label.text-field__label(for=id)= text
+      label.text-field__label(for=id ? id : undefined)= text
 
     input.text-field__input(
       type=type,
