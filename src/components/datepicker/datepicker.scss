@@ -127,81 +127,81 @@
     &.-day-.-other-month- {
       color: var(--darkShade25);
     }
-  }
 
-  .-selected- {
-    z-index: 1;
+    &.-selected- {
+      z-index: 1;
 
-    color: white;
-    border-radius: 22px;
-    background: var(--gradient);
+      color: white;
+      border-radius: 22px;
+      background: var(--gradient);
 
-    font-weight: 700;
-  }
+      font-weight: 700;
+    }
 
-  .-day-.-range-from- {
-    position: relative;
+    &.-day-.-range-from- {
+      position: relative;
 
-    &::before {
-      position: absolute;
-      z-index: -1;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
+      &::before {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
 
-      content: '';
+        content: '';
 
-      border-radius: 50% 0 0 50%;
+        border-radius: 50% 0 0 50%;
+        background: var(--gradient25);
+      }
+    }
+
+    &.-day-.-range-to- {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        content: '';
+
+        border-radius: 0 50% 50% 0;
+        background: var(--gradient25);
+      }
+    }
+
+    &.-focus- {
+      z-index: 10;
+
+      cursor: pointer;
+
+      color: white;
+      border: 0 50% 50% 50%;
+      border-radius: 22px;
       background: var(--gradient25);
     }
-  }
 
-  .-day-.-range-to- {
-    position: relative;
-
-    &::before {
-      position: absolute;
-      z-index: -1;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-
-      content: '';
-
-      border-radius: 0 50% 50% 0;
+    &.-in-range- {
       background: var(--gradient25);
     }
-  }
 
-  .-focus- {
-    z-index: 10;
+    &.-current-.-in-range- {
+      color: var(--darkShade50);
+      border-radius: 0;
+    }
 
-    cursor: pointer;
+    &.-focus-.-in-range- {
+      border-radius: 0;
+      background: linear-gradient(180deg, rgb(188 156 255 / 50%) 0%, rgb(139 164 249 / 50%) 100%);
+    }
 
-    color: white;
-    border: 0 50% 50% 50%;
-    border-radius: 22px;
-    background: var(--gradient25);
-  }
-
-  .-in-range- {
-    background: var(--gradient25);
-  }
-
-  .-current-.-in-range- {
-    color: var(--darkShade50);
-    border-radius: 0;
-  }
-
-  .-focus-.-in-range- {
-    border-radius: 0;
-    background: linear-gradient(180deg, rgb(188 156 255 / 50%) 0%, rgb(139 164 249 / 50%) 100%);
-  }
-
-  .-focus-.-selected- {
-    background: var(--gradient);
+    &.-focus-.-selected- {
+      background: var(--gradient);
+    }
   }
 
   &-buttons {
@@ -223,5 +223,9 @@
     font-size: 12px;
     font-weight: 700;
     line-height: 15px;
+
+    &:active {
+      color: var(--darkShade50);
+    }
   }
 }
