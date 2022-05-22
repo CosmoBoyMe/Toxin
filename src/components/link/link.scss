@@ -1,7 +1,6 @@
 @use '../../styles/vars';
 
 .link {
-  text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,6 +9,7 @@
 
   cursor: pointer;
   transition: opacity 0.3s;
+  text-decoration: none;
   text-transform: uppercase;
 
   color: #fff;

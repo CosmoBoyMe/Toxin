@@ -7,9 +7,10 @@
   &__img {
     display: block;
 
+    width: 100%;
+
     max-width: 100%;
     height: auto;
-    width: 100%;
     aspect-ratio: 271 / 151; // width / height
   }
 
@@ -43,12 +44,13 @@
     opacity: 0;
     color: #fff;
     border: none;
-    background: linear-gradient(
-      90deg,
-      rgb(0 0 0 / 50%) 0%,
-      rgb(0 0 0 / 0%) 99.99%,
-      rgb(255 255 255 / 0%) 100%
-    );
+    background:
+      linear-gradient(
+        90deg,
+        rgb(0 0 0 / 50%) 0%,
+        rgb(0 0 0 / 0%) 99.99%,
+        rgb(255 255 255 / 0%) 100%
+      );
     background-color: transparent;
 
     font-family: var(--materialFont);
@@ -73,10 +75,11 @@
 
   &__description {
     &-link {
-      text-decoration: none;
       display: block;
 
       padding: 17px 19px 22px;
+
+      text-decoration: none;
 
       border-bottom-right-radius: 4px;
       border-bottom-left-radius: 4px;

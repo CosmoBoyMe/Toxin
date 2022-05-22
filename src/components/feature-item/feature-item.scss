@@ -24,11 +24,12 @@
   }
 
   &__title {
+    color: var(--darkShade);
+
     font-family: var(--mainFont);
     font-size: 14px;
     font-weight: 700;
     line-height: 24px;
-    color: var(--darkShade);
   }
 
   &__text {

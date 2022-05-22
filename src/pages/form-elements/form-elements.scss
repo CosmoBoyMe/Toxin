@@ -1,14 +1,15 @@
-@import '../../styles/vars.scss';
-
+@import '../../styles/vars';
 @import '../../styles/index';
 
 .main {
   padding-top: 140px;
+
   &__container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
   }
+
   &__inner {
     display: flex;
     flex-direction: column;
@@ -91,6 +92,7 @@
       margin-bottom: 14px;
 
       text-transform: uppercase;
+
       color: var(--darkShade);
 
       font-size: 12px;
@@ -106,10 +108,12 @@
 
   &__toggle {
     margin-bottom: 42px;
+
     &-title {
       margin-bottom: 14px;
 
       text-transform: uppercase;
+
       color: var(--darkShade);
 
       font-size: 12px;
@@ -131,6 +135,7 @@
       margin-bottom: 16px;
 
       text-transform: uppercase;
+
       color: var(--darkShade);
 
       font-size: 12px;
@@ -151,6 +156,7 @@
       margin-bottom: 18px;
 
       text-transform: uppercase;
+
       color: var(--darkShade);
 
       font-size: 12px;
@@ -187,6 +193,7 @@
       margin-bottom: 17px;
 
       text-transform: uppercase;
+
       color: var(--darkShade);
 
       font-size: 12px;
@@ -224,6 +231,7 @@
       margin-bottom: 16px;
 
       text-transform: uppercase;
+
       color: var(--darkShade);
 
       font-size: 12px;

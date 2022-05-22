@@ -1,4 +1,4 @@
-@mixin extraLarge {
+@mixin extra-large {
   @media (max-width: (1200px)) {
     @content;
   }
@@ -22,7 +22,7 @@
   }
 }
 
-@mixin textGradient {
+@mixin text-gradient {
   color: var(--purple);
   background: var(--gradient);
   background-color: transparent;
@@ -30,7 +30,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-@mixin MaterialIcon($content) {
+@mixin material-icon($content) {
   position: absolute;
 
   content: $content;

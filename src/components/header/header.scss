@@ -2,11 +2,13 @@
 
 .header {
   background-color: #fff;
+
   &__container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
   }
+
   &__inner {
     display: flex;
     align-items: center;
@@ -122,8 +124,9 @@
     }
 
     &-link {
-      text-decoration: none;
       display: inline-block;
+
+      text-decoration: none;
 
       color: var(--darkShade50);
 
@@ -148,7 +151,7 @@
           top: -3px;
           right: 0;
 
-          @include MaterialIcon('expand_more');
+          @include material-icon('expand_more');
         }
       }
 

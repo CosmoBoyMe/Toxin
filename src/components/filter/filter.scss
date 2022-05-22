@@ -5,13 +5,13 @@
     max-width: 170px;
     margin: 0 auto;
 
-    @include extraLarge {
+    @include extra-large {
       display: flex;
     }
   }
 
   &__content {
-    @include extraLarge {
+    @include extra-large {
       position: fixed;
       z-index: 1000;
       top: 0;
@@ -34,7 +34,7 @@
   }
 
   &__content-wrapper {
-    @include extraLarge {
+    @include extra-large {
       width: 100%;
       max-width: 300px;
       margin: 0 auto;
@@ -82,7 +82,7 @@
       transform: rotate(-45deg);
     }
 
-    @include extraLarge {
+    @include extra-large {
       display: block;
     }
   }

@@ -1,5 +1,4 @@
 @use '../../styles/vars';
-
 @import '../../styles/index';
 
 .main {
@@ -8,6 +7,7 @@
     margin: 0 auto;
     padding: 0 20px;
   }
+
   &__inner {
     display: flex;
     justify-content: space-between;
@@ -70,6 +70,7 @@
     font-weight: 700;
     line-height: 28px;
   }
+
   &__name {
     margin-top: 2px;
   }

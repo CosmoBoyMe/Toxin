@@ -38,7 +38,7 @@
 
       color: var(--purple);
 
-      @include MaterialIcon('arrow_back');
+      @include material-icon('arrow_back');
     }
   }
 
@@ -52,7 +52,7 @@
 
       color: var(--purple);
 
-      @include MaterialIcon('arrow_forward');
+      @include material-icon('arrow_forward');
     }
   }
 

@@ -1,5 +1,4 @@
 @use '../../styles/vars';
-
 @import 'nouislider/dist/nouislider.css';
 
 .range-slider {
@@ -13,6 +12,7 @@
 
   &__title {
     text-transform: uppercase;
+
     color: var(--darkShade);
 
     font-size: 12px;

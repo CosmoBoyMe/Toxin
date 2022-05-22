@@ -28,7 +28,7 @@
     transform: translate(-50%, -50%);
     text-transform: none;
 
-    @include MaterialIcon('arrow_forward');
+    @include material-icon('arrow_forward');
   }
 
   &:hover {

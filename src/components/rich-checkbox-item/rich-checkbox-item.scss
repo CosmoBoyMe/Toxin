@@ -22,6 +22,7 @@
     border: 1px solid var(--darkShade25);
     border-radius: 4px;
   }
+
   &__input_visually_hidden {
     position: absolute;
 
@@ -34,6 +35,7 @@
     white-space: nowrap;
     clip-path: inset(50%);
   }
+
   &__input:checked + &__box {
     border-color: var(--purple);
 

@@ -10,10 +10,6 @@
   padding-right: 10px;
   row-gap: 21px;
 
-  @include large {
-    display: none;
-  }
-
   &__item {
     line-height: 17px;
   }
@@ -32,6 +28,11 @@
 
   &__link {
     text-decoration: none;
+
     color: var(--darkShade50);
+  }
+
+  @include large {
+    display: none;
   }
 }
