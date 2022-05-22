@@ -6,6 +6,7 @@
     "custom-property-pattern": null,
     "declaration-empty-line-before": null,
     "selector-class-pattern": null,
+    "string-quotes": "single",
     "order/order": [
       "custom-properties",
       "dollar-variables",
