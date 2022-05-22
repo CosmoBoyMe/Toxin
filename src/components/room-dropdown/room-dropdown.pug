@@ -4,7 +4,7 @@ mixin room-dropdown({label='удобства номера', values=[], placehold
   .room-dropdown.js-room-dropdown
     -
       const items= [{ title: 'спальни', value: 0 }, { title: 'кровати', value: 0 }, { title: 'ванные комнаты', value: 0 }];
-      if(values) {
+      if(values.length > 0) {
         values.forEach((value, index) => items[index].value = value)
         }
 
