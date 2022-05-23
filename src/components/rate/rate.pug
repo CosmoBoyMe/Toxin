@@ -4,4 +4,4 @@ mixin rate(rateNumber=TOTAL_STARS_COUNT)
   .rate
     - for(let i = 0; i < TOTAL_STARS_COUNT; i++)
       - const iconName = i < rateNumber ? "star" : "star_border";
-        i.rate__icon= iconName
+        span.rate__icon= iconName
