@@ -4,8 +4,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 let mode = 'development';
 if (process.env.NODE_ENV === 'production') {
@@ -73,46 +72,50 @@ module.exports = {
       filename: 'signUp.html',
       chunks: ['signUp'],
     }),
+
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './src/pages/room-details/room-details.pug'), // шаблон
       filename: 'roomDetails.html',
       chunks: ['roomDetails'],
     }),
+
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './src/pages/search-room/search-room.pug'), // шаблон
       filename: 'searchRoom.html',
       chunks: ['searchRoom'],
     }),
+
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './src/pages/colors/colors.pug'), // шаблон
       filename: 'colors.html',
       chunks: ['colors'],
     }),
+
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './src/pages/headers-and-footers/headers-and-footers.pug'), // шаблон
       filename: 'headersAndFooters.html',
       chunks: ['headersAndFooters'],
     }),
+
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './src/pages/form-elements/form-elements.pug'), // шаблон
       filename: 'formElements.html',
       chunks: ['formElements'],
     }),
+
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './src/pages/cards/cards.pug'), // шаблон
       filename: 'cards.html',
       chunks: ['cards'],
     }),
-    new FaviconsWebpackPlugin({
-      logo: path.resolve(__dirname, './src/assets/favicons/favicon.svg'),
-      outputPath: path.resolve(__dirname, './dist/assets/favicons'),
-      prefix: 'assets/favicons/',
-      inject: true,
-      favicons: {
-        icons: {
-          appleStartup: false,
+
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/assets/favicons'),
+          to: path.resolve(__dirname, 'dist/assets/favicons'),
         },
-      },
+      ],
     }),
   ],
   module: {
@@ -131,6 +134,7 @@ module.exports = {
                 plugins: [
                   [
                     'postcss-preset-env',
+
                     {
                       // Options
                     },
