@@ -1,7 +1,0 @@
-mixin footer-list(list)
-  ul.footer__list 
-    li.footer__item
-      h3.footer__title= list.title
-    each item in list.items 
-      li.footer__item
-        a.footer__link(href=item.link ? item.link : "/mock-address/change-me")= item.text

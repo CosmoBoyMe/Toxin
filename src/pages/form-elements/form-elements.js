@@ -1,26 +1,14 @@
 import './form-elements.scss';
-import { initExpandableList } from '../../components/expandable-list/expandable-list';
+import '../../components/expandable-list/expandable-list';
 import '../../components/masked-field/masked-field';
 import '../../components/like-btn/like-btn';
-import { initRoomDropdown } from '../../components/room-dropdown/room-dropdown';
-import { initGuestDropdown } from '../../components/guest-dropdown/guest-dropdown';
+import '../../components/room-dropdown/room-dropdown';
+import '../../components/guest-dropdown/guest-dropdown';
 import { initCalendar } from '../../components/calendar/calendar';
-import { initRangeSlider } from '../../components/range-slider/range-slider';
-import { initPagination } from '../../components/pagination/pagination';
+import '../../components/range-slider/range-slider';
+import '../../components/pagination/pagination';
 
-const roomDropdownElements = document.querySelectorAll('.js-main__room-dropdown');
-const guestDropdownElements = document.querySelectorAll('.js-main__guest-dropdown');
-
-roomDropdownElements.forEach((element) => {
-  initRoomDropdown(element);
-});
-
-guestDropdownElements.forEach((element) => {
-  initGuestDropdown(element);
-});
-
-initExpandableList();
-initCalendar('calendar-first', 'date-picker-first', 'multiple');
-initCalendar('filter-calendar', 'date-picker-second');
-initRangeSlider('range-slider');
-initPagination(170, 12);
+const calendarFirstEl = document.querySelector('.js-main__multiple-calendar');
+const filterCalendarEl = document.querySelector('.js-main__filter-calendar');
+initCalendar(calendarFirstEl, 'date-picker-first');
+initCalendar(filterCalendarEl, 'date-picker-second');

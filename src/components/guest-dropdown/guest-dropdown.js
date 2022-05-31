@@ -21,4 +21,5 @@ const initGuestDropdown = (element) => {
   initDropdown({ dropdownEl: element, onChangeTextValue });
 };
 
-export { initGuestDropdown };
+const dropdownElements = document.querySelectorAll('.js-guest-dropdown');
+dropdownElements.forEach((element) => initGuestDropdown(element));

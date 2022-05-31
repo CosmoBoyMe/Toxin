@@ -1,9 +1,9 @@
-const likeBtnElements = document.querySelectorAll('.like-btn');
+const likeBtnElements = document.querySelectorAll('.js-like-btn');
 
-likeBtnElements.forEach((item) => {
+likeBtnElements.forEach((element) => {
   const handlerLikeBtnClick = (event) => {
     const { currentTarget } = event;
-    const countEl = currentTarget.querySelector('.like-btn__count');
+    const countEl = currentTarget.querySelector('.js-like-btn__count');
     const currentCount = Number(countEl.textContent);
 
     if (currentTarget.classList.contains('like-btn_liked')) {
@@ -14,5 +14,5 @@ likeBtnElements.forEach((item) => {
       countEl.textContent = currentCount + 1;
     }
   };
-  item.addEventListener('click', handlerLikeBtnClick);
+  element.addEventListener('click', handlerLikeBtnClick);
 });

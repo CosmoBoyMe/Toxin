@@ -1,8 +1,8 @@
 include ../date-field/date-field.pug
 include ../datepicker/datepicker.pug
 
-mixin calendar({calendarId, datePickerId, type='', title='', secondTitle= ''})
-  .calendar(id=calendarId)
+mixin calendar({type='', title='', secondTitle= ''} = {}, datePickerId)
+  .calendar.js-calendar(data-type=type)
     if (type==="multiple")
       .calendar__fields
         .calendar__field.js-calendar__field

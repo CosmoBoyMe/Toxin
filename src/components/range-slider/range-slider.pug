@@ -1,5 +1,5 @@
-mixin range-slider(id='', title='Range Slider', text='')
-  .range-slider(id=id)
+mixin range-slider({title='Range Slider', text='', start = [5000, 10000], step=100, range={min: 1000, max: 15500 }} = {})
+  .range-slider.js-range-slider(data-start=start, data-step=step, data-range=range)
     .range-slider__info 
       h3.range-slider__title= title
       .range-slider__price.js-range-slider__price

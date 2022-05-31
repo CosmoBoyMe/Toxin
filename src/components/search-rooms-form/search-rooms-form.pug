@@ -5,8 +5,8 @@ include ../submit-btn/submit-btn.pug
 mixin search-rooms-form
   form.search-rooms-form
     h1.search-rooms-form__title Найдём номера под ваши пожелания
-    .search-rooms-form__calendar 
-      +calendar({calendarId: 'search-rooms-form__calendar', datePickerId: 'search-rooms-form__datepicker' , type:'multiple'})
-    .search-rooms-form__dropdown.js-search-rooms-form__dropdown
+    .search-rooms-form__calendar.js-search-rooms-form__calendar
+      +calendar({type:'multiple'}, 'search-rooms-form__datepicker')
+    .search-rooms-form__dropdown
       +guest-dropdown
     +submit-btn('подобрать номер')

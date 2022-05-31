@@ -1,7 +1,8 @@
 import Chart from 'chart.js/auto';
 
-const initPieChart = (id, data) => {
-  const pieChartEl = document.getElementById(id);
+const initPieChart = (pieChartEl) => {
+  const dataValues = pieChartEl.getAttribute('data-values');
+  const parsedValues = JSON.parse(dataValues);
   const doughtCtx = pieChartEl.getContext('2d');
 
   const purpleGradient = doughtCtx.createLinearGradient(0, 0, 0, 600);
@@ -27,7 +28,7 @@ const initPieChart = (id, data) => {
       cutout: 70,
       datasets: [
         {
-          data,
+          data: parsedValues,
           backgroundColor: [blackGradient, purpleGradient, greenGradient, orangeGradient],
           spacing: 2,
           borderWidth: 1,
@@ -48,4 +49,5 @@ const initPieChart = (id, data) => {
   });
 };
 
-export { initPieChart };
+const pieChartElements = document.querySelectorAll('.js-pie-chart__item');
+pieChartElements.forEach((element) => initPieChart(element));

@@ -11,8 +11,8 @@ mixin booking-form
         span.booking-form__room-status люкс
       .booking-form__room-price 9 990₽
         span.booking-form__room-days в сутки
-    .booking-form__calendar 
-      +calendar({calendarId: 'booking-form__calendar', datePickerId: 'booking-form__datepicker', type: 'multiple'})
+    .booking-form__calendar.js-booking-form__calendar
+      +calendar({type: 'multiple'}, 'booking-form__datepicker')
     .booking-form__dropdown.js-booking-form__dropdown
       +guest-dropdown({values: [1,2]})
     .booking-form__services-items 

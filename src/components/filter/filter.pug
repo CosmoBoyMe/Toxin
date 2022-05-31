@@ -16,11 +16,11 @@ mixin filter
       .filter__content-wrapper
         button.filter__content-btn-close.js-filter__btn(type="button")
         .filter__calendar 
-          +calendar({calendarId: 'calendar', datePickerId: 'datepicker'})
+          +calendar({}, 'datepicker')
         .filter__guest-dropdown.js-filter__guest-dropdown
           +guest-dropdown({values: [1,2,1]})
         .filter__range-slider 
-          +range-slider('range-slider','диапазон цены', 'Стоимость за сутки пребывания в номере')
+          +range-slider({title: 'диапазон цены', text: 'Стоимость за сутки пребывания в номере'})
         .filter__rules
           - const checkboxItems = [{ title: "Можно курить" }, { title: "Можно с питомцами" }, { title: "Можно пригласить гостей (до 10 человек)" }];
           +checkbox-list('правила дома', checkboxItems, '')

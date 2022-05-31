@@ -21,9 +21,9 @@ const swiper = new Swiper('.room-card__slider', {
   },
 });
 
-const cardEls = document.querySelectorAll('.js-room-card');
-cardEls.forEach((cardEl) => {
-  const cardPriceEl = cardEl.querySelector('.js-room-card__description-header-value');
+const cardElements = document.querySelectorAll('.js-room-card');
+cardElements.forEach((element) => {
+  const cardPriceEl = element.querySelector('.js-room-card__description-header-value');
 
   const priceFormat = wNumb({
     thousand: ' ',

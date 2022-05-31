@@ -26,5 +26,5 @@ mixin header(options = { activePageName: '', isAuth: false, userName: ''})
               .header__nav-profile= userName
             else
               .header__nav-auth-user
-                +link({text: 'войти', href: '/signIn.html', border: true, size: 'small'})
-                +link({text: 'зарегистрироваться', href: '/signUp.html', size: 'small'})
+                +link({text: 'войти', href: 'signIn.html', border: true, size: 'small'})
+                +link({text: 'зарегистрироваться', href: 'signUp.html', size: 'small'})

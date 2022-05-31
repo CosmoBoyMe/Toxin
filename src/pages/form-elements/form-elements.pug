@@ -34,14 +34,14 @@ html(lang="en")
                 +text-field({text:'Text Field', type:'email', name: 'email', placeholder: 'Email', id: 'email'})
               .main__text-field
                 +text-field({text:'Text Field', type:'email', placeholder: 'Email', focus: true, name: 'extra-email', value: 'This is pretty awesome', id:'extra-email'})
-              .main__guest-dropdown-first.js-main__guest-dropdown
+              .main__guest-dropdown-first
                 +guest-dropdown({label: 'dropdown'})
               .main__masked-field
                 +masked-field({text:'masked text field', id: 'date', name: 'date'})
-              .main__multiple-calendar
-                +calendar({calendarId: 'calendar-first', datePickerId: 'date-picker-first', type: 'multiple', title: 'date Dropdown', secondTitle: 'date Dropdown'})
-              .main__filter-calendar
-                +calendar({calendarId: 'filter-calendar', datePickerId: 'date-picker-second', title: 'filter date dropdown'})
+              .main__multiple-calendar.js-main__multiple-calendar
+                +calendar({type: 'multiple', title: 'date Dropdown', secondTitle: 'date Dropdown'}, 'date-picker-first')
+              .main__filter-calendar.js-main__filter-calendar
+                +calendar({ title: 'filter date dropdown'}, 'date-picker-second')
               .main__subscription-field
                 +subscription-field({text:'subscription text field', id:'subscription'})
               .main__room-dropdown.js-main__room-dropdown
@@ -104,7 +104,7 @@ html(lang="en")
                 +checkbox-list('rich Checkbox Buttons', richCheckboxItems, type='rich')
             .main__third-column
               .main__range-slider 
-                +range-slider('range-slider')
+                +range-slider
               .main__buttons
                 h3.main__buttons-title buttons
                 .main__buttons-links

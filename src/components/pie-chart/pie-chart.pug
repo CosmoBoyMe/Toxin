@@ -1,6 +1,6 @@
-mixin pie-chart(id='', votesCount=0)
+mixin pie-chart(votesCount=260, values=[0, 65, 65, 130])
   .pie-chart
-    canvas(id=id)
+    canvas.pie-chart__item.js-pie-chart__item(data-values=values)
     span.pie-chart__inner
       span.pie-chart__number= votesCount
       span.pie-chart__text голосов

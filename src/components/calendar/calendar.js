@@ -1,16 +1,19 @@
 import { initDatePicker } from '../datepicker/datepicker';
 
-const initCalendar = (calendarId, datePickerId, type = '') => {
-  const calendarEl = document.getElementById(calendarId);
-  const datePickerEl = calendarEl.querySelector('.js-calendar__date-picker');
-  const fieldElements = calendarEl.querySelectorAll('.js-calendar__field');
-  const inputElements = calendarEl.querySelectorAll('input');
+const initCalendar = (element, datePickerId) => {
+  const calendarEl = element.querySelector('.js-calendar');
+  const datePickerEl = element.querySelector('.js-calendar__date-picker');
+  const fieldElements = element.querySelectorAll('.js-calendar__field');
+  const inputElements = element.querySelectorAll('input');
+  const type = calendarEl.getAttribute('data-type');
+
   const datePickerToggleHandler = () => {
     datePickerEl.classList.toggle('js-calendar__date-picker_close');
   };
+
   const initOutsideClick = () => {
     const handlerOutsideClick = (event) => {
-      if (!calendarEl.contains(event.target)) {
+      if (!element.contains(event.target)) {
         datePickerEl.classList.add('js-calendar__date-picker_close');
       }
     };

@@ -1,7 +1,7 @@
 include ../dropdown/dropdown.pug
 
 mixin guest-dropdown({label='Гости', values=[], placeholder='Сколько гостей', active=false}={})
-  .guest-dropdown
+  .guest-dropdown.js-guest-dropdown
     -
       const items=[{ title: 'взрослые', value: 0 }, { title: 'дети', value: 0 }, { title: 'младенцы', value: 0 }];
       if(values) {

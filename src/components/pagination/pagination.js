@@ -1,9 +1,14 @@
 const FIRST_PAGE_NUMBER = 1;
 const PAGINATION_BUTTONS_COUNT = 5;
 
-const initPagination = (totalItems, itemsPerPage) => {
-  const containerEl = document.querySelector('.js-pagination__buttons');
-  const paginationTextCounterEl = document.querySelector('.js-pagination__text-counter');
+const initPagination = (element) => {
+  const totalItemsData = element.getAttribute('data-totalItems');
+  const itemsPerPageData = element.getAttribute('data-itemsPerPage');
+  const totalItems = Number(totalItemsData);
+  const itemsPerPage = Number(itemsPerPageData);
+
+  const buttonsContainerEl = element.querySelector('.js-pagination__buttons');
+  const paginationTextCounterEl = element.querySelector('.js-pagination__text-counter');
   const totalPage = Math.ceil(totalItems / itemsPerPage);
   let activePageNumber = 1;
 
@@ -111,20 +116,20 @@ const initPagination = (totalItems, itemsPerPage) => {
   };
 
   const render = () => {
-    containerEl.innerHTML = '';
+    buttonsContainerEl.innerHTML = '';
     if (totalPage <= PAGINATION_BUTTONS_COUNT) {
       const buttons = [];
       const nextButton = createNextButton();
       for (let i = FIRST_PAGE_NUMBER; i <= totalPage; i += 1) {
         buttons.push(createPageButton(i));
       }
-      containerEl.append(...buttons, nextButton);
+      buttonsContainerEl.append(...buttons, nextButton);
     } else {
       const firstButton = createPageButton(FIRST_PAGE_NUMBER);
       const lastButton = createPageButton(totalPage);
       const middleButtons = getMiddle();
       const nextButton = createNextButton();
-      containerEl.append(firstButton, ...middleButtons, lastButton, nextButton);
+      buttonsContainerEl.append(firstButton, ...middleButtons, lastButton, nextButton);
     }
     updateText();
   };
@@ -132,4 +137,6 @@ const initPagination = (totalItems, itemsPerPage) => {
   render();
 };
 
-export { initPagination };
+const paginationElements = document.querySelectorAll('.js-pagination');
+
+paginationElements.forEach((element) => initPagination(element));

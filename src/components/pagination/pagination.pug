@@ -1,5 +1,5 @@
-mixin pagination
-  .pagination 
+mixin pagination(totalItems=169, itemsPerPage=12)
+  .pagination.js-pagination(data-totalItems=totalItems, data-itemsPerPage=itemsPerPage)
     .pagination__buttons.js-pagination__buttons
     p.pagination__text 
       span.pagination__text-counter.js-pagination__text-counter

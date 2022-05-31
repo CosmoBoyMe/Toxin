@@ -10,4 +10,5 @@ const initRoomDropdown = (element) => {
   initDropdown({ dropdownEl: element, wordsDeclensions });
 };
 
-export { initRoomDropdown };
+const roomDropdownElements = document.querySelectorAll('.js-room-dropdown');
+roomDropdownElements.forEach(initRoomDropdown);
