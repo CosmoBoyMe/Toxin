@@ -3,6 +3,8 @@
 .expandable-list {
   position: relative;
 
+  cursor: pointer;
+
   background-color: #fff;
 
   &__header {
