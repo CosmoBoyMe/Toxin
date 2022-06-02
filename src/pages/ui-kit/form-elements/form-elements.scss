@@ -1,0 +1,276 @@
+@import '../../../styles/vars';
+@import '../../../styles/index';
+
+.main {
+  padding-top: 140px;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__columns {
+    display: flex;
+
+    margin-bottom: 221px;
+  }
+
+  // FIRST COLUMN
+
+  &__first-column {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 320px;
+    margin-right: 126px;
+  }
+
+  &__text-field {
+    margin-bottom: 20.4px;
+  }
+
+  &__guest-dropdown-first {
+    margin-bottom: 22px;
+  }
+
+  &__masked-field {
+    margin-bottom: 40px;
+  }
+
+  &__multiple-calendar {
+    margin-bottom: 40.5px;
+  }
+
+  &__filter-calendar {
+    width: 266px;
+    margin-bottom: 35px;
+  }
+
+  &__subscription-field {
+    width: 266px;
+    margin-bottom: 100px;
+  }
+
+  &__room-dropdown {
+    width: 266px;
+    margin-bottom: 20px;
+
+    &_position_margin-bottom {
+      margin-bottom: 157px;
+    }
+  }
+
+  &__expandable-list {
+    width: 266px;
+    margin-bottom: 20px;
+
+    &_position_margin-bottom {
+      margin-bottom: 0;
+    }
+  }
+
+  // SECOND-COLUMN
+
+  &__second-column {
+    margin-right: 72px;
+  }
+
+  &__checkbox-buttons-list {
+    margin-bottom: 40.8px;
+  }
+
+  &__radio-buttons {
+    margin-bottom: 39px;
+
+    &-title {
+      margin-bottom: 14px;
+
+      text-transform: uppercase;
+
+      color: var(--darkShade);
+
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 15px;
+    }
+
+    &-items {
+      display: flex;
+      column-gap: 20px;
+    }
+  }
+
+  &__toggle {
+    margin-bottom: 42px;
+
+    &-title {
+      margin-bottom: 14px;
+
+      text-transform: uppercase;
+
+      color: var(--darkShade);
+
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 15px;
+    }
+
+    &-items {
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+    }
+  }
+
+  &__like-buttons {
+    margin-bottom: 40px;
+
+    &-title {
+      margin-bottom: 16px;
+
+      text-transform: uppercase;
+
+      color: var(--darkShade);
+
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 15px;
+    }
+
+    &-items {
+      display: flex;
+      column-gap: 10px;
+    }
+  }
+
+  &__rate-buttons {
+    margin-bottom: 198px;
+
+    &-title {
+      margin-bottom: 18px;
+
+      text-transform: uppercase;
+
+      color: var(--darkShade);
+
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 15px;
+    }
+
+    &-items {
+      display: flex;
+      column-gap: 21px;
+    }
+  }
+
+  &__guest-dropdown-second {
+    width: 320px;
+    margin-bottom: 256px;
+  }
+
+  &__rich-checkbox-buttons {
+    width: 263px;
+  }
+
+  // THIRD COLUMN
+
+  &__range-slider {
+    width: 266px;
+    margin-bottom: 43px;
+  }
+
+  &__buttons {
+    margin-bottom: 40px;
+
+    &-title {
+      margin-bottom: 17px;
+
+      text-transform: uppercase;
+
+      color: var(--darkShade);
+
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 15px;
+    }
+
+    &-links {
+      display: flex;
+      column-gap: 17px;
+
+      margin-bottom: 31px;
+
+      &_position_margin-bottom {
+        margin-bottom: 26px;
+      }
+    }
+
+    &-buttons {
+      display: flex;
+      column-gap: 21px;
+
+      margin-bottom: 25px;
+    }
+
+    &-submit-btn {
+      width: 320px;
+    }
+  }
+
+  &__pagination {
+    margin-bottom: 234px;
+
+    &-title {
+      margin-bottom: 16px;
+
+      text-transform: uppercase;
+
+      color: var(--darkShade);
+
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 15px;
+    }
+
+    &-pagination {
+      margin-left: -78px;
+    }
+  }
+
+  &__guest-dropdown-third {
+    margin-bottom: 256px;
+  }
+
+  &__bullet-list {
+    width: 263px;
+  }
+
+  // ROW BOTTOM
+
+  &__row-bottom {
+    display: flex;
+  }
+
+  &__feature-items {
+    margin-right: 168px;
+  }
+
+  &__feature-item {
+    width: 279px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+
+    border-bottom: 1px solid rgb(31 32 65 / 10%);
+  }
+
+  &__review-item {
+    margin-top: 10px;
+  }
+}

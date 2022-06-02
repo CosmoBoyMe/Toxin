@@ -1,0 +1,39 @@
+@use '../../../styles/vars';
+@import '../../../styles/mixins';
+@import '../../../styles/index';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100%;
+}
+
+.main {
+  flex: 1 1 auto;
+}
+
+.sign-in {
+  background-image: url('/assets/img/login-bg.jpg');
+  background-repeat: no-repeat;
+  background-position-y: 100%;
+  background-size: 100%;
+
+  &__inner {
+    padding: 172px 20px;
+
+    @include medium {
+      padding: 100px 15px;
+    }
+  }
+
+  &__form {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 1330px) {
+    background-position: center;
+    background-size: cover;
+  }
+}

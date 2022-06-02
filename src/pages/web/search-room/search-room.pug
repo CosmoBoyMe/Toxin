@@ -1,0 +1,28 @@
+include ../../../components/header/header.pug
+include ../../../components/footer/footer.pug
+include ../../../components/filter/filter.pug
+include ../../../components/room-card/room-card.pug
+include ../../../components/pagination/pagination.pug
+include ../../../components/head/head.pug
+
+doctype html
+html(lang="en")
+  +head('Search room')
+  body 
+    .wrapper 
+      +header
+      main.main
+        .main__container
+          .main__inner 
+            .main__filter
+              +filter
+            .main__content
+              .content 
+                h1.content__title Номера, которые мы для вас подобрали
+                .content__cards
+                  - const { roomCards } = require("../../../js/room-cards.js");
+                    each roomCard in roomCards 
+                      +room-card(roomCard)
+                .content__pagination
+                  +pagination
+      +footer

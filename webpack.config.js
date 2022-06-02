@@ -24,18 +24,18 @@ module.exports = {
   },
 
   entry: {
-    main: path.resolve(__dirname, './src/pages/landing-page/landing-page.js'),
-    signIn: path.resolve(__dirname, './src/pages/sign-in/sign-in.js'),
-    signUp: path.resolve(__dirname, './src/pages/sign-up/sign-up.js'),
-    roomDetails: path.resolve(__dirname, './src/pages/room-details/room-details.js'),
-    searchRoom: path.resolve(__dirname, './src/pages/search-room/search-room.js'),
-    colors: path.resolve(__dirname, './src/pages/colors/colors.js'),
+    main: path.resolve(__dirname, './src/pages/web/landing-page/landing-page.js'),
+    signIn: path.resolve(__dirname, './src/pages/web/sign-in/sign-in.js'),
+    signUp: path.resolve(__dirname, './src/pages/web/sign-up/sign-up.js'),
+    roomDetails: path.resolve(__dirname, './src/pages/web/room-details/room-details.js'),
+    searchRoom: path.resolve(__dirname, './src/pages/web/search-room/search-room.js'),
+    colors: path.resolve(__dirname, './src/pages/ui-kit/colors/colors.js'),
     headersAndFooters: path.resolve(
       __dirname,
-      './src/pages/headers-and-footers/headers-and-footers.js'
+      './src/pages/ui-kit/headers-and-footers/headers-and-footers.js'
     ),
-    formElements: path.resolve(__dirname, './src/pages/form-elements/form-elements.js'),
-    cards: path.resolve(__dirname, './src/pages/cards/cards.js'),
+    formElements: path.resolve(__dirname, './src/pages/ui-kit/form-elements/form-elements.js'),
+    cards: path.resolve(__dirname, './src/pages/ui-kit/cards/cards.js'),
   },
 
   output: {
@@ -57,54 +57,57 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/pages/landing-page/landing-page.pug'), // шаблон
+      template: path.resolve(__dirname, './src/pages/web/landing-page/landing-page.pug'),
       chunks: ['main'],
     }),
 
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/pages/sign-in/sign-in.pug'), // шаблон
+      template: path.resolve(__dirname, './src/pages/web/sign-in/sign-in.pug'),
       filename: 'signIn.html',
       chunks: ['signIn'],
     }),
 
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/pages/sign-up/sign-up.pug'), // шаблон
+      template: path.resolve(__dirname, './src/pages/web/sign-up/sign-up.pug'),
       filename: 'signUp.html',
       chunks: ['signUp'],
     }),
 
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/pages/room-details/room-details.pug'), // шаблон
+      template: path.resolve(__dirname, './src/pages/web/room-details/room-details.pug'),
       filename: 'roomDetails.html',
       chunks: ['roomDetails'],
     }),
 
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/pages/search-room/search-room.pug'), // шаблон
+      template: path.resolve(__dirname, './src/pages/web/search-room/search-room.pug'),
       filename: 'searchRoom.html',
       chunks: ['searchRoom'],
     }),
 
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/pages/colors/colors.pug'), // шаблон
+      template: path.resolve(__dirname, './src/pages/ui-kit/colors/colors.pug'),
       filename: 'colors.html',
       chunks: ['colors'],
     }),
 
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/pages/headers-and-footers/headers-and-footers.pug'), // шаблон
+      template: path.resolve(
+        __dirname,
+        './src/pages/ui-kit/headers-and-footers/headers-and-footers.pug'
+      ),
       filename: 'headersAndFooters.html',
       chunks: ['headersAndFooters'],
     }),
 
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/pages/form-elements/form-elements.pug'), // шаблон
+      template: path.resolve(__dirname, './src/pages/ui-kit/form-elements/form-elements.pug'),
       filename: 'formElements.html',
       chunks: ['formElements'],
     }),
 
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/pages/cards/cards.pug'), // шаблон
+      template: path.resolve(__dirname, './src/pages/ui-kit/cards/cards.pug'),
       filename: 'cards.html',
       chunks: ['cards'],
     }),
@@ -131,15 +134,7 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: [
-                  [
-                    'postcss-preset-env',
-
-                    {
-                      // Options
-                    },
-                  ],
-                ],
+                plugins: [['postcss-preset-env', {}]],
               },
             },
           },
