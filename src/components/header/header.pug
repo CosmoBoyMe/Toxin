@@ -5,8 +5,9 @@ mixin header(options = { activePageName: '', isAuth: false, userName: ''})
   - const { activePageName, isAuth, userName } = options;
   header.header.js-header
     .header__container
-      .header__inner 
-        +logo
+      .header__inner
+        a.header__logo-link(href="/") 
+          +logo
         -
           const items = [{text: 'о нас'}, {text: 'услуги', nested: true},
           {text: 'вакансии'}, {text: 'новости'}, {text: 'соглашения', nested: true} ]
