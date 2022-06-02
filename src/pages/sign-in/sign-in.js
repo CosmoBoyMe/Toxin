@@ -1,3 +1,2 @@
+import '../../components/components';
 import './sign-in.scss';
-
-import '../../components/header/header';

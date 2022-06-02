@@ -1,5 +1,2 @@
-import '../../components/header/header';
+import '../../components/components';
 import './landing-page.scss';
-
-import '../../components/search-rooms-form/search-rooms-form';
-

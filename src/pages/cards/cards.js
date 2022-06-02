@@ -1,9 +1,5 @@
-import './cards.scss';
-import '../../components/sign-up-form/sign-up-form';
-import '../../components/room-card/room-card';
-
-import '../../components/search-rooms-form/search-rooms-form';
-import '../../components/booking-form/booking-form';
+import '../../components/components';
 import { initDatePicker } from '../../components/datepicker/datepicker';
+import './cards.scss';
 
 initDatePicker('main__third-column-datepicker');

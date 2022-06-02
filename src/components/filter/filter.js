@@ -1,9 +1,3 @@
-import { initCalendar } from '../calendar/calendar';
-import '../range-slider/range-slider';
-import '../expandable-list/expandable-list';
-import '../room-dropdown/room-dropdown';
-import '../guest-dropdown/guest-dropdown';
-
 const filterBtnElements = document.querySelectorAll('.js-filter__btn');
 const filterContentEl = document.querySelector('.js-filter__content');
 
@@ -17,5 +11,3 @@ const handlerButtonClick = () => {
 };
 
 filterBtnElements.forEach((btn) => btn.addEventListener('click', handlerButtonClick));
-const filterCalendarEl = document.querySelector('.filter__calendar');
-initCalendar(filterCalendarEl, 'datepicker');
