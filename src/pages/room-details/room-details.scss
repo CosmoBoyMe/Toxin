@@ -118,6 +118,8 @@
     &-items {
       display: flex;
       flex-direction: column;
+
+      list-style: none;
       gap: 20px;
 
       @include medium {
@@ -188,6 +190,8 @@
     }
 
     &-list {
+      list-style: none;
+
       color: var(--darkShade75);
 
       font-family: var(--mainFont);
@@ -265,6 +269,8 @@
     &-list {
       display: flex;
       flex-direction: column;
+
+      list-style: none;
       row-gap: 23px;
     }
   }
@@ -305,6 +311,8 @@
     &-list {
       display: flex;
       flex-direction: column;
+
+      list-style: none;
       row-gap: 10px;
     }
 

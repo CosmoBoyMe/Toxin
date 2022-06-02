@@ -84,6 +84,8 @@
   &__amount-items {
     display: flex;
     flex-direction: column;
+
+    list-style: none;
     row-gap: 7px;
   }
 
