@@ -24,7 +24,9 @@
     
     Проверка стилей в проекте 
     npm run style
-
+    
+    Запуск eslint
+    npm run lint
 ## Страницы
 
 * [Главная страница](https://cosmoboyme.github.io/Toxin/)
