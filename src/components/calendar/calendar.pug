@@ -1,7 +1,6 @@
 include ../date-field/date-field.pug
-include ../datepicker/datepicker.pug
 
-mixin calendar({type='', title='', secondTitle= ''} = {}, datePickerId)
+mixin calendar({type='', title='', secondTitle= ''} = {})
   .calendar.js-calendar(data-type=type)
     if (type==="multiple")
       .calendar__fields
@@ -11,10 +10,11 @@ mixin calendar({type='', title='', secondTitle= ''} = {}, datePickerId)
         .calendar__field.js-calendar__field
           - const dateFieldTitleSecond = secondTitle ? secondTitle : "выезд";
           +date-field(dateFieldTitleSecond)
-    else
+    if (type==='single')
       .calendar__field.js-calendar__field
         - const dateFieldTittleThird = title ? title : "даты пребывания в отеле";
         +date-field(dateFieldTittleThird, 'ДД-ММ - ДД-ММ')
-
-    .calendar__date-picker.js-calendar__date-picker.js-calendar__date-picker_close
-      +datepicker(datePickerId)
+    .calendar__date-picker.js-calendar__date-picker(
+      class=type === "" ? "" : "js-calendar__date-picker_close",
+      class=type === "" ? "" : "calendar__date-picker_position_absolute"
+    )

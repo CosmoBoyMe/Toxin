@@ -3,34 +3,35 @@ include ../../../components/search-rooms-form/search-rooms-form.pug
 include ../../../components/sign-up-form/sign-up-form.pug
 include ../../../components/booking-form/booking-form.pug
 include ../../../components/sign-in-form/sign-in-form.pug
-include ../../../components/datepicker/datepicker.pug
+include ../../../components/calendar/calendar.pug
 include ../../../components/room-card/room-card.pug
 
 doctype html
 html(lang="en")
   +head('Cards')
-  body 
-    main.main
-      .main__inner 
-        .main__first-column
-          .main__search-rooms-form
-            +search-rooms-form
-          .main__sign-up-form
-            +sign-up-form
-        .main__second-column 
-          .main__booking-form
-            +booking-form
-          .main__sign-in-form
-            +sign-in-form
-        .main__third-column
-          .main__datepicker
-            +datepicker('main__third-column-datepicker')
-          .main__cards 
-            -
-              const cardItems = [
-                  { roomNumber: 888, price: 9990, isLux: true, reviewsCount: 145, imgsSrc: [require('../../../assets/img/rooms/room-1.jpg'),require('../../../assets/img/rooms/room-1.jpg'),require('../../../assets/img/rooms/room-1.jpg'),require('../../../assets/img/rooms/room-1.jpg')], rateNumber: 5 },
-                  { roomNumber: 840, price: 9900, reviewsCount: 65, imgsSrc: [require('../../../assets/img/rooms/room-2.jpg'),require('../../../assets/img/rooms/room-2.jpg'),require('../../../assets/img/rooms/room-2.jpg'),require('../../../assets/img/rooms/room-2.jpg')], rateNumber: 4}
-                  ];
-            each item in cardItems
-              .main__room-card
-                +room-card(item)
+  body
+    .cards
+      main.cards__main
+        .cards__inner 
+          .cards__first-column
+            .cards__search-rooms-form
+              +search-rooms-form
+            .cards__sign-up-form
+              +sign-up-form
+          .cards__second-column 
+            .cards__booking-form
+              +booking-form
+            .cards__sign-in-form
+              +sign-in-form
+          .cards__third-column
+            .cards__calendar
+              +calendar
+            .cards__cards 
+              -
+                const cardItems = [
+                    { roomNumber: 888, price: 9990, isLux: true, reviewsCount: 145, imgsSrc: [require('../../../assets/img/rooms/room-1.jpg'),require('../../../assets/img/rooms/room-1.jpg'),require('../../../assets/img/rooms/room-1.jpg'),require('../../../assets/img/rooms/room-1.jpg')], rateNumber: 5 },
+                    { roomNumber: 840, price: 9900, reviewsCount: 65, imgsSrc: [require('../../../assets/img/rooms/room-2.jpg'),require('../../../assets/img/rooms/room-2.jpg'),require('../../../assets/img/rooms/room-2.jpg'),require('../../../assets/img/rooms/room-2.jpg')], rateNumber: 4}
+                    ];
+              each item in cardItems
+                .cards__room-card
+                  +room-card(item)

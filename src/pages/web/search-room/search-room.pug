@@ -9,20 +9,19 @@ doctype html
 html(lang="en")
   +head('Search room')
   body 
-    .wrapper 
+    .search-room
       +header
-      main.main
-        .main__container
-          .main__inner 
-            .main__filter
+      main.search-room__main
+        .search-room__container
+          .search-room__inner 
+            .search-room__filter
               +filter
-            .main__content
-              .content 
-                h1.content__title Номера, которые мы для вас подобрали
-                .content__cards
-                  - const { roomCards } = require("../../../js/room-cards.js");
-                    each roomCard in roomCards 
-                      +room-card(roomCard)
-                .content__pagination
-                  +pagination
+            .search-room__content 
+              h1.search-room__content-title Номера, которые мы для вас подобрали
+              .search-room__content-cards
+                - const { roomCards } = require("../../../js/room-cards.js");
+                  each roomCard in roomCards 
+                    +room-card(roomCard)
+              .search-room__content-pagination
+                +pagination
       +footer

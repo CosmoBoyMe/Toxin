@@ -12,7 +12,7 @@ mixin booking-form
       .booking-form__room-price 9 990₽
         span.booking-form__room-days в сутки
     .booking-form__calendar.js-booking-form__calendar
-      +calendar({type: 'multiple'}, 'booking-form__datepicker')
+      +calendar({type: 'multiple'})
     .booking-form__dropdown.js-booking-form__dropdown
       +guest-dropdown({values: [1,2]})
     .booking-form__services-items 

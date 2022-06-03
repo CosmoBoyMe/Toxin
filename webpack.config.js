@@ -23,20 +23,7 @@ module.exports = {
     port: 8080,
   },
 
-  entry: {
-    main: path.resolve(__dirname, './src/pages/web/landing-page/landing-page.js'),
-    signIn: path.resolve(__dirname, './src/pages/web/sign-in/sign-in.js'),
-    signUp: path.resolve(__dirname, './src/pages/web/sign-up/sign-up.js'),
-    roomDetails: path.resolve(__dirname, './src/pages/web/room-details/room-details.js'),
-    searchRoom: path.resolve(__dirname, './src/pages/web/search-room/search-room.js'),
-    colors: path.resolve(__dirname, './src/pages/ui-kit/colors/colors.js'),
-    headersAndFooters: path.resolve(
-      __dirname,
-      './src/pages/ui-kit/headers-and-footers/headers-and-footers.js'
-    ),
-    formElements: path.resolve(__dirname, './src/pages/ui-kit/form-elements/form-elements.js'),
-    cards: path.resolve(__dirname, './src/pages/ui-kit/cards/cards.js'),
-  },
+  entry: path.resolve(__dirname, './src/entry.js'),
 
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -58,37 +45,31 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './src/pages/web/landing-page/landing-page.pug'),
-      chunks: ['main'],
     }),
 
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './src/pages/web/sign-in/sign-in.pug'),
       filename: 'signIn.html',
-      chunks: ['signIn'],
     }),
 
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './src/pages/web/sign-up/sign-up.pug'),
       filename: 'signUp.html',
-      chunks: ['signUp'],
     }),
 
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './src/pages/web/room-details/room-details.pug'),
       filename: 'roomDetails.html',
-      chunks: ['roomDetails'],
     }),
 
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './src/pages/web/search-room/search-room.pug'),
       filename: 'searchRoom.html',
-      chunks: ['searchRoom'],
     }),
 
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './src/pages/ui-kit/colors/colors.pug'),
       filename: 'colors.html',
-      chunks: ['colors'],
     }),
 
     new HtmlWebpackPlugin({
@@ -97,19 +78,16 @@ module.exports = {
         './src/pages/ui-kit/headers-and-footers/headers-and-footers.pug'
       ),
       filename: 'headersAndFooters.html',
-      chunks: ['headersAndFooters'],
     }),
 
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './src/pages/ui-kit/form-elements/form-elements.pug'),
       filename: 'formElements.html',
-      chunks: ['formElements'],
     }),
 
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './src/pages/ui-kit/cards/cards.pug'),
       filename: 'cards.html',
-      chunks: ['cards'],
     }),
 
     new CopyPlugin({

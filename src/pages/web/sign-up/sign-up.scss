@@ -1,21 +1,22 @@
-@import '../../../styles/index';
-
-.wrapper {
+.sign-up {
   display: flex;
   flex-direction: column;
 
   min-height: 100%;
-}
 
-.main {
-  flex: 1 1 auto;
-}
+  &__main {
+    flex: 1 1 auto;
 
-.sign-up {
-  background-image: url('/assets/img/login-bg.jpg');
-  background-repeat: no-repeat;
-  background-position-y: 80%;
-  background-size: 100%;
+    background-image: url('/assets/img/login-bg.jpg');
+    background-repeat: no-repeat;
+    background-position-y: 80%;
+    background-size: 100%;
+
+    @media (max-width: 1280px) {
+      background-position: center;
+      background-size: cover;
+    }
+  }
 
   &__inner {
     margin-bottom: 1px;
@@ -26,10 +27,5 @@
   &__form {
     max-width: 380px;
     margin: 0 auto;
-  }
-
-  @media (max-width: 1280px) {
-    background-position: center;
-    background-size: cover;
   }
 }

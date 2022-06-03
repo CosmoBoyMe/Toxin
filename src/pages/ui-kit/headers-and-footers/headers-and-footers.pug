@@ -6,8 +6,9 @@ doctype html
 html(lang="en")
   +head('Headers and Footers')
   body
-    main.main 
-      +header({activePageName: 'о нас'})
-      +header({activePageName: 'о нас', isAuth: true, userName: 'юлий цезарь'})
-      +footer
-      +footer
+    .headers-and-footers
+      main.headers-and-footers__main
+        +header({activePageName: 'о нас'})
+        +header({activePageName: 'о нас', isAuth: true, userName: 'юлий цезарь'})
+        +footer
+        +footer

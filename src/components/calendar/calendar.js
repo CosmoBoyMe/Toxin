@@ -1,12 +1,48 @@
-import { initDatePicker } from '../datepicker/datepicker';
+import AirDatepicker from 'air-datepicker';
 
-const initCalendar = (calendarEl, datePickerId) => {
+const initDatePicker = (element, settings = {}) => {
+  const { onClickApplyBtnHandler, newOpts = {} } = settings;
+  const datePickerInstance = new AirDatepicker(element, {
+    range: true,
+    minDate: new Date(),
+    buttons: [
+      {
+        content: 'очистить',
+        attrs: { type: 'button' },
+        onClick: (dpInstance) => dpInstance.clear(),
+      },
+      {
+        content: 'Применить',
+        attrs: { type: 'button' },
+        onClick: () => {
+          if (onClickApplyBtnHandler) {
+            return onClickApplyBtnHandler();
+          }
+          return undefined;
+        },
+      },
+    ],
+    dateFormat(date) {
+      return date.toLocaleString('ru', {
+        day: '2-digit',
+        month: 'short',
+      });
+    },
+    prevHtml: '<span class="air-datepicker-prev"></span>',
+    nextHtml: '<span class="air-datepicker-next"></span>',
+    navTitles: { days: 'MMMM yyyy' },
+  });
+
+  datePickerInstance.update(newOpts);
+};
+
+const initCalendar = (calendarEl) => {
   const datePickerEl = calendarEl.querySelector('.js-calendar__date-picker');
   const fieldElements = calendarEl.querySelectorAll('.js-calendar__field');
   const inputElements = calendarEl.querySelectorAll('input');
   const type = calendarEl.getAttribute('data-type');
 
-  const datePickerToggleHandler = () => {
+  const handlerDatePickerClick = () => {
     datePickerEl.classList.toggle('js-calendar__date-picker_close');
   };
 
@@ -23,7 +59,7 @@ const initCalendar = (calendarEl, datePickerId) => {
   };
 
   fieldElements.forEach((field) => {
-    field.addEventListener('click', datePickerToggleHandler);
+    field.addEventListener('click', handlerDatePickerClick);
   });
 
   if (type === 'multiple') {
@@ -41,30 +77,31 @@ const initCalendar = (calendarEl, datePickerId) => {
         month: '2-digit',
       });
 
-    initDatePicker(datePickerId, {
-      onClickApplyBtnHandler: datePickerToggleHandler,
+    initDatePicker(datePickerEl, {
+      onClickApplyBtnHandler: handlerDatePickerClick,
       newOpts: { onSelect, dateFormat },
     });
-  } else {
+    initOutsideClick();
+  } else if (type === 'single') {
     const onSelect = ({ formattedDate }) => {
       const inputElement = inputElements[0];
       const formattedDateValue = formattedDate.join(' - ');
       inputElement.value = formattedDateValue;
     };
 
-    initDatePicker(datePickerId, {
-      onClickApplyBtnHandler: datePickerToggleHandler,
+    initDatePicker(datePickerEl, {
+      onClickApplyBtnHandler: handlerDatePickerClick,
       newOpts: {
         onSelect,
       },
     });
+    initOutsideClick();
+  } else {
+    initDatePicker(datePickerEl);
   }
-  initOutsideClick();
 };
 
 const calendarElements = document.querySelectorAll('.js-calendar');
 calendarElements.forEach((calendarEl) => {
-  const datePickerEl = calendarEl.querySelector('.js-datepicker');
-  const datePickerId = datePickerEl.getAttribute('id');
-  initCalendar(calendarEl, datePickerId);
+  initCalendar(calendarEl);
 });

@@ -1,8 +1,9 @@
 @import '../../../styles/vars';
-@import '../../../styles/index';
 
-.main {
-  padding-top: 140px;
+.form-elements {
+  &__main {
+    padding-top: 140px;
+  }
 
   &__container {
     max-width: 1200px;
