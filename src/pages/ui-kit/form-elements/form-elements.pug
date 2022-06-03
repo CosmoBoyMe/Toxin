@@ -99,8 +99,8 @@ html(lang="en")
               .main__rich-checkbox-buttons
                 -
                   const richCheckboxItems = [
-                    {title: 'Широкий коридор', text: 'Ширина коридоров в номере не менее 91 см.'},
-                    {title: 'Помощник для инвалидов', text: 'На 1 этаже вас встретит специалист  и проводит до номера.'}]
+                    {title: 'Широкий коридор', texts: ["Ширина коридоров в номере", "не менее 91 см."]},
+                    {title: 'Помощник для инвалидов', texts: ["На 1 этаже вас встретит специалист", "и проводит до номера."]}]
                 +checkbox-list('rich Checkbox Buttons', richCheckboxItems, type='rich')
             .main__third-column
               .main__range-slider 
