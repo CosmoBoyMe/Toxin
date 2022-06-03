@@ -9,5 +9,9 @@
   font-weight: 400;
   line-height: 20px;
 
+  &__icon {
+    cursor: pointer;
+  }
+
   @include text-gradient;
 }

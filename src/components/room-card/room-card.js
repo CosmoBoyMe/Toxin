@@ -29,7 +29,8 @@ cardElements.forEach((element) => {
     thousand: ' ',
     suffix: '₽',
   });
-
   const formattedCardPriceValue = priceFormat.to(Number(cardPriceEl.textContent));
   cardPriceEl.textContent = formattedCardPriceValue;
+  const ratingEl = element.querySelector('.js-rating');
+  ratingEl.addEventListener('click', (event) => event.preventDefault());
 });
