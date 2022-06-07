@@ -1,6 +1,7 @@
 include ../footer-list/footer-list.pug
 include ../subscription-field/subscription-field.pug
 include ../logo/logo.pug
+include ../footer-icon-list/footer-icon-list.pug
 
 mixin footer
   footer.footer
@@ -32,25 +33,4 @@ mixin footer
         .footer__container
           .footer__bottom-inner 
             p.footer__copyright-text Copyright © 2018 Toxin отель. Все права защищены.
-            ul.footer__icon-list
-              li.footer__icon-item
-                a.footer__icon-link(
-                  href="https://twitter.com",
-                  target="_blank",
-                  rel="noopener noreferrer"
-                ) 
-                  span.fab.fa-twitter
-              li.footer__icon-item
-                a.footer__icon-link(
-                  href="https://www.facebook.com",
-                  target="_blank",
-                  rel="noopener noreferrer"
-                )
-                  span.fab.fa-facebook-square
-              li.footer__icon-item
-                a.footer__icon-link(
-                  href="https://www.instagram.com/",
-                  target="_blank",
-                  rel="noopener noreferrer"
-                )
-                  span.fab.fa-instagram
+            +footer-icon-list

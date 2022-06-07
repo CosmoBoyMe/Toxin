@@ -110,22 +110,4 @@
       text-align: center;
     }
   }
-
-  &__icon-list {
-    display: flex;
-
-    margin-top: 4px;
-
-    list-style: none;
-    column-gap: 23px;
-  }
-
-  &__icon-link {
-    text-decoration: none;
-
-    font-size: 24px;
-    line-height: 24px;
-
-    @include text-gradient;
-  }
 }

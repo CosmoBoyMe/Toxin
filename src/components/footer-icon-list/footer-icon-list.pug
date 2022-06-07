@@ -1,0 +1,12 @@
+mixin footer-icon-list
+  -
+    const items = [
+      { href: "https://twitter.com", iconClassName: "fa-twitter" },
+      { href: "https://www.facebook.com", iconClassName: "fa-facebook-square" },
+      { href: "https://www.instagram.com/", iconClassName: "fa-instagram" }];
+
+  ul.footer-icon-list
+    each item in items
+      li.footer-icon-list__item
+        a.footer-icon-list__link(href=item.href, target="_blank", rel="noopener noreferrer")
+          span.fab(class=item.iconClassName)
