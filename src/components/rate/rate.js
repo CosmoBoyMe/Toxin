@@ -1,30 +1,41 @@
 const STAR_ICON_NAME = 'star';
 const STAR_WITH_BORDER_ICON_NAME = 'star_border';
 
-const initRate = (element) => {
-  const starElements = element.querySelectorAll('.js-rate__icon');
-  const starCounts = starElements.length;
+class Rate {
+  constructor(element) {
+    const starIconElements = element.querySelectorAll('.js-rate__icon');
+    this.elements = { element, starIconElements };
+    this.starCounts = starIconElements.length;
+    this.init();
+  }
 
-  starElements.forEach((starElement, index) => {
-    const handleStarClick = (event) => {
-      const { target } = event;
-      const text = target.textContent;
-      if (text === STAR_ICON_NAME) {
-        for (let i = index + 1; i < starCounts; i += 1) {
-          starElements[i].textContent = STAR_WITH_BORDER_ICON_NAME;
-        }
-      } else {
-        for (let i = index; i >= 0; i -= 1) {
-          starElements[i].textContent = STAR_ICON_NAME;
-        }
+  handleStarIconClick = (event, index) => {
+    const { starCounts, elements } = this;
+    const { starIconElements } = elements;
+
+    const { target } = event;
+    const text = target.textContent;
+    if (text === STAR_ICON_NAME) {
+      for (let i = index + 1; i < starCounts; i += 1) {
+        starIconElements[i].textContent = STAR_WITH_BORDER_ICON_NAME;
       }
-    };
-    starElement.addEventListener('click', handleStarClick);
-  });
-};
+    } else {
+      for (let i = index; i >= 0; i -= 1) {
+        starIconElements[i].textContent = STAR_ICON_NAME;
+      }
+    }
+  };
 
-const rateElements = document.querySelectorAll('.js-rate');
+  bindStarIconsListeners() {
+    const { starIconElements } = this.elements;
+    starIconElements.forEach((element, index) =>
+      element.addEventListener('click', (event) => this.handleStarIconClick(event, index))
+    );
+  }
 
-rateElements.forEach((element) => {
-  initRate(element);
-});
+  init() {
+    this.bindStarIconsListeners();
+  }
+}
+
+export { Rate };

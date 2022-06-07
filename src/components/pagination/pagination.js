@@ -1,37 +1,46 @@
 const FIRST_PAGE_NUMBER = 1;
 const PAGINATION_BUTTONS_COUNT = 5;
 
-const initPagination = (element) => {
-  const totalItemsData = element.getAttribute('data-totalItems');
-  const itemsPerPageData = element.getAttribute('data-itemsPerPage');
-  const totalItems = Number(totalItemsData);
-  const itemsPerPage = Number(itemsPerPageData);
+class Pagination {
+  constructor(element) {
+    const totalItemsData = element.getAttribute('data-totalItems');
+    const itemsPerPageData = element.getAttribute('data-itemsPerPage');
+    const buttonsContainerEl = element.querySelector('.js-pagination__buttons');
+    const paginationTextCounterEl = element.querySelector('.js-pagination__text-counter');
 
-  const buttonsContainerEl = element.querySelector('.js-pagination__buttons');
-  const paginationTextCounterEl = element.querySelector('.js-pagination__text-counter');
-  const totalPage = Math.ceil(totalItems / itemsPerPage);
-  let activePageNumber = 1;
+    const totalItemsCount = Number(totalItemsData);
+    const itemsPerPage = Number(itemsPerPageData);
+    const totalPage = Math.ceil(totalItemsCount / itemsPerPage);
 
-  const updateText = () => {
+    this.totalItemsCount = totalItemsCount;
+    this.itemsPerPage = itemsPerPage;
+    this.totalPage = totalPage;
+    this.elements = { buttonsContainerEl, paginationTextCounterEl };
+    this.activePageNumber = 1;
+    this.render();
+  }
+
+  updateText() {
+    const { activePageNumber, itemsPerPage, totalItemsCount, elements } = this;
     const lastItem = activePageNumber * itemsPerPage;
-    const lastItemsNumber = lastItem > totalItems ? totalItems : lastItem;
-    const totalCountText = totalItems > 100 ? '100+' : totalItems;
-    paginationTextCounterEl.textContent = `${
+    const lastItemsNumber = lastItem > totalItemsCount ? totalItemsCount : lastItem;
+    const totalCountText = totalItemsCount > 100 ? '100+' : totalItemsCount;
+
+    elements.paginationTextCounterEl.textContent = `${
       itemsPerPage * (activePageNumber - 1) + 1
     } - ${lastItemsNumber} из ${totalCountText}`;
-  };
+  }
 
-  const createPageButton = (pageNumber) => {
+  createPageButton(pageNumber) {
     const buttonEl = document.createElement('button');
     buttonEl.textContent = pageNumber;
     buttonEl.classList.add('js-pagination__btn', 'js-pagination__page');
     const handlerPageButtonClick = () => {
-      activePageNumber = pageNumber;
-      // eslint-disable-next-line no-use-before-define
-      render();
+      this.activePageNumber = pageNumber;
+      this.render();
     };
 
-    if (activePageNumber === pageNumber) {
+    if (this.activePageNumber === pageNumber) {
       buttonEl.classList.add(
         'js-pagination__btn',
         'js-pagination__page',
@@ -42,9 +51,10 @@ const initPagination = (element) => {
     }
     buttonEl.addEventListener('click', handlerPageButtonClick);
     return buttonEl;
-  };
+  }
 
-  const createNextButton = () => {
+  createNextButton() {
+    const { activePageNumber, totalPage } = this;
     const nextButton = document.createElement('button');
     nextButton.classList.add('js-pagination__btn', 'js-pagination__btn-next');
     nextButton.setAttribute('type', 'button');
@@ -54,23 +64,24 @@ const initPagination = (element) => {
       nextButton.setAttribute('disable', true);
     } else {
       const handlerNextButtonClick = () => {
-        activePageNumber += 1;
-        // eslint-disable-next-line no-use-before-define
-        render();
+        this.activePageNumber += 1;
+        this.render();
       };
       nextButton.addEventListener('click', handlerNextButtonClick);
     }
     return nextButton;
-  };
+  }
 
-  const createDotsIcon = () => {
+  // eslint-disable-next-line class-methods-use-this
+  createDotsIcon() {
     const dotsIconEl = document.createElement('i');
     dotsIconEl.textContent = '...';
     dotsIconEl.classList.add('js-pagination__dots');
     return dotsIconEl;
-  };
+  }
 
-  const getMiddle = () => {
+  createMiddle() {
+    const { activePageNumber, totalPage } = this;
     const result = [];
     const leftPageNumber = activePageNumber - 1;
     const rightPageNumber = activePageNumber + 1;
@@ -78,65 +89,64 @@ const initPagination = (element) => {
     switch (activePageNumber) {
       case 1:
       case 2:
-        result.push(createPageButton(2));
-        result.push(createPageButton(3));
-        result.push(createDotsIcon());
+        result.push(this.createPageButton(2));
+        result.push(this.createPageButton(3));
+        result.push(this.createDotsIcon());
         break;
       case 3:
-        result.push(createPageButton(leftPageNumber));
-        result.push(createPageButton(activePageNumber));
-        result.push(createPageButton(rightPageNumber));
-        result.push(createDotsIcon());
+        result.push(this.createPageButton(leftPageNumber));
+        result.push(this.createPageButton(activePageNumber));
+        result.push(this.createPageButton(rightPageNumber));
+        result.push(this.createDotsIcon());
         break;
       case totalPage - 1:
-        result.push(createDotsIcon());
-        result.push(createPageButton(leftPageNumber));
-        result.push(createPageButton(activePageNumber));
+        result.push(this.createDotsIcon());
+        result.push(this.createPageButton(leftPageNumber));
+        result.push(this.createPageButton(activePageNumber));
         break;
       case totalPage - 2:
-        result.push(createDotsIcon());
-        result.push(createPageButton(leftPageNumber));
-        result.push(createPageButton(activePageNumber));
-        result.push(createPageButton(rightPageNumber));
+        result.push(this.createDotsIcon());
+        result.push(this.createPageButton(leftPageNumber));
+        result.push(this.createPageButton(activePageNumber));
+        result.push(this.createPageButton(rightPageNumber));
         break;
       case totalPage:
-        result.push(createDotsIcon());
-        result.push(createPageButton(activePageNumber - 2));
-        result.push(createPageButton(leftPageNumber));
+        result.push(this.createDotsIcon());
+        result.push(this.createPageButton(activePageNumber - 2));
+        result.push(this.createPageButton(leftPageNumber));
         break;
 
       default:
-        result.push(createDotsIcon());
-        result.push(createPageButton(leftPageNumber));
-        result.push(createPageButton(activePageNumber));
-        result.push(createPageButton(rightPageNumber));
-        result.push(createDotsIcon());
+        result.push(this.createDotsIcon());
+        result.push(this.createPageButton(leftPageNumber));
+        result.push(this.createPageButton(activePageNumber));
+        result.push(this.createPageButton(rightPageNumber));
+        result.push(this.createDotsIcon());
     }
     return result;
-  };
+  }
 
-  const render = () => {
+  render() {
+    const { totalPage, elements } = this;
+    const { buttonsContainerEl } = elements;
+
     buttonsContainerEl.innerHTML = '';
     if (totalPage <= PAGINATION_BUTTONS_COUNT) {
       const buttons = [];
-      const nextButton = createNextButton();
+      const nextButton = this.createNextButton();
       for (let i = FIRST_PAGE_NUMBER; i <= totalPage; i += 1) {
-        buttons.push(createPageButton(i));
+        buttons.push(this.createPageButton(i));
       }
       buttonsContainerEl.append(...buttons, nextButton);
     } else {
-      const firstButton = createPageButton(FIRST_PAGE_NUMBER);
-      const lastButton = createPageButton(totalPage);
-      const middleButtons = getMiddle();
-      const nextButton = createNextButton();
+      const firstButton = this.createPageButton(FIRST_PAGE_NUMBER);
+      const lastButton = this.createPageButton(totalPage);
+      const middleButtons = this.createMiddle();
+      const nextButton = this.createNextButton();
       buttonsContainerEl.append(firstButton, ...middleButtons, lastButton, nextButton);
     }
-    updateText();
-  };
+    this.updateText();
+  }
+}
 
-  render();
-};
-
-const paginationElements = document.querySelectorAll('.js-pagination');
-
-paginationElements.forEach((element) => initPagination(element));
+export { Pagination };
