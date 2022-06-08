@@ -8,7 +8,7 @@ mixin checkbox-list(title='', items=[], type='')
       if (type === 'rich')
         each item in items
           li.checkbox-list__item
-            +rich-checkbox-item(item.title, item.texts, items.checked)
+            +rich-checkbox-item(item.title, item.text, items.checked)
       else
         each item in items
           li.checkbox-list__item

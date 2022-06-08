@@ -70,6 +70,8 @@
   &__text {
     margin-left: 30px;
 
+    white-space: pre-line;
+
     font-family: var(--mainFont);
     font-size: 12px;
     font-weight: 400;

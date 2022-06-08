@@ -24,7 +24,7 @@ mixin filter
           - const checkboxItems = [{ title: "Можно курить" }, { title: "Можно с питомцами" }, { title: "Можно пригласить гостей (до 10 человек)" }];
           +checkbox-list('правила дома', checkboxItems, '')
         .filter__availability
-          - const richCheckboxItems = [{ title: "Широкий коридор", texts: ["Ширина коридоров в номере", "не менее 91 см."] }, { title: "Помощник для инвалидов", texts: ["На 1 этаже вас встретит специалист", "и проводит до номера."] }];
+          - const richCheckboxItems = [{ title: "Широкий коридор", text: "Ширина коридоров в номере \n не менее 91 см."}, { title: "Помощник для инвалидов", text: "На 1 этаже вас встретит специалист \n и проводит до номера." }];
           +checkbox-list('доступность', richCheckboxItems, 'rich')
         .filter__room-dropdown.js-filter__room-dropdown
           +room-dropdown({values: [2,2]})
