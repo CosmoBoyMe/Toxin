@@ -226,6 +226,7 @@
   }
 
   &__pagination {
+    width: fit-content;
     margin-bottom: 234px;
 
     &-title {
@@ -238,10 +239,6 @@
       font-size: 12px;
       font-weight: 700;
       line-height: 15px;
-    }
-
-    &-pagination {
-      margin-left: -78px;
     }
   }
 
