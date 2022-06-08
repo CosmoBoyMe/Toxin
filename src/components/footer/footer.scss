@@ -4,21 +4,17 @@
 .footer {
   background-color: #fff;
 
-  &__inner {
-    @include large {
-      padding: 120px 0;
-    }
-  }
-
   &__container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
   }
 
-  &__top-inner {
+  &__top {
     display: flex;
 
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 100px 0;
 
     @include large {
@@ -109,5 +105,9 @@
 
       text-align: center;
     }
+  }
+
+  @include large {
+    padding: 120px 0;
   }
 }
