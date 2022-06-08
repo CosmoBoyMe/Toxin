@@ -1,107 +1,118 @@
 import AirDatepicker from 'air-datepicker';
 
-const initDatePicker = (element, settings = {}) => {
-  const { onClickApplyBtnHandler, newOpts = {} } = settings;
-  const datePickerInstance = new AirDatepicker(element, {
-    range: true,
-    minDate: new Date(),
-    buttons: [
-      {
-        content: 'очистить',
-        attrs: { type: 'button' },
-        onClick: (dpInstance) => dpInstance.clear(),
-      },
-      {
-        content: 'Применить',
-        attrs: { type: 'button' },
-        onClick: () => {
-          if (onClickApplyBtnHandler) {
-            return onClickApplyBtnHandler();
-          }
-          return undefined;
-        },
-      },
-    ],
-    dateFormat(date) {
-      return date.toLocaleString('ru', {
-        day: '2-digit',
-        month: 'short',
-      });
-    },
-    prevHtml: '<span class="air-datepicker-prev"></span>',
-    nextHtml: '<span class="air-datepicker-next"></span>',
-    navTitles: { days: 'MMMM yyyy' },
-  });
+class Calendar {
+  constructor(element) {
+    const datePickerEl = element.querySelector('.js-calendar__date-picker');
+    const fieldElements = element.querySelectorAll('.js-calendar__field');
+    const inputElements = element.querySelectorAll('input');
+    const type = element.getAttribute('data-type');
 
-  datePickerInstance.update(newOpts);
-};
-
-const initCalendar = (calendarEl) => {
-  const datePickerEl = calendarEl.querySelector('.js-calendar__date-picker');
-  const fieldElements = calendarEl.querySelectorAll('.js-calendar__field');
-  const inputElements = calendarEl.querySelectorAll('input');
-  const type = calendarEl.getAttribute('data-type');
-
-  const handlerDatePickerClick = () => {
-    datePickerEl.classList.toggle('js-calendar__date-picker_close');
-  };
-
-  const initOutsideClick = () => {
-    const handlerOutsideClick = (event) => {
-      if (!calendarEl.contains(event.target)) {
-        datePickerEl.classList.add('js-calendar__date-picker_close');
-      }
+    this.elements = {
+      element,
+      datePickerEl,
+      fieldElements,
+      inputElements,
     };
-    datePickerEl.addEventListener('click', (event) => {
-      event.stopPropagation();
-    });
-    document.addEventListener('click', handlerOutsideClick);
-  };
+    this.type = type;
 
-  fieldElements.forEach((field) => {
-    field.addEventListener('click', handlerDatePickerClick);
-  });
-
-  if (type === 'multiple') {
-    const onSelect = ({ formattedDate }) => {
-      const [firstDate, lastDate] = formattedDate;
-      const [firstInputEl, lastInputEl] = inputElements;
-      firstInputEl.value = firstDate ?? '';
-      lastInputEl.value = lastDate ?? '';
-    };
-
-    const dateFormat = (date) =>
-      date.toLocaleString('ru', {
-        year: 'numeric',
-        day: '2-digit',
-        month: '2-digit',
-      });
-
-    initDatePicker(datePickerEl, {
-      onClickApplyBtnHandler: handlerDatePickerClick,
-      newOpts: { onSelect, dateFormat },
-    });
-    initOutsideClick();
-  } else if (type === 'single') {
-    const onSelect = ({ formattedDate }) => {
-      const inputElement = inputElements[0];
-      const formattedDateValue = formattedDate.join(' - ');
-      inputElement.value = formattedDateValue;
-    };
-
-    initDatePicker(datePickerEl, {
-      onClickApplyBtnHandler: handlerDatePickerClick,
-      newOpts: {
-        onSelect,
-      },
-    });
-    initOutsideClick();
-  } else {
-    initDatePicker(datePickerEl);
+    this.init();
   }
-};
 
-const calendarElements = document.querySelectorAll('.js-calendar');
-calendarElements.forEach((calendarEl) => {
-  initCalendar(calendarEl);
-});
+  initDatePicker() {
+    const { type, elements } = this;
+    const { inputElements } = elements;
+    const { datePickerEl } = this.elements;
+
+    let options = {};
+    const defaultOptions = {
+      range: true,
+      minDate: new Date(),
+      buttons: [
+        {
+          content: 'очистить',
+          attrs: { type: 'button' },
+          onClick: (dpInstance) => dpInstance.clear(),
+        },
+        {
+          content: 'Применить',
+          attrs: { type: 'button' },
+          onClick: () => this.toggleCloseDatePicker(),
+        },
+      ],
+      dateFormat(date) {
+        return date.toLocaleString('ru', {
+          day: '2-digit',
+          month: 'short',
+        });
+      },
+      prevHtml: '<span class="air-datepicker-prev"></span>',
+      nextHtml: '<span class="air-datepicker-next"></span>',
+      navTitles: { days: 'MMMM yyyy' },
+    };
+
+    if (type === 'multiple') {
+      const onSelect = ({ formattedDate }) => {
+        const [firstDate, lastDate] = formattedDate;
+        const [firstInputEl, lastInputEl] = inputElements;
+        firstInputEl.value = firstDate ?? '';
+        lastInputEl.value = lastDate ?? '';
+      };
+
+      const dateFormat = (date) =>
+        date.toLocaleString('ru', {
+          year: 'numeric',
+          day: '2-digit',
+          month: '2-digit',
+        });
+
+      options = {
+        onSelect,
+        dateFormat,
+      };
+    } else if (type === 'single') {
+      const onSelect = ({ formattedDate }) => {
+        const inputElement = inputElements[0];
+        const formattedDateValue = formattedDate.join(' - ');
+        inputElement.value = formattedDateValue;
+      };
+
+      options = {
+        onSelect,
+      };
+    }
+
+    new AirDatepicker(datePickerEl, { ...defaultOptions, ...options }); // eslint-disable-line no-new
+  }
+
+  handlerOutsideClick = (event) => {
+    const { element, datePickerEl } = this.elements;
+    if (!element.contains(event.target)) {
+      datePickerEl.classList.add('js-calendar__date-picker_close');
+      document.removeEventListener('click', this.handlerOutsideClick);
+    }
+  };
+
+  handleFieldClick = () => {
+    this.toggleCloseDatePicker();
+    document.addEventListener('click', this.handlerOutsideClick);
+  };
+
+  toggleCloseDatePicker() {
+    const { datePickerEl } = this.elements;
+    datePickerEl.classList.toggle('js-calendar__date-picker_close');
+  }
+
+  bindEventListeners() {
+    const { fieldElements } = this.elements;
+    fieldElements.forEach((field) => {
+      field.addEventListener('click', this.handleFieldClick);
+    });
+  }
+
+  init() {
+    this.initDatePicker();
+    this.bindEventListeners();
+  }
+}
+
+export { Calendar };

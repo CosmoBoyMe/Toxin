@@ -1,11 +1,18 @@
 import Inputmask from 'inputmask';
 
-const maskedInputElements = document.querySelectorAll('.js-masked-field__input');
+class MaskedField {
+  constructor(element) {
+    this.element = element;
+    this.init();
+  }
 
-maskedInputElements.forEach((element) => {
-  Inputmask({
-    alias: 'datetime',
-    placeholder: 'ДД.ММ.ГГГГ',
-    inputFormat: 'dd.mm.yyyy',
-  }).mask(element);
-});
+  init() {
+    new Inputmask({
+      alias: 'datetime',
+      placeholder: 'ДД.ММ.ГГГГ',
+      inputFormat: 'dd.mm.yyyy',
+    }).mask(this.element);
+  }
+}
+
+export { MaskedField };

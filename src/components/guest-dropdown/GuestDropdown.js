@@ -1,4 +1,4 @@
-import { initDropdown } from '../dropdown/dropdown';
+import { Dropdown } from '../dropdown/Dropdown';
 import { wording } from '../../helpers/wording';
 
 class GuestDropdown {
@@ -23,7 +23,8 @@ class GuestDropdown {
   };
 
   init() {
-    initDropdown({ dropdownEl: this.element, onChangeTextValue: this.onChangeTextValue });
+    // eslint-disable-next-line no-new
+    new Dropdown({ element: this.element, onChangeTextValue: this.onChangeTextValue });
   }
 }
 

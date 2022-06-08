@@ -1,4 +1,4 @@
-import { initDropdown } from '../dropdown/dropdown';
+import { Dropdown } from '../dropdown/Dropdown';
 
 class RoomDropdown {
   constructor(element) {
@@ -14,7 +14,7 @@ class RoomDropdown {
   init() {
     const { element, wordsDeclensions } = this;
 
-    initDropdown({ dropdownEl: element, wordsDeclensions });
+    new Dropdown({ element, wordsDeclensions }); // eslint-disable-line no-new
   }
 }
 export { RoomDropdown };
