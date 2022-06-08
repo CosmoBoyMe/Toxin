@@ -1,12 +1,10 @@
 import Swiper, { Navigation, Pagination } from 'swiper';
-import wNumb from 'wnumb';
 
-// eslint-disable-next-line import/no-unresolved
-import 'swiper/css';
+import 'swiper/css'; // eslint-disable-line import/no-unresolved
 
 class RoomCard {
   constructor(element) {
-    const cardPriceEl = element.querySelector('.js-room-card__description-header-value');
+    const cardPriceEl = element.querySelector('.js-card-header-info__value');
     const ratingEl = element.querySelector('.js-rating');
     this.elements = {
       cardPriceEl,
@@ -16,19 +14,7 @@ class RoomCard {
     this.init();
   }
 
-  formatCardPrice() {
-    const { cardPriceEl } = this.elements;
-
-    const priceFormat = wNumb({
-      thousand: ' ',
-      suffix: '₽',
-    });
-    const cardPriceValue = Number(cardPriceEl.textContent);
-    const formattedCardPriceValue = priceFormat.to(cardPriceValue);
-    cardPriceEl.textContent = formattedCardPriceValue;
-  }
-
-  bindRatingListener() {
+  bindEventListeners() {
     const { ratingEl } = this.elements;
     ratingEl.addEventListener('click', (event) => event.preventDefault());
   }
@@ -54,8 +40,7 @@ class RoomCard {
   }
 
   init() {
-    this.formatCardPrice();
-    this.bindRatingListener();
+    this.bindEventListeners();
     this.initSwiper();
   }
 }

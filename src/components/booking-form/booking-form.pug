@@ -1,16 +1,12 @@
 include ../submit-btn/submit-btn.pug
 include ../calendar/calendar.pug
 include ../guest-dropdown/guest-dropdown.pug
+include ../card-header-info/card-header-info.pug
 
 mixin booking-form
   form.booking-form 
     .booking-form__about
-      .booking-form__room-numbers 
-        span.booking-form__room-symbol №
-        | 888
-        span.booking-form__room-status люкс
-      .booking-form__room-price 9 990₽
-        span.booking-form__room-days в сутки
+      +card-header-info({isLarge: true})
     .booking-form__calendar.js-booking-form__calendar
       +calendar({type: 'multiple'})
     .booking-form__dropdown.js-booking-form__dropdown

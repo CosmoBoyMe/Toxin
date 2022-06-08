@@ -1,4 +1,5 @@
 include ../rate/rate.pug
+include ../card-header-info/card-header-info.pug
 
 mixin room-card({roomNumber=1, price=9999, isLux=true, reviewsCount=10, imgsSrc='', rateNumber=5} = {})
   .room-card.js-room-card
@@ -16,14 +17,7 @@ mixin room-card({roomNumber=1, price=9999, isLux=true, reviewsCount=10, imgsSrc=
     .room-card__description
       a.room-card__description-link(href="/mock-address/change-me")
         .room-card__description-header
-          .room-card__description-header-room-number
-            span.room-card__description-header-symbol №
-            span.room-card__description-header-number= roomNumber
-            if (isLux)
-              span.room-card__description-header-status люкс
-          .room-card__description-header-price
-            span.room-card__description-header-value.js-room-card__description-header-value= price
-            span.room-card__description-header-days в сутки
+          +card-header-info({isLux, price, roomNumber})
         .room-card__description-footer
           .rating.js-rating
             +rate(rateNumber)

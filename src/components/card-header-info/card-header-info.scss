@@ -1,0 +1,61 @@
+.card-header-info {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &__number {
+    color: var(--darkShade);
+
+    font-family: var(--mainFont);
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 29px;
+
+    &_size_large {
+      font-size: 24px;
+    }
+  }
+
+  &__symbol {
+    margin-right: 5px;
+
+    color: var(--darkShade);
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+  }
+
+  &__status {
+    margin-left: 8px;
+
+    text-transform: uppercase;
+
+    color: var(--purple);
+
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+  }
+
+  &__price {
+    color: var(--darkShade50);
+
+    font-family: var(--mainFont);
+  }
+
+  &__value {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+  }
+
+  &__days {
+    margin-left: 2px;
+
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+}

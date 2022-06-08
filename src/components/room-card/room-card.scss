@@ -94,64 +94,9 @@
     }
 
     &-header {
-      display: flex;
-      align-items: baseline;
-      flex-wrap: wrap;
-      justify-content: space-between;
-
       padding-bottom: 8px;
 
       border-bottom: 1px solid rgb(31 32 65 / 10%);
-      gap: 10px;
-
-      &-room-number {
-        color: var(--darkShade);
-
-        font-family: var(--mainFont);
-        font-size: 19px;
-        font-weight: 700;
-        line-height: 29px;
-      }
-
-      &-symbol {
-        margin-right: 5px;
-
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 17px;
-      }
-
-      &-status {
-        margin-left: 8px;
-
-        text-transform: uppercase;
-
-        color: var(--purple);
-
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 15px;
-      }
-
-      &-price {
-        color: var(--darkShade50);
-
-        font-family: var(--mainFont);
-      }
-
-      &-value {
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 18px;
-      }
-
-      &-days {
-        margin-left: 2px;
-
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 18px;
-      }
     }
 
     &-footer {
