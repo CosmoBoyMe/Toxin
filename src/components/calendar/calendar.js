@@ -87,7 +87,7 @@ class Calendar {
   handlerOutsideClick = (event) => {
     const { element, datePickerEl } = this.elements;
     if (!element.contains(event.target)) {
-      datePickerEl.classList.add('js-calendar__date-picker_close');
+      datePickerEl.classList.add('calendar__date-picker_closed');
       document.removeEventListener('click', this.handlerOutsideClick);
     }
   };
@@ -99,7 +99,7 @@ class Calendar {
 
   toggleCloseDatePicker() {
     const { datePickerEl } = this.elements;
-    datePickerEl.classList.toggle('js-calendar__date-picker_close');
+    datePickerEl.classList.toggle('calendar__date-picker_closed');
   }
 
   bindEventListeners() {

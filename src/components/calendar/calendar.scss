@@ -13,18 +13,18 @@
     }
   }
 
-  &__date-picker_position_absolute {
-    position: absolute;
-    z-index: 1000;
-    top: calc(100% + 5px);
+  &__date-picker {
+    &_position_absolute {
+      position: absolute;
+      z-index: 1000;
+      top: calc(100% + 5px);
 
-    width: 100%;
-  }
-}
+      width: 100%;
+    }
 
-.js-calendar {
-  &__date-picker_close {
-    display: none;
+    &_closed {
+      display: none;
+    }
   }
 }
 

@@ -30,7 +30,7 @@ class RoomCard {
         type: 'bullets',
         clickable: true,
         bulletClass: 'js-room-card__pagination-bullet',
-        bulletActiveClass: 'js-room-card__pagination-bullet_active',
+        bulletActiveClass: 'room-card__pagination-bullet_active',
       },
       navigation: {
         nextEl: '.js-room-card__btn-next',

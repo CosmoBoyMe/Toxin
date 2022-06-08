@@ -14,8 +14,8 @@ class Header {
 
   handlerNavBurgerClick = () => {
     const { burgerEl, contentEl } = this.elements;
-    burgerEl.classList.toggle('js-header__nav-burger_active');
-    contentEl.classList.toggle('js-header__nav-content_active');
+    burgerEl.classList.toggle('header__nav-burger_active');
+    contentEl.classList.toggle('header__nav-content_active');
   };
 
   bindBurgerListener() {

@@ -32,7 +32,7 @@
     text-overflow: ellipsis;
 
     color: var(--darkShade75);
-    border: 1px solid var(--darkShade50);
+    border: 1px solid var(--darkShade25);
     border-radius: 4px 4px 0 0;
 
     font-family: var(--mainFont);
@@ -80,6 +80,10 @@
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     background-color: #fff;
+
+    &_active {
+      display: block;
+    }
   }
 
   &__amount-items {
@@ -101,15 +105,9 @@
     &_position_margin-left {
       margin-left: auto;
     }
-  }
-}
 
-.js-dropdown {
-  &__menu_active {
-    display: block;
-  }
-
-  &__btn_hidden {
-    display: none;
+    &_hidden {
+      display: none;
+    }
   }
 }

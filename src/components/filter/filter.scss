@@ -13,6 +13,10 @@
   }
 
   &__content {
+    &_visible {
+      transform: translateX(0);
+    }
+
     @include extra-large {
       position: fixed;
       z-index: 1000;
@@ -111,11 +115,5 @@
 
   &__room-dropdown {
     margin-bottom: 15px;
-  }
-}
-
-.js-filter {
-  &__content_visible {
-    transform: translateX(0);
   }
 }

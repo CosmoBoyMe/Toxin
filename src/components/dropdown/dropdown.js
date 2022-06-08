@@ -64,9 +64,9 @@ class Dropdown {
     const { clearBtnEl } = elements;
 
     if (state.totalCounts === 0) {
-      clearBtnEl?.classList.add('js-dropdown__btn_hidden');
+      clearBtnEl?.classList.add('dropdown__btn_hidden');
     } else {
-      clearBtnEl?.classList.remove('js-dropdown__btn_hidden');
+      clearBtnEl?.classList.remove('dropdown__btn_hidden');
     }
   }
 
@@ -101,7 +101,7 @@ class Dropdown {
 
   toggleDropdownMenu() {
     const { menuEl } = this.elements;
-    menuEl.classList.toggle('js-dropdown__menu_active');
+    menuEl.classList.toggle('dropdown__menu_active');
   }
 
   handlerClearButtonClick = () => {
@@ -117,7 +117,7 @@ class Dropdown {
   handlerOutsideClick = (event) => {
     const { element, menuEl } = this.elements;
     if (!element.contains(event.target)) {
-      menuEl.classList.remove('js-dropdown__menu_active');
+      menuEl.classList.remove('dropdown__menu_active');
       document.removeEventListener('click', this.handlerOutsideClick);
     }
   };

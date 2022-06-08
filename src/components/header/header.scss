@@ -63,6 +63,20 @@
         top: calc(100% - var(--burger-line-height));
       }
 
+      &_active::before {
+        top: 50%;
+
+        transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+        transform: rotate(45deg);
+      }
+
+      &_active::after {
+        top: 50%;
+
+        transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+        transform: rotate(-45deg);
+      }
+
       &-line {
         position: absolute;
         top: 50%;
@@ -75,6 +89,11 @@
         transform: translateY(-50%);
 
         background-color: currentcolor;
+      }
+
+      &_active &-line {
+        transition: transform 0.3s ease-in-out;
+        transform: scale(0);
       }
 
       &:focus::after {
@@ -204,34 +223,5 @@
 
   @include large {
     position: relative;
-  }
-}
-
-.js-header__nav {
-  &-burger {
-    &_active::before {
-      top: 50%;
-
-      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
-      transform: rotate(45deg);
-    }
-
-    &_active::after {
-      top: 50%;
-
-      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
-      transform: rotate(-45deg);
-    }
-
-    &_active &-line {
-      transition: transform 0.3s ease-in-out;
-      transform: scale(0);
-    }
-  }
-
-  &-content {
-    &_active {
-      display: flex;
-    }
   }
 }

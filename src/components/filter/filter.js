@@ -17,7 +17,7 @@ class Filter {
   handlerButtonClick = () => {
     const { filterContentEl } = this.elements;
 
-    filterContentEl.classList.toggle('js-filter__content_visible');
+    filterContentEl.classList.toggle('filter__content_visible');
     if (document.body.style.overflowY === 'hidden') {
       document.body.style.overflowY = 'auto';
     } else {

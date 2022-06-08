@@ -14,15 +14,15 @@ class ExpandableList {
 
   toggleMenu() {
     const { menuEl, headerArrowEl } = this.elements;
-    menuEl.classList.toggle('js-expandable-list__menu_active');
-    headerArrowEl.classList.toggle('js-expandable-list__arrow_active');
+    menuEl.classList.toggle('expandable-list__menu_active');
+    headerArrowEl.classList.toggle('expandable-list__arrow_active');
   }
 
   handlerOutsideClick = (event) => {
     const { element, menuEl, headerArrowEl } = this.elements;
     if (!element.contains(event.target)) {
-      menuEl.classList.remove('js-expandable-list__menu_active');
-      headerArrowEl.classList.remove('js-expandable-list__arrow_active');
+      menuEl.classList.remove('expandable-list__menu_active');
+      headerArrowEl.classList.remove('expandable-list__arrow_active');
       document.removeEventListener('click', this.handlerOutsideClick);
     }
   };
