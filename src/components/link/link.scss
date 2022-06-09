@@ -31,6 +31,7 @@
     background-color: transparent;
 
     &::before {
+      content: '';
       position: absolute;
       top: 0;
       right: 0;
@@ -38,8 +39,6 @@
       left: 0;
 
       padding: 2px;
-
-      content: '';
 
       border-radius: 22px;
       background: var(--gradient);

@@ -34,6 +34,7 @@
     background-color: transparent;
 
     &_sign_minus::before {
+      content: '';
       position: absolute;
       top: 50%;
       left: 50%;
@@ -41,13 +42,13 @@
       width: 5px;
       height: 1px;
 
-      content: '';
       transform: translate(-50%, -50%);
 
       background-color: var(--darkShade75);
     }
 
     &_sign_plus::before {
+      content: '';
       position: absolute;
       top: 50%;
       left: 50%;
@@ -55,13 +56,13 @@
       width: 5px;
       height: 1px;
 
-      content: '';
       transform: translate(-50%, -50%);
 
       background-color: var(--darkShade75);
     }
 
     &_sign_plus::after {
+      content: '';
       position: absolute;
       top: 50%;
       left: 50%;
@@ -69,7 +70,6 @@
       width: 1px;
       height: 5px;
 
-      content: '';
       transform: translate(-50%, -50%);
 
       background-color: var(--darkShade75);

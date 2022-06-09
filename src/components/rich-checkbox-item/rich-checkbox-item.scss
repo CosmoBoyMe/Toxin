@@ -40,6 +40,7 @@
     border-color: var(--purple);
 
     &::before {
+      content: '';
       position: absolute;
       top: 5px;
       left: 5px;
@@ -47,7 +48,6 @@
       width: 8px;
       height: 6px;
 
-      content: '';
       transform: rotate(135deg);
 
       border: 2px solid;

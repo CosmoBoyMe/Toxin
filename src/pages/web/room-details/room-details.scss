@@ -201,6 +201,7 @@
         word-wrap: break-word;
 
         &::before {
+          content: '';
           position: absolute;
           top: 50%;
           left: 1px;
@@ -208,7 +209,6 @@
           width: 10px;
           height: 10px;
 
-          content: '';
           transform: translate(-50%, -50%);
 
           border-radius: 50%;

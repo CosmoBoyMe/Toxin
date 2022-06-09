@@ -43,13 +43,13 @@
 
       &::before,
       &::after {
+        content: '';
         position: absolute;
         left: 0;
 
         width: 100%;
         height: var(--burger-line-height);
 
-        content: '';
         transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
 
         background-color: currentcolor;
@@ -193,14 +193,13 @@
       color: var(--darkShade50);
 
       &::before {
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
 
         width: 1px;
         height: 100%;
-
-        content: '';
 
         background: rgb(31 32 65 / 10%);
       }

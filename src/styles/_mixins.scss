@@ -31,9 +31,8 @@
 }
 
 @mixin material-icon($content) {
-  position: absolute;
-
   content: $content;
+  position: absolute;
 
   font-family: var(--materialFont);
   font-size: 24px;

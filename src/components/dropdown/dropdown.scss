@@ -50,11 +50,11 @@
   }
 
   &__input-arrow::before {
+    content: 'expand_more';
     position: absolute;
     top: 0;
     right: 10px;
 
-    content: 'expand_more';
     cursor: pointer;
 
     color: var(--darkShade50);

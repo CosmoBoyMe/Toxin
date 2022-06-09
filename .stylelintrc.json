@@ -19,7 +19,7 @@
     "order/properties-order": [
       {
         "emptyLineBefore": "always",
-        "properties": ["position", "z-index", "top", "right", "bottom", "left"]
+        "properties": ["content", "position", "z-index", "top", "right", "bottom", "left"]
       },
       {
         "emptyLineBefore": "always",
@@ -128,7 +128,6 @@
       {
         "emptyLineBefore": "always",
         "properties": [
-          "content",
           "quotes",
           "counter-reset",
           "counter-increment",
