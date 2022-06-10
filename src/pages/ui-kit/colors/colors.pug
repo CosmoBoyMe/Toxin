@@ -1,4 +1,6 @@
 include ../../../components/head/head.pug
+include ../../../components/ui-kit/color-item/color-item.pug
+include ../../../components/ui-kit/color-type-item/color-type-item.pug
 
 doctype html
 html(lang="en")
@@ -7,53 +9,26 @@ html(lang="en")
     .colors
       main.colors__main 
         .colors__container
-          .colors__inner 
-            .colors__colors
-              .colors__colors-item 
-                .colors__colors-color.colors__colors-color_color_darkShade
-                .colors__colors-column 
-                  .colors__colors-name Dark Shade 100%
-                  .colors__colors-hex #1F2041
-              .colors__colors-item 
-                .colors__colors-color.colors__colors-color_color_darkShade75 
-                .colors__colors-column 
-                  .colors__colors-name Dark Shade 75%
-                  .colors__colors-hex #1F2041
-              .colors__colors-item 
-                .colors__colors-color.colors__colors-color_color_darkShade50 
-                .colors__colors-column 
-                  .colors__colors-name Dark Shade 50%
-                  .colors__colors-hex #1F2041
-              .colors__colors-item 
-                .colors__colors-color.colors__colors-color_color_darkShade25
-                .colors__colors-column 
-                  .colors__colors-name Dark Shade 25%
-                  .colors__colors-hex #1F2041
-              .colors__colors-item 
-                .colors__colors-color.colors__colors-color_color_white
-                .colors__colors-column 
-                  .colors__colors-name Dark Shade 5%
-                  .colors__colors-hex #1F2041
-              .colors__colors-item 
-                .colors__colors-color.colors__colors-color_color_purple 
-                .colors__colors-column 
-                  .colors__colors-name Purple
-                  .colors__colors-hex #BC9CFF
-              .colors__colors-item 
-                .colors__colors-color.colors__colors-color_color_green 
-                .colors__colors-column 
-                  .colors__colors-name Green
-                  .colors__colors-hex #6FCF97
-            .colors__types
-              .colors__types-item 
-                .colors__types-tag.colors__types-tag_name_h1 H1
-                h1.colors__types-text.colors__types-text_title_h1 This one is the sub-section or widget title
-              .colors__types-item
-                .colors__types-tag.colors__types-tag_name_h2 H2
-                h2.colors__types-text.colors__types-text_title_h2 Next one is the item title inside widgets
-              .colors__types-item
-                .colors__types-tag.colors__types-tag_tag-name_h3 H3
-                h3.colors__types-text.colors__types-text_transform_uppercase.colors__types-text_title_h3 This is a label or CTA text
-              .colors__types-item
-                .colors__types-tag.colors__types-tag_tag-name_body Body
-                p.colors__types-text This is the body text which is used for most of the design, like paragraphs, lists, etc.
+          .colors__colors
+            -
+              const colors = [
+                {color:'darkShade', title:'Dark Shade 100%', text:'#1F2041'},
+                {color:'darkShade75', title:'Dark Shade 75%', text:'#1F2041'},
+                {color:'darkShade50', title:'Dark Shade 50%', text:'#1F2041'},
+                {color:'darkShade25', title:'Dark Shade 25%', text:'#1F2041'},
+                {color:'white', title:'Dark Shade 5%', text:'#1F2041'},
+                {color:'purple', title:'Purple', text:'#BC9CFF'},
+                {color:'green', title:'Green', text:'#6FCF97'},
+              ];
+            each item in colors
+              +color-item(item)
+          .colors__types
+            -
+              const types = [
+                {tag:'h1', title:'H1', text: 'This one is the sub-section or widget title'},
+                {tag:'h2', title:'H2', text: 'Next one is the item title inside \n widgets'},
+                {tag:'h3', title:'H3', text: 'This is a label or CTA text', isUppercase: true},
+                {tag:'body', title:'Body', text: 'This is the body text which is used for most \n of the design, like paragraphs, lists, etc.'}
+              ];
+            each item in types
+              +color-type-item(item)

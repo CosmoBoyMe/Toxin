@@ -2,15 +2,12 @@
 
 .colors {
   &__container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-
-  &__inner {
     display: flex;
     justify-content: space-between;
 
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
     padding-top: 100px;
   }
 
@@ -18,59 +15,6 @@
     display: flex;
     flex-direction: column;
     row-gap: 20px;
-
-    &-item {
-      display: flex;
-      align-items: center;
-    }
-
-    &-color {
-      width: 70px;
-      height: 70px;
-      margin-right: 40px;
-
-      border-radius: 6px;
-
-      &_color_darkShade {
-        background-color: var(--darkShade);
-      }
-
-      &_color_darkShade75 {
-        background-color: var(--darkShade75);
-      }
-
-      &_color_darkShade50 {
-        background-color: var(--darkShade50);
-      }
-
-      &_color_darkShade25 {
-        background-color: var(--darkShade25);
-      }
-
-      &_color_white {
-        background-color: var(--white);
-      }
-
-      &_color_purple {
-        background-color: var(--purple);
-      }
-
-      &_color_green {
-        background-color: var(--green);
-      }
-    }
-
-    &-column {
-      color: var(--darkShade);
-
-      font-size: 19px;
-      font-weight: 700;
-      line-height: 28px;
-    }
-
-    &-name {
-      margin-top: 2px;
-    }
   }
 
   &__types {
@@ -80,62 +24,5 @@
     flex-direction: column;
 
     width: 454px;
-
-    &-item {
-      display: flex;
-    }
-
-    &-tag {
-      margin-right: 30px;
-
-      color: var(--darkShade25);
-
-      &_name_h1 {
-        font-size: 24px;
-        line-height: 29px;
-      }
-
-      &_name_h2 {
-        font-size: 19px;
-        line-height: 23px;
-      }
-
-      &_name_h3 {
-        margin-right: 40px;
-
-        font-size: 12px;
-        line-height: 15px;
-      }
-    }
-
-    &-text {
-      &_transform_uppercase {
-        text-transform: uppercase;
-      }
-
-      &_title_h1 {
-        color: var(--darkShade);
-
-        font-size: 24px;
-        font-weight: 700;
-        line-height: 29px;
-      }
-
-      &_title_h2 {
-        color: var(--darkShade);
-
-        font-size: 19px;
-        font-weight: 700;
-        line-height: 23px;
-      }
-
-      &_title_h3 {
-        color: var(--darkShade);
-
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 15px;
-      }
-    }
   }
 }
