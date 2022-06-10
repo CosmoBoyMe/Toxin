@@ -13,7 +13,6 @@
       "at-variables",
       "declarations",
       "rules",
-      "at-rules",
       "less-mixins"
     ],
     "order/properties-order": [

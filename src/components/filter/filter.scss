@@ -13,10 +13,6 @@
   }
 
   &__content {
-    &_visible {
-      transform: translateX(0);
-    }
-
     @include extra-large {
       position: fixed;
       z-index: 1000;
@@ -36,6 +32,10 @@
       transform: translateX(200%);
 
       background-color: #fff;
+    }
+
+    &_visible {
+      transform: translateX(0);
     }
   }
 
