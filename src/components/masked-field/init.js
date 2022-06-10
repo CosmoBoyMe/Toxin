@@ -1,4 +1,4 @@
-import { MaskedField } from './masked-field';
+import { MaskedField } from './MaskedField';
 
 const maskedInputElements = document.querySelectorAll('.js-masked-field__input');
 
