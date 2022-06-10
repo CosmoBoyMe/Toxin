@@ -59,10 +59,6 @@
   }
 
   &__title {
-    color: var(--darkShade75);
-
-    font-family: var(--mainFont);
-    font-size: 14px;
     font-weight: 700;
     line-height: 18px;
   }
@@ -72,9 +68,7 @@
 
     white-space: pre-line;
 
-    font-family: var(--mainFont);
     font-size: 12px;
-    font-weight: 400;
     line-height: 14px;
   }
 }
