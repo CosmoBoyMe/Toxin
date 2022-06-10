@@ -74,7 +74,7 @@ class Pagination {
 
   // eslint-disable-next-line class-methods-use-this
   createDotsIcon() {
-    const dotsIconEl = document.createElement('i');
+    const dotsIconEl = document.createElement('span');
     dotsIconEl.textContent = '...';
     dotsIconEl.classList.add('js-pagination__dots');
     return dotsIconEl;
