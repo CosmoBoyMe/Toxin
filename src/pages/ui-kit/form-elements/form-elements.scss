@@ -62,17 +62,16 @@
     width: 266px;
     margin-bottom: 20px;
 
-    &_position_margin-bottom {
+    &_second {
       margin-bottom: 157px;
     }
   }
 
   &__expandable-list {
     width: 266px;
-    margin-bottom: 20px;
 
-    &_position_margin-bottom {
-      margin-bottom: 0;
+    &_first {
+      margin-bottom: 20px;
     }
   }
 
@@ -208,7 +207,7 @@
 
       margin-bottom: 31px;
 
-      &_position_margin-bottom {
+      &_second {
         margin-bottom: 26px;
       }
     }
