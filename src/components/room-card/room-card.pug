@@ -9,10 +9,10 @@ mixin room-card({roomNumber=1, price=9999, isLux=true, reviewsCount=10, imgsSrc=
           .room-card__slide.swiper-slide
             .room-card__img-wrapper
               img.room-card__img(src=imgSrc, alt="комната отеля")
-      .room-card__pagination.js_room-card__pagination
+      .room-card__pagination.js-room-card__pagination
       button.room-card__btn.js-room-card__btn-prev(type="button")
         i.room-card__btn-icon expand_more
-      button.room-card__btn.room-card__btn_transform_rotate.js-room-card__btn-next(type="button")
+      button.room-card__btn.room-card__btn_rotated.js-room-card__btn-next(type="button")
         i.room-card__btn-icon expand_more
     .room-card__description
       a.room-card__description-link(href="/mock-address/change-me")
