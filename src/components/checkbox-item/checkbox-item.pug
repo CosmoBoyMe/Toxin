@@ -1,9 +1,14 @@
-mixin checkbox-item(title='', checked=false)
+mixin checkbox-item({ title='', text='', checked=false, rich=false } = {})
   .checkbox-item
     label.checkbox-item__label
       input.checkbox-item__input.checkbox-item__input_visually_hidden(
         type="checkbox",
         checked=checked
       )
-      span.checkbox-item__box
-      span.checkbox-item__title= title
+      span.checkbox-item__box 
+      .checkbox-item__description
+        if rich
+          span.checkbox-item__rich-title= title
+          p.checkbox-item__rich-text= text
+        else 
+          span.checkbox-item__title= title

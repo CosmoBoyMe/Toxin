@@ -1,13 +1,11 @@
-include ../checkbox-item/checkbox-item.pug
+include ../checkbox-list/checkbox-list.pug
 
-mixin expandable-list(title='', items=[], active=false)
+mixin expandable-list({title='', items=[], active=false} = {})
   .expandable-list.js-expandable-list
     .expandable-list__header.js-expandable-list__header
       h3.expandable-list__title= title
       span.expandable-list__arrow.js-expandable-list__arrow(
         class=active ? "expandable-list__arrow_active" : ""
       ) expand_more
-    ul.expandable-list__menu.js-expandable-list__menu(class=active ? "expandable-list__menu_active" : "")
-      each item in items 
-        li.expandable-list__item
-          +checkbox-item(item)
+    .expandable-list__menu.js-expandable-list__menu(class=active ? "expandable-list__menu_active" : "")
+      +checkbox-list({ items })

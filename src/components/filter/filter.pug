@@ -1,6 +1,5 @@
 include ../calendar/calendar.pug
 include ../checkbox-list/checkbox-list.pug
-include ../rich-checkbox-item/rich-checkbox-item.pug
 include ../range-slider/range-slider.pug
 include ../expandable-list/expandable-list.pug
 include ../guest-dropdown/guest-dropdown.pug
@@ -21,13 +20,13 @@ mixin filter
         .filter__range-slider 
           +range-slider({title: 'диапазон цены', text: 'Стоимость за сутки пребывания в номере'})
         .filter__rules
-          - const checkboxItems = [{ title: "Можно курить" }, { title: "Можно с питомцами" }, { title: "Можно пригласить гостей (до 10 человек)" }];
-          +checkbox-list('правила дома', checkboxItems, '')
+          - const checkboxItems = [{ title: "Можно курить" }, { title: "Можно с питомцами", checked: true }, { title: "Можно пригласить гостей (до 10 человек)", checked: true }];
+          +checkbox-list({title: 'правила дома', items: checkboxItems})
         .filter__availability
           - const richCheckboxItems = [{ title: "Широкий коридор", text: "Ширина коридоров в номере \n не менее 91 см."}, { title: "Помощник для инвалидов", text: "На 1 этаже вас встретит специалист \n и проводит до номера." }];
-          +checkbox-list('доступность', richCheckboxItems, 'rich')
+          +checkbox-list({title: 'доступность', items: richCheckboxItems, type: 'rich'})
         .filter__room-dropdown.js-filter__room-dropdown
           +room-dropdown({values: [2,2]})
         .filter__expandable-list 
-          - const expandableItems = ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"];
-            +expandable-list('дополнительные удобства', expandableItems)
+          - const expandableItems = [{title: "Завтрак"}, {title:"Письменный стол"}, {title:"Стул для кормления"}, {title: "Кроватка"}, {title: "Телевизор"}, {title: "Шампунь"}];
+            +expandable-list({title: 'дополнительные удобства', items: expandableItems})

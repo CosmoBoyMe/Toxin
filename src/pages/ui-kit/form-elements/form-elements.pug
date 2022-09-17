@@ -47,13 +47,13 @@ html(lang="en")
                   +subscription-field({text:'subscription text field', id:'subscription'})
                 .form-elements__room-dropdown.js-form-elements__room-dropdown
                   +room-dropdown({label: 'dropdown', values: [2, 2]})
-                .form-elements__room-dropdown.form-elements__room-dropdown_position_margin-bottom.js-form-elements__room-dropdown
+                .form-elements__room-dropdown.form-elements__room-dropdown_second.js-form-elements__room-dropdown
                   +room-dropdown({label: 'dropdown',values: [2, 2], active: true})
-                - const expandableItems = ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"];
+                - const expandableItems = [{title: "Завтрак"}, {title: "Письменный стол", checked: true}, {title:"Стул для кормления", checked: true}, {title:"Кроватка", checked: true}, {title:"Телевизор"}, {title:"Шампунь"}];
+                .form-elements__expandable-list.form-elements__expandable-list_first
+                  +expandable-list({title:'expandable checkbox list', items: expandableItems})
                 .form-elements__expandable-list
-                  +expandable-list('expandable checkbox list', expandableItems)
-                .form-elements__expandable-list.form-elements__expandable-list_position_margin-bottom
-                  +expandable-list('expandable checkbox list', expandableItems, true)
+                  +expandable-list({title: 'expandable checkbox list', items: expandableItems, active: true})
               .form-elements__second-column
                 .form-elements__checkbox-buttons-list
                   -
@@ -61,7 +61,7 @@ html(lang="en")
                       { title: 'Можно курить'},
                       { title: 'Можно с питомцами', checked: true },
                       { title: 'Можно пригласить гостей (до 10 человек)', checked: true }];
-                  +checkbox-list('checkbox buttons', checkboxItems)
+                  +checkbox-list({title: 'checkbox buttons', items: checkboxItems})
                 .form-elements__radio-buttons
                   -
                     const radioItems = [
@@ -102,7 +102,7 @@ html(lang="en")
                     const richCheckboxItems = [
                       {title: 'Широкий коридор', text: "Ширина коридоров в номере \n не менее 91 см."},
                       {title: 'Помощник для инвалидов', text: "На 1 этаже вас встретит специалист \n и проводит до номера."}]
-                  +checkbox-list('rich Checkbox Buttons', richCheckboxItems, type='rich')
+                  +checkbox-list({title: 'rich Checkbox Buttons', items: richCheckboxItems, type:'rich'})
               .form-elements__third-column
                 .form-elements__range-slider 
                   +range-slider
@@ -111,7 +111,7 @@ html(lang="en")
                   .form-elements__buttons-links
                     +link({text: 'click me'})
                     +link({text: 'click me', active: true})
-                  .form-elements__buttons-links.form-elements__buttons-links_position_margin-bottom
+                  .form-elements__buttons-links.form-elements__buttons-links_second
                     +link({text: 'click me', border: true})
                     +link({text: 'click me', border: true, active: true})
                   .form-elements__buttons-buttons 
