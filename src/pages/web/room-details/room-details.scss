@@ -228,7 +228,7 @@
 
     &-reviews {
       max-width: 712px;
-      margin-bottom: 33px;
+      margin-bottom: 29px;
 
       &-title {
         color: var(--darkShade);
@@ -265,7 +265,6 @@
 
     &-details {
       display: flex;
-      justify-content: flex-start;
 
       @include extra-large {
         justify-content: space-between;
@@ -279,30 +278,7 @@
 
     &-rules {
       max-width: 260px;
-      margin-right: 101px;
-
-      &-title {
-        margin-bottom: 18px;
-        margin-left: 20px;
-
-        color: var(--darkShade);
-
-        font-size: 19px;
-        font-weight: 700;
-        line-height: 23px;
-
-        @include medium {
-          margin-left: 0;
-        }
-      }
-
-      &-list {
-        display: flex;
-        flex-direction: column;
-
-        list-style: none;
-        row-gap: 10px;
-      }
+      margin-right: 109px;
 
       @include extra-large {
         margin-right: 20px;

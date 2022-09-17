@@ -5,7 +5,7 @@ include ../../../components/submit-btn/submit-btn.pug
 include ../../../components/feature-item/feature-item.pug
 include ../../../components/like-btn/like-btn.pug
 include ../../../components/review-item/review-item.pug
-include ../../../components/bullet-item/bullet-item.pug
+include ../../../components/bullet-list/bullet-list.pug
 include ../../../components/pie-chart/pie-chart.pug
 include ../../../components/booking-form/booking-form.pug
 
@@ -64,15 +64,13 @@ html(lang="en")
                       +review-item({name: 'Патрисия Стёклышкова', online: 'Неделю назад', avatarSrc: require('../../../assets/img/user-img-2.jpg'), likeCount: 2, isLiked:false, text:'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'})
                 .room-details__room-details
                   .room-details__room-rules
-                    h2.room-details__room-rules-title Правила
-                    ul.room-details__room-rules-list
-                      li.room-details__room-rules-item
-                        +bullet-item('нельзя с питомцами')
-                      li.room-details__room-rules-item
-                        +bullet-item('Без вечеринок и мероприятий')
-                      li.room-details__room-rules-item
-                        +bullet-item('Время прибытия — после 13:00, а выезд до 12:00')
-
+                    -
+                      const bulletItems = [
+                        'Нельзя с питомцами',
+                        'Без вечеринок и мероприятий',
+                        'Время прибытия — после 13:00,\n а выезд до 12:00'];
+                  
+                    +bullet-list({ tag:'h2', title: 'Правила', itemsTitle: bulletItems })
                   .room-details__room-cancel 
                     h2.room-details__room-cancel-title Отмена
                     p.room-details__room-cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
