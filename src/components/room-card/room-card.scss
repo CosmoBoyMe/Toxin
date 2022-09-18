@@ -24,6 +24,21 @@
 
     user-select: none;
     column-gap: 4px;
+
+    &-bullet {
+      width: 7.5px;
+      height: 7.5px;
+
+      cursor: pointer;
+
+      border: 1px solid #fff;
+      border-radius: 50%;
+      background-color: transparent;
+
+      &_active {
+        background-color: #fff;
+      }
+    }
   }
 
   &__btn {
@@ -118,23 +133,6 @@
       &-reviews-count {
         font-weight: 700;
       }
-    }
-  }
-}
-
-.js {
-  &-room-card__pagination-bullet {
-    width: 7.5px;
-    height: 7.5px;
-
-    cursor: pointer;
-
-    border: 1px solid #fff;
-    border-radius: 50%;
-    background-color: transparent;
-
-    &_active {
-      background-color: #fff;
     }
   }
 }

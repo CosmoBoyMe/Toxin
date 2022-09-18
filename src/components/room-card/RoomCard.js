@@ -29,8 +29,8 @@ class RoomCard {
         el: '.js-room-card__pagination',
         type: 'bullets',
         clickable: true,
-        bulletClass: 'js-room-card__pagination-bullet',
-        bulletActiveClass: 'js-room-card__pagination-bullet_active',
+        bulletClass: 'room-card__pagination-bullet js-room-card__pagination-bullet',
+        bulletActiveClass: 'room-card__pagination-bullet_active',
       },
       navigation: {
         nextEl: '.js-room-card__btn-next',
