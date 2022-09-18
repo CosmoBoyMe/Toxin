@@ -1,21 +1,19 @@
 import { Dropdown } from '../dropdown/Dropdown';
 import { wording } from '../../helpers/wording';
+import { guestDropdownWordsDeclensions } from '../../const';
 
 class GuestDropdown {
   constructor(element) {
     this.element = element;
-    this.wordsDeclensions = [
-      ['гость', 'гостя', 'гостей'],
-      ['младенец', 'младенца', 'младенцев'],
-    ];
     this.init();
   }
 
-  onChangeTextValue = (totalCounts, values) => {
+  // eslint-disable-next-line class-methods-use-this
+  onChangeTextValue = (_, values) => {
     const guestCount = values[0] + values[1];
     const babyCount = values[2];
     const wordingTextArray = [guestCount, babyCount].map((count, index) =>
-      wording(count, this.wordsDeclensions[index])
+      wording(count, guestDropdownWordsDeclensions[index])
     );
     const removedEmptyText = wordingTextArray.filter((item) => item !== '');
     const formattedText = removedEmptyText.join(', ');

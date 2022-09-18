@@ -1,20 +1,16 @@
 import { Dropdown } from '../dropdown/Dropdown';
+import { roomWordsDeclensions } from '../../const';
 
 class RoomDropdown {
   constructor(element) {
     this.element = element;
-    this.wordsDeclensions = [
-      ['спальня', 'спальни', 'спален'],
-      ['кровать', 'кровати', 'кроватей'],
-      ['ванная комната', 'ванных комнат', 'ванных комнат'],
-    ];
     this.init();
   }
 
   init() {
-    const { element, wordsDeclensions } = this;
+    const { element } = this;
 
-    new Dropdown({ element, wordsDeclensions }); // eslint-disable-line no-new
+    new Dropdown({ element, roomWordsDeclensions }); // eslint-disable-line no-new
   }
 }
 export { RoomDropdown };
