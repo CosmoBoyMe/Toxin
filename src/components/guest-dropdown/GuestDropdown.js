@@ -1,6 +1,7 @@
-import { Dropdown } from '../dropdown/Dropdown';
-import { wording } from '../../helpers/wording';
+
 import { guestDropdownWordsDeclensions } from '../../const';
+import { wording } from '../../helpers/wording';
+import { Dropdown } from '../dropdown/Dropdown';
 
 class GuestDropdown {
   constructor(element) {
