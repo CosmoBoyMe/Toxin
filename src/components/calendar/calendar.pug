@@ -15,5 +15,5 @@ mixin calendar({type='', title='', secondTitle= ''} = {})
         - const dateFieldTittleThird = title ? title : "даты пребывания в отеле";
         +date-field(dateFieldTittleThird, 'ДД-ММ - ДД-ММ')
     .calendar__date-picker.js-calendar__date-picker(
-      class=type === "" ? "" : "calendar__date-picker_closed calendar__date-picker_shift_top"
+      class=type && "calendar__date-picker_closed calendar__date-picker_shift_top"
     )
