@@ -1,6 +1,7 @@
 import wNumb from 'wnumb';
-import { wording } from '../../helpers/wording';
+
 import { bookingFormDaysWordsDeclensions } from '../../const';
+import { wording } from '../../helpers/wording';
 
 class BookingForm {
   constructor(element) {
