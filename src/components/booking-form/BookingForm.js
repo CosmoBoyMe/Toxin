@@ -6,20 +6,20 @@ import { wording } from '../../helpers/wording';
 class BookingForm {
   constructor(element) {
     const servicesPriceElements = element.querySelectorAll('.js-booking-form__services-item-price');
-    const daysCountEl = element.querySelector('.js-booking-form__services-item-days');
-    const daysWordEl= element.querySelector('.js-booking-form__services-item-days-word');
+    const daysCountElement = element.querySelector('.js-booking-form__services-item-days');
+    const daysWordElement = element.querySelector('.js-booking-form__services-item-days-word');
 
     this.elements = {
       element,
       servicesPriceElements,
-      daysCountEl,
-      daysWordEl
+      daysCountElement,
+      daysWordElement
     }
     this.init();
   }
 
   init() {
-    const { servicesPriceElements, daysCountEl, daysWordEl } = this.elements;
+    const { servicesPriceElements, daysCountElement, daysWordElement } = this.elements;
     const valueFormat = wNumb({
       decimals: 0,
       thousand: ' ',
@@ -31,9 +31,9 @@ class BookingForm {
       // eslint-disable-next-line no-param-reassign
       item.textContent = formattedValue;
     });
-    const daysCount = Number(daysCountEl.textContent);
+    const daysCount = Number(daysCountElement.textContent);
     const dayDeclension = wording(daysCount, bookingFormDaysWordsDeclensions, false);
-    daysWordEl.textContent = dayDeclension;
+    daysWordElement.textContent = dayDeclension;
   }
 }
 

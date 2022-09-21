@@ -2,24 +2,24 @@ import wNumb from 'wnumb';
 
 class CardHeaderInfo {
   constructor(element) {
-    const cardPriceEl = element.querySelector('.js-card-header-info__value');
+    const cardPriceElement = element.querySelector('.js-card-header-info__value');
     this.elements = {
-      cardPriceEl,
+      cardPriceElement,
       element,
     };
     this.init();
   }
 
   formatCardPrice() {
-    const { cardPriceEl } = this.elements;
+    const { cardPriceElement } = this.elements;
 
     const priceFormat = wNumb({
       thousand: ' ',
       suffix: '₽',
     });
-    const cardPriceValue = Number(cardPriceEl.textContent);
+    const cardPriceValue = Number(cardPriceElement.textContent);
     const formattedCardPriceValue = priceFormat.to(cardPriceValue);
-    cardPriceEl.textContent = formattedCardPriceValue;
+    cardPriceElement.textContent = formattedCardPriceValue;
   }
 
   init() {

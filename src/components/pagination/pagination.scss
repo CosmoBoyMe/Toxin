@@ -14,7 +14,7 @@
 }
 
 .js-pagination {
-  &__btn {
+  &__button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,7 +58,7 @@
     line-height: 15px;
   }
 
-  &__btn-next {
+  &__button-next {
     transition: opacity 0.4s;
 
     color: white;

@@ -1,6 +1,6 @@
 include ../calendar/calendar.pug
 include ../guest-dropdown/guest-dropdown.pug
-include ../submit-btn/submit-btn.pug
+include ../submit-button/submit-button.pug
 
 mixin search-rooms-form
   form.search-rooms-form
@@ -9,4 +9,4 @@ mixin search-rooms-form
       +calendar({type:'multiple'}, 'search-rooms-form__datepicker')
     .search-rooms-form__dropdown
       +guest-dropdown
-    +submit-btn('подобрать номер')
+    +submit-button('подобрать номер')

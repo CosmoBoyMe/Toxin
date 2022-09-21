@@ -12,21 +12,21 @@ class PieChart {
 
   init() {
     const { element, values } = this;
-    const doughtCtx = element.getContext('2d');
+    const doughtContext = element.getContext('2d');
 
-    const purpleGradient = doughtCtx.createLinearGradient(0, 0, 0, 600);
+    const purpleGradient = doughtContext.createLinearGradient(0, 0, 0, 600);
     purpleGradient.addColorStop(0, '#BC9CFF');
     purpleGradient.addColorStop(1, '#8BA4F9');
 
-    const greenGradient = doughtCtx.createLinearGradient(0, 0, 0, 600);
+    const greenGradient = doughtContext.createLinearGradient(0, 0, 0, 600);
     greenGradient.addColorStop(0, '#6FCF97');
     greenGradient.addColorStop(1, '#66D2EA');
 
-    const orangeGradient = doughtCtx.createLinearGradient(0, 0, 0, 600);
+    const orangeGradient = doughtContext.createLinearGradient(0, 0, 0, 600);
     orangeGradient.addColorStop(0, '#FFE39C');
     orangeGradient.addColorStop(1, '#FFBA9C');
 
-    const blackGradient = doughtCtx.createLinearGradient(0, 0, 0, 600);
+    const blackGradient = doughtContext.createLinearGradient(0, 0, 0, 600);
     blackGradient.addColorStop(0, '#909090');
     blackGradient.addColorStop(1, '#3D4975');
 

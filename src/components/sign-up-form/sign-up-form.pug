@@ -2,7 +2,7 @@ include ../text-field/text-field.pug
 include ../radio/radio.pug
 include ../masked-field/masked-field.pug
 include ../toggle/toggle.pug
-include ../submit-btn/submit-btn.pug
+include ../submit-button/submit-button.pug
 include ../link/link.pug
 
 mixin sign-up-form
@@ -21,8 +21,8 @@ mixin sign-up-form
       +text-field({placeholder: 'Пароль', type:'password', name: 'password'})
     .sign-up-form__toggle 
       +toggle("Получать спецпредложения")
-    .sign-up-form__submit-btn 
-      +submit-btn('зарегистрироваться')
+    .sign-up-form__submit-button 
+      +submit-button('зарегистрироваться')
     .sign-up-form__info 
       p.sign-up-form__text Уже есть аккаунт на Toxin
       +link({text: 'Войти', href: '/signIn.html', border: true})

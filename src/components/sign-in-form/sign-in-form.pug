@@ -1,5 +1,5 @@
 include ../text-field/text-field.pug
-include ../submit-btn/submit-btn.pug
+include ../submit-button/submit-button.pug
 include ../link/link.pug
 
 mixin sign-in-form
@@ -8,8 +8,8 @@ mixin sign-in-form
     .sign-in-form__fields
       +text-field({type: 'text', placeholder: 'Email', name: 'email'})
       +text-field({type: 'password', placeholder: 'Пароль', name: 'password'})
-    .sign-in-form__submit-btn 
-      +submit-btn('войти')
+    .sign-in-form__submit-button 
+      +submit-button('войти')
     .sign-in-form__info
       p.sign-in-form__text Нет аккаунта на Toxin?
       +link({text:'создать', href: 'signUp.html', border:true})

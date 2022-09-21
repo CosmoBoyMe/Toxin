@@ -2,14 +2,14 @@ import AirDatepicker from 'air-datepicker';
 
 class Calendar {
   constructor(element) {
-    const datePickerEl = element.querySelector('.js-calendar__date-picker');
+    const datePickerElement = element.querySelector('.js-calendar__date-picker');
     const fieldElements = element.querySelectorAll('.js-calendar__field');
     const inputElements = element.querySelectorAll('input');
     const type = element.getAttribute('data-type');
 
     this.elements = {
       element,
-      datePickerEl,
+      datePickerElement,
       fieldElements,
       inputElements,
     };
@@ -21,7 +21,7 @@ class Calendar {
   initDatePicker() {
     const { type, elements } = this;
     const { inputElements } = elements;
-    const { datePickerEl } = this.elements;
+    const { datePickerElement } = this.elements;
 
     let options = {};
     const defaultOptions = {
@@ -53,9 +53,9 @@ class Calendar {
     if (type === 'multiple') {
       const onSelect = ({ formattedDate }) => {
         const [firstDate, lastDate] = formattedDate;
-        const [firstInputEl, lastInputEl] = inputElements;
-        firstInputEl.value = firstDate ?? '';
-        lastInputEl.value = lastDate ?? '';
+        const [firstInputElement, lastInputElement] = inputElements;
+        firstInputElement.value = firstDate ?? '';
+        lastInputElement.value = lastDate ?? '';
       };
 
       const dateFormat = (date) =>
@@ -81,13 +81,13 @@ class Calendar {
       };
     }
 
-    new AirDatepicker(datePickerEl, { ...defaultOptions, ...options }); // eslint-disable-line no-new
+    new AirDatepicker(datePickerElement, { ...defaultOptions, ...options }); // eslint-disable-line no-new
   }
 
   handlerOutsideClick = (event) => {
-    const { element, datePickerEl } = this.elements;
+    const { element, datePickerElement } = this.elements;
     if (!element.contains(event.target)) {
-      datePickerEl.classList.add('calendar__date-picker_closed');
+      datePickerElement.classList.add('calendar__date-picker_closed');
       document.removeEventListener('click', this.handlerOutsideClick);
     }
   };
@@ -98,8 +98,8 @@ class Calendar {
   };
 
   toggleCloseDatePicker() {
-    const { datePickerEl } = this.elements;
-    datePickerEl.classList.toggle('calendar__date-picker_closed');
+    const { datePickerElement } = this.elements;
+    datePickerElement.classList.toggle('calendar__date-picker_closed');
   }
 
   bindEventListeners() {

@@ -15,7 +15,7 @@ mixin dropdown({ label='', placeholder='', items=[], buttons=true, active=false}
             +amount-select(title, value, min, max)
       if (buttons)
         .dropdown__buttons
-          .dropdown__btn.js-dropdown__btn_clear
+          .dropdown__button.js-dropdown__button_clear
             +button({text: 'очистить'})
-          .dropdown__btn.dropdown__btn_position_margin-left.js-dropdown__btn_apply
+          .dropdown__button.dropdown__button_position_margin-left.js-dropdown__button_apply
             +button({text: 'применить'})

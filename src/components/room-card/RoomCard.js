@@ -4,19 +4,19 @@ import 'swiper/css'; // eslint-disable-line import/no-unresolved
 
 class RoomCard {
   constructor(element) {
-    const cardPriceEl = element.querySelector('.js-card-header-info__value');
-    const ratingEl = element.querySelector('.js-rating');
+    const cardPriceElement = element.querySelector('.js-card-header-info__value');
+    const ratingElement = element.querySelector('.js-rating');
     this.elements = {
-      cardPriceEl,
-      ratingEl,
+      cardPriceElement,
+      ratingElement,
       element,
     };
     this.init();
   }
 
   bindEventListeners() {
-    const { ratingEl } = this.elements;
-    ratingEl.addEventListener('click', (event) => event.preventDefault());
+    const { ratingElement } = this.elements;
+    ratingElement.addEventListener('click', (event) => event.preventDefault());
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -33,8 +33,8 @@ class RoomCard {
         bulletActiveClass: 'room-card__pagination-bullet_active',
       },
       navigation: {
-        nextEl: '.js-room-card__btn-next',
-        prevEl: '.js-room-card__btn-prev',
+        nextEl: '.js-room-card__button-next',
+        prevEl: '.js-room-card__button-prev',
       },
     });
   }

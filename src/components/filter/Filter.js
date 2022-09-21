@@ -1,23 +1,23 @@
 class Filter {
   constructor(element) {
-    const filterBtnEl = element.querySelector('.js-filter__btn');
-    const filterBtnCloseEl = element.querySelector('.js-filter__content-btn-close');
-    const filterContentEl = element.querySelector('.js-filter__content');
+    const filterButtonElement = element.querySelector('.js-filter__button');
+    const filterButtonCloseElement = element.querySelector('.js-filter__content-button-close');
+    const filterContentElement = element.querySelector('.js-filter__content');
 
     this.elements = {
       element,
-      filterBtnEl,
-      filterBtnCloseEl,
-      filterContentEl,
+      filterButtonElement,
+      filterButtonCloseElement,
+      filterContentElement,
     };
 
     this.init();
   }
 
   handlerButtonClick = () => {
-    const { filterContentEl } = this.elements;
+    const { filterContentElement } = this.elements;
 
-    filterContentEl.classList.toggle('filter__content_visible');
+    filterContentElement.classList.toggle('filter__content_visible');
     if (document.body.style.overflowY === 'hidden') {
       document.body.style.overflowY = 'auto';
     } else {
@@ -26,9 +26,9 @@ class Filter {
   };
 
   bindButtonListeners() {
-    const { filterBtnEl, filterBtnCloseEl } = this.elements;
-    filterBtnEl.addEventListener('click', this.handlerButtonClick);
-    filterBtnCloseEl.addEventListener('click', this.handlerButtonClick);
+    const { filterButtonElement, filterButtonCloseElement } = this.elements;
+    filterButtonElement.addEventListener('click', this.handlerButtonClick);
+    filterButtonCloseElement.addEventListener('click', this.handlerButtonClick);
   }
 
   init() {

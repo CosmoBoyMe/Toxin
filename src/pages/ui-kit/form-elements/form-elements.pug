@@ -11,11 +11,11 @@ include ../../../components/feature-item/feature-item.pug
 include ../../../components/checkbox-list/checkbox-list.pug
 include ../../../components/radio/radio.pug
 include ../../../components/toggle/toggle.pug
-include ../../../components/like-btn/like-btn.pug
+include ../../../components/like-button/like-button.pug
 include ../../../components/rate/rate.pug
 include ../../../components/bullet-list/bullet-list.pug
 include ../../../components/range-slider/range-slider.pug
-include ../../../components/submit-btn/submit-btn.pug
+include ../../../components/submit-button/submit-button.pug
 include ../../../components/link/link.pug
 include ../../../components/button/button.pug
 include ../../../components/pagination/pagination.pug
@@ -87,7 +87,7 @@ html(lang="en")
                     -
                       const likeButtonsItems = [{likeCount: 2 }, {likeCount: 12, liked: true}];
                     each likeButtonItem in likeButtonsItems 
-                      +like-btn(likeButtonItem.likeCount, likeButtonItem.liked)
+                      +like-button(likeButtonItem.likeCount, likeButtonItem.liked)
                 .form-elements__rate-buttons 
                   h3.form-elements__rate-buttons-title rate button
                   .form-elements__rate-buttons-items 
@@ -117,8 +117,8 @@ html(lang="en")
                   .form-elements__buttons-buttons 
                     +button({text: 'click me'})
                     +button({text: 'click me', active: true})
-                  .form-elements__buttons-submit-btn
-                    +submit-btn('перейти к оплате')
+                  .form-elements__buttons-submit-button
+                    +submit-button('перейти к оплате')
                 .form-elements__pagination
                   h3.form-elements__pagination-title= "pagination"
                   .form-elements__pagination-pagination

@@ -5,8 +5,8 @@ class Pagination {
   constructor(element) {
     const totalItemsData = element.getAttribute('data-totalItems');
     const itemsPerPageData = element.getAttribute('data-itemsPerPage');
-    const buttonsContainerEl = element.querySelector('.js-pagination__buttons');
-    const paginationTextCounterEl = element.querySelector('.js-pagination__text-counter');
+    const buttonsContainerElement = element.querySelector('.js-pagination__buttons');
+    const paginationTextCounterElement = element.querySelector('.js-pagination__text-counter');
 
     const totalItemsCount = Number(totalItemsData);
     const itemsPerPage = Number(itemsPerPageData);
@@ -15,7 +15,7 @@ class Pagination {
     this.totalItemsCount = totalItemsCount;
     this.itemsPerPage = itemsPerPage;
     this.totalPage = totalPage;
-    this.elements = { buttonsContainerEl, paginationTextCounterEl };
+    this.elements = { buttonsContainerElement, paginationTextCounterElement };
     this.activePageNumber = 1;
     this.render();
   }
@@ -26,37 +26,37 @@ class Pagination {
     const lastItemsNumber = lastItem > totalItemsCount ? totalItemsCount : lastItem;
     const totalCountText = totalItemsCount > 100 ? '100+' : totalItemsCount;
 
-    elements.paginationTextCounterEl.textContent = `${
+    elements.paginationTextCounterElement.textContent = `${
       itemsPerPage * (activePageNumber - 1) + 1
     } - ${lastItemsNumber} из ${totalCountText}`;
   }
 
   createPageButton(pageNumber) {
-    const buttonEl = document.createElement('button');
-    buttonEl.textContent = pageNumber;
-    buttonEl.classList.add('js-pagination__btn', 'js-pagination__page');
+    const buttonElement = document.createElement('button');
+    buttonElement.textContent = pageNumber;
+    buttonElement.classList.add('js-pagination__button', 'js-pagination__page');
     const handlerPageButtonClick = () => {
       this.activePageNumber = pageNumber;
       this.render();
     };
 
     if (this.activePageNumber === pageNumber) {
-      buttonEl.classList.add(
-        'js-pagination__btn',
+      buttonElement.classList.add(
+        'js-pagination__button',
         'js-pagination__page',
-        'js-pagination__btn_active'
+        'js-pagination__button_active'
       );
     } else {
-      buttonEl.classList.add('js-pagination__btn', 'js-pagination__page');
+      buttonElement.classList.add('js-pagination__button', 'js-pagination__page');
     }
-    buttonEl.addEventListener('click', handlerPageButtonClick);
-    return buttonEl;
+    buttonElement.addEventListener('click', handlerPageButtonClick);
+    return buttonElement;
   }
 
   createNextButton() {
     const { activePageNumber, totalPage } = this;
     const nextButton = document.createElement('button');
-    nextButton.classList.add('js-pagination__btn', 'js-pagination__btn-next');
+    nextButton.classList.add('js-pagination__button', 'js-pagination__button-next');
     nextButton.setAttribute('type', 'button');
     nextButton.textContent = 'arrow_forward';
 
@@ -74,10 +74,10 @@ class Pagination {
 
   // eslint-disable-next-line class-methods-use-this
   createDotsIcon() {
-    const dotsIconEl = document.createElement('span');
-    dotsIconEl.textContent = '...';
-    dotsIconEl.classList.add('js-pagination__dots');
-    return dotsIconEl;
+    const dotsIconElement = document.createElement('span');
+    dotsIconElement.textContent = '...';
+    dotsIconElement.classList.add('js-pagination__dots');
+    return dotsIconElement;
   }
 
   createMiddle() {
@@ -128,22 +128,22 @@ class Pagination {
 
   render() {
     const { totalPage, elements } = this;
-    const { buttonsContainerEl } = elements;
+    const { buttonsContainerElement } = elements;
 
-    buttonsContainerEl.innerHTML = '';
+    buttonsContainerElement.innerHTML = '';
     if (totalPage <= PAGINATION_BUTTONS_COUNT) {
       const buttons = [];
       const nextButton = this.createNextButton();
       for (let i = FIRST_PAGE_NUMBER; i <= totalPage; i += 1) {
         buttons.push(this.createPageButton(i));
       }
-      buttonsContainerEl.append(...buttons, nextButton);
+      buttonsContainerElement.append(...buttons, nextButton);
     } else {
       const firstButton = this.createPageButton(FIRST_PAGE_NUMBER);
       const lastButton = this.createPageButton(totalPage);
       const middleButtons = this.createMiddle();
       const nextButton = this.createNextButton();
-      buttonsContainerEl.append(firstButton, ...middleButtons, lastButton, nextButton);
+      buttonsContainerElement.append(firstButton, ...middleButtons, lastButton, nextButton);
     }
     this.updateText();
   }

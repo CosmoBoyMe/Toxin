@@ -8,11 +8,11 @@ include ../button/button.pug
 
 mixin filter
   .filter.js-filter
-    .filter__btn.js-filter__btn
+    .filter__button.js-filter__button
       +button({text: 'открыть фильтр'})
     .filter__content.js-filter__content
       .filter__content-wrapper
-        button.filter__content-btn-close.js-filter__content-btn-close(type="button")
+        button.filter__content-button-close.js-filter__content-button-close(type="button")
         .filter__calendar 
           +calendar({type:'single'})
         .filter__guest-dropdown.js-filter__guest-dropdown

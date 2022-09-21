@@ -2,26 +2,26 @@ import { wording } from '../../helpers/wording';
 
 class Dropdown {
   constructor({ element, wordsDeclensions = [], onChangeTextValue = null }) {
-    const inputWrapperEl = element.querySelector('.js-dropdown__input-wrapper');
-    const inputEl = element.querySelector('.js-dropdown__input');
+    const inputWrapperElement = element.querySelector('.js-dropdown__input-wrapper');
+    const inputElement = element.querySelector('.js-dropdown__input');
 
-    const menuEl = element.querySelector('.js-dropdown__menu');
+    const menuElement = element.querySelector('.js-dropdown__menu');
     const counterElements = element.querySelectorAll('.js-amount-select__number');
-    const minusBtnElements = element.querySelectorAll('.js-amount-select__btn_sign_minus');
-    const plusBtnElements = element.querySelectorAll('.js-amount-select__btn_sign_plus');
-    const clearBtnEl = element.querySelector('.js-dropdown__btn_clear');
-    const applyBtnEl = element.querySelector('.js-dropdown__btn_apply');
+    const minusButtonElements = element.querySelectorAll('.js-amount-select__button_sign_minus');
+    const plusButtonElements = element.querySelectorAll('.js-amount-select__button_sign_plus');
+    const clearButtonElement = element.querySelector('.js-dropdown__button_clear');
+    const applyButtonElement = element.querySelector('.js-dropdown__button_apply');
 
     this.elements = {
       element,
-      inputWrapperEl,
-      inputEl,
-      menuEl,
+      inputWrapperElement,
+      inputElement,
+      menuElement,
       counterElements,
-      minusBtnElements,
-      plusBtnElements,
-      clearBtnEl,
-      applyBtnEl,
+      minusButtonElements,
+      plusButtonElements,
+      clearButtonElement,
+      applyButtonElement,
     };
     this.state = {};
     this.wordsDeclensions = wordsDeclensions;
@@ -42,31 +42,31 @@ class Dropdown {
 
   updateInputValueText() {
     const { elements, state } = this;
-    const { inputEl } = elements;
+    const { inputElement } = elements;
 
     if (state.totalCounts === 0) {
-      inputEl.value = '';
+      inputElement.value = '';
     } else if (this.onChangeTextValue) {
       const inputText = this.onChangeTextValue(state.totalCounts, state.values);
-      inputEl.value = inputText;
+      inputElement.value = inputText;
     } else {
       const wordingTextArray = this.wordsDeclensions.map((item, index) =>
         wording(state.values[index], item)
       );
       const removedEmptyText = wordingTextArray.filter((item) => item !== '');
       const formattedText = removedEmptyText.join(', ');
-      inputEl.value = formattedText;
+      inputElement.value = formattedText;
     }
   }
 
-  toggleHiddenClearBtn() {
+  toggleHiddenClearButton() {
     const { elements, state } = this;
-    const { clearBtnEl } = elements;
+    const { clearButtonElement } = elements;
 
     if (state.totalCounts === 0) {
-      clearBtnEl?.classList.add('dropdown__btn_hidden');
+      clearButtonElement?.classList.add('dropdown__button_hidden');
     } else {
-      clearBtnEl?.classList.remove('dropdown__btn_hidden');
+      clearButtonElement?.classList.remove('dropdown__button_hidden');
     }
   }
 
@@ -84,40 +84,40 @@ class Dropdown {
     });
 
     this.updateInputValueText();
-    this.toggleHiddenClearBtn();
+    this.toggleHiddenClearButton();
   }
 
   handlerMinusButtonClick = ({ target }) => {
-    const counterEl = target.nextElementSibling;
-    counterEl.stepDown();
+    const counterElement = target.nextElementSibling;
+    counterElement.stepDown();
     this.update();
   };
 
   handlerPlusButtonClick = ({ target }) => {
-    const counterEl = target.previousElementSibling;
-    counterEl.stepUp();
+    const counterElement = target.previousElementSibling;
+    counterElement.stepUp();
     this.update();
   };
 
   toggleDropdownMenu() {
-    const { menuEl } = this.elements;
-    menuEl.classList.toggle('dropdown__menu_active');
+    const { menuElement } = this.elements;
+    menuElement.classList.toggle('dropdown__menu_active');
   }
 
   handlerClearButtonClick = () => {
     const { counterElements } = this.elements;
     [...counterElements].forEach((counter) => {
-      const counterEl = counter;
-      counterEl.value = 0;
+      const counterElement = counter;
+      counterElement.value = 0;
     });
     this.updateState();
     this.update();
   };
 
   handlerOutsideClick = (event) => {
-    const { element, menuEl } = this.elements;
+    const { element, menuElement } = this.elements;
     if (!element.contains(event.target)) {
-      menuEl.classList.remove('dropdown__menu_active');
+      menuElement.classList.remove('dropdown__menu_active');
       document.removeEventListener('click', this.handlerOutsideClick);
     }
   };
@@ -128,17 +128,17 @@ class Dropdown {
   };
 
   bindEventListeners() {
-    const { inputWrapperEl, applyBtnEl, clearBtnEl, minusBtnElements, plusBtnElements } =
+    const { inputWrapperElement, applyButtonElement, clearButtonElement, minusButtonElements, plusButtonElements } =
       this.elements;
 
-    inputWrapperEl.addEventListener('click', this.handlerInputWrapperClick);
-    applyBtnEl?.addEventListener('click', () => this.toggleDropdownMenu());
-    clearBtnEl?.addEventListener('click', this.handlerClearButtonClick);
-    minusBtnElements.forEach((btn) => {
-      btn.addEventListener('click', this.handlerMinusButtonClick);
+    inputWrapperElement.addEventListener('click', this.handlerInputWrapperClick);
+    applyButtonElement?.addEventListener('click', () => this.toggleDropdownMenu());
+    clearButtonElement?.addEventListener('click', this.handlerClearButtonClick);
+    minusButtonElements.forEach((button) => {
+      button.addEventListener('click', this.handlerMinusButtonClick);
     });
-    plusBtnElements.forEach((btn) => {
-      btn.addEventListener('click', this.handlerPlusButtonClick);
+    plusButtonElements.forEach((button) => {
+      button.addEventListener('click', this.handlerPlusButtonClick);
     });
   }
 

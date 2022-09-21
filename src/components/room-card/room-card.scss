@@ -41,7 +41,7 @@
     }
   }
 
-  &__btn {
+  &__button {
     position: absolute;
     z-index: 1;
     top: 0;
@@ -84,7 +84,7 @@
     }
   }
 
-  &__slider:hover &__btn {
+  &__slider:hover &__button {
     opacity: 1;
   }
 

@@ -3,8 +3,8 @@ import wNumb from 'wnumb';
 
 class RangeSlider {
   constructor(element) {
-    const sliderEl = element.querySelector('.js-range-slider__slider');
-    const priceEl = element.querySelector('.js-range-slider__price');
+    const sliderElement = element.querySelector('.js-range-slider__slider');
+    const priceElement = element.querySelector('.js-range-slider__price');
     const startData = element.getAttribute('data-start');
     const stepData = element.getAttribute('data-step');
     const rangeData = element.getAttribute('data-range');
@@ -20,22 +20,22 @@ class RangeSlider {
     };
     this.elements = {
       element,
-      sliderEl,
-      priceEl,
+      sliderElement,
+      priceElement,
     };
     this.initNoUiSlider();
   }
 
   updatePriceText(values) {
-    const { priceEl } = this.elements;
+    const { priceElement } = this.elements;
     const valuesString = values.join(' - ');
-    priceEl.textContent = valuesString;
+    priceElement.textContent = valuesString;
   }
 
   initNoUiSlider() {
-    const { sliderEl } = this.elements;
+    const { sliderElement } = this.elements;
     const { start, range, step } = this.options;
-    noUiSlider.create(sliderEl, {
+    noUiSlider.create(sliderElement, {
       start,
       connect: true,
       step,
@@ -48,7 +48,7 @@ class RangeSlider {
       }),
     });
 
-    sliderEl.noUiSlider.on('update', this.updatePriceText.bind(this));
+    sliderElement.noUiSlider.on('update', this.updatePriceText.bind(this));
   }
 }
 export { RangeSlider };
