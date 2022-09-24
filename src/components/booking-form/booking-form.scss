@@ -32,9 +32,11 @@
 
   &__services-item {
     display: flex;
+    flex-wrap: wrap;
 
     &-info {
       display: flex;
+      flex-wrap: wrap;
 
       margin-right: 10px;
     }

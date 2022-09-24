@@ -25,4 +25,5 @@ mixin sign-up-form
       +submit-button('зарегистрироваться')
     .sign-up-form__info 
       p.sign-up-form__text Уже есть аккаунт на Toxin
-      +link({text: 'Войти', href: '/signIn.html', border: true})
+      .sign-up-form__link
+        +link({text: 'Войти', href: '/signIn.html', border: true})

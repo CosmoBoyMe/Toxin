@@ -4,6 +4,8 @@
   &__label {
     display: flex;
 
+    max-width: fit-content;
+
     cursor: pointer;
 
     line-height: 18px;
@@ -72,6 +74,8 @@
   &__rich-text {
     white-space: pre-line;
 
+    color: var(--darkShade50);
+
     font-size: 12px;
     line-height: 14px;
   }
@@ -81,5 +85,7 @@
     margin-bottom: 2px;
 
     word-wrap: break-word;
+
+    color: var(--darkShade50);
   }
 }

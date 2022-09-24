@@ -56,5 +56,11 @@
 
   &__text {
     word-wrap: break-word;
+
+    color: var(--darkShade50);
+  }
+
+  &__input:checked ~ &__text {
+    color: var(--darkShade75);
   }
 }
