@@ -51,11 +51,15 @@
     padding: 9px 20px;
   }
 
-  &_active {
+  &_hover {
+    opacity: 0.5;
+  }
+
+  &:hover {
     opacity: 0.5;
   }
 
   &:active {
-    opacity: 0.5;
+    opacity: 0.4;
   }
 }

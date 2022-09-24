@@ -15,11 +15,15 @@
   font-weight: 700;
   line-height: 15px;
 
-  &_active {
+  &_hover {
+    color: var(--darkShade50);
+  }
+
+  &:hover {
     color: var(--darkShade50);
   }
 
   &:active {
-    color: var(--darkShade50);
+    opacity: 0.7;
   }
 }
