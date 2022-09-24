@@ -1,19 +1,19 @@
 include ../date-field/date-field.pug
 
-mixin calendar({type='', title='', secondTitle= ''} = {})
+mixin calendar({type='', title='', secondTitle= '', selectedDate=[]} = {})
   .calendar.js-calendar(data-type=type)
     if (type==="multiple")
       .calendar__fields
         .calendar__field.js-calendar__field
           - const dateFieldTitleFirst = title ? title : "прибытие";
-            +date-field(dateFieldTitleFirst)
+            +date-field(dateFieldTitleFirst, selectedDate[0])
         .calendar__field.js-calendar__field
           - const dateFieldTitleSecond = secondTitle ? secondTitle : "выезд";
-          +date-field(dateFieldTitleSecond)
+          +date-field(dateFieldTitleSecond, selectedDate[1])
     if (type==='single')
       .calendar__field.js-calendar__field
         - const dateFieldTittleThird = title ? title : "даты пребывания в отеле";
-        +date-field(dateFieldTittleThird, 'ДД-ММ - ДД-ММ')
+        +date-field(dateFieldTittleThird, 'ДД-ММ - ДД-ММ', selectedDate[0])
     .calendar__date-picker.js-calendar__date-picker(
       class=type && "calendar__date-picker_closed calendar__date-picker_shift_top"
     )
