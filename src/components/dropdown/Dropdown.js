@@ -100,7 +100,8 @@ class Dropdown {
   };
 
   toggleDropdownMenu() {
-    const { menuElement } = this.elements;
+    const { menuElement, inputElement } = this.elements;
+    inputElement.classList.toggle('dropdown__input_active')
     menuElement.classList.toggle('dropdown__menu_active');
   }
 
@@ -115,9 +116,10 @@ class Dropdown {
   };
 
   handlerOutsideClick = (event) => {
-    const { element, menuElement } = this.elements;
+    const { element, menuElement, inputElement } = this.elements;
     if (!element.contains(event.target)) {
       menuElement.classList.remove('dropdown__menu_active');
+      inputElement.classList.remove('dropdown__input_active')
       document.removeEventListener('click', this.handlerOutsideClick);
     }
   };

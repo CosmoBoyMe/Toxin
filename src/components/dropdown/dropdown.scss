@@ -33,7 +33,7 @@
 
     color: var(--darkShade75);
     border: 1px solid var(--darkShade25);
-    border-radius: 4px 4px 0 0;
+    border-radius: 4px;
 
     font-family: var(--mainFont);
     font-size: 14px;
@@ -41,10 +41,16 @@
     line-height: 18px;
 
     &:focus {
+      outline: none;
+    }
+
+    &_active {
       user-select: none;
 
       border: 1px solid var(--darkShade50);
-      outline: var(--darkShade50);
+      border-bottom: none;
+      border-end-start-radius: 0;
+      border-end-end-radius: 0;
     }
 
     &::placeholder {

@@ -5,7 +5,7 @@ mixin dropdown({ label='', placeholder='', items=[], buttons=true, active=false}
   .dropdown
     label.dropdown__label= label
     .dropdown__input-wrapper.js-dropdown__input-wrapper
-      input.dropdown__input.js-dropdown__input(placeholder=placeholder, readonly)
+      input.dropdown__input.js-dropdown__input(class=active ? "dropdown__input_active" : "", placeholder=placeholder, readonly)
       span.dropdown__input-arrow
     .dropdown__menu.js-dropdown__menu(class=active ? "dropdown__menu_active" : "")
       ul.dropdown__amount-items
