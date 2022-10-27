@@ -1,7 +1,7 @@
 - const TOTAL_STARS_COUNT = 5;
 
-mixin rate(rateNumber=TOTAL_STARS_COUNT)
+mixin rate(rateNumber = TOTAL_STARS_COUNT)
   .rate.js-rate
-    - for(let i = 0; i < TOTAL_STARS_COUNT; i++)
+    - for(let i = 0; i < TOTAL_STARS_COUNT; i += 1)
       - const iconName = i < rateNumber ? "star" : "star_border";
         span.rate__icon.js-rate__icon= iconName

@@ -12,23 +12,23 @@ html(lang="en")
           .colors__colors
             -
               const colors = [
-                {color:'darkShade', title:'Dark Shade 100%', text:'#1F2041'},
-                {color:'darkShade75', title:'Dark Shade 75%', text:'#1F2041'},
-                {color:'darkShade50', title:'Dark Shade 50%', text:'#1F2041'},
-                {color:'darkShade25', title:'Dark Shade 25%', text:'#1F2041'},
-                {color:'white', title:'Dark Shade 5%', text:'#1F2041'},
-                {color:'purple', title:'Purple', text:'#BC9CFF'},
-                {color:'green', title:'Green', text:'#6FCF97'},
+                { color:'darkShade', title:'Dark Shade 100%', text:'#1F2041' },
+                { color:'darkShade75', title:'Dark Shade 75%', text:'#1F2041' },
+                { color:'darkShade50', title:'Dark Shade 50%', text:'#1F2041' },
+                { color:'darkShade25', title:'Dark Shade 25%', text:'#1F2041' },
+                { color:'white', title:'Dark Shade 5%', text:'#1F2041' },
+                { color:'purple', title:'Purple', text:'#BC9CFF' },
+                { color:'green', title:'Green', text:'#6FCF97' },
               ];
             each item in colors
               +color-item(item)
           .colors__types
             -
               const types = [
-                {tag:'h1', title:'H1', text: 'This one is the sub-section or widget title'},
-                {tag:'h2', title:'H2', text: 'Next one is the item title inside \n widgets'},
-                {tag:'h3', title:'H3', text: 'This is a label or CTA text', isUppercase: true},
-                {tag:'body', title:'Body', text: 'This is the body text which is used for most \n of the design, like paragraphs, lists, etc.'}
+                { tag:'h1', title:'H1', text: 'This one is the sub-section or widget title' },
+                { tag:'h2', title:'H2', text: 'Next one is the item title inside \n widgets' },
+                { tag:'h3', title:'H3', text: 'This is a label or CTA text', isUppercase: true },
+                { tag:'body', title:'Body', text: 'This is the body text which is used for most \n of the design, like paragraphs, lists, etc.' }
               ];
             each item in types
               +color-type-item(item)

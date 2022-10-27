@@ -1,8 +1,8 @@
 include ../date-field/date-field.pug
 
-mixin calendar({type='', title='', secondTitle= '', selectedDate=[]} = {})
+mixin calendar({ type = '', title = '', secondTitle = '', selectedDate = [] } = {})
   .calendar.js-calendar(data-type=type)
-    if (type==="multiple")
+    if (type === "multiple")
       .calendar__fields
         .calendar__field.js-calendar__field
           - const dateFieldTitleFirst = title || "прибытие";
@@ -10,7 +10,7 @@ mixin calendar({type='', title='', secondTitle= '', selectedDate=[]} = {})
         .calendar__field.js-calendar__field
           - const dateFieldTitleSecond = secondTitle || "выезд";
           +date-field(dateFieldTitleSecond, selectedDate[1])
-    if (type==='single')
+    if (type === 'single')
       .calendar__field.js-calendar__field
         - const dateFieldTittleThird = title || "даты пребывания в отеле";
         +date-field(dateFieldTittleThird, 'ДД-ММ - ДД-ММ', selectedDate[0])

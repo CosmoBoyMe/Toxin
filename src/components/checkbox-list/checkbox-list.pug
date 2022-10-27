@@ -1,6 +1,6 @@
 include ../checkbox-item/checkbox-item.pug
 
-mixin checkbox-list({title='', items=[], type=''} = {})
+mixin checkbox-list({ title = '', items = [], type = '' } = {})
   .checkbox-list
     if title
       h3.checkbox-list__title= title
@@ -8,9 +8,9 @@ mixin checkbox-list({title='', items=[], type=''} = {})
       if (type === 'rich')
         each item in items
           li.checkbox-list__item
-            - const richItem = {title: item.title, text: item.text, checked: item.checked, rich: true};
+            - const richItem = { title: item.title, text: item.text, checked: item.checked, rich: true };
               +checkbox-item(richItem)
       else
         each item in items
           li.checkbox-list__item
-            +checkbox-item({title: item.title, checked: item.checked})
+            +checkbox-item({ title: item.title, checked: item.checked })

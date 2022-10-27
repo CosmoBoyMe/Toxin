@@ -59,9 +59,9 @@ html(lang="en")
                     .room-details__room-reviews-counts 2 отзыва
                   ul.room-details__room-reviews-list
                     li.room-details__room-reviews-item 
-                      +review-item({name: 'Мурад Сарафанов', online: '5 дней назад', avatarSrc: require('../../../assets/img/user-img-1.jpg'), likeCount: 12, isLiked:true, text:'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'})
+                      +review-item({ name: 'Мурад Сарафанов', online: '5 дней назад', avatarSrc: require('../../../assets/img/user-img-1.jpg'), likeCount: 12, isLiked:true, text:'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.' })
                     li.room-details__room-reviews-item 
-                      +review-item({name: 'Патрисия Стёклышкова', online: 'Неделю назад', avatarSrc: require('../../../assets/img/user-img-2.jpg'), likeCount: 2, isLiked:false, text:'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'})
+                      +review-item({ name: 'Патрисия Стёклышкова', online: 'Неделю назад', avatarSrc: require('../../../assets/img/user-img-2.jpg'), likeCount: 2, isLiked:false, text:'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент' })
                 .room-details__room-details
                   .room-details__room-rules
                     -
@@ -69,11 +69,11 @@ html(lang="en")
                         'Нельзя с питомцами',
                         'Без вечеринок и мероприятий',
                         'Время прибытия — после 13:00,\n а выезд до 12:00'];
-                  
+
                     +bullet-list({ tag:'h2', title: 'Правила', itemsTitle: bulletItems })
                   .room-details__room-cancel 
                     h2.room-details__room-cancel-title Отмена
                     p.room-details__room-cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
               .room-details__room-form
-                +booking-form({selectedDate:['2019-08-23', '2019-08-23']})
+                +booking-form({ selectedDate: [ '2019-08-23', '2019-08-23' ] })
       +footer
