@@ -22,8 +22,6 @@
     margin-bottom: 221px;
   }
 
-  // FIRST COLUMN
-
   &__first-column {
     display: flex;
     flex-direction: column;
@@ -74,8 +72,6 @@
       margin-bottom: 20px;
     }
   }
-
-  // SECOND-COLUMN
 
   &__second-column {
     margin-right: 72px;
@@ -179,8 +175,6 @@
     width: 263px;
   }
 
-  // THIRD COLUMN
-
   &__range-slider {
     width: 266px;
     margin-bottom: 43px;
@@ -248,8 +242,6 @@
   &__bullet-list {
     width: 263px;
   }
-
-  // ROW BOTTOM
 
   &__row-bottom {
     display: flex;
