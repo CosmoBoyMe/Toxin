@@ -1,4 +1,4 @@
-mixin masked-field({text='', id='', name=''})
+mixin masked-field({ text = '', id = '', name = '' } = {})
   .masked-field
     if (text)
       label.masked-field__label(for=id ? id : undefined)= text

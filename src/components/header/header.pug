@@ -1,8 +1,7 @@
 include ../link/link.pug
 include ../logo/logo.pug
 
-mixin header(options = { activePageName: '', isAuth: false, userName: ''})
-  - const { activePageName, isAuth, userName } = options;
+mixin header({ activePageName = '', isAuth = false, userName = '' } = {})
   header.header.js-header
     .header__container
       .header__inner

@@ -16,7 +16,7 @@ mixin dropdown({ label = '', placeholder = '', items = [], buttons = true, activ
         each item in items
           - const { title, value, min, max } = item;
           li.dropdown__amount-select.js-dropdown__amount-select
-            +amount-select(title, value, min, max)
+            +amount-select({ title, value, min, max })
       if (buttons)
         .dropdown__buttons
           .dropdown__button.js-dropdown__button_clear

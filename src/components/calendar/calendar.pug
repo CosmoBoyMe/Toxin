@@ -6,14 +6,14 @@ mixin calendar({ type = '', title = '', secondTitle = '', selectedDate = [] } = 
       .calendar__fields
         .calendar__field.js-calendar__field
           - const dateFieldTitleFirst = title || "прибытие";
-            +date-field(dateFieldTitleFirst, selectedDate[0])
+            +date-field({ title: dateFieldTitleFirst , selectedDate: selectedDate[0] })
         .calendar__field.js-calendar__field
           - const dateFieldTitleSecond = secondTitle || "выезд";
-          +date-field(dateFieldTitleSecond, selectedDate[1])
+          +date-field({ title: dateFieldTitleSecond , selectedDate: selectedDate[1] })
     if (type === 'single')
       .calendar__field.js-calendar__field
         - const dateFieldTittleThird = title || "даты пребывания в отеле";
-        +date-field(dateFieldTittleThird, 'ДД-ММ - ДД-ММ', selectedDate[0])
+        +date-field({ title: dateFieldTittleThird, placeholder: 'ДД-ММ - ДД-ММ', selectedDate: selectedDate[0] })
     .calendar__date-picker.js-calendar__date-picker(
       class=type && "calendar__date-picker_closed calendar__date-picker_shift_top"
     )

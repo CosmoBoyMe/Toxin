@@ -136,8 +136,8 @@ html(lang="en")
             .form-elements__row-bottom
               .form-elements__feature-items 
                 .form-elements__feature-item
-                  +feature-item('Комфорт', 'Шумопоглощающие стены', 'insert_emoticon')
+                  +feature-item({ title: 'Комфорт', text: 'Шумопоглощающие' })
                 .form-elements__feature-item
-                  +feature-item('Удобство', 'Окно в каждой из спален', 'location_city')
+                  +feature-item({ title: 'Удобство', text: 'Окно в каждой из спален', iconText: 'location_city' })
               .form-elements__review-item
                 +review-item({ name: 'Мурад Сарафанов', online: '5 дней назад', avatarSrc: require('../../../assets/img/user-img-1.jpg'), likeCount: 12, isLiked: true, text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.' })

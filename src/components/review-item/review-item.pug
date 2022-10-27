@@ -1,6 +1,6 @@
 include ../like-button/like-button.pug
 
-mixin review-item({name='', online='час назад', avatarSrc='', likeCount=5, isLiked=true, text=''})
+mixin review-item({ name = '', online = 'час назад', avatarSrc = '', likeCount = 5, isLiked = true, text = '' } = {})
   .review-item 
     .review-item__user 
       img.review-item__user-img(src=avatarSrc, alt="user avatar")
