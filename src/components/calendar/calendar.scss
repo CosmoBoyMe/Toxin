@@ -106,8 +106,7 @@
 
       width: 15%;
       height: auto;
-      padding-top: 4.5%;
-      padding-bottom: 4.5%;
+      padding: 4.5% 0;
     }
 
     &--cells {
@@ -143,8 +142,7 @@
     justify-content: center;
 
     height: auto;
-    padding-top: 32%;
-    padding-bottom: 32%;
+    padding: 32% 0;
 
     &.-current- {
       color: white;
