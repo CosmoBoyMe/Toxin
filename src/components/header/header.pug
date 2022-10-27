@@ -9,7 +9,7 @@ mixin header(options = { activePageName: '', isAuth: false, userName: ''})
         a.header__logo-link(href="landing-page.html") 
           +logo
         -
-          const items = [{text: 'о нас'}, {text: 'услуги', nested: true},
+          const items = [{text: 'о нас',}, {text: 'услуги', nested: true},
           {text: 'вакансии'}, {text: 'новости'}, {text: 'соглашения', nested: true} ]
         nav.header__nav
           button.header__nav-burger.js-header__nav-burger
@@ -19,9 +19,9 @@ mixin header(options = { activePageName: '', isAuth: false, userName: ''})
               each item in items
                 li.header__nav-item
                   a.header__nav-link(
-                    class=item.text.toLowerCase() === activePageName.toLowerCase() ? "header__nav-link_active" : "",
-                    class=item.nested ? "header__nav-link_sign_arrow" : "",
-                    href=item.link ? link : "/mock-address/change-me"
+                    class=item.text.toLowerCase() === activePageName.toLowerCase() && "header__nav-link_active",
+                    class=item.nested && "header__nav-link_sign_arrow",
+                    href=item.link || "/mock-address/change-me"
                   )= item.text
             if isAuth
               .header__nav-profile= userName

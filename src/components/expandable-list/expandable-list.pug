@@ -5,7 +5,7 @@ mixin expandable-list({title='', items=[], active=false} = {})
     .expandable-list__header.js-expandable-list__header
       h3.expandable-list__title= title
       span.expandable-list__arrow.js-expandable-list__arrow(
-        class=active ? "expandable-list__arrow_active" : ""
+        class=active && "expandable-list__arrow_active"
       ) expand_more
-    .expandable-list__menu.js-expandable-list__menu(class=active ? "expandable-list__menu_active" : "")
+    .expandable-list__menu.js-expandable-list__menu(class=active && "expandable-list__menu_active")
       +checkbox-list({ items })

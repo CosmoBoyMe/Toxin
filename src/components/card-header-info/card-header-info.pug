@@ -2,7 +2,7 @@ mixin card-header-info({isLux=true, price=9990, roomNumber=888, isLarge=false} =
   .card-header-info.js-card-header-info
     .card-header-info__room-number
       span.card-header-info__symbol №
-      span.card-header-info__number(class=isLarge ? "card-header-info__number_size_large" : "")= roomNumber
+      span.card-header-info__number(class=isLarge && "card-header-info__number_size_large")= roomNumber
       if (isLux)
         span.card-header-info__status люкс
     .card-header-info__price

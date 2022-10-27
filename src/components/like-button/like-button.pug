@@ -1,4 +1,4 @@
 mixin like-button(likeCount= 0, liked=false)
-  button.like-button.js-like-button(type="button", class=liked ? "like-button_liked" : "")
+  button.like-button.js-like-button(type="button", class=liked && "like-button_liked")
     span.like-button__heart
     span.like-button__count.js-like-button__count= likeCount

@@ -9,5 +9,5 @@ mixin text-field({text='', type='text', placeholder='введите текст',
       name=name,
       placeholder=placeholder,
       value=value,
-      class=focus ? "text-field__input_focused" : ""
+      class=focus && "text-field__input_focused"
     )
