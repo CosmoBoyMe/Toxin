@@ -14,9 +14,14 @@ class RoomCard {
     this.init();
   }
 
+  // eslint-disable-next-line class-methods-use-this
+  handleRatingClick(event) {
+    event.preventDefault();
+  }
+
   bindEventListeners() {
     const { ratingElement } = this.elements;
-    ratingElement.addEventListener('click', (event) => event.preventDefault());
+    ratingElement.addEventListener('click', this.handleRatingClick);
   }
 
   // eslint-disable-next-line class-methods-use-this

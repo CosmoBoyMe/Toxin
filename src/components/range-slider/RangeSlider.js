@@ -26,11 +26,11 @@ class RangeSlider {
     this.initNoUiSlider();
   }
 
-  updatePriceText(values) {
+  updatePriceText = (values) => {
     const { priceElement } = this.elements;
     const valuesString = values.join(' - ');
     priceElement.textContent = valuesString;
-  }
+  };
 
   initNoUiSlider() {
     const { sliderElement } = this.elements;
@@ -48,7 +48,7 @@ class RangeSlider {
       }),
     });
 
-    sliderElement.noUiSlider.on('update', this.updatePriceText.bind(this));
+    sliderElement.noUiSlider.on('update', this.updatePriceText);
   }
 }
 export { RangeSlider };
