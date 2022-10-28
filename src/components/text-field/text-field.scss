@@ -1,10 +1,12 @@
 @use '../../styles/vars';
 
 .text-field {
-  display: flex;
-  flex-direction: column;
-
   &__label {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__text {
     margin-bottom: 5px;
     margin-left: 1px;
 

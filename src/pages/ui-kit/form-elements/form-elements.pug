@@ -32,19 +32,19 @@ html(lang="en")
             .form-elements__columns
               .form-elements__first-column
                 .form-elements__text-field
-                  +text-field({ text:'Text Field', type:'email', name: 'email', placeholder: 'Email', id: 'email' })
+                  +text-field({ text:'Text Field', type:'email', name: 'email', placeholder: 'Email' })
                 .form-elements__text-field
-                  +text-field({ text:'Text Field', type:'email', placeholder: 'Email', focus: true, name: 'extra-email', value: 'This is pretty awesome', id:'extra-email' })
+                  +text-field({ text:'Text Field', type:'email', placeholder: 'Email', focus: true, name: 'extra-email', value: 'This is pretty awesome' })
                 .form-elements__guest-dropdown-first
                   +guest-dropdown({ label: 'dropdown' })
                 .form-elements__masked-field
-                  +masked-field({ text:'masked text field', id: 'date', name: 'date' })
+                  +masked-field({ text:'masked text field', name: 'date' })
                 .form-elements__multiple-calendar.js-form-elements__multiple-calendar
                   +calendar({ type: 'multiple', title: 'date Dropdown', secondTitle: 'date Dropdown' })
                 .form-elements__filter-calendar.js-form-elements__filter-calendar
                   +calendar({ type: 'single', title: 'filter date dropdown' })
                 .form-elements__subscription-field
-                  +subscription-field({ text:'subscription text field', id:'subscription' })
+                  +subscription-field('subscription text field')
                 .form-elements__room-dropdown.js-form-elements__room-dropdown
                   +room-dropdown({ label: 'dropdown', values: [2, 2] })
                 .form-elements__room-dropdown.form-elements__room-dropdown_second.js-form-elements__room-dropdown

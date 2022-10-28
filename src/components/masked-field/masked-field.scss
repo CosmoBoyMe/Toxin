@@ -1,12 +1,14 @@
 @use '../../styles/vars';
 
 .masked-field {
-  display: flex;
-  flex-direction: column;
-
   width: 100%;
 
   &__label {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__text {
     margin-bottom: 5px;
     margin-left: 1px;
 

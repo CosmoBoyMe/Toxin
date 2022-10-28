@@ -1,7 +1,8 @@
-mixin subscription-field({ text = '', id = undefined } = {})
+mixin subscription-field(text = '')
   .subscription-field
-    if (text)
-      label.subscription-field__label(for=id)= text
-    .subscription-field__controls
-      input.subscription-field__input(type="email", id=id, placeholder="Email", required, name="email")
-      button.subscription-field__button arrow_forward
+    label.subscription-field__label
+      if (text)
+        span.subscription-field__text= text
+      .subscription-field__controls
+        input.subscription-field__input(type="email", placeholder="Email", required, name="email")
+        button.subscription-field__button arrow_forward

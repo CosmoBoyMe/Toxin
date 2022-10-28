@@ -7,8 +7,11 @@
   }
 
   &__label {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+  }
 
+  &__text {
     margin-bottom: 5px;
     margin-left: 2px;
 

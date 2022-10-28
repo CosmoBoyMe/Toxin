@@ -1,13 +1,12 @@
-mixin text-field({ text = '', type = 'text', placeholder = 'введите текст', focus = false, value = '', id = undefined, name='' } = {})
+mixin text-field({ text = '', type = 'text', placeholder = 'введите текст', focus = false, value = '', name='' } = {})
   .text-field
-    if (text)
-      label.text-field__label(for=id)= text
-
-    input.text-field__input(
-      type=type,
-      id=id,
-      name=name,
-      placeholder=placeholder,
-      value=value,
-      class=focus && "text-field__input_focused"
-    )
+    label.text-field__label
+      if (text)
+        span.text-field__text= text
+      input.text-field__input(
+        type=type,
+        name=name,
+        placeholder=placeholder,
+        value=value,
+        class=focus && "text-field__input_focused"
+      )

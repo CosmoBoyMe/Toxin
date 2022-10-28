@@ -15,7 +15,7 @@ mixin sign-up-form
       +radio({ text: 'Мужчина', checked: true, name: 'gender', value: 'Мужчина' })
       +radio({ text: 'Женщина', name: 'gender', value: 'Женщина' })
     .sign-up-form__birth-field
-      +masked-field({ text: 'дата рождения', id: 'birthdate', name: 'birthdate' })
+      +masked-field({ text: 'дата рождения', name: 'birthdate' })
     .sign-up-form__fields 
       +text-field({ text: 'данные для входа в сервис', placeholder: 'Email', type: 'email', name: 'email' })
       +text-field({ placeholder: 'Пароль', type:'password', name: 'password' })

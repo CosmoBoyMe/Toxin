@@ -1,10 +1,9 @@
-mixin masked-field({ text = '', id = '', name = '' } = {})
+mixin masked-field({ text = '', name = '' } = {})
   .masked-field
-    if (text)
-      label.masked-field__label(for=id ? id : undefined)= text
-    input.masked-field__input.js-masked-field__input(
-      type="text",
-      id=id ? id : undefined,
-      name=name,
-      placeholder="ДД.ММ.ГГГГ"
-    )
+    label.masked-field__label
+      span.masked-field__text= text
+      input.masked-field__input.js-masked-field__input(
+        type="text",
+        name=name,
+        placeholder="ДД.ММ.ГГГГ"
+      )
