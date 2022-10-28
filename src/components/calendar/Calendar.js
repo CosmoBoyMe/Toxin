@@ -6,6 +6,7 @@ class Calendar {
     const fieldElements = element.querySelectorAll('.js-calendar__field');
     const inputElements = element.querySelectorAll('input');
     const type = element.getAttribute('data-type');
+    const selectedDates = [...inputElements].map((input) => input.getAttribute('data-date'));
 
     this.elements = {
       element,
@@ -14,7 +15,7 @@ class Calendar {
       inputElements,
     };
     this.type = type;
-
+    this.selectedDates = selectedDates;
     this.init();
   }
 
@@ -52,10 +53,11 @@ class Calendar {
 
     if (type === 'multiple') {
       const onSelect = ({ formattedDate }) => {
-        const [firstDate, lastDate] = formattedDate;
-        const [firstInputElement, lastInputElement] = inputElements;
-        firstInputElement.value = firstDate ?? '';
-        lastInputElement.value = lastDate ?? '';
+        inputElements.forEach((input, index) => {
+          const value = formattedDate[index] ?? '';
+          input.value = value; // eslint-disable-line no-param-reassign
+          input.dataset.date = value; // eslint-disable-line no-param-reassign
+        });
       };
 
       const dateFormat = (date) =>
@@ -81,7 +83,8 @@ class Calendar {
       };
     }
 
-    new AirDatepicker(datePickerElement, { ...defaultOptions, ...options }); // eslint-disable-line no-new
+    const airDatepicker = new AirDatepicker(datePickerElement, { ...defaultOptions, ...options });
+    airDatepicker.selectDate(this.selectedDates);
   }
 
   handleDocumentClick = (event) => {
