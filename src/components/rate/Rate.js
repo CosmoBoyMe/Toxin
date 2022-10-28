@@ -6,7 +6,7 @@ class Rate {
     const starIconElements = element.querySelectorAll('.js-rate__icon');
     this.elements = { element, starIconElements };
     this.starCounts = starIconElements.length;
-    this.init();
+    this.bindStarIconsListeners();
   }
 
   handleStarIconClick = (event, index) => {
@@ -31,10 +31,6 @@ class Rate {
     starIconElements.forEach((element, index) =>
       element.addEventListener('click', (event) => this.handleStarIconClick(event, index))
     );
-  }
-
-  init() {
-    this.bindStarIconsListeners();
   }
 }
 
