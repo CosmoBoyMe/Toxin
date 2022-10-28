@@ -1,7 +1,7 @@
 import wNumb from 'wnumb';
 
 import { bookingFormDaysWordsDeclensions } from '../../constants/words-declensions';
-import { wording } from '../../helpers/wording';
+import { getWordDeclension } from '../../helpers/getWordDeclension';
 
 class BookingForm {
   constructor(element) {
@@ -13,8 +13,8 @@ class BookingForm {
       element,
       servicesPriceElements,
       daysCountElement,
-      daysWordElement
-    }
+      daysWordElement,
+    };
     this.init();
   }
 
@@ -32,7 +32,7 @@ class BookingForm {
       item.textContent = formattedValue;
     });
     const daysCount = Number(daysCountElement.textContent);
-    const dayDeclension = wording(daysCount, bookingFormDaysWordsDeclensions, false);
+    const dayDeclension = getWordDeclension(daysCount, bookingFormDaysWordsDeclensions, false);
     daysWordElement.textContent = dayDeclension;
   }
 }

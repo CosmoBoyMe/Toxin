@@ -1,4 +1,5 @@
 import { guestDropdownWordsDeclensions } from '../../constants/words-declensions';
+import { getWordDeclension } from '../../helpers/getWordDeclension';
 import { Dropdown } from '../dropdown/Dropdown';
 
 class GuestDropdown {
@@ -11,10 +12,10 @@ class GuestDropdown {
   onChangeTextValue = (_, values) => {
     const guestCount = values[0] + values[1];
     const babyCount = values[2];
-    const wordingTextArray = [guestCount, babyCount].map((count, index) =>
-      wording(count, guestDropdownWordsDeclensions[index])
+    const wordsDeclensions = [guestCount, babyCount].map((count, index) =>
+      getWordDeclension(count, guestDropdownWordsDeclensions[index])
     );
-    const removedEmptyText = wordingTextArray.filter((item) => item !== '');
+    const removedEmptyText = wordsDeclensions.filter((item) => item !== '');
     const formattedText = removedEmptyText.join(', ');
     return formattedText;
   };

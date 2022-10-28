@@ -1,4 +1,4 @@
-import { wording } from '../../helpers/wording';
+import { getWordDeclension } from '../../helpers/getWordDeclension';
 
 class Dropdown {
   constructor({ element, wordsDeclensions = [], onChangeTextValue = null }) {
@@ -51,7 +51,7 @@ class Dropdown {
       inputElement.value = inputText;
     } else {
       const wordingTextArray = this.wordsDeclensions.map((item, index) =>
-        wording(state.values[index], item)
+        getWordDeclension(state.values[index], item)
       );
       const removedEmptyText = wordingTextArray.filter((item) => item !== '');
       const formattedText = removedEmptyText.join(', ');
