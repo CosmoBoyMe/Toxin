@@ -19,7 +19,7 @@ html(lang="en")
             .search-room__content 
               h1.search-room__content-title Номера, которые мы для вас подобрали
               .search-room__content-cards
-                - const { roomCards } = require("../../../js/room-cards.js");
+                - const { roomCards } = require("../../../mocks/room-cards.js");
                   each roomCard in roomCards 
                     +room-card(roomCard)
               .search-room__content-pagination
