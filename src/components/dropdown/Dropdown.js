@@ -87,13 +87,13 @@ class Dropdown {
     this.toggleHiddenClearButton();
   }
 
-  handlerMinusButtonClick = ({ target }) => {
+  handleMinusButtonClick = ({ target }) => {
     const counterElement = target.nextElementSibling;
     counterElement.stepDown();
     this.update();
   };
 
-  handlerPlusButtonClick = ({ target }) => {
+  handlePlusButtonClick = ({ target }) => {
     const counterElement = target.previousElementSibling;
     counterElement.stepUp();
     this.update();
@@ -101,11 +101,11 @@ class Dropdown {
 
   toggleDropdownMenu() {
     const { menuElement, inputElement } = this.elements;
-    inputElement.classList.toggle('dropdown__input_active')
+    inputElement.classList.toggle('dropdown__input_active');
     menuElement.classList.toggle('dropdown__menu_active');
   }
 
-  handlerClearButtonClick = () => {
+  handleClearButtonClick = () => {
     const { counterElements } = this.elements;
     [...counterElements].forEach((counter) => {
       const counterElement = counter;
@@ -115,32 +115,37 @@ class Dropdown {
     this.update();
   };
 
-  handlerOutsideClick = (event) => {
+  handleDocumentClick = (event) => {
     const { element, menuElement, inputElement } = this.elements;
     if (!element.contains(event.target)) {
       menuElement.classList.remove('dropdown__menu_active');
-      inputElement.classList.remove('dropdown__input_active')
-      document.removeEventListener('click', this.handlerOutsideClick);
+      inputElement.classList.remove('dropdown__input_active');
+      document.removeEventListener('click', this.handleDocumentClick);
     }
   };
 
-  handlerInputWrapperClick = () => {
+  handleInputWrapperClick = () => {
     this.toggleDropdownMenu();
-    document.addEventListener('click', this.handlerOutsideClick);
+    document.addEventListener('click', this.handleDocumentClick);
   };
 
   bindEventListeners() {
-    const { inputWrapperElement, applyButtonElement, clearButtonElement, minusButtonElements, plusButtonElements } =
-      this.elements;
+    const {
+      inputWrapperElement,
+      applyButtonElement,
+      clearButtonElement,
+      minusButtonElements,
+      plusButtonElements,
+    } = this.elements;
 
-    inputWrapperElement.addEventListener('click', this.handlerInputWrapperClick);
+    inputWrapperElement.addEventListener('click', this.handleInputWrapperClick);
     applyButtonElement?.addEventListener('click', () => this.toggleDropdownMenu());
-    clearButtonElement?.addEventListener('click', this.handlerClearButtonClick);
+    clearButtonElement?.addEventListener('click', this.handleClearButtonClick);
     minusButtonElements.forEach((button) => {
-      button.addEventListener('click', this.handlerMinusButtonClick);
+      button.addEventListener('click', this.handleMinusButtonClick);
     });
     plusButtonElements.forEach((button) => {
-      button.addEventListener('click', this.handlerPlusButtonClick);
+      button.addEventListener('click', this.handlePlusButtonClick);
     });
   }
 

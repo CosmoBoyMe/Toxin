@@ -8,7 +8,7 @@ class LikeButton {
     this.bindLikeButtonListener();
   }
 
-  handlerLikeButtonClick = (event) => {
+  handleLikeButtonClick = (event) => {
     const { currentTarget } = event;
     const { countElement } = this.elements;
     const currentCount = Number(countElement.textContent);
@@ -23,7 +23,7 @@ class LikeButton {
   };
 
   bindLikeButtonListener() {
-    this.elements.element.addEventListener('click', this.handlerLikeButtonClick);
+    this.elements.element.addEventListener('click', this.handleLikeButtonClick);
   }
 }
 

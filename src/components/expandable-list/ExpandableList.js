@@ -18,22 +18,22 @@ class ExpandableList {
     headerArrowElement.classList.toggle('expandable-list__arrow_active');
   }
 
-  handlerOutsideClick = (event) => {
+  handleDocumentClick = (event) => {
     const { element, menuElement, headerArrowElement } = this.elements;
     if (!element.contains(event.target)) {
       menuElement.classList.remove('expandable-list__menu_active');
       headerArrowElement.classList.remove('expandable-list__arrow_active');
-      document.removeEventListener('click', this.handlerOutsideClick);
+      document.removeEventListener('click', this.handleDocumentClick);
     }
   };
 
-  handlerExpandableListHeaderClick = () => {
+  handleExpandableListHeaderClick = () => {
     this.toggleMenu();
-    document.addEventListener('click', this.handlerOutsideClick);
+    document.addEventListener('click', this.handleDocumentClick);
   };
 
   init() {
-    this.elements.headerElement.addEventListener('click', this.handlerExpandableListHeaderClick);
+    this.elements.headerElement.addEventListener('click', this.handleExpandableListHeaderClick);
   }
 }
 

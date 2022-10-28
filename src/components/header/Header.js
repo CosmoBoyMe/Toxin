@@ -9,10 +9,10 @@ class Header {
       contentElement,
     };
 
-    this.init();
+    this.bindBurgerListener();
   }
 
-  handlerNavBurgerClick = () => {
+  handleNavBurgerClick = () => {
     const { burgerElement, contentElement } = this.elements;
     burgerElement.classList.toggle('header__nav-burger_active');
     contentElement.classList.toggle('header__nav-content_active');
@@ -20,11 +20,7 @@ class Header {
 
   bindBurgerListener() {
     const { burgerElement } = this.elements;
-    burgerElement.addEventListener('click', this.handlerNavBurgerClick);
-  }
-
-  init() {
-    this.bindBurgerListener();
+    burgerElement.addEventListener('click', this.handleNavBurgerClick);
   }
 }
 

@@ -35,7 +35,7 @@ class Pagination {
     const buttonElement = document.createElement('button');
     buttonElement.textContent = pageNumber;
     buttonElement.classList.add('js-pagination__button', 'js-pagination__page');
-    const handlerPageButtonClick = () => {
+    const handlePageButtonClick = () => {
       this.activePageNumber = pageNumber;
       this.render();
     };
@@ -49,9 +49,15 @@ class Pagination {
     } else {
       buttonElement.classList.add('js-pagination__button', 'js-pagination__page');
     }
-    buttonElement.addEventListener('click', handlerPageButtonClick);
+
+    buttonElement.addEventListener('click', handlePageButtonClick);
     return buttonElement;
   }
+
+  handleNextButtonClick = () => {
+    this.activePageNumber += 1;
+    this.render();
+  };
 
   createNextButton() {
     const { activePageNumber, totalPage } = this;
@@ -63,11 +69,7 @@ class Pagination {
     if (activePageNumber === totalPage) {
       nextButton.setAttribute('disable', true);
     } else {
-      const handlerNextButtonClick = () => {
-        this.activePageNumber += 1;
-        this.render();
-      };
-      nextButton.addEventListener('click', handlerNextButtonClick);
+      nextButton.addEventListener('click', this.handleNextButtonClick);
     }
     return nextButton;
   }

@@ -11,10 +11,10 @@ class Filter {
       filterContentElement,
     };
 
-    this.init();
+    this.bindListeners();
   }
 
-  handlerButtonClick = () => {
+  handleButtonClick = () => {
     const { filterContentElement } = this.elements;
 
     filterContentElement.classList.toggle('filter__content_visible');
@@ -25,14 +25,10 @@ class Filter {
     }
   };
 
-  bindButtonListeners() {
+  bindListeners() {
     const { filterButtonElement, filterButtonCloseElement } = this.elements;
-    filterButtonElement.addEventListener('click', this.handlerButtonClick);
-    filterButtonCloseElement.addEventListener('click', this.handlerButtonClick);
-  }
-
-  init() {
-    this.bindButtonListeners();
+    filterButtonElement.addEventListener('click', this.handleButtonClick);
+    filterButtonCloseElement.addEventListener('click', this.handleButtonClick);
   }
 }
 

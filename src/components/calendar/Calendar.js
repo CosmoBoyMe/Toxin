@@ -84,17 +84,17 @@ class Calendar {
     new AirDatepicker(datePickerElement, { ...defaultOptions, ...options }); // eslint-disable-line no-new
   }
 
-  handlerOutsideClick = (event) => {
+  handleDocumentClick = (event) => {
     const { element, datePickerElement } = this.elements;
     if (!element.contains(event.target)) {
       datePickerElement.classList.add('calendar__date-picker_closed');
-      document.removeEventListener('click', this.handlerOutsideClick);
+      document.removeEventListener('click', this.handleDocumentClick);
     }
   };
 
   handleFieldClick = () => {
     this.toggleCloseDatePicker();
-    document.addEventListener('click', this.handlerOutsideClick);
+    document.addEventListener('click', this.handleDocumentClick);
   };
 
   toggleCloseDatePicker() {
