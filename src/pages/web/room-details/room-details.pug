@@ -38,11 +38,11 @@ html(lang="en")
                     h2.room-details__room-features-title Сведения о номере
                     ul.room-details__room-features-items 
                       li.room-details__room-features-item
-                        +feature-item('Комфорт', 'Шумопоглощающие стены', 'insert_emoticon')
+                        +feature-item({ title: 'Комфорт', text: 'Шумопоглощающие стены' })
                       li.room-details__room-features-item
-                        +feature-item('Удобство', 'Окно в каждой из спален', 'location_city')
+                        +feature-item({ title: 'Удобство', text: 'Окно в каждой из спален', iconText: 'location_city' })
                       li.room-details__room-features-item
-                        +feature-item('Уют', 'Номер оснащён камином', 'whatshot')
+                        +feature-item({ title: 'Уют', text: 'Номер оснащён камином', iconText: 'whatshot' })
                   .room-details__room-votes 
                     h2.room-details__room-votes-title Впечатления от номера
                     .room-details__room-votes-content 
