@@ -1,6 +1,4 @@
-
-import { guestDropdownWordsDeclensions } from '../../const';
-import { wording } from '../../helpers/wording';
+import { guestDropdownWordsDeclensions } from '../../constants/words-declensions';
 import { Dropdown } from '../dropdown/Dropdown';
 
 class GuestDropdown {

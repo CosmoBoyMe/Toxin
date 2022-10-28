@@ -1,6 +1,4 @@
-const bookingFormDaysWordsDeclensions = [
-  'сутки', 'суток', 'суток',
-];
+const bookingFormDaysWordsDeclensions = ['сутки', 'суток', 'суток'];
 
 const guestDropdownWordsDeclensions = [
   ['гость', 'гостя', 'гостей'],

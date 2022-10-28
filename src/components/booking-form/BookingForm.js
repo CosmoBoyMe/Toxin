@@ -1,6 +1,6 @@
 import wNumb from 'wnumb';
 
-import { bookingFormDaysWordsDeclensions } from '../../const';
+import { bookingFormDaysWordsDeclensions } from '../../constants/words-declensions';
 import { wording } from '../../helpers/wording';
 
 class BookingForm {
