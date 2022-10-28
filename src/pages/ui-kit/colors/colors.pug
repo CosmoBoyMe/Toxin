@@ -25,10 +25,10 @@ html(lang="en")
           .colors__types
             -
               const types = [
-                { tag:'h1', title:'H1', text: 'This one is the sub-section or widget title' },
-                { tag:'h2', title:'H2', text: 'Next one is the item title inside \n widgets' },
-                { tag:'h3', title:'H3', text: 'This is a label or CTA text', isUppercase: true },
-                { tag:'body', title:'Body', text: 'This is the body text which is used for most \n of the design, like paragraphs, lists, etc.' }
+                { tag:'h1', text: 'This one is the sub-section or widget title' },
+                { tag:'h2', text: 'Next one is the item title inside \n widgets' },
+                { tag:'h3', text: 'This is a label or CTA text', isUppercase: true },
+                { tag:'body', text: 'This is the body text which is used for most \n of the design, like paragraphs, lists, etc.' }
               ];
             each item in types
               +color-type-item(item)
