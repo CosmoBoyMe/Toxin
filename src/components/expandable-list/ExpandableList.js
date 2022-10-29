@@ -1,25 +1,20 @@
 class ExpandableList {
   constructor(element) {
-    const headerElement = element.querySelector('.js-expandable-list__header');
-    const headerArrowElement = headerElement.querySelector('.js-expandable-list__arrow');
-    const menuElement = element.querySelector('.js-expandable-list__menu');
-    this.elements = {
-      element,
-      headerElement,
-      headerArrowElement,
-      menuElement,
-    };
+    this.element = element;
+    this.headerElement = element.querySelector('.js-expandable-list__header');
+    this.headerArrowElement = this.headerElement.querySelector('.js-expandable-list__arrow');
+    this.menuElement = element.querySelector('.js-expandable-list__menu');
     this.init();
   }
 
   toggleMenu() {
-    const { menuElement, headerArrowElement } = this.elements;
+    const { menuElement, headerArrowElement } = this;
     menuElement.classList.toggle('expandable-list__menu_active');
     headerArrowElement.classList.toggle('expandable-list__arrow_active');
   }
 
   handleDocumentClick = (event) => {
-    const { element, menuElement, headerArrowElement } = this.elements;
+    const { element, menuElement, headerArrowElement } = this;
     if (!element.contains(event.target)) {
       menuElement.classList.remove('expandable-list__menu_active');
       headerArrowElement.classList.remove('expandable-list__arrow_active');
@@ -33,7 +28,7 @@ class ExpandableList {
   };
 
   init() {
-    this.elements.headerElement.addEventListener('click', this.handleExpandableListHeaderClick);
+    this.headerElement.addEventListener('click', this.handleExpandableListHeaderClick);
   }
 }
 

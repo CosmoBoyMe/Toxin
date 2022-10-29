@@ -1,26 +1,19 @@
 class Header {
   constructor(element) {
-    const burgerElement = element.querySelector('.js-header__nav-burger');
-    const contentElement = element.querySelector('.js-header__nav-content');
-
-    this.elements = {
-      element,
-      burgerElement,
-      contentElement,
-    };
-
+    this.element = element;
+    this.burgerElement = element.querySelector('.js-header__nav-burger');
+    this.contentElement = element.querySelector('.js-header__nav-content');
     this.bindBurgerListener();
   }
 
   handleNavBurgerClick = () => {
-    const { burgerElement, contentElement } = this.elements;
+    const { burgerElement, contentElement } = this;
     burgerElement.classList.toggle('header__nav-burger_active');
     contentElement.classList.toggle('header__nav-content_active');
   };
 
   bindBurgerListener() {
-    const { burgerElement } = this.elements;
-    burgerElement.addEventListener('click', this.handleNavBurgerClick);
+    this.burgerElement.addEventListener('click', this.handleNavBurgerClick);
   }
 }
 

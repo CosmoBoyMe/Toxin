@@ -2,27 +2,16 @@ import { getWordDeclension } from '../../helpers/getWordDeclension';
 
 class Dropdown {
   constructor({ element, wordsDeclensions = [], onChangeTextValue = null }) {
-    const inputWrapperElement = element.querySelector('.js-dropdown__input-wrapper');
-    const inputElement = element.querySelector('.js-dropdown__input');
+    this.element = element;
+    this.inputWrapperElement = element.querySelector('.js-dropdown__input-wrapper');
+    this.inputElement = element.querySelector('.js-dropdown__input');
+    this.menuElement = element.querySelector('.js-dropdown__menu');
+    this.counterElements = element.querySelectorAll('.js-amount-select__number');
+    this.minusButtonElements = element.querySelectorAll('.js-amount-select__button_sign_minus');
+    this.plusButtonElements = element.querySelectorAll('.js-amount-select__button_sign_plus');
+    this.clearButtonElement = element.querySelector('.js-dropdown__button_clear');
+    this.applyButtonElement = element.querySelector('.js-dropdown__button_apply');
 
-    const menuElement = element.querySelector('.js-dropdown__menu');
-    const counterElements = element.querySelectorAll('.js-amount-select__number');
-    const minusButtonElements = element.querySelectorAll('.js-amount-select__button_sign_minus');
-    const plusButtonElements = element.querySelectorAll('.js-amount-select__button_sign_plus');
-    const clearButtonElement = element.querySelector('.js-dropdown__button_clear');
-    const applyButtonElement = element.querySelector('.js-dropdown__button_apply');
-
-    this.elements = {
-      element,
-      inputWrapperElement,
-      inputElement,
-      menuElement,
-      counterElements,
-      minusButtonElements,
-      plusButtonElements,
-      clearButtonElement,
-      applyButtonElement,
-    };
     this.state = {};
     this.wordsDeclensions = wordsDeclensions;
     this.onChangeTextValue = onChangeTextValue;
@@ -31,8 +20,7 @@ class Dropdown {
   }
 
   updateState() {
-    const { elements, state } = this;
-    const { counterElements } = elements;
+    const { counterElements, state } = this;
     state.values = [...counterElements].map((counter) => Number(counter.value));
     state.totalCounts = [...counterElements].reduce(
       (prev, counter) => prev + Number(counter.value),
@@ -41,8 +29,7 @@ class Dropdown {
   }
 
   updateInputValueText() {
-    const { elements, state } = this;
-    const { inputElement } = elements;
+    const { inputElement, state } = this;
 
     if (state.totalCounts === 0) {
       inputElement.value = '';
@@ -60,8 +47,7 @@ class Dropdown {
   }
 
   toggleHiddenClearButton() {
-    const { elements, state } = this;
-    const { clearButtonElement } = elements;
+    const { clearButtonElement, state } = this;
 
     if (state.totalCounts === 0) {
       clearButtonElement?.classList.add('dropdown__button_hidden');
@@ -71,8 +57,7 @@ class Dropdown {
   }
 
   update() {
-    const { elements, state } = this;
-    const { counterElements } = elements;
+    const { counterElements, state } = this;
     this.updateState();
     state.values.forEach((value, index) => {
       const minusButton = counterElements[index].previousElementSibling;
@@ -100,13 +85,13 @@ class Dropdown {
   };
 
   toggleDropdownMenu() {
-    const { menuElement, inputElement } = this.elements;
+    const { menuElement, inputElement } = this;
     inputElement.classList.toggle('dropdown__input_active');
     menuElement.classList.toggle('dropdown__menu_active');
   }
 
   handleClearButtonClick = () => {
-    const { counterElements } = this.elements;
+    const { counterElements } = this;
     [...counterElements].forEach((counter) => {
       const counterElement = counter;
       counterElement.value = 0;
@@ -116,7 +101,7 @@ class Dropdown {
   };
 
   handleDocumentClick = (event) => {
-    const { element, menuElement, inputElement } = this.elements;
+    const { element, menuElement, inputElement } = this;
     if (!element.contains(event.target)) {
       menuElement.classList.remove('dropdown__menu_active');
       inputElement.classList.remove('dropdown__input_active');
@@ -136,7 +121,7 @@ class Dropdown {
       clearButtonElement,
       minusButtonElements,
       plusButtonElements,
-    } = this.elements;
+    } = this;
 
     inputWrapperElement.addEventListener('click', this.handleInputWrapperClick);
     applyButtonElement?.addEventListener('click', () => this.toggleDropdownMenu());

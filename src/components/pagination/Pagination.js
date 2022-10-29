@@ -3,11 +3,12 @@ const PAGINATION_BUTTONS_COUNT = 5;
 
 class Pagination {
   constructor(element) {
+    this.element = element;
+    this.buttonsContainerElement = element.querySelector('.js-pagination__buttons');
+    this.paginationTextCounterElement = element.querySelector('.js-pagination__text-counter');
+
     const totalItemsData = element.getAttribute('data-totalItems');
     const itemsPerPageData = element.getAttribute('data-itemsPerPage');
-    const buttonsContainerElement = element.querySelector('.js-pagination__buttons');
-    const paginationTextCounterElement = element.querySelector('.js-pagination__text-counter');
-
     const totalItemsCount = Number(totalItemsData);
     const itemsPerPage = Number(itemsPerPageData);
     const totalPage = Math.ceil(totalItemsCount / itemsPerPage);
@@ -15,18 +16,17 @@ class Pagination {
     this.totalItemsCount = totalItemsCount;
     this.itemsPerPage = itemsPerPage;
     this.totalPage = totalPage;
-    this.elements = { buttonsContainerElement, paginationTextCounterElement };
     this.activePageNumber = 1;
     this.render();
   }
 
   updateText() {
-    const { activePageNumber, itemsPerPage, totalItemsCount, elements } = this;
+    const { activePageNumber, itemsPerPage, totalItemsCount, paginationTextCounterElement } = this;
     const lastItem = activePageNumber * itemsPerPage;
     const lastItemsNumber = lastItem > totalItemsCount ? totalItemsCount : lastItem;
     const totalCountText = totalItemsCount > 100 ? '100+' : totalItemsCount;
 
-    elements.paginationTextCounterElement.textContent = `${
+    paginationTextCounterElement.textContent = `${
       itemsPerPage * (activePageNumber - 1) + 1
     } - ${lastItemsNumber} из ${totalCountText}`;
   }
@@ -129,8 +129,7 @@ class Pagination {
   }
 
   render() {
-    const { totalPage, elements } = this;
-    const { buttonsContainerElement } = elements;
+    const { totalPage, buttonsContainerElement } = this;
 
     buttonsContainerElement.innerHTML = '';
     if (totalPage <= PAGINATION_BUTTONS_COUNT) {

@@ -2,27 +2,18 @@ import AirDatepicker from 'air-datepicker';
 
 class Calendar {
   constructor(element) {
-    const datePickerElement = element.querySelector('.js-calendar__date-picker');
-    const fieldElements = element.querySelectorAll('.js-calendar__field');
-    const inputElements = element.querySelectorAll('input');
-    const type = element.getAttribute('data-type');
-    const selectedDates = [...inputElements].map((input) => input.getAttribute('data-date'));
+    this.element = element;
+    this.datePickerElement = element.querySelector('.js-calendar__date-picker');
+    this.fieldElements = element.querySelectorAll('.js-calendar__field');
+    this.inputElements = element.querySelectorAll('input');
 
-    this.elements = {
-      element,
-      datePickerElement,
-      fieldElements,
-      inputElements,
-    };
-    this.type = type;
-    this.selectedDates = selectedDates;
+    this.type = element.getAttribute('data-type');
+    this.selectedDates = [...this.inputElements].map((input) => input.getAttribute('data-date'));
     this.init();
   }
 
   initDatePicker() {
-    const { type, elements } = this;
-    const { inputElements } = elements;
-    const { datePickerElement } = this.elements;
+    const { type, datePickerElement, inputElements } = this;
 
     let options = {};
     const defaultOptions = {
@@ -88,7 +79,7 @@ class Calendar {
   }
 
   handleDocumentClick = (event) => {
-    const { element, datePickerElement } = this.elements;
+    const { element, datePickerElement } = this;
     if (!element.contains(event.target)) {
       datePickerElement.classList.add('calendar__date-picker_closed');
       document.removeEventListener('click', this.handleDocumentClick);
@@ -101,13 +92,11 @@ class Calendar {
   };
 
   toggleCloseDatePicker() {
-    const { datePickerElement } = this.elements;
-    datePickerElement.classList.toggle('calendar__date-picker_closed');
+    this.datePickerElement.classList.toggle('calendar__date-picker_closed');
   }
 
   bindEventListeners() {
-    const { fieldElements } = this.elements;
-    fieldElements.forEach((field) => {
+    this.fieldElements.forEach((field) => {
       field.addEventListener('click', this.handleFieldClick);
     });
   }

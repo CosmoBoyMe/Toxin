@@ -4,13 +4,10 @@ import 'swiper/css'; // eslint-disable-line import/no-unresolved
 
 class RoomCard {
   constructor(element) {
-    const cardPriceElement = element.querySelector('.js-card-header-info__value');
-    const ratingElement = element.querySelector('.js-rating');
-    this.elements = {
-      cardPriceElement,
-      ratingElement,
-      element,
-    };
+    this.element = element;
+    this.cardPriceElement = element.querySelector('.js-card-header-info__value');
+    this.ratingElement = element.querySelector('.js-rating');
+
     this.init();
   }
 
@@ -20,8 +17,7 @@ class RoomCard {
   }
 
   bindEventListeners() {
-    const { ratingElement } = this.elements;
-    ratingElement.addEventListener('click', this.handleRatingClick);
+    this.ratingElement.addEventListener('click', this.handleRatingClick);
   }
 
   // eslint-disable-next-line class-methods-use-this

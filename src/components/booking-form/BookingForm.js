@@ -5,21 +5,15 @@ import { getWordDeclension } from '../../helpers/getWordDeclension';
 
 class BookingForm {
   constructor(element) {
-    const servicesPriceElements = element.querySelectorAll('.js-booking-form__services-item-price');
-    const daysCountElement = element.querySelector('.js-booking-form__services-item-days');
-    const daysWordElement = element.querySelector('.js-booking-form__services-item-days-word');
-
-    this.elements = {
-      element,
-      servicesPriceElements,
-      daysCountElement,
-      daysWordElement,
-    };
+    this.element = element;
+    this.servicesPriceElements = element.querySelectorAll('.js-booking-form__services-item-price');
+    this.daysCountElement = element.querySelector('.js-booking-form__services-item-days');
+    this.daysWordElement = element.querySelector('.js-booking-form__services-item-days-word');
     this.init();
   }
 
   init() {
-    const { servicesPriceElements, daysCountElement, daysWordElement } = this.elements;
+    const { servicesPriceElements, daysCountElement, daysWordElement } = this;
     const valueFormat = wNumb({
       decimals: 0,
       thousand: ' ',

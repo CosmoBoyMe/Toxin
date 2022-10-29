@@ -2,16 +2,13 @@ import wNumb from 'wnumb';
 
 class CardHeaderInfo {
   constructor(element) {
-    const cardPriceElement = element.querySelector('.js-card-header-info__value');
-    this.elements = {
-      cardPriceElement,
-      element,
-    };
+    this.element = element;
+    this.cardPriceElement = element.querySelector('.js-card-header-info__value');
     this.init();
   }
 
   formatCardPrice() {
-    const { cardPriceElement } = this.elements;
+    const { cardPriceElement } = this;
 
     const priceFormat = wNumb({
       thousand: ' ',
