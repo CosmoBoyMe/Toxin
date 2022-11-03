@@ -1,6 +1,12 @@
 mixin pie-chart(votesCount = 260, values = [0, 65, 65, 130])
-  .pie-chart
-    canvas.pie-chart__item.js-pie-chart__item(data-values=values)
-    span.pie-chart__inner
-      span.pie-chart__number= votesCount
-      span.pie-chart__text голосов
+  .pie-chart  
+    .pie-chart__chart
+      canvas.pie-chart__item.js-pie-chart__item(data-values=values)
+      span.pie-chart__inner
+        span.pie-chart__number= votesCount
+        span.pie-chart__text голосов
+    ul.pie-chart__list
+      li.pie-chart__list-item.pie-chart__list-item_color_orange Великолепно
+      li.pie-chart__list-item.pie-chart__list-item_color_green Хорошо
+      li.pie-chart__list-item.pie-chart__list-item_color_purple Удовлетворительно
+      li.pie-chart__list-item.pie-chart__list-item_color_black Разочарован

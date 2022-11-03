@@ -147,6 +147,10 @@
     }
 
     &-votes {
+      width: 100%;
+      max-width: 311px;
+      margin: 0 auto;
+
       &-title {
         margin-bottom: 21px;
 
@@ -161,68 +165,11 @@
         }
       }
 
-      &-content {
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-
-        @include medium {
-          align-items: center;
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 50px;
-        }
-      }
-
       &-chart {
-        width: 122px;
-        margin-right: 32px;
-
-        @include medium {
-          margin-right: 0;
+        @include small {
+          max-width: 122px;
+          margin: 0 auto;
         }
-      }
-
-      &-list {
-        list-style: none;
-      }
-
-      &-item {
-        position: relative;
-
-        padding-left: 11px;
-
-        word-wrap: break-word;
-
-        &::before {
-          content: '';
-          position: absolute;
-          top: 50%;
-          left: 1px;
-
-          width: 10px;
-          height: 10px;
-
-          transform: translate(-50%, -50%);
-
-          border-radius: 50%;
-        }
-      }
-
-      &-item_color_orange::before {
-        background: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
-      }
-
-      &-item_color_green::before {
-        background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-      }
-
-      &-item_color_purple::before {
-        background: var(--gradient);
-      }
-
-      &-item_color_black::before {
-        background: linear-gradient(180deg, #919191 0%, #3d4975 100%);
       }
     }
 
