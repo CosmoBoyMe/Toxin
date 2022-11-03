@@ -1,6 +1,6 @@
 include ../dropdown/dropdown.pug
 
-mixin room-dropdown({ label = 'удобства номера', values = [], placeholder = 'Выберите удобства', active = false } = {})
+mixin room-dropdown({ label = 'удобства номера', values = [], placeholder = 'Выберите удобства', isActive = false } = {})
   .room-dropdown.js-room-dropdown
     -
       const items= [{ title: 'спальни', value: 0 }, { title: 'кровати', value: 0 }, { title: 'ванные комнаты', value: 0 }];
@@ -8,4 +8,4 @@ mixin room-dropdown({ label = 'удобства номера', values = [], plac
         values.forEach((value, index) => items[index].value = value)
       }
 
-    +dropdown({ label, placeholder, buttons: false, items, active })
+    +dropdown({ label, placeholder, withButtons: false, items, isActive: isActive })

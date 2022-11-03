@@ -34,7 +34,7 @@ html(lang="en")
                 .form-elements__text-field
                   +text-field({ text:'Text Field', type:'email', name: 'email', placeholder: 'Email' })
                 .form-elements__text-field
-                  +text-field({ text:'Text Field', type:'email', placeholder: 'Email', focus: true, name: 'extra-email', value: 'This is pretty awesome' })
+                  +text-field({ text:'Text Field', type:'email', placeholder: 'Email', isFocused: true, name: 'extra-email', value: 'This is pretty awesome' })
                 .form-elements__guest-dropdown-first
                   +guest-dropdown({ label: 'dropdown' })
                 .form-elements__masked-field
@@ -48,24 +48,24 @@ html(lang="en")
                 .form-elements__room-dropdown.js-form-elements__room-dropdown
                   +room-dropdown({ label: 'dropdown', values: [2, 2] })
                 .form-elements__room-dropdown.form-elements__room-dropdown_second.js-form-elements__room-dropdown
-                  +room-dropdown({ label: 'dropdown',values: [2, 2], active: true })
-                - const expandableItems = [{ title: "Завтрак" }, { title: "Письменный стол", checked: true }, { title: "Стул для кормления", checked: true }, { title: "Кроватка", checked: true }, { title: "Телевизор" }, { title: "Шампунь" }];
+                  +room-dropdown({ label: 'dropdown', values: [2, 2], isActive: true })
+                - const expandableItems = [{ title: "Завтрак" }, { title: "Письменный стол", isChecked: true }, { title: "Стул для кормления", isChecked: true }, { title: "Кроватка", isChecked: true }, { title: "Телевизор" }, { title: "Шампунь" }];
                 .form-elements__expandable-list.form-elements__expandable-list_first
                   +expandable-list({ title:'expandable checkbox list', items: expandableItems })
                 .form-elements__expandable-list
-                  +expandable-list({ title: 'expandable checkbox list', items: expandableItems, active: true })
+                  +expandable-list({ title: 'expandable checkbox list', items: expandableItems, isActive: true })
               .form-elements__second-column
                 .form-elements__checkbox-buttons-list
                   -
                     const checkboxItems = [
                       { title: 'Можно курить'},
-                      { title: 'Можно с питомцами', checked: true },
-                      { title: 'Можно пригласить гостей (до 10 человек)', checked: true }];
+                      { title: 'Можно с питомцами', isChecked: true },
+                      { title: 'Можно пригласить гостей (до 10 человек)', isChecked: true }];
                   +checkbox-list({ title: 'checkbox buttons', items: checkboxItems })
                 .form-elements__radio-buttons
                   -
                     const radioItems = [
-                      { text: 'Мужчина', checked: true, name: 'genders', value: 'man' },
+                      { text: 'Мужчина', isChecked: true, name: 'genders', value: 'man' },
                       { text: 'Женщина', name: 'genders', value: 'woman' }]
                   h3.form-elements__radio-buttons-title Radio Buttons
                   .form-elements__radio-buttons-items
@@ -76,18 +76,18 @@ html(lang="en")
                   .form-elements__toggle-items
                     -
                       const toggleItems = [
-                        { text: 'Получать спецпредложения', checked: true },
+                        { text: 'Получать спецпредложения', isChecked: true },
                         { text: 'Получать спецпредложения'}
                         ];
                     each toggleItem in toggleItems
-                      +toggle(toggleItem.text, toggleItem.checked)
+                      +toggle(toggleItem.text, toggleItem.isChecked)
                 .form-elements__like-buttons 
                   h3.form-elements__like-buttons-title like button
                   .form-elements__like-buttons-items
                     -
-                      const likeButtonsItems = [{ likeCount: 2 }, { likeCount: 12, liked: true }];
+                      const likeButtonsItems = [{ likeCount: 2 }, { likeCount: 12, isLiked: true }];
                     each likeButtonItem in likeButtonsItems 
-                      +like-button(likeButtonItem.likeCount, likeButtonItem.liked)
+                      +like-button(likeButtonItem.likeCount, likeButtonItem.isLiked)
                 .form-elements__rate-buttons 
                   h3.form-elements__rate-buttons-title rate button
                   .form-elements__rate-buttons-items 
@@ -96,7 +96,7 @@ html(lang="en")
                     each rateItem in rateItems 
                       +rate(rateItem.rateNumber) 
                 .form-elements__guest-dropdown-second.js-form-elements__guest-dropdown
-                  +guest-dropdown({ label: 'dropdown', active: true })
+                  +guest-dropdown({ label: 'dropdown', isActive: true })
                 .form-elements__rich-checkbox-buttons
                   -
                     const richCheckboxItems = [
@@ -110,13 +110,13 @@ html(lang="en")
                   h3.form-elements__buttons-title buttons
                   .form-elements__buttons-links
                     +link({ text: 'click me' })
-                    +link({ text: 'click me', hover: true })
+                    +link({ text: 'click me', isHovered: true })
                   .form-elements__buttons-links.form-elements__buttons-links_second
-                    +link({ text: 'click me', border: true })
-                    +link({ text: 'click me', border: true, hover: true })
+                    +link({ text: 'click me', withBorder: true })
+                    +link({ text: 'click me', withBorder: true, isHovered: true })
                   .form-elements__buttons-buttons 
                     +button({ text: 'click me' })
-                    +button({ text: 'click me', hover: true })
+                    +button({ text: 'click me', isHovered: true })
                   .form-elements__buttons-submit-button
                     +submit-button('перейти к оплате')
                 .form-elements__pagination
@@ -124,7 +124,7 @@ html(lang="en")
                   .form-elements__pagination-pagination
                     +pagination
                 .form-elements__guest-dropdown-third.js-form-elements__guest-dropdown
-                  +guest-dropdown({ label: 'Dropdown', values: [2, 1], active: true })
+                  +guest-dropdown({ label: 'Dropdown', values: [2, 1], isActive: true })
                 .form-elements__bullet-list
                   -
                     const bulletItems = [

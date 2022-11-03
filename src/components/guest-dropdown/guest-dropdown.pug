@@ -1,6 +1,6 @@
 include ../dropdown/dropdown.pug
 
-mixin guest-dropdown({ label = 'Гости', values = [], placeholder = 'Сколько гостей', active = false } = {})
+mixin guest-dropdown({ label = 'Гости', values = [], placeholder = 'Сколько гостей', isActive = false } = {})
   .guest-dropdown.js-guest-dropdown
     -
       const items=[{ title: 'взрослые', value: 0 }, { title: 'дети', value: 0 }, { title: 'младенцы', value: 0 }];
@@ -8,4 +8,4 @@ mixin guest-dropdown({ label = 'Гости', values = [], placeholder = 'Ско�
         values.forEach((value, index) => items[index].value = value)
       }
 
-    +dropdown({ label, placeholder, items, active: active })
+    +dropdown({ label, placeholder, items, isActive: isActive })

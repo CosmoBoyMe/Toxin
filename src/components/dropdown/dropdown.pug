@@ -1,23 +1,23 @@
 include ../amount-select/amount-select.pug
 include ../button/button.pug
 
-mixin dropdown({ label = '', placeholder = '', items = [], buttons = true, active = false } = {})
+mixin dropdown({ label = '', placeholder = '', items = [], withButtons = true, isActive = false } = {})
   .dropdown
     label.dropdown__label= label
     .dropdown__input-wrapper.js-dropdown__input-wrapper
       input.dropdown__input.js-dropdown__input(
-        class=active && "dropdown__input_active",
+        class=isActive && "dropdown__input_active",
         placeholder=placeholder,
         readonly
       )
       span.dropdown__input-arrow
-    .dropdown__menu.js-dropdown__menu(class=active && "dropdown__menu_active")
+    .dropdown__menu.js-dropdown__menu(class=isActive && "dropdown__menu_active")
       ul.dropdown__amount-items
         each item in items
           - const { title, value, min, max } = item;
           li.dropdown__amount-select.js-dropdown__amount-select
             +amount-select({ title, value, min, max })
-      if (buttons)
+      if (withButtons)
         .dropdown__buttons
           .dropdown__button.js-dropdown__button_clear
             +button({ text: 'очистить' })

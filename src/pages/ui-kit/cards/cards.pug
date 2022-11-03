@@ -29,8 +29,8 @@ html(lang="en")
             .cards__cards 
               -
                 const cardItems = [
-                    { roomNumber: 888, price: 9990, reviewsCount: 145, imgsSrc: [require('../../../assets/img/rooms/room-1.jpg'),require('../../../assets/img/rooms/room-1.jpg'),require('../../../assets/img/rooms/room-1.jpg'),require('../../../assets/img/rooms/room-1.jpg')], rateNumber: 5 },
-                    { roomNumber: 840, price: 9900, isLux: false, reviewsCount: 65, imgsSrc: [require('../../../assets/img/rooms/room-2.jpg'),require('../../../assets/img/rooms/room-2.jpg'),require('../../../assets/img/rooms/room-2.jpg'),require('../../../assets/img/rooms/room-2.jpg')], rateNumber: 4}
+                    { roomNumber: 888, price: 9990, reviewsCount: 145, isLux: true, imgsSrc: [require('../../../assets/img/rooms/room-1.jpg'),require('../../../assets/img/rooms/room-1.jpg'),require('../../../assets/img/rooms/room-1.jpg'),require('../../../assets/img/rooms/room-1.jpg')], rateNumber: 5 },
+                    { roomNumber: 840, price: 9900, reviewsCount: 65, imgsSrc: [require('../../../assets/img/rooms/room-2.jpg'),require('../../../assets/img/rooms/room-2.jpg'),require('../../../assets/img/rooms/room-2.jpg'),require('../../../assets/img/rooms/room-2.jpg')], rateNumber: 4}
                     ];
               each item in cardItems
                 .cards__room-card

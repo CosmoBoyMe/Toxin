@@ -1,4 +1,4 @@
-mixin text-field({ text = '', type = 'text', placeholder = 'введите текст', focus = false, value = '', name='' } = {})
+mixin text-field({ text = '', type = 'text', placeholder = 'введите текст', isFocused = false, value = '', name='' } = {})
   .text-field
     label.text-field__label
       if (text)
@@ -8,5 +8,5 @@ mixin text-field({ text = '', type = 'text', placeholder = 'введите те�
         name=name,
         placeholder=placeholder,
         value=value,
-        class=focus && "text-field__input_focused"
+        class=isFocused && "text-field__input_focused"
       )

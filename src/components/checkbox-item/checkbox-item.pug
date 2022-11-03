@@ -1,10 +1,10 @@
-mixin checkbox-item({ title = '', text = '', checked = false, rich = false } = {})
+mixin checkbox-item({ title = '', text = '', isChecked = false, isRich = false } = {})
   .checkbox-item
     label.checkbox-item__label
-      input.checkbox-item__input(type="checkbox", checked=checked)
+      input.checkbox-item__input(type = "checkbox", checked = isChecked)
       span.checkbox-item__box
       .checkbox-item__description
-        if rich
+        if isRich
           span.checkbox-item__rich-title= title
           p.checkbox-item__rich-text= text
         else
