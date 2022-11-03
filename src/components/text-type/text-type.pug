@@ -1,0 +1,7 @@
+mixin text-type({ tag = 'h1', text = 'This one is the sub-section or widget title' , isUppercase = false } = {})
+  .text-type
+    .text-type__tag-name(class=`text-type__tag-name_type_${tag}`)= tag
+    p.text-type__text(
+      class=`text-type__text_tag_${tag}`,
+      class=isUppercase && "text-type__text_size_big"
+    )= text

@@ -1,6 +1,6 @@
 include ../../../components/head/head.pug
 include ../../../components/color-item/color-item.pug
-include ../../../components/color-type-item/color-type-item.pug
+include ../../../components/text-type/text-type.pug
 
 doctype html
 html(lang="en")
@@ -31,4 +31,4 @@ html(lang="en")
                 { tag:'body', text: 'This is the body text which is used for most \n of the design, like paragraphs, lists, etc.' }
               ];
             each item in types
-              +color-type-item(item)
+              +text-type(item)
