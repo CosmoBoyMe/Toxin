@@ -35,7 +35,7 @@ html(lang="en")
                   +text-field({ text:'Text Field', type:'email', name: 'email', placeholder: 'Email' })
                 .form-elements__text-field
                   +text-field({ text:'Text Field', type:'email', placeholder: 'Email', isFocused: true, name: 'extra-email', value: 'This is pretty awesome' })
-                .form-elements__guest-dropdown-first
+                .form-elements__guest-dropdown.form-elements__guest-dropdown_shift_bottom
                   +guest-dropdown({ label: 'dropdown' })
                 .form-elements__masked-field
                   +masked-field({ text:'masked text field', name: 'date' })
@@ -47,10 +47,10 @@ html(lang="en")
                   +subscription-field('subscription text field')
                 .form-elements__room-dropdown
                   +room-dropdown({ label: 'dropdown', values: [2, 2] })
-                .form-elements__room-dropdown.form-elements__room-dropdown_second
+                .form-elements__room-dropdown.form-elements__room-dropdown_shift_bottom
                   +room-dropdown({ label: 'dropdown', values: [2, 2], isActive: true })
                 - const expandableItems = [{ title: "Завтрак" }, { title: "Письменный стол", isChecked: true }, { title: "Стул для кормления", isChecked: true }, { title: "Кроватка", isChecked: true }, { title: "Телевизор" }, { title: "Шампунь" }];
-                .form-elements__expandable-list.form-elements__expandable-list_first
+                .form-elements__expandable-list.form-elements__expandable-list_shift_bottom
                   +expandable-list({ title:'expandable checkbox list', items: expandableItems })
                 .form-elements__expandable-list
                   +expandable-list({ title: 'expandable checkbox list', items: expandableItems, isActive: true })
@@ -111,7 +111,7 @@ html(lang="en")
                   .form-elements__buttons-links
                     +link({ text: 'click me' })
                     +link({ text: 'click me', isHovered: true })
-                  .form-elements__buttons-links.form-elements__buttons-links_second
+                  .form-elements__buttons-links.form-elements__buttons-links_shift_bottom
                     +link({ text: 'click me', withBorder: true })
                     +link({ text: 'click me', withBorder: true, isHovered: true })
                   .form-elements__buttons-buttons 

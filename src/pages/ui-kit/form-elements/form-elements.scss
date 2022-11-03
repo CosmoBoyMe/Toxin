@@ -34,8 +34,10 @@
     margin-bottom: 20.4px;
   }
 
-  &__guest-dropdown-first {
-    margin-bottom: 22px;
+  &__guest-dropdown {
+    &_shift_bottom {
+      margin-bottom: 22px;
+    }
   }
 
   &__masked-field {
@@ -60,7 +62,7 @@
     width: 266px;
     margin-bottom: 20px;
 
-    &_second {
+    &_shift_bottom {
       margin-bottom: 157px;
     }
   }
@@ -68,7 +70,7 @@
   &__expandable-list {
     width: 266px;
 
-    &_first {
+    &_shift_bottom {
       margin-bottom: 20px;
     }
   }
@@ -201,7 +203,7 @@
 
       margin-bottom: 31px;
 
-      &_second {
+      &_shift_bottom {
         margin-bottom: 26px;
       }
     }

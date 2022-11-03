@@ -209,19 +209,19 @@
         }
       }
 
-      &-item_orange::before {
+      &-item_color_orange::before {
         background: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
       }
 
-      &-item_green::before {
+      &-item_color_green::before {
         background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
       }
 
-      &-item_purple::before {
+      &-item_color_purple::before {
         background: var(--gradient);
       }
 
-      &-item_black::before {
+      &-item_color_black::before {
         background: linear-gradient(180deg, #919191 0%, #3d4975 100%);
       }
     }
