@@ -5,9 +5,6 @@ import 'swiper/css'; // eslint-disable-line import/no-unresolved
 class RoomCard {
   constructor(element) {
     this.element = element;
-    this.cardPriceElement = element.querySelector('.js-card-header-info__value');
-    this.ratingElement = element.querySelector('.js-rating');
-
     this.init();
   }
 
@@ -41,6 +38,8 @@ class RoomCard {
   }
 
   init() {
+    this.cardPriceElement = this.element.querySelector('.js-card-header-info__value');
+    this.ratingElement = this.element.querySelector('.js-rating');
     this.bindEventListeners();
     this.initSwiper();
   }

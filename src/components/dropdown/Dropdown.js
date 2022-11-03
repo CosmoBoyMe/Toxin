@@ -3,14 +3,6 @@ import { getWordDeclension } from '../../helpers/getWordDeclension';
 class Dropdown {
   constructor({ element, wordsDeclensions = [], onChangeTextValue = null }) {
     this.element = element;
-    this.inputWrapperElement = element.querySelector('.js-dropdown__input-wrapper');
-    this.inputElement = element.querySelector('.js-dropdown__input');
-    this.menuElement = element.querySelector('.js-dropdown__menu');
-    this.counterElements = element.querySelectorAll('.js-amount-select__number');
-    this.minusButtonElements = element.querySelectorAll('.js-amount-select__button_sign_minus');
-    this.plusButtonElements = element.querySelectorAll('.js-amount-select__button_sign_plus');
-    this.clearButtonElement = element.querySelector('.js-dropdown__button_clear');
-    this.applyButtonElement = element.querySelector('.js-dropdown__button_apply');
 
     this.state = {};
     this.wordsDeclensions = wordsDeclensions;
@@ -135,6 +127,14 @@ class Dropdown {
   }
 
   init() {
+    this.inputWrapperElement = this.element.querySelector('.js-dropdown__input-wrapper');
+    this.inputElement = this.element.querySelector('.js-dropdown__input');
+    this.menuElement = this.element.querySelector('.js-dropdown__menu');
+    this.counterElements = this.element.querySelectorAll('.js-amount-select__number');
+    this.minusButtonElements = this.element.querySelectorAll('.js-amount-select__button_sign_minus');
+    this.plusButtonElements = this.element.querySelectorAll('.js-amount-select__button_sign_plus');
+    this.clearButtonElement = this.element.querySelector('.js-dropdown__button_clear');
+    this.applyButtonElement = this.element.querySelector('.js-dropdown__button_apply');
     this.update();
     this.bindEventListeners();
   }

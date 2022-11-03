@@ -1,9 +1,6 @@
 class ExpandableList {
   constructor(element) {
     this.element = element;
-    this.headerElement = element.querySelector('.js-expandable-list__header');
-    this.headerArrowElement = this.headerElement.querySelector('.js-expandable-list__arrow');
-    this.menuElement = element.querySelector('.js-expandable-list__menu');
     this.init();
   }
 
@@ -28,6 +25,9 @@ class ExpandableList {
   };
 
   init() {
+    this.headerElement = this.element.querySelector('.js-expandable-list__header');
+    this.headerArrowElement = this.headerElement.querySelector('.js-expandable-list__arrow');
+    this.menuElement = this.element.querySelector('.js-expandable-list__menu');
     this.headerElement.addEventListener('click', this.handleExpandableListHeaderClick);
   }
 }

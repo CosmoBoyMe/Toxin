@@ -1,8 +1,7 @@
 class LikeButton {
   constructor(element) {
     this.element = element;
-    this.countElement = element.querySelector('.js-like-button__count');
-    this.bindLikeButtonListener();
+    this.init();
   }
 
   handleLikeButtonClick = (event) => {
@@ -22,6 +21,12 @@ class LikeButton {
   bindLikeButtonListener() {
     this.element.addEventListener('click', this.handleLikeButtonClick);
   }
+
+  init() {
+    this.countElement = this.element.querySelector('.js-like-button__count');
+    this.bindLikeButtonListener();
+  }
+
 }
 
 export { LikeButton };

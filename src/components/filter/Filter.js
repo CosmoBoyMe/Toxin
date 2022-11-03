@@ -1,11 +1,7 @@
 class Filter {
   constructor(element) {
     this.element = element;
-    this.filterButtonElement = element.querySelector('.js-filter__button');
-    this.filterButtonCloseElement = element.querySelector('.js-filter__content-button-close');
-    this.filterContentElement = element.querySelector('.js-filter__content');
-
-    this.bindListeners();
+    this.init();
   }
 
   handleButtonClick = () => {
@@ -21,6 +17,13 @@ class Filter {
     const { filterButtonElement, filterButtonCloseElement } = this;
     filterButtonElement.addEventListener('click', this.handleButtonClick);
     filterButtonCloseElement.addEventListener('click', this.handleButtonClick);
+  }
+
+  init() {
+    this.filterButtonElement = this.element.querySelector('.js-filter__button');
+    this.filterButtonCloseElement = this.element.querySelector('.js-filter__content-button-close');
+    this.filterContentElement = this.element.querySelector('.js-filter__content');
+    this.bindListeners();
   }
 }
 

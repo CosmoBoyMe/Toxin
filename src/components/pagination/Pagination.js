@@ -4,20 +4,8 @@ const PAGINATION_BUTTONS_COUNT = 5;
 class Pagination {
   constructor(element) {
     this.element = element;
-    this.buttonsContainerElement = element.querySelector('.js-pagination__buttons');
-    this.paginationTextCounterElement = element.querySelector('.js-pagination__text-counter');
-
-    const totalItemsData = element.getAttribute('data-totalItems');
-    const itemsPerPageData = element.getAttribute('data-itemsPerPage');
-    const totalItemsCount = Number(totalItemsData);
-    const itemsPerPage = Number(itemsPerPageData);
-    const totalPage = Math.ceil(totalItemsCount / itemsPerPage);
-
-    this.totalItemsCount = totalItemsCount;
-    this.itemsPerPage = itemsPerPage;
-    this.totalPage = totalPage;
     this.activePageNumber = 1;
-    this.render();
+    this.init();
   }
 
   updateText() {
@@ -147,6 +135,19 @@ class Pagination {
       buttonsContainerElement.append(firstButton, ...middleButtons, lastButton, nextButton);
     }
     this.updateText();
+  }
+
+  init() {
+    this.buttonsContainerElement = this.element.querySelector('.js-pagination__buttons');
+    this.paginationTextCounterElement = this.element.querySelector('.js-pagination__text-counter');
+
+    const totalItemsData = this.element.getAttribute('data-totalItems');
+    const itemsPerPageData = this.element.getAttribute('data-itemsPerPage');
+
+    this.totalItemsCount = Number(totalItemsData);
+    this.itemsPerPage = Number(itemsPerPageData);
+    this.totalPage = Math.ceil(this.totalItemsCount / this.itemsPerPage);
+    this.render();
   }
 }
 

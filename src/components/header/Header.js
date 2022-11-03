@@ -1,9 +1,7 @@
 class Header {
   constructor(element) {
     this.element = element;
-    this.burgerElement = element.querySelector('.js-header__nav-burger');
-    this.contentElement = element.querySelector('.js-header__nav-content');
-    this.bindBurgerListener();
+    this.init();
   }
 
   handleNavBurgerClick = () => {
@@ -14,6 +12,12 @@ class Header {
 
   bindBurgerListener() {
     this.burgerElement.addEventListener('click', this.handleNavBurgerClick);
+  }
+
+  init() {
+    this.burgerElement = this.element.querySelector('.js-header__nav-burger');
+    this.contentElement = this.element.querySelector('.js-header__nav-content');
+    this.bindBurgerListener();
   }
 }
 

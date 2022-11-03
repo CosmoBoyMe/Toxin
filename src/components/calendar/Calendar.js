@@ -3,12 +3,6 @@ import AirDatepicker from 'air-datepicker';
 class Calendar {
   constructor(element) {
     this.element = element;
-    this.datePickerElement = element.querySelector('.js-calendar__date-picker');
-    this.fieldElements = element.querySelectorAll('.js-calendar__field');
-    this.inputElements = element.querySelectorAll('input');
-
-    this.type = element.getAttribute('data-type');
-    this.selectedDates = [...this.inputElements].map((input) => input.getAttribute('data-date'));
     this.init();
   }
 
@@ -102,6 +96,13 @@ class Calendar {
   }
 
   init() {
+    this.datePickerElement = this.element.querySelector('.js-calendar__date-picker');
+    this.fieldElements = this.element.querySelectorAll('.js-calendar__field');
+    this.inputElements = this.element.querySelectorAll('input');
+
+    this.type = this.element.getAttribute('data-type');
+    this.selectedDates = [...this.inputElements].map((input) => input.getAttribute('data-date'));
+    
     this.initDatePicker();
     this.bindEventListeners();
   }

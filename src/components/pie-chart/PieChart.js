@@ -2,17 +2,16 @@ import Chart from 'chart.js/auto';
 
 class PieChart {
   constructor(element) {
-    const dataValues = element.getAttribute('data-values');
-    const parsedValues = JSON.parse(dataValues);
 
     this.element = element;
-    this.values = parsedValues;
     this.init();
   }
 
   init() {
-    const { element, values } = this;
-    const doughtContext = element.getContext('2d');
+    const dataValues = this.element.getAttribute('data-values');
+    const values = JSON.parse(dataValues);
+
+    const doughtContext = this.element.getContext('2d');
 
     const purpleGradient = doughtContext.createLinearGradient(0, 0, 0, 600);
     purpleGradient.addColorStop(0, '#BC9CFF');
@@ -31,7 +30,7 @@ class PieChart {
     blackGradient.addColorStop(1, '#3D4975');
 
     // eslint-disable-next-line no-new
-    new Chart(element, {
+    new Chart(this.element, {
       type: 'doughnut',
       data: {
         cutout: 70,

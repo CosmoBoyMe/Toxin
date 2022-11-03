@@ -4,10 +4,7 @@ const STAR_WITH_BORDER_ICON_NAME = 'star_border';
 class Rate {
   constructor(element) {
     this.element = element;
-    this.starIconElements = element.querySelectorAll('.js-rate__icon');
-
-    this.starCounts = this.starIconElements.length;
-    this.bindStarIconsListeners();
+    this.init();
   }
 
   handleStarIconClick = (event, index) => {
@@ -30,6 +27,13 @@ class Rate {
     this.starIconElements.forEach((element, index) =>
       element.addEventListener('click', (event) => this.handleStarIconClick(event, index))
     );
+  }
+
+  init() {
+    this.starIconElements = this.element.querySelectorAll('.js-rate__icon');
+
+    this.starCounts = this.starIconElements.length;
+    this.bindStarIconsListeners();
   }
 }
 
