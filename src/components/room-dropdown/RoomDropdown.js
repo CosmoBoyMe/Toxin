@@ -1,5 +1,5 @@
-import { Dropdown } from '../dropdown/Dropdown';
 import { roomWordsDeclensions } from '../../constants/words-declensions';
+import { Dropdown } from '../dropdown/Dropdown';
 
 class RoomDropdown {
   constructor(element) {
