@@ -16,24 +16,6 @@
     aspect-ratio: 271 / 151;
   }
 
-  &__slider:hover &__img-wrapper::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-
-    background:
-      linear-gradient(
-        90deg,
-        rgb(0 0 0 / 50%) 0%,
-        rgb(0 0 0 / 0%) 99.99%,
-        rgb(255 255 255 / 0%) 100%
-      );
-  }
-
   &__pagination {
     position: absolute;
     z-index: 999;
@@ -70,7 +52,9 @@
     align-items: center;
     justify-content: space-between;
 
-    max-width: 44px;
+    width: 100%;
+
+    max-width: 42px;
     height: 100%;
 
     cursor: pointer;
@@ -79,7 +63,14 @@
     opacity: 0;
     color: #fff;
     border: none;
-    background: transparent;
+    border-radius: 5px;
+    background:
+      linear-gradient(
+        90deg,
+        rgb(0 0 0 / 50%) 0%,
+        rgb(0 0 0 / 0%) 99.99%,
+        rgb(255 255 255 / 0%) 100%
+      );
 
     font-family: var(--materialFont);
     font-size: 24px;
@@ -89,7 +80,7 @@
     &_rotated {
       right: 0;
 
-      transform: rotate(180deg);
+      transform: matrix(-1, 0, 0, 1, 0, 0);
     }
 
     &-icon {
