@@ -9,13 +9,12 @@ class Pagination {
   }
 
   updateText() {
-    const { activePageNumber, itemsPerPage, totalItemsCount, paginationTextCounterElement } = this;
-    const lastItem = activePageNumber * itemsPerPage;
-    const lastItemsNumber = lastItem > totalItemsCount ? totalItemsCount : lastItem;
-    const totalCountText = totalItemsCount > 100 ? '100+' : totalItemsCount;
+    const lastItem = this.activePageNumber * this.itemsPerPage;
+    const lastItemsNumber = lastItem > this.totalItemsCount ? this.totalItemsCount : lastItem;
+    const totalCountText = this.totalItemsCount > 100 ? '100+' : this.totalItemsCount;
 
-    paginationTextCounterElement.textContent = `${
-      itemsPerPage * (activePageNumber - 1) + 1
+    this.paginationTextCounterElement.textContent = `${
+      this.itemsPerPage * (this.activePageNumber - 1) + 1
     } - ${lastItemsNumber} из ${totalCountText}`;
   }
 
@@ -48,13 +47,12 @@ class Pagination {
   };
 
   createNextButton() {
-    const { activePageNumber, totalPage } = this;
     const nextButton = document.createElement('button');
     nextButton.classList.add('js-pagination__button', 'js-pagination__button-next');
     nextButton.setAttribute('type', 'button');
     nextButton.textContent = 'arrow_forward';
 
-    if (activePageNumber === totalPage) {
+    if (this.activePageNumber === this.totalPage) {
       nextButton.setAttribute('disable', true);
     } else {
       nextButton.addEventListener('click', this.handleNextButtonClick);
@@ -71,12 +69,11 @@ class Pagination {
   }
 
   createMiddle() {
-    const { activePageNumber, totalPage } = this;
     const result = [];
-    const leftPageNumber = activePageNumber - 1;
-    const rightPageNumber = activePageNumber + 1;
+    const leftPageNumber = this.activePageNumber - 1;
+    const rightPageNumber = this.activePageNumber + 1;
 
-    switch (activePageNumber) {
+    switch (this.activePageNumber) {
       case 1:
       case 2:
         result.push(this.createPageButton(2));
@@ -85,31 +82,31 @@ class Pagination {
         break;
       case 3:
         result.push(this.createPageButton(leftPageNumber));
-        result.push(this.createPageButton(activePageNumber));
+        result.push(this.createPageButton(this.activePageNumber));
         result.push(this.createPageButton(rightPageNumber));
         result.push(this.createDotsIcon());
         break;
-      case totalPage - 1:
+      case this.totalPage - 1:
         result.push(this.createDotsIcon());
         result.push(this.createPageButton(leftPageNumber));
-        result.push(this.createPageButton(activePageNumber));
+        result.push(this.createPageButton(this.activePageNumber));
         break;
-      case totalPage - 2:
+      case this.totalPage - 2:
         result.push(this.createDotsIcon());
         result.push(this.createPageButton(leftPageNumber));
-        result.push(this.createPageButton(activePageNumber));
+        result.push(this.createPageButton(this.activePageNumber));
         result.push(this.createPageButton(rightPageNumber));
         break;
-      case totalPage:
+      case this.totalPage:
         result.push(this.createDotsIcon());
-        result.push(this.createPageButton(activePageNumber - 2));
+        result.push(this.createPageButton(this.activePageNumber - 2));
         result.push(this.createPageButton(leftPageNumber));
         break;
 
       default:
         result.push(this.createDotsIcon());
         result.push(this.createPageButton(leftPageNumber));
-        result.push(this.createPageButton(activePageNumber));
+        result.push(this.createPageButton(this.activePageNumber));
         result.push(this.createPageButton(rightPageNumber));
         result.push(this.createDotsIcon());
     }
@@ -117,22 +114,20 @@ class Pagination {
   }
 
   render() {
-    const { totalPage, buttonsContainerElement } = this;
-
-    buttonsContainerElement.innerHTML = '';
-    if (totalPage <= PAGINATION_BUTTONS_COUNT) {
+    this.buttonsContainerElement.innerHTML = '';
+    if (this.totalPage <= PAGINATION_BUTTONS_COUNT) {
       const buttons = [];
       const nextButton = this.createNextButton();
-      for (let i = FIRST_PAGE_NUMBER; i <= totalPage; i += 1) {
+      for (let i = FIRST_PAGE_NUMBER; i <= this.totalPage; i += 1) {
         buttons.push(this.createPageButton(i));
       }
-      buttonsContainerElement.append(...buttons, nextButton);
+      this.buttonsContainerElement.append(...buttons, nextButton);
     } else {
       const firstButton = this.createPageButton(FIRST_PAGE_NUMBER);
-      const lastButton = this.createPageButton(totalPage);
+      const lastButton = this.createPageButton(this.totalPage);
       const middleButtons = this.createMiddle();
       const nextButton = this.createNextButton();
-      buttonsContainerElement.append(firstButton, ...middleButtons, lastButton, nextButton);
+      this.buttonsContainerElement.append(firstButton, ...middleButtons, lastButton, nextButton);
     }
     this.updateText();
   }

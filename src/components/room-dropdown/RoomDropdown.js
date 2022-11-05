@@ -8,8 +8,7 @@ class RoomDropdown {
   }
 
   init() {
-    const { element } = this;
-    new Dropdown({ element, wordsDeclensions: roomWordsDeclensions }); // eslint-disable-line no-new
+    new Dropdown({ element: this.element, wordsDeclensions: roomWordsDeclensions }); // eslint-disable-line no-new
   }
 }
 export { RoomDropdown };

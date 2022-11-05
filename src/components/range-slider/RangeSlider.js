@@ -13,13 +13,9 @@ class RangeSlider {
   };
 
   initNoUiSlider() {
-    const { sliderElement } = this;
-    const { start, range, step } = this.options;
-    noUiSlider.create(sliderElement, {
-      start,
+    noUiSlider.create(this.sliderElement, {
+      ...this.options,
       connect: true,
-      step,
-      range,
 
       format: wNumb({
         decimals: 0,
@@ -28,7 +24,7 @@ class RangeSlider {
       }),
     });
 
-    sliderElement.noUiSlider.on('update', this.updatePriceText);
+    this.sliderElement.noUiSlider.on('update', this.updatePriceText);
   }
 
   init() {

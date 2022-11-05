@@ -13,18 +13,16 @@ class Header {
     }
   }
 
-  handleDocumentClick = (event) => {
-    const { headerNavElement } = this;
-    if (!headerNavElement.contains(event.target) ) {
+  handleDocumentClick = ({ target }) => {
+    if (!this.headerNavElement.contains(target) ) {
       this.toggleBurgerMenu();
     }
   };
 
   toggleBurgerMenu = () => {
     this.isBurgerMenuActive  = !this.isBurgerMenuActive;
-    const { burgerElement, headerNavElement } = this;
-    burgerElement.classList.toggle('header__nav-burger_active');
-    headerNavElement.classList.toggle('header__nav_active');
+    this.burgerElement.classList.toggle('header__nav-burger_active');
+    this.headerNavElement.classList.toggle('header__nav_active');
     if (this.isBurgerMenuActive) {
       this.toggleBodyScroll();
       document.addEventListener('click', this.handleDocumentClick);

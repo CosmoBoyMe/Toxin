@@ -7,8 +7,6 @@ class Calendar {
   }
 
   initDatePicker() {
-    const { type, datePickerElement, inputElements } = this;
-
     let options = {};
     const defaultOptions = {
       range: true,
@@ -36,9 +34,9 @@ class Calendar {
       navTitles: { days: 'MMMM yyyy' },
     };
 
-    if (type === 'multiple') {
+    if (this.type === 'multiple') {
       const onSelect = ({ formattedDate }) => {
-        inputElements.forEach((input, index) => {
+        this.inputElements.forEach((input, index) => {
           const value = formattedDate[index] ?? '';
           input.value = value; // eslint-disable-line no-param-reassign
           input.dataset.date = value; // eslint-disable-line no-param-reassign
@@ -56,9 +54,9 @@ class Calendar {
         onSelect,
         dateFormat,
       };
-    } else if (type === 'single') {
+    } else if (this.type === 'single') {
       const onSelect = ({ formattedDate }) => {
-        const inputElement = inputElements[0];
+        const inputElement = this.inputElements[0];
         const formattedDateValue = formattedDate.join(' - ');
         inputElement.value = formattedDateValue;
       };
@@ -68,14 +66,13 @@ class Calendar {
       };
     }
 
-    const airDatepicker = new AirDatepicker(datePickerElement, { ...defaultOptions, ...options });
+    const airDatepicker = new AirDatepicker(this.datePickerElement, { ...defaultOptions, ...options });
     airDatepicker.selectDate(this.selectedDates);
   }
 
-  handleDocumentClick = (event) => {
-    const { element, datePickerElement } = this;
-    if (!element.contains(event.target)) {
-      datePickerElement.classList.add('calendar__date-picker_closed');
+  handleDocumentClick = ({ target }) => {
+    if (!this.element.contains(target)) {
+      this.datePickerElement.classList.add('calendar__date-picker_closed');
       document.removeEventListener('click', this.handleDocumentClick);
     }
   };

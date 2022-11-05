@@ -5,16 +5,14 @@ class ExpandableList {
   }
 
   toggleMenu() {
-    const { menuElement, headerArrowElement } = this;
-    menuElement.classList.toggle('expandable-list__menu_active');
-    headerArrowElement.classList.toggle('expandable-list__arrow_active');
+    this.menuElement.classList.toggle('expandable-list__menu_active');
+    this.headerArrowElement.classList.toggle('expandable-list__arrow_active');
   }
 
-  handleDocumentClick = (event) => {
-    const { element, menuElement, headerArrowElement } = this;
-    if (!element.contains(event.target)) {
-      menuElement.classList.remove('expandable-list__menu_active');
-      headerArrowElement.classList.remove('expandable-list__arrow_active');
+  handleDocumentClick = ({ target }) => {
+    if (!this.element.contains(target)) {
+      this.menuElement.classList.remove('expandable-list__menu_active');
+      this.headerArrowElement.classList.remove('expandable-list__arrow_active');
       document.removeEventListener('click', this.handleDocumentClick);
     }
   };

@@ -12,47 +12,41 @@ class Dropdown {
   }
 
   updateState() {
-    const { counterElements, state } = this;
-    state.values = [...counterElements].map((counter) => Number(counter.value));
-    state.totalCounts = [...counterElements].reduce(
+    this.state.values = [...this.counterElements].map((counter) => Number(counter.value));
+    this.state.totalCounts = [...this.counterElements].reduce(
       (prev, counter) => prev + Number(counter.value),
       0
     );
   }
 
   updateInputValueText() {
-    const { inputElement, state } = this;
-
-    if (state.totalCounts === 0) {
-      inputElement.value = '';
+    if (this.state.totalCounts === 0) {
+      this.inputElement.value = '';
     } else if (this.onChangeTextValue) {
-      const inputText = this.onChangeTextValue(state.totalCounts, state.values);
-      inputElement.value = inputText;
+      const inputText = this.onChangeTextValue(this.state.totalCounts, this.state.values);
+      this.inputElement.value = inputText;
     } else {
       const wordingTextArray = this.wordsDeclensions.map((item, index) =>
-        getWordDeclension(state.values[index], item)
+        getWordDeclension(this.state.values[index], item)
       );
       const removedEmptyText = wordingTextArray.filter((item) => item !== '');
       const formattedText = removedEmptyText.join(', ');
-      inputElement.value = formattedText;
+      this.inputElement.value = formattedText;
     }
   }
 
   toggleHiddenClearButton() {
-    const { clearButtonElement, state } = this;
-
-    if (state.totalCounts === 0) {
-      clearButtonElement?.classList.add('dropdown__button_hidden');
+    if (this.state.totalCounts === 0) {
+      this.clearButtonElement?.classList.add('dropdown__button_hidden');
     } else {
-      clearButtonElement?.classList.remove('dropdown__button_hidden');
+      this.clearButtonElement?.classList.remove('dropdown__button_hidden');
     }
   }
 
   update() {
-    const { counterElements, state } = this;
     this.updateState();
-    state.values.forEach((value, index) => {
-      const minusButton = counterElements[index].previousElementSibling;
+    this.state.values.forEach((value, index) => {
+      const minusButton = this.counterElements[index].previousElementSibling;
       if (value === 0) {
         minusButton.setAttribute('disabled', true);
       } else if (value === 1) {
@@ -77,14 +71,12 @@ class Dropdown {
   };
 
   toggleDropdownMenu() {
-    const { menuElement, inputElement } = this;
-    inputElement.classList.toggle('dropdown__input_active');
-    menuElement.classList.toggle('dropdown__menu_active');
+    this.inputElement.classList.toggle('dropdown__input_active');
+    this.menuElement.classList.toggle('dropdown__menu_active');
   }
 
   handleClearButtonClick = () => {
-    const { counterElements } = this;
-    [...counterElements].forEach((counter) => {
+    [...this.counterElements].forEach((counter) => {
       const counterElement = counter;
       counterElement.value = 0;
     });
@@ -93,10 +85,9 @@ class Dropdown {
   };
 
   handleDocumentClick = (event) => {
-    const { element, menuElement, inputElement } = this;
-    if (!element.contains(event.target)) {
-      menuElement.classList.remove('dropdown__menu_active');
-      inputElement.classList.remove('dropdown__input_active');
+    if (!this.element.contains(event.target)) {
+      this.menuElement.classList.remove('dropdown__menu_active');
+      this.inputElement.classList.remove('dropdown__input_active');
       document.removeEventListener('click', this.handleDocumentClick);
     }
   };
@@ -107,21 +98,13 @@ class Dropdown {
   };
 
   bindEventListeners() {
-    const {
-      inputWrapperElement,
-      applyButtonElement,
-      clearButtonElement,
-      minusButtonElements,
-      plusButtonElements,
-    } = this;
-
-    inputWrapperElement.addEventListener('click', this.handleInputWrapperClick);
-    applyButtonElement?.addEventListener('click', () => this.toggleDropdownMenu());
-    clearButtonElement?.addEventListener('click', this.handleClearButtonClick);
-    minusButtonElements.forEach((button) => {
+    this.inputWrapperElement.addEventListener('click', this.handleInputWrapperClick);
+    this.applyButtonElement?.addEventListener('click', () => this.toggleDropdownMenu());
+    this.clearButtonElement?.addEventListener('click', this.handleClearButtonClick);
+    this.minusButtonElements.forEach((button) => {
       button.addEventListener('click', this.handleMinusButtonClick);
     });
-    plusButtonElements.forEach((button) => {
+    this.plusButtonElements.forEach((button) => {
       button.addEventListener('click', this.handlePlusButtonClick);
     });
   }

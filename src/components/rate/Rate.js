@@ -7,18 +7,15 @@ class Rate {
     this.init();
   }
 
-  handleStarIconClick = (event, index) => {
-    const { starCounts, starIconElements } = this;
-
-    const { target } = event;
+  handleStarIconClick = ({ target }, index) => {
     const text = target.textContent;
     if (text === STAR_ICON_NAME) {
-      for (let i = index + 1; i < starCounts; i += 1) {
-        starIconElements[i].textContent = STAR_WITH_BORDER_ICON_NAME;
+      for (let i = index + 1; i < this.starCounts; i += 1) {
+        this.starIconElements[i].textContent = STAR_WITH_BORDER_ICON_NAME;
       }
     } else {
       for (let i = index; i >= 0; i -= 1) {
-        starIconElements[i].textContent = STAR_ICON_NAME;
+        this.starIconElements[i].textContent = STAR_ICON_NAME;
       }
     }
   };

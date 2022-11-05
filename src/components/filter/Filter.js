@@ -14,9 +14,8 @@ class Filter {
   };
 
   bindListeners() {
-    const { filterButtonElement, filterButtonCloseElement } = this;
-    filterButtonElement.addEventListener('click', this.handleButtonClick);
-    filterButtonCloseElement.addEventListener('click', this.handleButtonClick);
+    this.filterButtonElement.addEventListener('click', this.handleButtonClick);
+    this.filterButtonCloseElement.addEventListener('click', this.handleButtonClick);
   }
 
   init() {

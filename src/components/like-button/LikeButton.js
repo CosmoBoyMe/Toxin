@@ -4,17 +4,15 @@ class LikeButton {
     this.init();
   }
 
-  handleLikeButtonClick = (event) => {
-    const { currentTarget } = event;
-    const { countElement } = this;
-    const currentCount = Number(countElement.textContent);
+  handleLikeButtonClick = ({ currentTarget }) => {
+    const currentCount = Number(this.countElement.textContent);
 
     if (currentTarget.classList.contains('like-button_liked')) {
       currentTarget.classList.remove('like-button_liked');
-      countElement.textContent = currentCount - 1;
+      this.countElement.textContent = currentCount - 1;
     } else {
       currentTarget.classList.add('like-button_liked');
-      countElement.textContent = currentCount + 1;
+      this.countElement.textContent = currentCount + 1;
     }
   };
 
