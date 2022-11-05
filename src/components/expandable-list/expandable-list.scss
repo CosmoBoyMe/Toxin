@@ -3,14 +3,14 @@
 .expandable-list {
   position: relative;
 
-  cursor: pointer;
-
   background-color: #fff;
 
   &__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    cursor: pointer;
   }
 
   &__title {
