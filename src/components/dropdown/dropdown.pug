@@ -1,4 +1,3 @@
-include ../amount-select/amount-select.pug
 include ../button/button.pug
 
 mixin dropdown({ label = '', placeholder = '', items = [], withButtons = true, isActive = false } = {})
@@ -16,7 +15,21 @@ mixin dropdown({ label = '', placeholder = '', items = [], withButtons = true, i
         each item in items
           - const { title, value, min, max } = item;
           li.dropdown__amount-select.js-dropdown__amount-select
-            +amount-select({ title, value, min, max })
+            h3.dropdown__amount-select-title= title
+            .dropdown__amount-select-controls
+              button.dropdown__amount-select-button.dropdown__amount-select-button_sign_minus.js-dropdown__amount-select-button_sign_minus(
+                type="button"
+              )
+              input.dropdown__amount-select-number.js-dropdown__amount-select-number(
+                type="number",
+                min=min,
+                max=max,
+                value=value,
+                readonly=""
+              )
+              button.dropdown__amount-select-button.dropdown__amount-select-button_sign_plus.js-dropdown__amount-select-button_sign_plus(
+                type="button"
+              )
       if (withButtons)
         .dropdown__buttons
           .dropdown__button.js-dropdown__button_clear

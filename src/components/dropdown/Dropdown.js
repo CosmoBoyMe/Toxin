@@ -130,9 +130,9 @@ class Dropdown {
     this.inputWrapperElement = this.element.querySelector('.js-dropdown__input-wrapper');
     this.inputElement = this.element.querySelector('.js-dropdown__input');
     this.menuElement = this.element.querySelector('.js-dropdown__menu');
-    this.counterElements = this.element.querySelectorAll('.js-amount-select__number');
-    this.minusButtonElements = this.element.querySelectorAll('.js-amount-select__button_sign_minus');
-    this.plusButtonElements = this.element.querySelectorAll('.js-amount-select__button_sign_plus');
+    this.counterElements = this.element.querySelectorAll('.js-dropdown__amount-select-number');
+    this.minusButtonElements = this.element.querySelectorAll('.js-dropdown__amount-select-button_sign_minus');
+    this.plusButtonElements = this.element.querySelectorAll('.js-dropdown__amount-select-button_sign_plus');
     this.clearButtonElement = this.element.querySelector('.js-dropdown__button_clear');
     this.applyButtonElement = this.element.querySelector('.js-dropdown__button_apply');
     this.update();
