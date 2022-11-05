@@ -47,10 +47,11 @@
     &_active {
       user-select: none;
 
-      border: 1px solid var(--darkShade50);
-      border-bottom: none;
+      border-color: var(--darkShade50);
       border-end-start-radius: 0;
       border-end-end-radius: 0;
+
+      border-bottom-color: transparent;
     }
 
     &::placeholder {
