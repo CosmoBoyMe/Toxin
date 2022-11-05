@@ -10,9 +10,9 @@ class BookingForm {
   }
 
   init() {
-    const servicesPriceElements = this.element.querySelectorAll('.js-booking-form__services-item-price');
-    const daysCountElement = this.element.querySelector('.js-booking-form__services-item-days');
-    const daysWordElement = this.element.querySelector('.js-booking-form__services-item-days-word');
+    const servicesPriceElements = this.element.querySelectorAll('.js-booking-form__services-price');
+    const daysCountElement = this.element.querySelector('.js-booking-form__services-days');
+    const daysWordElement = this.element.querySelector('.js-booking-form__services-days-word');
 
     const valueFormat = wNumb({
       decimals: 0,

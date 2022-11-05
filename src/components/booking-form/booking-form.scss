@@ -22,36 +22,38 @@
     margin-bottom: 18px;
   }
 
-  &__services-items {
-    display: flex;
-    flex-direction: column;
+  &__services {
+    display: grid;
+    grid-template-columns: minmax(150px, 240px) 1fr;
 
-    margin-bottom: 27px;
+    margin-bottom: 26px;
     row-gap: 10px;
-  }
 
-  &__services-item {
-    display: flex;
-    flex-wrap: wrap;
-
-    &-info {
+    &-descriptions {
       display: flex;
-      flex-wrap: wrap;
-
-      margin-right: 10px;
+      justify-content: space-between;
     }
 
-    &-name {
-      max-width: 214px;
+    &-price {
+      margin-left: auto;
+
+      white-space: nowrap;
+    }
+
+    &-discount-price {
+      white-space: nowrap;
+    }
+
+    &-text {
+      max-width: 218px;
       margin-right: 5px;
 
       line-height: 21px;
     }
 
     &-info-button {
-      width: 20px;
+      min-width: 20px;
       height: 20px;
-      margin-right: 5px;
 
       cursor: pointer;
       text-align: center;
@@ -60,10 +62,6 @@
       border: 1px solid rgb(31 32 65 / 25%);
       border-radius: 50%;
       background-color: transparent;
-    }
-
-    &-price {
-      margin-left: auto;
     }
   }
 

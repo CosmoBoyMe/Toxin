@@ -11,32 +11,33 @@ mixin booking-form({ price = 9999, days = 4, discountServices = 2179, services =
       +calendar({ type: 'multiple', selectedDate: selectedDate })
     .booking-form__dropdown.js-booking-form__dropdown
       +guest-dropdown({ values: [1,2] })
-    .booking-form__services-items 
-      .booking-form__services-item
-        .booking-form__services-item-info
-          span.booking-form__services-item-room-price.js-booking-form__services-item-price #{ price }
-          | &nbsp;
-          span.booking-form__services-item-symbol x
-          | &nbsp;
-          span.booking-form__services-item-days.js-booking-form__services-item-days #{ days }
-          | &nbsp;
-          span.booking-form__services-item-days-world.js-booking-form__services-item-days-word суток
-          | &nbsp;
-        span.booking-form__services-item-price.js-booking-form__services-item-price #{ price * days }
-      .booking-form__services-item
-        .booking-form__services-item-info
-          span.booking-form__services-item-name Сбор за услуги: скидка
-          | &nbsp;
-          span.booking-form__services-discount-price.js-booking-form__services-item-price #{ discountServices }
-          | &nbsp;
-          button.booking-form__services-item-info-button(type="button") i
-        span.booking-form__services-item-price.js-booking-form__services-item-price #{ services }
-      .booking-form__services-item
-        .booking-form__services-item-info
-          span.booking-form__services-item-name Сбор за дополнительные услуги
-          button.booking-form__services-item-info-button(type="button") i
-        span.booking-form__services-item-price.js-booking-form__services-item-price #{ extraServices }
+    .booking-form__services
+        .booking-form__services-descriptions
+          p.booking-form__services-text 
+            span.booking-form__services-price.js-booking-form__services-price #{ price }
+            | &nbsp;
+            span.booking-form__services-symbol x
+            | &nbsp;
+            span.booking-form__services-days.js-booking-form__services-days #{ days }
+            | &nbsp;
+            span.booking-form__services-days-world.js-booking-form__services-days-word суток
+            | &nbsp;
+        span.booking-form__services-price.js-booking-form__services-price #{ price * days }
+        .booking-form__services-descriptions
+          p.booking-form__services-description-text 
+            span.booking-form__services-name Сбор за услуги: скидка
+            | &nbsp;
+            span.booking-form__services-discount-price.js-booking-form__services-price #{ discountServices }
+            | &nbsp;
+          button.booking-form__services-info-button(type="button") i
+        span.booking-form__services-price.js-booking-form__services-price #{ services }
+        .booking-form__services-descriptions
+          p.booking-form__services-text 
+            span.booking-form__services-name Сбор за дополнительные услуги
+          button.booking-form__services-info-button(type="button") i
+        span.booking-form__services-price.js-booking-form__services-price #{ extraServices }
+
     .booking-form__result Итого
       span.booking-form__result-line
-      span.booking-form__result-price.js-booking-form__services-item-price #{ totalAmount }
+      span.booking-form__result-price.js-booking-form__services-price #{ totalAmount }
     +submit-button('забронировать')
