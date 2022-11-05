@@ -15,7 +15,7 @@ mixin filter
         button.filter__content-button-close.js-filter__content-button-close(type="button")
         .filter__calendar 
           +calendar({ type:'single' })
-        .filter__guest-dropdown.js-filter__guest-dropdown
+        .filter__guest-dropdown
           +guest-dropdown({ values: [1,2,1] })
         .filter__range-slider 
           +range-slider({ title: 'диапазон цены', text: 'Стоимость за сутки пребывания в номере' })
@@ -25,7 +25,7 @@ mixin filter
         .filter__availability
           - const richCheckboxItems = [{ title: "Широкий коридор", text: "Ширина коридоров в номере \n не менее 91 см." }, { title: "Помощник для инвалидов", text: "На 1 этаже вас встретит специалист \n и проводит до номера." }];
           +checkbox-list({ title: 'доступность', items: richCheckboxItems, type: 'rich' })
-        .filter__room-dropdown.js-filter__room-dropdown
+        .filter__room-dropdown
           +room-dropdown({ values: [2,2] })
         .filter__expandable-list 
           - const expandableItems = [{ title: "Завтрак" }, { title: "Письменный стол", isChecked: true }, { title: "Стул для кормления", isChecked: true  }, { title: "Кроватка", isChecked: true  }, { title: "Телевизор" }, { title: "Шампунь" }];
