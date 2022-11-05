@@ -8,7 +8,7 @@ const guestDropdownWordsDeclensions = [
 const roomWordsDeclensions = [
   ['спальня', 'спальни', 'спален'],
   ['кровать', 'кровати', 'кроватей'],
-  ['ванная комната', 'ванных комнат', 'ванных комнат'],
+  ['ванная комната', 'ванные комнаты', 'ванных комнат'],
 ];
 
 export { bookingFormDaysWordsDeclensions, guestDropdownWordsDeclensions, roomWordsDeclensions };
