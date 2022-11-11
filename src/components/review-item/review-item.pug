@@ -9,5 +9,5 @@ mixin review-item({ name = '', online = 'час назад', avatarSrc = '', lik
         .review-item__user-online= online
     .review-item__comment
       .review-item__like
-      +like-button(likeCount, isLiked)
+      +like-button({likeCount, isLiked})
       p.review-item__text= text

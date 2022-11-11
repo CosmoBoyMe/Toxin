@@ -87,7 +87,7 @@ html(lang="en")
                     -
                       const likeButtonsItems = [{ likeCount: 2 }, { likeCount: 12, isLiked: true }];
                     each likeButtonItem in likeButtonsItems 
-                      +like-button(likeButtonItem.likeCount, likeButtonItem.isLiked)
+                      +like-button({likeCount: likeButtonItem.likeCount, isLiked: likeButtonItem.isLiked})
                 .form-elements__rate-buttons 
                   h3.form-elements__rate-buttons-title rate button
                   .form-elements__rate-buttons-items 
