@@ -14,7 +14,6 @@
   border: none;
   border-radius: 22px;
   background: var(--gradient);
-  background-color: var(--gradient);
 
   font-size: 12px;
   font-weight: 700;
@@ -25,7 +24,6 @@
 
     color: var(--purple);
     background: none;
-    background-color: transparent;
 
     &::before {
       content: '';
