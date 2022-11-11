@@ -21,20 +21,14 @@ class Pagination {
   createPageButton(pageNumber) {
     const buttonElement = document.createElement('button');
     buttonElement.textContent = pageNumber;
-    buttonElement.classList.add('js-pagination__button', 'js-pagination__page');
+    buttonElement.classList.add('pagination__button');
     const handlePageButtonClick = () => {
       this.activePageNumber = pageNumber;
       this.render();
     };
 
     if (this.activePageNumber === pageNumber) {
-      buttonElement.classList.add(
-        'js-pagination__button',
-        'js-pagination__page',
-        'js-pagination__button_active'
-      );
-    } else {
-      buttonElement.classList.add('js-pagination__button', 'js-pagination__page');
+      buttonElement.classList.add('pagination__button_active');
     }
 
     buttonElement.addEventListener('click', handlePageButtonClick);
@@ -48,7 +42,7 @@ class Pagination {
 
   createNextButton() {
     const nextButton = document.createElement('button');
-    nextButton.classList.add('js-pagination__button', 'js-pagination__button-next');
+    nextButton.classList.add('pagination__button', 'pagination__button_type_next');
     nextButton.setAttribute('type', 'button');
     nextButton.textContent = 'arrow_forward';
 
@@ -64,7 +58,7 @@ class Pagination {
   createDotsIcon() {
     const dotsIconElement = document.createElement('span');
     dotsIconElement.textContent = '...';
-    dotsIconElement.classList.add('js-pagination__dots');
+    dotsIconElement.classList.add('pagination__dots');
     return dotsIconElement;
   }
 

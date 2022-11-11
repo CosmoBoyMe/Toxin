@@ -13,9 +13,7 @@
 
     user-select: none;
   }
-}
 
-.js-pagination {
   &__button {
     display: flex;
     align-items: center;
@@ -42,6 +40,22 @@
 
       font-weight: 700;
     }
+
+    &_type_next {
+      transition: opacity 0.4s;
+
+      color: white;
+      background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+
+      font-family: var(--materialFont);
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 20px;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
   }
 
   &__dots {
@@ -58,21 +72,5 @@
 
     font-size: 12px;
     line-height: 15px;
-  }
-
-  &__button-next {
-    transition: opacity 0.4s;
-
-    color: white;
-    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-
-    font-family: var(--materialFont);
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 20px;
-
-    &:hover {
-      opacity: 0.7;
-    }
   }
 }
