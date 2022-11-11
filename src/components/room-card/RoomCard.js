@@ -1,5 +1,4 @@
 import Swiper, { Navigation, Pagination } from 'swiper';
-
 import 'swiper/css'; // eslint-disable-line import/no-unresolved
 
 class RoomCard {
