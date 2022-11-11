@@ -4,7 +4,7 @@ include ../guest-dropdown/guest-dropdown.pug
 include ../card-header-info/card-header-info.pug
 
 mixin booking-form({ price = 9999, days = 4, discountServices = 2179, services = 0, extraServices = 300, totalAmount = 38081, selectedDate = [] } = {})
-  form.booking-form
+  form.booking-form.js-booking-form
     .booking-form__about
       +card-header-info({ isLarge: true })
     .booking-form__calendar
