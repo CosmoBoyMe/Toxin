@@ -1,8 +1,5 @@
-/* eslint-disable no-unused-vars */
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const LiveReloadPlugin = require('webpack-livereload-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
@@ -49,7 +46,7 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './src/pages/web/landing-page/landing-page.pug'),
-      filename: 'landing-page.html'
+      filename: 'landing-page.html',
     }),
 
     new HtmlWebpackPlugin({
@@ -106,8 +103,6 @@ module.exports = {
   ],
   module: {
     rules: [
-      // стили
-
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
@@ -124,9 +119,6 @@ module.exports = {
           'sass-loader',
         ],
       },
-
-      // изображения
-
       {
         test: /\.(?:ico|gif|png|jpg|jpeg|svg)$/i,
         type: 'asset/resource',
@@ -134,9 +126,6 @@ module.exports = {
           filename: 'img/[name][ext][query]',
         },
       },
-
-      // шрифты
-
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
@@ -144,9 +133,6 @@ module.exports = {
           filename: 'fonts/[name][ext][query]',
         },
       },
-
-      // pug
-
       {
         test: /\.pug$/,
         exclude: /(node_modules|bower_components)/,
