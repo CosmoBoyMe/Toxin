@@ -32,7 +32,7 @@ mixin dropdown({ label = '', placeholder = '', items = [], withButtons = true, i
               )
       if (withButtons)
         .dropdown__buttons
-          .dropdown__button.js-dropdown__button_clear
+          .dropdown__button.dropdown__button_type_clear.js-dropdown__button_type_clear
             +button({ text: 'очистить' })
-          .dropdown__button.dropdown__button_shift_left.js-dropdown__button_apply
+          .dropdown__button.dropdown__button_shift_left.dropdown__button_type_apply.js-dropdown__button_type_apply
             +button({ text: 'применить' })

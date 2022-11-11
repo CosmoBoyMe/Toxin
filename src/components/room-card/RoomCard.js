@@ -30,8 +30,8 @@ class RoomCard {
         bulletActiveClass: 'room-card__pagination-bullet_active',
       },
       navigation: {
-        nextEl: '.js-room-card__button-next',
-        prevEl: '.js-room-card__button-prev',
+        nextEl: '.js-room-card__button_type_next',
+        prevEl: '.js-room-card__button_type_prev',
       },
     });
   }
