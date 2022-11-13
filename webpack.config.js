@@ -2,11 +2,34 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const fs = require('fs');
 
 let mode = 'development';
 if (process.env.NODE_ENV === 'production') {
   mode = 'production';
 }
+
+const pathToUiPages = path.resolve(__dirname, './src/pages/ui-kit');
+const pathToWebPages = path.resolve(__dirname, './src/pages/web');
+
+const getPages = (pathToPagesFolder) => {
+  const pagesNames = fs.readdirSync(pathToPagesFolder);
+  const pages = pagesNames.map((pageName) => {
+    const pageNameInCamelCase = pageName
+      .toLowerCase()
+      .replace(/[^a-zA-Z0-9]+(.)/g, (match, char) => char.toUpperCase());
+
+    const page = new HtmlWebpackPlugin({
+      template: path.resolve(pathToPagesFolder, `${pageName}/${pageName}.pug`),
+      filename: `${pageNameInCamelCase}.html`,
+    });
+    return page;
+  });
+
+  return pages;
+};
+
+const pages = [...getPages(pathToUiPages), ...getPages(pathToWebPages)];
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
@@ -39,58 +62,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'style/[name].[contenthash].css',
     }),
-
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/pages/web/index/index.pug'),
-    }),
-
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/pages/web/landing-page/landing-page.pug'),
-      filename: 'landing-page.html',
-    }),
-
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/pages/web/sign-in/sign-in.pug'),
-      filename: 'signIn.html',
-    }),
-
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/pages/web/sign-up/sign-up.pug'),
-      filename: 'signUp.html',
-    }),
-
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/pages/web/room-details/room-details.pug'),
-      filename: 'roomDetails.html',
-    }),
-
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/pages/web/search-room/search-room.pug'),
-      filename: 'searchRoom.html',
-    }),
-
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/pages/ui-kit/colors/colors.pug'),
-      filename: 'colors.html',
-    }),
-
-    new HtmlWebpackPlugin({
-      template: path.resolve(
-        __dirname,
-        './src/pages/ui-kit/headers-and-footers/headers-and-footers.pug'
-      ),
-      filename: 'headersAndFooters.html',
-    }),
-
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/pages/ui-kit/form-elements/form-elements.pug'),
-      filename: 'formElements.html',
-    }),
-
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/pages/ui-kit/cards/cards.pug'),
-      filename: 'cards.html',
-    }),
+    ...pages,
 
     new CopyPlugin({
       patterns: [
@@ -101,6 +73,7 @@ module.exports = {
       ],
     }),
   ],
+
   module: {
     rules: [
       {
