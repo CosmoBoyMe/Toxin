@@ -2,7 +2,6 @@ import Chart from 'chart.js/auto';
 
 class PieChart {
   constructor(element) {
-
     this.element = element;
     this.init();
   }

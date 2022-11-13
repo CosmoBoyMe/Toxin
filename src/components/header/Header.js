@@ -11,16 +11,16 @@ class Header {
     } else {
       this.bodyElement.classList.remove('body_disable');
     }
-  }
+  };
 
   handleDocumentClick = ({ target }) => {
-    if (!this.headerNavElement.contains(target) ) {
+    if (!this.headerNavElement.contains(target)) {
       this.toggleBurgerMenu();
     }
   };
 
   toggleBurgerMenu = () => {
-    this.isBurgerMenuActive  = !this.isBurgerMenuActive;
+    this.isBurgerMenuActive = !this.isBurgerMenuActive;
     this.burgerElement.classList.toggle('header__nav-burger_active');
     this.headerNavElement.classList.toggle('header__nav_active');
     if (this.isBurgerMenuActive) {
@@ -32,10 +32,10 @@ class Header {
       window.removeEventListener('resize', this.toggleBodyScroll);
       this.bodyElement.classList.remove('body_disable');
     }
-  }
+  };
 
   handleNavBurgerClick = () => {
-    this.toggleBurgerMenu()
+    this.toggleBurgerMenu();
   };
 
   bindBurgerListener() {

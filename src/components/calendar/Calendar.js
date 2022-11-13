@@ -66,7 +66,10 @@ class Calendar {
       };
     }
 
-    const airDatepicker = new AirDatepicker(this.datePickerElement, { ...defaultOptions, ...options });
+    const airDatepicker = new AirDatepicker(this.datePickerElement, {
+      ...defaultOptions,
+      ...options,
+    });
     airDatepicker.selectDate(this.selectedDates);
   }
 
@@ -99,7 +102,7 @@ class Calendar {
 
     this.type = this.element.getAttribute('data-type');
     this.selectedDates = [...this.inputElements].map((input) => input.getAttribute('data-date'));
-    
+
     this.initDatePicker();
     this.bindEventListeners();
   }

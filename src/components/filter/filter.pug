@@ -28,5 +28,5 @@ mixin filter
         .filter__room-dropdown
           +room-dropdown({ values: [2,2] })
         .filter__expandable-list 
-          - const expandableItems = [{ title: "Завтрак" }, { title: "Письменный стол", isChecked: true }, { title: "Стул для кормления", isChecked: true  }, { title: "Кроватка", isChecked: true  }, { title: "Телевизор" }, { title: "Шампунь" }];
+          - const expandableItems = [{ title: "Завтрак" }, { title: "Письменный стол", isChecked: true }, { title: "Стул для кормления", isChecked: true }, { title: "Кроватка", isChecked: true }, { title: "Телевизор" }, { title: "Шампунь" }];
             +expandable-list({ title: 'дополнительные удобства', items: expandableItems })

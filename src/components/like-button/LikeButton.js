@@ -24,7 +24,6 @@ class LikeButton {
     this.countElement = this.element.querySelector('.js-like-button__count');
     this.bindLikeButtonListener();
   }
-
 }
 
 export { LikeButton };

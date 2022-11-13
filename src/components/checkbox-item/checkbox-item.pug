@@ -1,7 +1,7 @@
 mixin checkbox-item({ title = '', text = '', isChecked = false, isRich = false } = {})
   .checkbox-item
     label.checkbox-item__label
-      input.checkbox-item__input(type = "checkbox", checked = isChecked)
+      input.checkbox-item__input(type="checkbox", checked=isChecked)
       span.checkbox-item__box
       .checkbox-item__description
         if isRich
