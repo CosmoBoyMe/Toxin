@@ -10,6 +10,7 @@
     "build": "set NODE_ENV=production&&webpack",
     "lint": "eslint \"*/**/*.{js,ts}\" --quiet --fix",
     "style": "stylelint \"**/*.scss\" --fix",
+    "prettier": "prettier --write \"**/*.{ts,js,css,pug}\"",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "prepare": "husky install"
@@ -70,6 +71,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "npm run lint",
-    "**/*.scss": "npm run style"
+    "**/*.scss": "npm run style",
+    "**/*.{ts,js,pug}": "npm run prettier"
   }
 }
