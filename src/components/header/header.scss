@@ -1,7 +1,7 @@
 @import '../../styles/mixins';
 
 .body {
-  &_disable {
+  &_with-disabled-scroll {
     overflow: hidden;
   }
 }

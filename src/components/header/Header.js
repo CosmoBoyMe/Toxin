@@ -7,9 +7,9 @@ class Header {
 
   toggleBodyScroll = () => {
     if (this.bodyElement.offsetWidth <= 768) {
-      this.bodyElement.classList.add('body_disable');
+      this.bodyElement.classList.add('body_with-disabled-scroll');
     } else {
-      this.bodyElement.classList.remove('body_disable');
+      this.bodyElement.classList.remove('body_with-disabled-scroll');
     }
   };
 
@@ -30,7 +30,7 @@ class Header {
     } else {
       document.removeEventListener('click', this.handleDocumentClick);
       window.removeEventListener('resize', this.toggleBodyScroll);
-      this.bodyElement.classList.remove('body_disable');
+      this.bodyElement.classList.remove('body_with-disabled-scroll');
     }
   };
 
