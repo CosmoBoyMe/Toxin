@@ -92,6 +92,10 @@
     &_active {
       display: block;
     }
+
+    &_with-buttons {
+      padding-bottom: 6px;
+    }
   }
 
   &__amount-items {

@@ -10,7 +10,10 @@ mixin dropdown({ label = '', placeholder = '', items = [], withButtons = true, i
         readonly
       )
       span.dropdown__input-arrow
-    .dropdown__menu.js-dropdown__menu(class=isActive && "dropdown__menu_active")
+    .dropdown__menu.js-dropdown__menu(
+      class=isActive && "dropdown__menu_active",
+      class=withButtons && "dropdown__menu_with-buttons"
+    )
       ul.dropdown__amount-items
         each item in items
           - const { title, value, min, max } = item;
