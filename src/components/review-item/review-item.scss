@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
 
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   &__user-img {
@@ -31,6 +31,10 @@
     align-items: flex-start;
 
     margin-left: 4px;
+  }
+
+  &__like {
+    margin-top: 2px;
   }
 
   &__text {
