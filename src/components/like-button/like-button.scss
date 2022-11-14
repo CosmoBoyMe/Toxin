@@ -43,5 +43,9 @@
 
   &_liked &__heart::before {
     content: 'favorite';
+
+    color: transparent;
+    background-image: var(--gradient);
+    background-clip: text;
   }
 }
