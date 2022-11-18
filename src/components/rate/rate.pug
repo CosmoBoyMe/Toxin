@@ -2,6 +2,7 @@
 
 mixin rate(rateNumber = TOTAL_STARS_COUNT)
   .rate.js-rate
+    // prettier-ignore
     - for(let i = 0; i < TOTAL_STARS_COUNT; i += 1)
       - const iconName = i < rateNumber ? "star" : "star_border";
         span.rate__icon.js-rate__icon= iconName
