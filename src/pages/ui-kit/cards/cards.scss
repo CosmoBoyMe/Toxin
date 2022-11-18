@@ -19,6 +19,7 @@
   }
 
   &__second-column {
+    margin-top: 2px;
     margin-right: 40px;
   }
 
@@ -34,7 +35,7 @@
   &__cards {
     display: flex;
     flex-direction: column;
-    row-gap: 40px;
+    row-gap: 39px;
   }
 
   &__room-card {

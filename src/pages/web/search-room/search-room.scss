@@ -9,7 +9,7 @@
   &__main {
     flex: 1 1 auto;
 
-    padding-top: 30px;
+    padding-top: 31px;
     padding-bottom: 72px;
 
     border-bottom: 1px solid var(--darkShade25);
@@ -58,7 +58,7 @@
       grid-template-columns: repeat(3, minmax(255px, 271px));
       gap: 20px 12px;
 
-      margin-bottom: 41px;
+      margin-bottom: 39px;
 
       @include extra-large {
         grid-template-columns: repeat(3, 1fr);

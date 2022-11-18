@@ -2,7 +2,7 @@
 
 .booking-form {
   max-width: 380px;
-  padding: 40px 29px 29px;
+  padding: 39px 29px 29px;
 
   border: 1px solid rgb(0 0 0 / 12%);
   border-radius: 4px;
@@ -25,7 +25,7 @@
     display: grid;
     grid-template-columns: minmax(150px, 240px) 1fr;
 
-    margin-bottom: 26px;
+    margin-bottom: 27px;
     row-gap: 10px;
 
     &-descriptions {
@@ -71,6 +71,7 @@
     justify-content: space-between;
 
     margin-bottom: 21px;
+    margin-left: 1px;
 
     color: var(--darkShade);
 

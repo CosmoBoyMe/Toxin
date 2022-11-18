@@ -2,7 +2,7 @@
 
 .sign-in-form {
   max-width: 380px;
-  padding: 39px 29px 33px;
+  padding: 39px 29px 32px;
 
   border: 1px solid rgb(0 0 0 / 12%);
   border-radius: 4px;
@@ -45,5 +45,9 @@
 
   @include medium {
     padding: 39px 15px 33px;
+  }
+
+  &__link {
+    margin-top: 1px;
   }
 }

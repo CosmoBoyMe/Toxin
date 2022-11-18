@@ -12,4 +12,5 @@ mixin sign-in-form
       +submit-button('войти')
     .sign-in-form__info
       p.sign-in-form__text Нет аккаунта на Toxin?
-      +link({ text: 'создать', href: 'signUp.html', withBorder: true })
+      .sign-in-form__link
+        +link({ text: 'создать', href: 'signUp.html', withBorder: true })
