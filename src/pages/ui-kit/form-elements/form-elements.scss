@@ -1,6 +1,6 @@
 .form-elements {
   &__main {
-    padding-top: 140px;
+    padding: 140px 0 150px;
   }
 
   &__container {
@@ -248,12 +248,15 @@
   }
 
   &__feature-items {
+    display: flex;
+    flex-direction: column;
+
     margin-right: 168px;
+    row-gap: 20px;
   }
 
   &__feature-item {
     width: 279px;
-    margin-bottom: 20px;
     padding-bottom: 16px;
 
     border-bottom: 1px solid rgb(31 32 65 / 10%);
