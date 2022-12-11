@@ -1,12 +1,15 @@
 include ../../../components/head/head.pug
 include ../../../components/color-item/color-item.pug
 include ../../../components/text-type/text-type.pug
+include ../../../components/logo/logo.pug
 
 doctype html
 html(lang="en")
   +head('Colors')
   body
     .colors
+      header.colors__header
+        +logo(false)
       main.colors__main 
         .colors__container
           .colors__colors
@@ -31,4 +34,5 @@ html(lang="en")
                 { tag:'body', text: 'This is the body text which is used for most \n of the design, like paragraphs, lists, etc.' }
               ];
             each item in types
-              +text-type(item)
+              .colors__types-item(class=`colors__types-item_tag_${item.tag}`)
+                +text-type(item)

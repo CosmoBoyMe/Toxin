@@ -20,12 +20,15 @@ include ../../../components/link/link.pug
 include ../../../components/button/button.pug
 include ../../../components/pagination/pagination.pug
 include ../../../components/review-item/review-item.pug
+include ../../../components/logo/logo.pug
 
 doctype html
 html(lang="en")
   +head('Form Elements')
   body
     .form-elements
+      header.form-elements__header
+        +logo(false)
       main.form-elements__main
         .form-elements__container
           .form-elements__inner

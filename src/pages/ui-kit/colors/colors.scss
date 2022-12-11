@@ -1,11 +1,21 @@
 .colors {
+  &__header {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 30px 0 0 30px;
+  }
+
+  &__main {
+    padding-bottom: 145px;
+  }
+
   &__container {
     display: flex;
     justify-content: space-between;
 
     max-width: 1178px;
     margin: 0 auto;
-    padding-top: 145px;
+    padding-top: 67px;
   }
 
   &__colors {
@@ -18,10 +28,21 @@
 
   &__types {
     display: flex;
-    row-gap: 52px;
+    row-gap: 47px;
 
     flex-direction: column;
 
-    width: 454px;
+    width: 462px;
+
+    &-item_tag_h1,
+    &-item_tag_h2 {
+      margin-bottom: 5px;
+    }
+
+    &-item_tag_h1,
+    &-item_tag_h2,
+    &-item_tag_h3 {
+      margin-left: 8px;
+    }
   }
 }

@@ -5,12 +5,15 @@ include ../../../components/booking-form/booking-form.pug
 include ../../../components/sign-in-form/sign-in-form.pug
 include ../../../components/calendar/calendar.pug
 include ../../../components/room-card/room-card.pug
+include ../../../components/logo/logo.pug
 
 doctype html
 html(lang="en")
   +head('Cards')
   body
     .cards
+      header.cards__header 
+        +logo(false)
       main.cards__main
         .cards__inner 
           .cards__first-column

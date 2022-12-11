@@ -1,11 +1,17 @@
 .headers-and-footers {
+  background-color: #e5e5e5;
+
+  &__header {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 30px 0 0 30px;
+  }
+
   &__main {
     display: flex;
     flex-direction: column;
 
-    padding-top: 140px;
-
-    background-color: #e5e5e5;
+    padding: 62px 0 140px;
     row-gap: 40px;
   }
 }
